@@ -1,7 +1,10 @@
 {
   "name": "front-end",
-  "version": "0.1.0",
+  "version": "v0.0.2",
   "private": true,
+  "author": "Harold Caraballo",
+  "email": "electronicsistems15@gmail.com",
+
   "scripts": {
     "dev": "next dev",
     "build": "next build",
