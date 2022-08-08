@@ -1,5 +1,4 @@
 import { useRouter } from 'next/router';
-
 import ALink from '../../../features/alink';
 
 function MainMenu() {
@@ -137,7 +136,7 @@ function MainMenu() {
                                 <li className={ path.indexOf( "pages/contact-2" ) > -1 ? 'active' : '' }><ALink href="/pages/contact-2">Contact 02</ALink></li>
                             </ul>
                         </li>
-                        <li className={ path.indexOf( "pages/login" ) > -1 ? 'active' : '' }><ALink href="/pages/login">Login</ALink></li>
+                        <li className={ path.indexOf( "/login" ) > -1 ? 'active' : '' }><ALink href="/login">Login</ALink></li>
                         <li className={ path.indexOf( "pages/faq" ) > -1 ? 'active' : '' }><ALink href="/pages/faq">FAQs</ALink></li>
                         <li className={ path.indexOf( "404" ) > -1 ? 'active' : '' }><ALink href="/404">Error 404</ALink></li>
                         <li className={ path.indexOf( "pages/coming-soon" ) > -1 ? 'active' : '' }><ALink href="/pages/coming-soon">Coming Soon</ALink></li>

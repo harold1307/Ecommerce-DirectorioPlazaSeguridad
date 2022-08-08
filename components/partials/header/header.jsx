@@ -5,9 +5,9 @@ import ALink from '../../features/alink';
 //import LoginModal from '../../features/modals/login-modal';
 import HeaderSearch from '../../partials/header/partials/header-search';
 import CategoryMenu from '../../partials/header/partials/category-menu';
+import LoginModal from '~/components/features/modals/login-modal';
 import MainMenu from '../../partials/header/partials/main-menu';
 import StickyHeader from '../../features/sticky-header';
-
 
 
 function Header() {
@@ -24,53 +24,23 @@ function Header() {
 
     return (
         <header className="header header-14">
-            <div className="header-top">
-                <div className={ containerClass }>
-                    <div className="header-left">
+            <div className="header-top ">
+                <div className={`${ containerClass } py-ms-2 py-lg-3 `}>
+                    <div className="header-left pl-4">
                         <a href="tel:#">
                             <i className="icon-phone"></i>Call: +0123 456 789
                         </a>
                     </div>
 
-                    <div className="header-right">
+                    <div className="header-right pr-4">
                         <ul className="top-menu">
                             <li>
-                                <ALink href="#">Links</ALink>
-                                <ul className="menus">
-                                    <li>
-                                        <div className="header-dropdown">
-                                            <ALink href="#">USD</ALink>
-                                            <div className="header-menu">
-                                                <ul>
-                                                    <li><ALink href="#">Eur</ALink></li>
-                                                    <li><ALink href="#">Usd</ALink></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div className="header-dropdown">
-                                            <ALink href="#">English</ALink>
-                                            <div className="header-menu header-menu-lang">
-                                                <ul>
-                                                    <li><ALink href="#">English</ALink></li>
-                                                    <li><ALink href="#">French</ALink></li>
-                                                    <li><ALink href="#">Spanish</ALink></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </li>
+                              
+                                   
+                                       <LoginModal />
+                                  
 
-
-
-                                    <p>"Aqui va la modal"</p>
-
-                                    
-
-
-
-
-                                </ul>
+                                  
                             </li>
                         </ul>
                     </div>

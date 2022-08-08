@@ -12,7 +12,7 @@ const initialState = {
     error: false
 }
 
-export default function(state = initialState, action) {
+const productsAllreducer = (state = initialState, action) => {
     switch(action.type) {
         case CARGANDO_PRODUCTOS_INICIO: 
             return {
@@ -39,3 +39,6 @@ export default function(state = initialState, action) {
             return state;     
     }
 }
+
+export default productsAllreducer;
+

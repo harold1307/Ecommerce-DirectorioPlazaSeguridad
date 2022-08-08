@@ -6,6 +6,9 @@ function GalleryDefault ( props ) {
     const { product, adClass = "product-gallery-vertical" } = props;
     const [ isOpen, setIsOpen ] = useState( false );
     const [ photoIndex, setPhotoIndex ] = useState( 0 );
+ 
+
+   console.log('Targeta producto=>', product[0].name)
 
     const imagenes=[
         '/images/products/product-1.jpg',
@@ -83,22 +86,25 @@ function GalleryDefault ( props ) {
                         }
 
                         {
-                            !product.stock || product.stock == 0 ?
-                                <span className="product-label label-out">Out of Stock</span>
+                            !product[0].stockStatus || product.stockStatus == 0 ?
+                                <span className="product-label label-out">No disponible</span>
                                 : ""
                         }
                      
                         <Magnifier
-                            imageSrc={ `${imagenes[0]}` }
+                            imageSrc={ product[0].image.location }
                             imageAlt="product"
-                            largeImageSrc={ '/images/products/product-1.jpg' } // Optional
+                            largeImageSrc={ product[0].image.location } // Optional
                             dragToMove={ true }
-                            mouseActivation="hover"
+                            //mouseActivation="hover"
                             cursorStyleActive="crosshair"
                             id="product-zoom"
                             className="zoom-image position-relative "
                             width= "792"
-                            height= "800"                                                
+                            height= "800"
+                            mouseActivation={MOUSE_ACTIVATION.DOUBLE_CLICK} 
+                          
+            
                             style={ { paddingTop: `${800 / 792 * 100}%` } }
                         />
 

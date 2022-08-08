@@ -72,7 +72,7 @@ function ProductEleven ( props ) {
                         >
                             <LazyLoadImage
                                 alt="product"
-                                src={`${product.COMPANY.logo}`} // Se debe cambiar por la imagen del producto principal.
+                                src={`${product.image.location }` } // Se debe cambiar por la imagen del producto principal.
                                 threshold={ 500 }
                                 effect="black and white"
                                 wrapperClassName="product-image"

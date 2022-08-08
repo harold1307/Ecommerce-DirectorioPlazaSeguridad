@@ -10,7 +10,7 @@ const initialState = {
     error: false
 }
 
-export default function(state = initialState, action) {
+const categoriesAllreducer = (state = initialState, action)=> {
     switch(action.type) {
         case CARGANDO_CATEGORIAS_INICIO: 
             return {
@@ -37,3 +37,5 @@ export default function(state = initialState, action) {
             return state;     
     }
 }
+
+export default categoriesAllreducer;

@@ -1,8 +1,25 @@
+import React, { useState,useEffect } from 'react';
+import { useRouter } from 'next/router'
+import { useForm } from 'react-hook-form';
+import { useSelector }  from "react-redux";
 import { Tabs, TabList, Tab, TabPanel } from 'react-tabs';
-import ALink from '../../components/features/alink';
-import Layout from '../../components/layout';
+import ALink from '../components/features/alink';
+import Layout from '../components/layout';
+import { useDispatch }  from "react-redux";
+import { verificarUsuario } from "../store/actions/Auth";
+
 
 function Login () {
+    const router = useRouter()
+    const dispatch = useDispatch();
+    const { register, handleSubmit, formState: { errors } } = useForm();
+    const dataFormSesion = (sendDataForm) =>  {
+       dispatch( verificarUsuario(sendDataForm)); 
+    };  
+
+    const verifyUser =  useSelector(state => state.authReducer.dataUser);
+    //verifyUser.success? router.push('/dashboard') : '';  
+   
     return (
         <Layout>
             <div className="main">
@@ -37,16 +54,19 @@ function Login () {
 
                                     <div className="tab-content">
                                         <TabPanel style={ { paddingTop: "2rem" } }>
+                                        {/* Inicio sesion */}
                                             <div>
-                                                <form action="#">
+                                          
+                                                <form onSubmit={handleSubmit(dataFormSesion) }>
                                                     <div className="form-group">
                                                         <label htmlFor="singin-email-2">Correo electrónico *</label>
-                                                        <input type="text" className="form-control" id="singin-email-2" name="singin-email" required />
+                                                        <input type="text" className="form-control" placeholder=".." {...register("username", {required: true, pattern: /^\S+@\S+$/i})} />
+                                                  
                                                     </div>
 
                                                     <div className="form-group">
                                                         <label htmlFor="singin-password-2">Clave *</label>
-                                                        <input type="password" className="form-control" id="singin-password-2" name="singin-password" required />
+                                                        <input type="text" className="form-control"  placeholder="..." {...register("password", {required: true, maxLength: 25})} />                                            
                                                     </div>
 
                                                     <div className="form-footer">

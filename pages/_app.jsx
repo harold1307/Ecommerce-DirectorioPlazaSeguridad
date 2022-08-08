@@ -3,6 +3,10 @@ import Helmet from "react-helmet";
 //import Layout from '../components/layout';
 import { Provider } from 'react-redux';
 import store from "../store/store";
+
+import { persistor } from '../store/store';
+import {PersistGate} from 'redux-persist/lib/integration/react';
+
 import '../public/scss/plugins/owl-carousel/owl.carousel.scss';
 import "../public/scss/style.scss";
 
@@ -27,8 +31,22 @@ const WrappedApp = ({ Component, pageProps }) => {
                     <link rel="mask-icon" href="images/icons/safari-pinned-tab.svg" color="#666666" />
                     <link rel="shortcut icon" type="image/x-icon" href="https://cdndirectorio.s3.amazonaws.com/assets/images/favicon.svg"></link>
                 </Helmet>
-                <Provider store={store}>                 
-                   <Component {...pageProps} />
+                <Provider store={store}>   
+                  
+                   <PersistGate 
+                      loading={
+                          <div className="loading-overlay">
+                              <div className="bounce-loader">
+                                  <div className="bounce1"></div>
+                                  <div className="bounce2"></div>
+                                  <div className="bounce3"></div>
+                              </div>
+                          </div>
+                        }
+                   persistor={persistor}
+                   >            
+                        <Component {...pageProps} />
+                   </PersistGate>  
                 </Provider>
       </Fragment>  
     )

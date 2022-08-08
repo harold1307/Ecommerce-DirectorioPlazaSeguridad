@@ -54,7 +54,7 @@ function DetailOne ( props ) {
 
     return (
         <div className="product-details" ref={ ref }>
-        <h1 className="product-title">{ product.name }</h1>
+        <h1 className="product-title">{ product[0].name }</h1>
 
     
 
@@ -62,7 +62,7 @@ function DetailOne ( props ) {
       
                 <div className="product-price">
                     <span className="out-price">
-                       Precio
+                      $ { product[0].regularPrice }
                     </span>
                 </div>
                 
@@ -70,7 +70,7 @@ function DetailOne ( props ) {
         }
 
         <div className="product-content">
-            <p>Descripción corta</p>
+            <p>{product[0].shortDescription}</p>
         </div>
 
         {

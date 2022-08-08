@@ -1,3 +1,4 @@
+import React from 'react';
 import { useEffect } from "react";
 import { ToastContainer } from 'react-toastify';
 import { useRouter } from 'next/router';
@@ -9,11 +10,9 @@ import Footer from "./partials/footer/footer";
 //import QuickViewModal from "./features/modals/quickview-modal";
 import MobileMenu from "./features/mobile-menu";
 import { isSafariBrowser, isEdgeBrowser } from "../utils";
-import { useSelector,  useDispatch }  from "react-redux";
+import { useDispatch }  from "react-redux";
 import { cargarCategoriasAll } from "../store/actions/categoriesAllAction";
 import { cargarProductosAll } from "../store/actions/productsAllAction";
-
-
 
 function Layout ( {children} ) {
     const router = useRouter( "" );
@@ -23,7 +22,6 @@ function Layout ( {children} ) {
          dispatch( cargarCategoriasAll() );      
          dispatch( cargarProductosAll() );     
     }, [ dispatch])
-
 
     useEffect( () => {
         if ( router.pathname.includes( 'pages/coming-soon' ) ) {
@@ -67,7 +65,6 @@ function Layout ( {children} ) {
         document.querySelector( 'body' ).classList.remove( 'mmenu-active' );
     }
 
-  
     return (
         <>
             <div className="page-wrapper">
@@ -96,4 +93,4 @@ function Layout ( {children} ) {
     )
 }
 
-export default Layout;
+export default React.memo(Layout);
