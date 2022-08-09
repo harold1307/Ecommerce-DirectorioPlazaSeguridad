@@ -16,10 +16,7 @@ export default function CrearEmpresa() {
     })
   }
   
-  
-
-  
-  return (
+return (
 
  <div className="container">
  

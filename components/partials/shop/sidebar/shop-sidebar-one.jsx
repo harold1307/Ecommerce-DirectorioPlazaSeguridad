@@ -8,7 +8,7 @@ import ALink from '~/components/features/alink';
 import { shopData } from '~/utils/data';
 
 function ShopSidebarOne ( props ) {
-    const { toggle = false , queryPath } = props;
+    const { toggle = false } = props;
     const router = useRouter();
     const query = useRouter().query;
     const [ priceRange, setRange ] = useState( { min: 0, max: 1000 } );
@@ -24,7 +24,7 @@ function ShopSidebarOne ( props ) {
 
     function onChangePriceRange ( value ) {
         setRange( value );
-        //router.push( '/productos' );
+        router.push( '/productos' );
         console.log('varia precio', { pathname: `/productos/.*/${value}`})
         
     }
