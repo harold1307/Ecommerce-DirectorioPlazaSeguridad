@@ -34,9 +34,12 @@ const AdminLayoud = ({children}) => {
             <div className="site-layout-background">
               
            
-                           
+                  
+                  <div className="container">                
+                        <div className="row">             
                             {children}                 
-               
+                        </div>
+                  </div>
              
   
   

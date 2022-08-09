@@ -1,5 +1,5 @@
 import React, { useRef, useEffect } from 'react';
-import Carousel from 'react-owl-carousel2fix';
+import Carousel from 'react-owl-carousel2';
 
 function OwlCarousel ( props ) {
     const { adClass, options, events, isTheme = true } = props;
