@@ -23,7 +23,7 @@ function DetailOne ( props ) {
         return () => {
             window.removeEventListener( 'scroll', scrollHandler );
         }
-    }, [] )
+    }, [ ] )
 
 
 
@@ -43,20 +43,12 @@ function DetailOne ( props ) {
         }
     }
 
-
-
-
-
-
-
-
  
 
     return (
         <div className="product-details" ref={ ref }>
         <h1 className="product-title">{ product[0].name }</h1>
 
-    
 
         {
       

@@ -103,7 +103,7 @@ function Login () {
                                             </div>
                                         </TabPanel>
 
-                                        <TabPanel>
+                                        <TabPanel style={ { paddingTop: "2rem" } }>
                                             <form action="#">
                                                 <div className="form-group">
                                                     <label htmlFor="register-email-2">Your email address *</label>

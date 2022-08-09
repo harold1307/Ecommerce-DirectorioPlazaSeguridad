@@ -9,6 +9,8 @@ import LoginModal from '~/components/features/modals/login-modal';
 import MainMenu from '../../partials/header/partials/main-menu';
 import StickyHeader from '../../features/sticky-header';
 
+import CartMenu from '../../partials/header/partials/cart-menu';
+
 
 function Header() {
     const router = useRouter();
@@ -68,7 +70,7 @@ function Header() {
 
                                        <p>CompareMenu </p>
                                         <p>WishlistMenu</p>
-                                        <p>CartMenu</p>
+                                        <CartMenu/>
 
 
 

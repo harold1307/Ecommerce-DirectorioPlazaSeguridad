@@ -143,7 +143,7 @@ function MainMenu() {
                     </ul>
                 </li>
                 <li className={ path.indexOf( "blog/" ) > -1 ? 'active' : '' }>
-                    <ALink href="/blog/classic" className="sf-with-ul">Blog</ALink>
+                <ALink href="/login">Login</ALink>
 
                     <ul>
                         <li className={ path.indexOf( "blog/classic" ) > -1 ? 'active' : '' }><ALink href="/blog/classic">Classic</ALink></li>

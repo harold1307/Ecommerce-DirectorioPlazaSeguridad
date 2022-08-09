@@ -12,7 +12,7 @@ import 'react-toastify/dist/ReactToastify.css';
 export function verificarUsuario(credencialesUsuario ) {
     return async (dispatch) => {       
         dispatch( verificarUsuario_Inicio() );        
-           toast.info('Verificando credenciales.', {
+           toast.info('Verificando credenciales', {
             position: "bottom-center",
             autoClose: 5000,
             hideProgressBar: false,
@@ -22,11 +22,12 @@ export function verificarUsuario(credencialesUsuario ) {
             });
         
         try {     
+            
                 
-           const dataUser = await clienteAxios.post('/login',credencialesUsuario);                   
-           dispatch( verificarUsuario_Exito(dataUser) );   
-           console.log('dataUser=', dataUser)       
-           toast.success('Redireccionando...', {
+           let { data } = await clienteAxios.post('/login',credencialesUsuario);                   
+           dispatch( verificarUsuario_Exito(data) );   
+           console.log('dataUser=', data)       
+           toast.success('Iniciando sesión', {
            position: "bottom-center",
             autoClose: 5000,
             hideProgressBar: false,

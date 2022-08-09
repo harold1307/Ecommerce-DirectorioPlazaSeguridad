@@ -40,7 +40,8 @@ const CategoryMenu = () =>{
                                         if(index<13){
                                             return(
                                                 <li className="megamenu-container" key={ index }>
-                                                <ALink id={`${categoria.value}`} className="sf-with-ul text-dark py-2" href={ { pathname: `/categorias/${categoria.value}`} }>
+             
+                                                <ALink href={ { pathname:  `/productos/todos`, query: {categoria: categoria.value     } } } className="sidebar-filter-clear" scroll={ false }>
                                                 <div className="row">                                                    
                                                     <i className={'fa '+` ${categoria.icon}`} aria-hidden="true"></i>                                                   
                                   

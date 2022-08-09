@@ -1,10 +1,11 @@
 import React from 'react'
  import { useRouter } from 'next/router';
 import Layout from '../../components/layout';
+import { cargarCategoriasAll } from '~/store/actions/categoriesAllAction';
 
 
 
-    export default () => {
+   const Categorias =  () => {
         const router = useRouter()
         const { categoriaId }= router.query
        
@@ -16,3 +17,5 @@ import Layout from '../../components/layout';
             </Layout>
             )
     }
+
+    export default Categorias
