@@ -12,9 +12,10 @@ import Qty from '../../../features/qty';
 function DetailOne ( props ) {
     const router = useRouter();
     const ref = useRef( null );
-    const { product } = props;
+    const { product = [] } = props;   
 
-  console.log('====>', product)
+  console.log('targeta producto=>', typeof product[0].name)
+
     useEffect( () => {
         window.addEventListener( 'scroll', scrollHandler, {
             passive: true
@@ -24,10 +25,6 @@ function DetailOne ( props ) {
             window.removeEventListener( 'scroll', scrollHandler );
         }
     }, [] )
-
-
-
-
 
 
     function scrollHandler () {
@@ -61,16 +58,16 @@ function DetailOne ( props ) {
         {
       
                 <div className="product-price">
-                    <span className="out-price">
+                  
                       $ { product[0].regularPrice }
-                    </span>
+                  
                 </div>
                 
    
         }
 
         <div className="product-content">
-            <p>{product[0].shortDescription}</p>
+            <p>{product.shortDescription}</p>
         </div>
 
         {
@@ -125,7 +122,7 @@ function DetailOne ( props ) {
 
         <div className="product-details-footer">
             <div className="product-cat w-100 text-truncate">
-                <span>Category:</span>
+                <span>Categoría: {product[0].category}</span>
                 
             </div>
 

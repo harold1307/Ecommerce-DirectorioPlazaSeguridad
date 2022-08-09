@@ -1,4 +1,11 @@
-import { Magnifier, MOUSE_ACTIVATION } from 'react-image-magnifiers';
+import {
+    Magnifier,
+    GlassMagnifier,
+    SideBySideMagnifier,
+    PictureInPictureMagnifier,
+    MOUSE_ACTIVATION,
+    TOUCH_ACTIVATION
+  } from "react-image-magnifiers";
 import React, { useState, useEffect } from 'react';
 import LightBox from 'react-image-lightbox';
 
@@ -8,7 +15,7 @@ function GalleryDefault ( props ) {
     const [ photoIndex, setPhotoIndex ] = useState( 0 );
  
 
-   console.log('Targeta producto=>', product[0].name)
+   console.log('Targeta producto=>', product)
 
     const imagenes=[
         '/images/products/product-1.jpg',
@@ -86,26 +93,19 @@ function GalleryDefault ( props ) {
                         }
 
                         {
-                            !product[0].stockStatus || product.stockStatus == 0 ?
+                            !product.stockStatus || product.stockStatus == 0 ?
                                 <span className="product-label label-out">No disponible</span>
                                 : ""
                         }
                      
+                       
+
                         <Magnifier
-                            imageSrc={ product[0].image.location }
-                            imageAlt="product"
-                            largeImageSrc={ product[0].image.location } // Optional
-                            dragToMove={ true }
-                            //mouseActivation="hover"
-                            cursorStyleActive="crosshair"
-                            id="product-zoom"
-                            className="zoom-image position-relative "
-                            width= "792"
-                            height= "800"
-                            mouseActivation={MOUSE_ACTIVATION.DOUBLE_CLICK} 
-                          
-            
-                            style={ { paddingTop: `${800 / 792 * 100}%` } }
+                        imageSrc={ imagenes[0] }
+                        imageAlt="Example"
+                        largeImageSrc={ imagenes[0]  } // Optional
+                        mouseActivation={MOUSE_ACTIVATION.DOUBLE_CLICK} // Optional
+                        touchActivation={TOUCH_ACTIVATION.DOUBLE_TAP} // Optional
                         />
 
                         <button id="btn-product-gallery" className="btn-product-gallery" onClick={ openLightBox }>
