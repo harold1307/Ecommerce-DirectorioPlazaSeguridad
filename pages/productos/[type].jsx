@@ -4,10 +4,10 @@ import React, { useState, useEffect } from 'react';
 import StickyBox from 'react-sticky-box';
 import ALink from '~/components/features/alink';
 import PageHeader from '~/components/features/page-header';
-import ShopListOne from '../../../components/partials/shop/list/shop-list-one';
+import ShopListOne from '../../components/partials/shop/list/shop-list-one';
 import Pagination from '~/components/features/pagination';
-import ShopSidebarOne from '../../../components/partials/shop/sidebar/shop-sidebar-one';
-import Layout from '../../../components/layout';
+import ShopSidebarOne from '../../components/partials/shop/sidebar/shop-sidebar-one';
+import Layout from '../../components/layout';
 import { useSelector }  from "react-redux";
 //import { cargarCategoriasAll } from "../../../../store/actions/categoriesAllAction";
 
@@ -19,8 +19,7 @@ function ShopGrid() {
     const router = useRouter();
     const type = router.query.type;
     const query = router.query;
-    console.log(query);
-   
+  
     const getProducts = ()=>{
         return []
     }
@@ -34,17 +33,18 @@ function ShopGrid() {
     
     const  productosState =  useSelector(state => state.productsAll);
     const  loading = productosState.loading;
-    console.log('carga de productos:', loading? 'exito' : productosState.error)
- 
-    const products = productosState.productos;
-    const totalCount = 4;
+
+    const products = productosState.productos.filter(producto=> producto.category== (query.categoria || producto.category));
+    const totalCount = productosState.productos.length;
 
     useEffect( () => {
         window.addEventListener( "resize", resizeHandle );
         resizeHandle();
+       
         return () => {
             window.removeEventListener( "resize", resizeHandle );
         }
+        
     }, [] )
 
     function resizeHandle() {
@@ -82,16 +82,16 @@ function ShopGrid() {
 
     useEffect( () => {
         if ( type == 'list' ) {
-            setPageTitle( 'Directorio' );
+            setPageTitle( 'Lista de productos' );
             setPerPage( 5 );
         } else if ( type == '2cols' ) {
-            setPageTitle( 'Directorio' );
+            setPageTitle( 'Lista de productos' );
             setPerPage( 6 );
         } else if ( type == '3cols' ) {
-            setPageTitle( 'Directorio' );
+            setPageTitle( 'Lista de productos' );
             setPerPage( 9 );
         } else if ( type == 'todos' ) {
-            setPageTitle( 'Directorio' );
+            setPageTitle( 'Lista de productos' );
             setPerPage( 12 );
         }
     }, [ type ] )
@@ -145,13 +145,19 @@ function ShopGrid() {
                                 <ALink href="/">Inicio</ALink>
                             </li>
                             <li className="breadcrumb-item">
-                                <ALink href="/shop/directorios/list">Shop</ALink>
+                                <ALink href="/productos/todos">Productos</ALink>
                             </li>
-                            <li className="breadcrumb-item active">{ pageTitle }</li>
+                                {
+                                    query.categoria ?
+                                   <li className="breadcrumb-item active">{query.categoria}</li>
+                                   :
+                                   <li className="breadcrumb-item active">Todos</li>
+                                }
+                            
                             {
-                                query.search ?
+                                query.categoria ?
                                     <li className="breadcrumb-item">
-                                        <span>Search - { query.searchTerm }</span>
+                                        <span> {query.categoria}</span>
                                     </li>
                                     : ""
                             }
@@ -168,10 +174,10 @@ function ShopGrid() {
                                 <div className="toolbox">
                                     <div className="toolbox-left">
                                         {
-                                            !loading && products ?
+                                             products ?
                                                 <div className="toolbox-info">
-                                                    Showing
-                                                    <span> { products.length } of { totalCount }</span> Products
+                                                    Mostrando
+                                                    <span> { products.length } de { totalCount }</span> Productos
                                                 </div>
                                                 : ""
                                         }
@@ -197,7 +203,7 @@ function ShopGrid() {
                                         </div>
                                         <div className="toolbox-layout">
                                             <ALink
-                                                href="/shop/directorios/list"
+                                                href="/productos/list"
                                                 className={ `btn-layout ${ type == 'list' ? 'active' : '' }` }
                                                 scroll={ false }
                                             >
@@ -210,7 +216,7 @@ function ShopGrid() {
                                             </ALink>
 
                                             <ALink
-                                                href="/shop/directorios/2cols"
+                                                href="/productos/2cols"
                                                 className={ `btn-layout ${ type == '2cols' ? 'active' : '' }` }
                                                 scroll={ false }
                                             >
@@ -223,7 +229,7 @@ function ShopGrid() {
                                             </ALink>
 
                                             <ALink
-                                                href="/shop/directorios/3cols"
+                                                href="/productos/3cols"
                                                 className={ `btn-layout ${ type == '3cols' ? 'active' : '' }` }
                                                 scroll={ false }
                                             >
@@ -238,7 +244,7 @@ function ShopGrid() {
                                             </ALink>
 
                                             <ALink
-                                                href="/shop/directorios/4cols"
+                                                href="/productos/4cols"
                                                 className={ `btn-layout ${ type == '4cols' ? 'active' : '' }` }
                                                 scroll={ false }
                                             >

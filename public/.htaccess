@@ -1,7 +1,7 @@
 RewriteEngine On
 
 # If an existing asset or directory is requested go to it as it is
-RewriteRule ^shop/directorios/(list|2cols|3cols|4cols) shop/directorios/[type]/index.html?type=$1 [L]
+RewriteRule ^productos/(list|2cols|3cols|4cols) productos/[type]/index.html?type=$1 [L]
 RewriteRule ^shop/nosidebar/(fullwidth|boxed) shop/nosidebar/[type]/index.html?type=$1 [L]
 RewriteRule ^product/(default|centered|extended|fullwidth|gallery|sticky|sidebar|masonry)/(.*) product/$1/[slug]/index.html?slug=$2 [L]
 RewriteRule ^blog/single/default/(.*) blog/single/default/[slug]/index.html?slug=$1 [L]

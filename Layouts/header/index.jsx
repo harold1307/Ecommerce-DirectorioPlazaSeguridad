@@ -1,95 +1,59 @@
 import React , { useState } from 'react';
 import Image from 'next/image';
-import { AppstoreOutlined, MailOutlined, SettingOutlined } from '@ant-design/icons';
-  import { Layout, Menu } from 'antd';
-  const {  Header } = Layout;
-  import ALink from '../../components/features/alink';
-
-
-  function getItem(label, key,  children, type) {
-    return {
-      key,
-      
-      children,
-      label,
-      type,
-    };
-  }
-  
-  const items = [
-    getItem('Perfil', 'sub1',  [
-      getItem('Option 1', '1'),
-      getItem('Option 2', '2'),
-      getItem('Option 3', '3'),
-      getItem('Option 4', '4'),
-    ])
-  ]; 
-  
-  const rootSubmenuKeys = ['sub1', 'sub2', 'sub4'];
+import { MailOutlined, AppstoreOutlined, SettingOutlined } from '@ant-design/icons';
+import { Layout, Menu } from 'antd';
+const {  Header } = Layout;
+import ALink from '../../components/features/alink';
 
 
 
 
-function HeaderAdmin() {
-    
+function HeaderAdmin() {    
+const [openKeys, setOpenKeys] = useState(['sub1']);
 
- 
-
-
-      const [openKeys, setOpenKeys] = useState(['sub1']);
-
-      const onOpenChange = (keys) => {
-        const latestOpenKey = keys.find((key) => openKeys.indexOf(key) === -1);
-    
-        if (rootSubmenuKeys.indexOf(latestOpenKey) === -1) {
-          setOpenKeys(keys);
-        } else {
-          setOpenKeys(latestOpenKey ? [latestOpenKey] : []);
-        }
-      };
-
-
-  return (
-  
-<Header>
-
-
-<div className="container">
-    <div className="row">
-        <div className="col-md-8">
-                <h6>Panel Administrador</h6>
-        </div>
-        <div className="col-md-4">
-          <div className="avatar">
-
-
-          <div className="">
-            <Menu
-                mode="inline"
-                openKeys={openKeys}
-                onOpenChange={onOpenChange}
-                style={{
-                    width: 256,
-                }}
-                items={items}
-            />
-        </div>
+ return (  
+  <Layout>
+    <Header>
+      <div className="container">
+          <div className="row">
+              <div className="col-md-8 py-3 align-self-center">
+                  <h3 className="text-center">Panel Administrador</h3>
+              </div>
+              <div className="col-md-4 d-flex align-content-end">
+                  <div className="avatar">
+                        <div className="">
+                              <Menu mode="horizontal" defaultSelectedKeys={['mail']}>
+                                <Menu.Item key="mail" icon={<MailOutlined />}>
+                                  Navigation One
+                                </Menu.Item>
+                                <Menu.SubMenu key="SubMenu" title="Navigation Two - Submenu" icon={<SettingOutlined />}>
+                                  <Menu.Item key="two" icon={<AppstoreOutlined />}>
+                                    Navigation Two
+                                  </Menu.Item>
+                                  <Menu.Item key="three" icon={<AppstoreOutlined />}>
+                                    Navigation Three
+                                  </Menu.Item>
+                                  <Menu.ItemGroup title="Item Group">
+                                    <Menu.Item key="four" icon={<AppstoreOutlined />}>
+                                      Navigation Four
+                                    </Menu.Item>
+                                    <Menu.Item key="five" icon={<AppstoreOutlined />}>
+                                      Navigation Five
+                                    </Menu.Item>
+                                  </Menu.ItemGroup>
+                                </Menu.SubMenu>
+                              </Menu>
+                        </div>
 
 
-                
+                        
+                  </div>
+              </div>
+
           </div>
-
-        </div>
-
-    </div>
-</div>
-
-
-
-
-
-</Header>
-
+      </div>
+    </Header>
+    </Layout>
   )
 }
 

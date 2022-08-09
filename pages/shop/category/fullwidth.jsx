@@ -27,8 +27,8 @@ function CategoryFullwidth() {
 
                     <ol className="breadcrumb">
                         <li className="breadcrumb-item"><ALink href="/">Home</ALink></li>
-                        <li className="breadcrumb-item"><ALink href="/shop/directorios/list">Shop</ALink></li>
-                        <li className="breadcrumb-item"><ALink href="/shop/directorios/list">Product Category</ALink></li>
+                        <li className="breadcrumb-item"><ALink href="/productos/list">Shop</ALink></li>
+                        <li className="breadcrumb-item"><ALink href="/productos/list">Product Category</ALink></li>
                         <li className="breadcrumb-item active">Fullwidth</li>
                     </ol>
                 </div>
@@ -42,7 +42,7 @@ function CategoryFullwidth() {
                                 <div className="row">
                                     <div className="col-sm-8">
                                         <div className="banner banner-cat banner-badge">
-                                            <ALink href="/shop/directorios/list">
+                                            <ALink href="/productos/list">
                                                 <div className="lazy-overlay"></div>
 
                                                 <LazyLoadImage
@@ -55,7 +55,7 @@ function CategoryFullwidth() {
                                                 />
                                             </ALink>
 
-                                            <ALink className="banner-link" href="/shop/directorios/list">
+                                            <ALink className="banner-link" href="/productos/list">
                                                 <h3 className="banner-title">Jackets</h3>
                                                 <h4 className="banner-subtitle">2 Products</h4>
                                                 <span className="banner-link-text">Shop Now</span>
@@ -65,7 +65,7 @@ function CategoryFullwidth() {
 
                                     <div className="col-sm-4">
                                         <div className="banner banner-cat banner-badge">
-                                            <ALink href="/shop/directorios/list">
+                                            <ALink href="/productos/list">
                                                 <div className="lazy-overlay"></div>
 
                                                 <LazyLoadImage
@@ -78,7 +78,7 @@ function CategoryFullwidth() {
                                                 />
                                             </ALink>
 
-                                            <ALink className="banner-link" href="/shop/directorios/list">
+                                            <ALink className="banner-link" href="/productos/list">
                                                 <h3 className="banner-title">Jeans</h3>
                                                 <h4 className="banner-subtitle">1 Product</h4>
                                                 <span className="banner-link-text">Shop Now</span>
@@ -88,7 +88,7 @@ function CategoryFullwidth() {
 
                                     <div className="col-sm-4">
                                         <div className="banner banner-cat banner-badge">
-                                            <ALink href="/shop/directorios/list">
+                                            <ALink href="/productos/list">
                                                 <div className="lazy-overlay"></div>
 
                                                 <LazyLoadImage
@@ -101,7 +101,7 @@ function CategoryFullwidth() {
                                                 />
                                             </ALink>
 
-                                            <ALink className="banner-link" href="/shop/directorios/list">
+                                            <ALink className="banner-link" href="/productos/list">
                                                 <h3 className="banner-title">Sportwear</h3>
                                                 <h4 className="banner-subtitle">0 Product</h4>
                                                 <span className="banner-link-text">Shop Now</span>
@@ -111,7 +111,7 @@ function CategoryFullwidth() {
 
                                     <div className="col-sm-8">
                                         <div className="banner banner-cat banner-badge">
-                                            <ALink href="/shop/directorios/list">
+                                            <ALink href="/productos/list">
                                                 <div className="lazy-overlay"></div>
 
                                                 <LazyLoadImage
@@ -124,7 +124,7 @@ function CategoryFullwidth() {
                                                 />
                                             </ALink>
 
-                                            <ALink className="banner-link" href="/shop/directorios/list">
+                                            <ALink className="banner-link" href="/productos/list">
                                                 <h3 className="banner-title">Bags</h3>
                                                 <h4 className="banner-subtitle">4 Products</h4>
                                                 <span className="banner-link-text">Shop Now</span>
@@ -138,7 +138,7 @@ function CategoryFullwidth() {
                                 <div className="row">
                                     <div className="col-sm-8">
                                         <div className="banner banner-cat banner-badge">
-                                            <ALink href="/shop/directorios/list">
+                                            <ALink href="/productos/list">
                                                 <div className="lazy-overlay"></div>
 
                                                 <LazyLoadImage
@@ -151,7 +151,7 @@ function CategoryFullwidth() {
                                                 />
                                             </ALink>
 
-                                            <ALink className="banner-link" href="/shop/directorios/list">
+                                            <ALink className="banner-link" href="/productos/list">
                                                 <h3 className="banner-title">Dresses</h3>
                                                 <h4 className="banner-subtitle">3 Products</h4>
                                                 <span className="banner-link-text">Shop Now</span>
@@ -159,7 +159,7 @@ function CategoryFullwidth() {
                                         </div>
 
                                         <div className="banner banner-cat banner-badge">
-                                            <ALink href="/shop/directorios/list">
+                                            <ALink href="/productos/list">
                                                 <div className="lazy-overlay"></div>
 
                                                 <LazyLoadImage
@@ -172,7 +172,7 @@ function CategoryFullwidth() {
                                                 />
                                             </ALink>
 
-                                            <ALink className="banner-link" href="/shop/directorios/list">
+                                            <ALink className="banner-link" href="/productos/list">
                                                 <h3 className="banner-title">Shoes</h3>
                                                 <h4 className="banner-subtitle">2 Products</h4>
                                                 <span className="banner-link-text">Shop Now</span>
@@ -182,7 +182,7 @@ function CategoryFullwidth() {
 
                                     <div className="col-sm-4">
                                         <div className="banner banner-cat banner-badge">
-                                            <ALink href="/shop/directorios/list">
+                                            <ALink href="/productos/list">
                                                 <div className="lazy-overlay"></div>
 
                                                 <LazyLoadImage
@@ -195,7 +195,7 @@ function CategoryFullwidth() {
                                                 />
                                             </ALink>
 
-                                            <ALink className="banner-link" href="/shop/directorios/list">
+                                            <ALink className="banner-link" href="/productos/list">
                                                 <h3 className="banner-title">T-shirts</h3>
                                                 <h4 className="banner-subtitle">0 Products</h4>
                                                 <span className="banner-link-text">Shop Now</span>
@@ -203,7 +203,7 @@ function CategoryFullwidth() {
                                         </div>
 
                                         <div className="banner banner-cat banner-badge">
-                                            <ALink href="/shop/directorios/list">
+                                            <ALink href="/productos/list">
                                                 <div className="lazy-overlay"></div>
 
                                                 <LazyLoadImage
@@ -216,7 +216,7 @@ function CategoryFullwidth() {
                                                 />
                                             </ALink>
 
-                                            <ALink className="banner-link" href="/shop/directorios/list">
+                                            <ALink className="banner-link" href="/productos/list">
                                                 <h3 className="banner-title">Jumpers</h3>
                                                 <h4 className="banner-subtitle">1 Product</h4>
                                                 <span className="banner-link-text">Shop Now</span>

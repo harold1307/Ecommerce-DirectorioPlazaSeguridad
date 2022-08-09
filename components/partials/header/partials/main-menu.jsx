@@ -21,10 +21,10 @@ function MainMenu() {
         <nav className="main-nav">
             <ul className="menu sf-arrows">
                 <li className={ `megamenu-container ${ path === '/' ? 'active' : '' }` } id="menu-home">
-                    <ALink href="/" className="sf-with-ul">Inicio</ALink>
+                    <ALink href="/" >Inicio</ALink>
                 </li>
-                <li className={ ( path.indexOf( "shop/directorios" ) > -1 && query.type == 'todos' ) ? "active" : '' }>
-                        <ALink href="/shop/directorios/todos" scroll={ false }>Directorios</ALink>
+                <li className={ ( path.indexOf( "productos" ) > -1 && query.type == 'todos' ) ? "active" : '' }>
+                        <ALink href="/productos/todos" scroll={ false }>Productos</ALink>
 
                     <div className="megamenu megamenu-md">
                         <div className="row no-gutters">
@@ -34,11 +34,11 @@ function MainMenu() {
                                         <div className="col-md-6">
                                             <div className="menu-title">Shop with sidebar</div>
                                             <ul>
-                                                <li className={ ( path.indexOf( "shop/directorios" ) > -1 && query.type == 'lista' ) ? "active" : '' }><ALink href="/shop/directorios/lista" scroll={ false }>Shop List</ALink></li>
-                                                <li className={ ( path.indexOf( "shop/directorios" ) > -1 && query.type == '2cols' ) ? "active" : '' }><ALink href="/shop/directorios/2cols" scroll={ false }>Shop Grid 2 Columns</ALink></li>
-                                                <li className={ ( path.indexOf( "shop/directorios" ) > -1 && query.type == '3cols' ) ? "active" : '' }><ALink href="/shop/directorios/3cols" scroll={ false }>Shop Grid 3 Columns</ALink></li>
-                                                <li className={ ( path.indexOf( "shop/directorios" ) > -1 && query.type == '4cols' ) ? "active" : '' }><ALink href="/shop/directorios/4cols" scroll={ false }>Shop Grid 4 Columns</ALink></li>
-                                                <li className={ path.indexOf( "shop/directorios" ) > -1 ? "active" : '' }><ALink href="/shop/directorios"><span>Shop Market<span className="tip tip-new">New</span></span></ALink></li>
+                                                <li className={ ( path.indexOf( "productos" ) > -1 && query.type == 'lista' ) ? "active" : '' }><ALink href="/productos/lista" scroll={ false }>Shop List</ALink></li>
+                                                <li className={ ( path.indexOf( "productos" ) > -1 && query.type == '2cols' ) ? "active" : '' }><ALink href="/productos/2cols" scroll={ false }>Shop Grid 2 Columns</ALink></li>
+                                                <li className={ ( path.indexOf( "productos" ) > -1 && query.type == '3cols' ) ? "active" : '' }><ALink href="/productos/3cols" scroll={ false }>Shop Grid 3 Columns</ALink></li>
+                                                <li className={ ( path.indexOf( "productos" ) > -1 && query.type == '4cols' ) ? "active" : '' }><ALink href="/productos/4cols" scroll={ false }>Shop Grid 4 Columns</ALink></li>
+                                                <li className={ path.indexOf( "productos" ) > -1 ? "active" : '' }><ALink href="/productos"><span>Shop Market<span className="tip tip-new">New</span></span></ALink></li>
                                             </ul>
 
                                             <div className="menu-title">Shop no sidebar</div>
@@ -69,7 +69,7 @@ function MainMenu() {
 
                             <div className="col-md-4">
                                 <div className="banner banner-overlay">
-                                    <ALink href="/shop/directorios/list" className="banner banner-menu">
+                                    <ALink href="/productos/list" className="banner banner-menu">
                                         <img src="images/menu/banner-1.jpg" alt="Banner" />
 
                                         <div className="banner-content banner-content-top">

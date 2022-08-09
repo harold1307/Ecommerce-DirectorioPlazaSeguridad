@@ -153,7 +153,7 @@ function ProductTwo ( props ) {
                     {
                         product.category.map( ( item, index ) => (
                             <React.Fragment key={ item.slug + '-' + index }>
-                                <ALink href={ { pathname: '/shop/directorios/list', query: { category: item.slug } } }>
+                                <ALink href={ { pathname: '/productos/list', query: { category: item.slug } } }>
                                     { item.name }
                                 </ALink>
                                 { index < product.category.length - 1 ? ', ' : "" }

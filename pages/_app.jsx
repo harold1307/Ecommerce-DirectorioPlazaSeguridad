@@ -20,7 +20,7 @@ const WrappedApp = ({ Component, pageProps }) => {
                     <meta name="description" content="Molla –  eCommerce React Template is a multi-use React template. It is designed to go well with multi-purpose websites."/>
                     <meta name="author" content="d-themes" />
                     <meta name="apple-mobile-web-app-title" content="Molla" />
-                    <meta name="application-name" content="Molla React eCommerce Template" />
+                    <meta name="application-name" content="Directorio Plaza eguridas" />
                     <meta name="msapplication-TileColor" content="#cc9966" />
                     <meta name="msapplication-config" content="images/icons/browserconfig.xml" />
                     <meta name="theme-color" content="#ffffff" />
@@ -31,8 +31,7 @@ const WrappedApp = ({ Component, pageProps }) => {
                     <link rel="mask-icon" href="images/icons/safari-pinned-tab.svg" color="#666666" />
                     <link rel="shortcut icon" type="image/x-icon" href="https://cdndirectorio.s3.amazonaws.com/assets/images/favicon.svg"></link>
                 </Helmet>
-                <Provider store={store}>   
-                  
+                <Provider store={store}>                 
                    <PersistGate 
                       loading={
                           <div className="loading-overlay">
@@ -43,8 +42,7 @@ const WrappedApp = ({ Component, pageProps }) => {
                               </div>
                           </div>
                         }
-                   persistor={persistor}
-                   >            
+                   persistor={persistor}>            
                         <Component {...pageProps} />
                    </PersistGate>  
                 </Provider>

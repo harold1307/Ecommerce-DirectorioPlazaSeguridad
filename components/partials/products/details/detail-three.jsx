@@ -342,7 +342,7 @@ function DetailThree ( props ) {
                                     product.category.map( ( cat, index ) => (
                                         <span key={ index }>
                                             <ALink
-                                                href={ { pathname: '/shop/directorios/list', query: { category: cat.slug } } }
+                                                href={ { pathname: '/productos/list', query: { category: cat.slug } } }
                                             >{ cat.name }</ALink>
                                             { index < product.category.length - 1 ? ',' : '' }
                                         </span>

@@ -106,7 +106,7 @@ function HeaderSearch () {
     function onSubmitSearchForm ( e ) {
         e.preventDefault();
         router.push( {
-            pathname: '/shop/directorios/list',
+            pathname: '/productos/list',
             query: {
                 searchTerm: searchTerm,
                 category: cat

@@ -70,7 +70,7 @@ function Categories () {
 
                                     <h4 className="banner-subtitle">18 Products</h4>
 
-                                    <ALink href="/shop/directorios/list" className="banner-link p-0">Shop Now</ALink>
+                                    <ALink href="/productos/list" className="banner-link p-0">Shop Now</ALink>
                                 </div>
                             </div>
                         </div>
@@ -95,7 +95,7 @@ function Categories () {
 
                                     <h4 className="banner-subtitle">12 Products</h4>
 
-                                    <ALink href="/shop/directorios/list" className="banner-link p-0">Shop Now</ALink>
+                                    <ALink href="/productos/list" className="banner-link p-0">Shop Now</ALink>
                                 </div>
                             </div>
                         </div>
@@ -126,7 +126,7 @@ function Categories () {
 
                                     <h4 className="banner-subtitle">18 Products</h4>
 
-                                    <ALink href="/shop/directorios/list" className="banner-link p-0">Shop Now</ALink>
+                                    <ALink href="/productos/list" className="banner-link p-0">Shop Now</ALink>
                                 </div>
                             </div>
                         </div>
@@ -151,7 +151,7 @@ function Categories () {
 
                                     <h4 className="banner-subtitle">12 Products</h4>
 
-                                    <ALink href="/shop/directorios/list" className="banner-link p-0">Shop Now</ALink>
+                                    <ALink href="/productos/list" className="banner-link p-0">Shop Now</ALink>
                                 </div>
                             </div>
                         </div>
@@ -176,7 +176,7 @@ function Categories () {
 
                                     <h4 className="banner-subtitle">8 Products</h4>
 
-                                    <ALink href="/shop/directorios/list" className="banner-link p-0">Shop Now</ALink>
+                                    <ALink href="/productos/list" className="banner-link p-0">Shop Now</ALink>
                                 </div>
                             </div>
                         </div>
@@ -207,7 +207,7 @@ function Categories () {
                                 <h4 className="banner-subtitle">18 Products</h4>
 
                                 <ALink
-                                    href="/shop/directorios/list"
+                                    href="/productos/list"
                                     className="banner-link p-0"
                                 >Shop Now</ALink>
                             </div>
@@ -232,7 +232,7 @@ function Categories () {
                                 <h4 className="banner-subtitle">12 Products</h4>
 
                                 <ALink
-                                    href="/shop/directorios/list"
+                                    href="/productos/list"
                                     className="banner-link p-0"
                                 >Shop Now</ALink>
                             </div>
@@ -257,7 +257,7 @@ function Categories () {
                                 <h4 className="banner-subtitle">15 Products</h4>
 
                                 <ALink
-                                    href="/shop/directorios/list"
+                                    href="/productos/list"
                                     className="banner-link p-0"
                                 >Shop Now</ALink>
                             </div>
@@ -282,7 +282,7 @@ function Categories () {
                                 <h4 className="banner-subtitle">8 Products</h4>
 
                                 <ALink
-                                    href="/shop/directorios/list"
+                                    href="/productos/list"
                                     className="banner-link p-0"
                                 >Shop Now</ALink>
                             </div>
@@ -307,7 +307,7 @@ function Categories () {
                                 <h4 className="banner-subtitle">18 Products</h4>
 
                                 <ALink
-                                    href="/shop/directorios/list"
+                                    href="/productos/list"
                                     className="banner-link p-0"
                                 >Shop Now</ALink>
                             </div>
@@ -341,7 +341,7 @@ function Categories () {
 
                                     <h4 className="banner-subtitle">18 Products</h4>
 
-                                    <ALink href="/shop/directorios/list" className="banner-link p-0">Shop Now</ALink>
+                                    <ALink href="/productos/list" className="banner-link p-0">Shop Now</ALink>
                                 </div>
                             </div>
                         </div>
@@ -366,7 +366,7 @@ function Categories () {
 
                                     <h4 className="banner-subtitle">12 Products</h4>
 
-                                    <ALink href="/shop/directorios/list" className="banner-link p-0">Shop Now</ALink>
+                                    <ALink href="/productos/list" className="banner-link p-0">Shop Now</ALink>
                                 </div>
                             </div>
                         </div>
@@ -391,7 +391,7 @@ function Categories () {
 
                                     <h4 className="banner-subtitle">12 Products</h4>
 
-                                    <ALink href="/shop/directorios/list" className="banner-link p-0">Shop Now</ALink>
+                                    <ALink href="/productos/list" className="banner-link p-0">Shop Now</ALink>
                                 </div>
                             </div>
                         </div>
@@ -425,7 +425,7 @@ function Categories () {
 
                                     <h4 className="banner-subtitle">8 Products</h4>
 
-                                    <ALink href="/shop/directorios/list" className="banner-link p-0">Shop Now</ALink>
+                                    <ALink href="/productos/list" className="banner-link p-0">Shop Now</ALink>
                                 </div>
                             </div>
                         </div>
@@ -450,7 +450,7 @@ function Categories () {
 
                                     <h4 className="banner-subtitle">15 Products</h4>
 
-                                    <ALink href="/shop/directorios/list" className="banner-link p-0">Shop Now</ALink>
+                                    <ALink href="/productos/list" className="banner-link p-0">Shop Now</ALink>
                                 </div>
                             </div>
                         </div>
@@ -478,7 +478,7 @@ function Categories () {
                                             <h4 className="banner-subtitle">18 Products</h4>
 
                                             <ALink
-                                                href="/shop/directorios/list"
+                                                href="/productos/list"
                                                 className="banner-link p-0"
                                             >Shop Now</ALink>
                                         </div>
@@ -506,7 +506,7 @@ function Categories () {
                                             <h4 className="banner-subtitle">12 Products</h4>
 
                                             <ALink
-                                                href="/shop/directorios/list"
+                                                href="/productos/list"
                                                 className="banner-link p-0"
                                             >Shop Now</ALink>
                                         </div>
@@ -537,7 +537,7 @@ function Categories () {
 
                                 </ALink>
 
-                                <ALink className="banner-link" href="/shop/directorios/list">
+                                <ALink className="banner-link" href="/productos/list">
                                     <h3 className="banner-title">Accessories</h3>
 
                                     <h4 className="banner-subtitle">8 Products</h4>
@@ -562,7 +562,7 @@ function Categories () {
                                     />
                                 </ALink>
 
-                                <ALink className="banner-link" href="/shop/directorios/list">
+                                <ALink className="banner-link" href="/productos/list">
                                     <h3 className="banner-title">Women</h3>
 
                                     <h4 className="banner-subtitle">15 Products</h4>
@@ -586,7 +586,7 @@ function Categories () {
                                     />
                                 </ALink>
 
-                                <ALink className="banner-link" href="/shop/directorios/list">
+                                <ALink className="banner-link" href="/productos/list">
                                     <h3 className="banner-title">Men</h3>
 
                                     <h4 className="banner-subtitle">12 Products</h4>

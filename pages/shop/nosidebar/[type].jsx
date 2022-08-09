@@ -5,7 +5,7 @@ import { useLazyQuery } from '@apollo/react-hooks';
 import ALink from '~/components/features/alink';
 import PageHeader from '~/components/features/page-header';
 import ShopListThree from '~/components/partials/shop/list/shop-list-three';
-import ShopSidebarOne from '~/components/partials/shop/directorios/shop-sidebar-one';
+import ShopSidebarOne from '~/components/partials/productos/shop-sidebar-one';
 
 import withApollo from '~/server/apollo';
 import { GET_PRODUCTS } from '~/server/queries';
@@ -152,7 +152,7 @@ function ShopNoSidebar() {
                             <ALink href="/">Home</ALink>
                         </li>
                         <li className="breadcrumb-item">
-                            <ALink href="/shop/directorios/list">Shop</ALink>
+                            <ALink href="/productos/list">Shop</ALink>
                         </li>
                         <li className="breadcrumb-item active">{ pageTitle }</li>
                         {

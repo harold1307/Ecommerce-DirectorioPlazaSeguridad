@@ -131,7 +131,7 @@ function BlogSidebar ( props ) {
                 <div className="banner-sidebar-title">ad box 280 x 280</div>
 
                 <div className="banner-sidebar banner-overlay">
-                    <ALink href="/shop/directorios/3cols" className="w-100">
+                    <ALink href="/productos/3cols" className="w-100">
                         <div className="lazy-overlay"></div>
                         <LazyLoadImage
                             alt="banner"
@@ -146,7 +146,7 @@ function BlogSidebar ( props ) {
                         <p className="mb-1">online & in-store</p>
                         <h3 className="banner-subtitle text-uppercase">Spring Sale</h3>
                         <h2 className="banner-title">Up to 60% off<br />from $55</h2>
-                        <ALink href="/shop/directorios/3cols" className="btn btn-outline btn-md btn-outline-white text-uppercase m-0">Shop Now</ALink>
+                        <ALink href="/productos/3cols" className="btn btn-outline btn-md btn-outline-white text-uppercase m-0">Shop Now</ALink>
                     </div>
                 </div>
             </div>

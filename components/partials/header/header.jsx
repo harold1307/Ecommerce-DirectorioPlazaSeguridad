@@ -31,16 +31,10 @@ function Header() {
                             <i className="icon-phone"></i>Call: +0123 456 789
                         </a>
                     </div>
-
                     <div className="header-right pr-4">
                         <ul className="top-menu">
-                            <li>
-                              
-                                   
-                                       <LoginModal />
-                                  
-
-                                  
+                            <li>                                                         
+                                <LoginModal />                                  
                             </li>
                         </ul>
                     </div>
@@ -57,7 +51,7 @@ function Header() {
                             </button>
 
                             <ALink href="/" className="logo">
-                                <img src="/images/logo.png" alt="Molla Logo" width={ 105 } height={ 27 } />
+                                <img src="/images/logo.png" alt="Logo" width={ 105 } height={ 27 } />
                             </ALink>
                         </div>
 
@@ -72,12 +66,12 @@ function Header() {
 
 
 
-
                                        <p>CompareMenu </p>
-
                                         <p>WishlistMenu</p>
-
                                         <p>CartMenu</p>
+
+
+
 
                                     </div>
                                 </div>
@@ -92,45 +86,21 @@ function Header() {
                     <div className={ containerClass }>
                         <div className="row">
                             <div className="col-auto col-lg-3 col-xl-3 col-xxl-2 header-left">
-
-
                                 <CategoryMenu />
-
-
-
-
                             </div>
                             <div className="col col-lg-6 col-xl-6 col-xxl-8 header-center">
-
-
                                 <MainMenu />
-
-
                             </div>
 
                             <div className="col col-lg-3 col-xl-3 col-xxl-2 header-right">
                                 <i className="la la-lightbulb-o"></i><p>Clearance Up to 30% Off</p>
                             </div>
                         </div>
-
                     </div>
                 </div>
 
-
-
-
-
-
-
             </StickyHeader>
-
-
-
-
-
-
-
-            
+      
         </header>
     )
 }

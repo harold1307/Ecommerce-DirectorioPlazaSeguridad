@@ -39,7 +39,7 @@ function Checkout ( props ) {
                             <ALink href="/">Home</ALink>
                         </li>
                         <li className="breadcrumb-item">
-                            <ALink href="/shop/directorios/list">Shop</ALink>
+                            <ALink href="/productos/list">Shop</ALink>
                         </li>
                         <li className="breadcrumb-item active">Checkout</li>
                     </ol>

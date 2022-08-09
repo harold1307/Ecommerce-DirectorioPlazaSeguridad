@@ -41,13 +41,10 @@ const CategoryMenu = () =>{
                                             return(
                                                 <li className="megamenu-container" key={ index }>
                                                 <ALink id={`${categoria.value}`} className="sf-with-ul text-dark py-2" href={ { pathname: `/categorias/${categoria.value}`} }>
-                                                <div className="row">
-                                                    <div className="col-2">
-                                                    <i className={'fa '+` ${categoria.icon}`} aria-hidden="true"></i>
-                                                    </div>
-                                                    <div className="col-2">
-                                                    {categoria.name}
-                                                    </div>
+                                                <div className="row">                                                    
+                                                    <i className={'fa '+` ${categoria.icon}`} aria-hidden="true"></i>                                                   
+                                  
+                                                     <small> {categoria.name}</small>
 
                                                 </div>
                                             

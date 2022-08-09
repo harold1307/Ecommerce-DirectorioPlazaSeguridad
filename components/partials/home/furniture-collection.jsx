@@ -16,30 +16,30 @@ function FurnitureCollection( props ) {
                     <div className="cat-banner-list col-sm-6 d-xl-none d-xxl-flex" style={ { backgroundImage: `url(images/home/banners/banner-bg-2.jpg)` } }>
                         <div className="banner-list-content">
                             <h2>
-                                <ALink href="/shop/directorios/list">Furniture</ALink>
+                                <ALink href="/productos/list">Furniture</ALink>
                             </h2>
 
                             <ul>
                                 <li>
-                                    <ALink href="/shop/directorios/list">Bedroom</ALink>
+                                    <ALink href="/productos/list">Bedroom</ALink>
                                 </li>
                                 <li>
-                                    <ALink href="/shop/directorios/list">Office</ALink>
+                                    <ALink href="/productos/list">Office</ALink>
                                 </li>
                                 <li>
-                                    <ALink href="/shop/directorios/list">Living Room</ALink>
+                                    <ALink href="/productos/list">Living Room</ALink>
                                 </li>
                                 <li>
-                                    <ALink href="/shop/directorios/list">Kitchen & Dining</ALink>
+                                    <ALink href="/productos/list">Kitchen & Dining</ALink>
                                 </li>
                                 <li>
-                                    <ALink href="/shop/directorios/list">Decoration</ALink>
+                                    <ALink href="/productos/list">Decoration</ALink>
                                 </li>
                                 <li>
-                                    <ALink href="/shop/directorios/list">Outdoor</ALink>
+                                    <ALink href="/productos/list">Outdoor</ALink>
                                 </li>
                                 <li className="list-all-link">
-                                    <ALink href="/shop/directorios/list">See All Departments</ALink>
+                                    <ALink href="/productos/list">See All Departments</ALink>
                                 </li>
                             </ul>
                         </div>
@@ -47,7 +47,7 @@ function FurnitureCollection( props ) {
 
                     <div className="col-sm-6 col-xl-12 col-xxl-6">
                         <div className="banner banner-overlay">
-                            <ALink href="/shop/directorios/list">
+                            <ALink href="/productos/list">
                                 <div className="lazy-overlay"></div>
 
                                 <LazyLoadImage
@@ -62,11 +62,11 @@ function FurnitureCollection( props ) {
 
                             <div className="banner-content">
                                 <h4 className="banner-subtitle text-white">
-                                    <ALink href="/shop/directorios/list">Best Deals</ALink>
+                                    <ALink href="/productos/list">Best Deals</ALink>
                                 </h4>
 
                                 <h3 className="banner-title text-white">
-                                    <ALink href="/shop/directorios/list">
+                                    <ALink href="/productos/list">
                                         Furniture Sets
                                     <br />
                                         <span>Up To 30% Off</span>
@@ -74,7 +74,7 @@ function FurnitureCollection( props ) {
                                 </h3>
 
                                 <ALink
-                                    href="/shop/directorios/3cols"
+                                    href="/productos/3cols"
                                     className="banner-link"
                                 >
                                     Shop Now

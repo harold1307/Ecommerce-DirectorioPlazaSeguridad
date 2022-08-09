@@ -25,7 +25,7 @@ const MobileMenu = () => {
     function onSubmitSearchForm( e ) {
         e.preventDefault();
         router.push( {
-            pathname: '/shop/directorios/list',
+            pathname: '/productos/list',
             query: {
                 searchTerm: searchTerm,
                 category: ""
@@ -106,16 +106,16 @@ const MobileMenu = () => {
                                     <SlideToggle collapsed={ true }>
                                         { ( { onToggle, setCollapsibleElement, toggleState } ) => (
                                             <li className={ toggleState.toLowerCase() == 'expanded' ? 'open' : '' }>
-                                                <ALink href="/shop/directorios/list">
+                                                <ALink href="/productos/list">
                                                     Shop
                                                     <span className="mmenu-btn" onClick={ ( e ) => { onToggle( e ); e.preventDefault() } }></span>
                                                 </ALink>
 
                                                 <ul ref={ setCollapsibleElement }>
-                                                    <li><ALink href="/shop/directorios/list">Shop List</ALink></li>
-                                                    <li><ALink href="/shop/directorios/2cols">Shop Grid 2 Columns</ALink></li>
-                                                    <li><ALink href="/shop/directorios/3cols">Shop Grid 3 Columns</ALink></li>
-                                                    <li><ALink href="/shop/directorios/4cols">Shop Grid 4 Columns</ALink></li>
+                                                    <li><ALink href="/productos/list">Shop List</ALink></li>
+                                                    <li><ALink href="/productos/2cols">Shop Grid 2 Columns</ALink></li>
+                                                    <li><ALink href="/productos/3cols">Shop Grid 3 Columns</ALink></li>
+                                                    <li><ALink href="/productos/4cols">Shop Grid 4 Columns</ALink></li>
                                                     <li><ALink href="/shop/market"><span>Shop Market<span className="tip tip-new">New</span></span></ALink></li>
                                                     <li><ALink href="/shop/nosidebar/boxed"><span>Shop Boxed No Sidebar<span className="tip tip-hot">Hot</span></span></ALink></li>
                                                     <li><ALink href="/shop/nosidebar/fullwidth">Shop Fullwidth No Sidebar</ALink></li>
@@ -288,17 +288,17 @@ const MobileMenu = () => {
                         <TabPanel>
                             <nav className="mobile-cats-nav">
                                 <ul className="mobile-cats-menu">
-                                    <li className="item-cats-lead"><ALink href="/shop/directorios/3cols?category=electronics">Electronics</ALink></li>
-                                    <li className="item-cats-lead"><ALink href="/shop/directorios/3cols?category=gift-idea">Gift Ideas</ALink></li>
-                                    <li><ALink href="/shop/directorios/3cols?category=beds">Beds</ALink></li>
-                                    <li><ALink href="/shop/directorios/3cols?category=lighting">Lighting</ALink></li>
-                                    <li><ALink href="/shop/directorios/3cols?category=sofas-and-sleeper-sofas">Sofas & Sleeper sofas</ALink></li>
-                                    <li><ALink href="/shop/directorios/3cols?category=storage">Storage</ALink></li>
-                                    <li><ALink href="/shop/directorios/3cols?category=armchairs-and-chaises">Armchairs & Chaises</ALink></li>
-                                    <li><ALink href="/shop/directorios/3cols?category=decoration">Decoration </ALink></li>
-                                    <li><ALink href="/shop/directorios/3cols?category=kitchen-cabinets">Kitchen Cabinets</ALink></li>
-                                    <li><ALink href="/shop/directorios/3cols?category=coffee-and-tables">Coffee & Tables</ALink></li>
-                                    <li><ALink href="/shop/directorios/3cols?category=furniture">Outdoor Furniture </ALink></li>
+                                    <li className="item-cats-lead"><ALink href="/productos/3cols?category=electronics">Electronics</ALink></li>
+                                    <li className="item-cats-lead"><ALink href="/productos/3cols?category=gift-idea">Gift Ideas</ALink></li>
+                                    <li><ALink href="/productos/3cols?category=beds">Beds</ALink></li>
+                                    <li><ALink href="/productos/3cols?category=lighting">Lighting</ALink></li>
+                                    <li><ALink href="/productos/3cols?category=sofas-and-sleeper-sofas">Sofas & Sleeper sofas</ALink></li>
+                                    <li><ALink href="/productos/3cols?category=storage">Storage</ALink></li>
+                                    <li><ALink href="/productos/3cols?category=armchairs-and-chaises">Armchairs & Chaises</ALink></li>
+                                    <li><ALink href="/productos/3cols?category=decoration">Decoration </ALink></li>
+                                    <li><ALink href="/productos/3cols?category=kitchen-cabinets">Kitchen Cabinets</ALink></li>
+                                    <li><ALink href="/productos/3cols?category=coffee-and-tables">Coffee & Tables</ALink></li>
+                                    <li><ALink href="/productos/3cols?category=furniture">Outdoor Furniture </ALink></li>
                                 </ul>
                             </nav>
                         </TabPanel>

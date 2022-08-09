@@ -8,7 +8,7 @@ import PageHeader from '../../components/features/page-header';
 import OwlCarousel from '../../components/features/owl-carousel';
 import ShopListTwo from '../../components/partials/shop/list/shop-list-two';
 import Pagination from '../../components/features/pagination';
-import ShopSidebarThree from '../../components/partials/shop/directorios/shop-sidebar-three';
+import ShopSidebarThree from '../../components/partials/productos/shop-sidebar-three';
 import Layout from '../../components/layout'
 
 
@@ -116,7 +116,7 @@ function ProductosShopMarket () {
                                 <ALink href="/">Home</ALink>
                             </li>
                             <li className="breadcrumb-item">
-                                <ALink href="/shop/directorios/list">Shop</ALink>
+                                <ALink href="/productos/list">Shop</ALink>
                             </li>
                             <li className="breadcrumb-item active">Market</li>
                         </ol>

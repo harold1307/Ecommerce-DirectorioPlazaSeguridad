@@ -25,7 +25,7 @@ function ProductTwelve( props ) {
                     {
                      
                             <React.Fragment key={ index }>
-                                <ALink href={ { pathname: '/shop/directorios/list', query: { category: producto.value } } }>
+                                <ALink href={ { pathname: '/productos/list', query: { category: producto.value } } }>
                                     { producto.name }
                                 </ALink>
                                

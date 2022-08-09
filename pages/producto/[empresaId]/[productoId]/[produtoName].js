@@ -31,7 +31,7 @@ function ProductDefault () {
                             <ALink href="/">Inicio</ALink>
                         </li>
                         <li className="breadcrumb-item">
-                            <ALink href="/shop/directorios/todos">Directorio</ALink>
+                            <ALink href="/productos/todos">Directorio</ALink>
                         </li>
                         <li className="breadcrumb-item active">{producto.category}</li>
                     </ol>

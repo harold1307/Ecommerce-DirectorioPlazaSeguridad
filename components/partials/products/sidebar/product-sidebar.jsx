@@ -67,7 +67,7 @@ function ProductSidebar ( props ) {
                                         <RelatedProductsTwo products={ products.slice( 0, 4 ) } />
                                     </div>
 
-                                    <ALink href="/shop/directorios/list" className="btn btn-outline-dark-3 text-truncate"><span>View More Products</span><i className="icon-long-arrow-right"></i></ALink>
+                                    <ALink href="/productos/list" className="btn btn-outline-dark-3 text-truncate"><span>View More Products</span><i className="icon-long-arrow-right"></i></ALink>
                                 </div>
 
                                 <div className="widget widget-banner-sidebar pb-2">
@@ -89,7 +89,7 @@ function ProductSidebar ( props ) {
                                             <p className="mb-1">online & in-store</p>
                                             <h3 className="banner-subtitle text-uppercase">Spring Sale</h3>
                                             <h2 className="banner-title">Up to 60% off<br />from $55</h2>
-                                            <ALink href="/shop/directorios/3cols" className="btn btn-outline btn-md btn-outline-white text-uppercase m-0">Shop Now</ALink>
+                                            <ALink href="/productos/3cols" className="btn btn-outline btn-md btn-outline-white text-uppercase m-0">Shop Now</ALink>
                                         </div>
                                     </div>
                                 </div>

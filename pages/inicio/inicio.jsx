@@ -81,7 +81,7 @@ function Home() {
                                             </h1>
 
                                             <div className="intro-text text-white">Spring Collections 2021</div>
-                                            <ALink href="/shop/directorios/list" className="btn btn-primary">
+                                            <ALink href="/productos/list" className="btn btn-primary">
                                                 <span>Discover Now</span>
                                                 <i className="icon-long-arrow-right"></i>
                                             </ALink>
@@ -113,7 +113,7 @@ function Home() {
                                                     <sup>.99</sup>
                                                 </span>
                                             </div>
-                                            <ALink href="/shop/directorios/list" className="btn btn-primary">
+                                            <ALink href="/productos/list" className="btn btn-primary">
                                                 <span>Discover Here</span>
                                                 <i className="icon-long-arrow-right"></i>
                                             </ALink>
@@ -139,7 +139,7 @@ function Home() {
                                             </h1>
 
                                             <div className="intro-text">Summer Collection 2021</div>
-                                            <ALink href="/shop/directorios/list" className="btn btn-primary">
+                                            <ALink href="/productos/list" className="btn btn-primary">
                                                 <span>Discover Now</span>
                                                 <i className="icon-long-arrow-right"></i>
                                             </ALink>
@@ -151,7 +151,7 @@ function Home() {
                     </div>
                     <div className="col-xl-3 col-xxl-2 d-none d-xxl-block">
                         <div className="banner intro-banner banner-overlay banner-content-stretch">
-                            <ALink href="/shop/directorios/3cols">
+                            <ALink href="/productos/3cols">
                                 <div className="lazy-overlay bg-transparent"></div>
 
                                 <LazyLoadImage
@@ -171,7 +171,7 @@ function Home() {
                                         <sup className="text-white">,99</sup>
                                     </span>
                                 </div>
-                                <ALink href="/shop/directorios/list" className="banner-link">
+                                <ALink href="/productos/list" className="banner-link">
                                     Discover Now
                                     <i className="icon-long-arrow-right"></i>
                                 </ALink>
@@ -190,7 +190,7 @@ function Home() {
                                     <div className="col-md-6">
                                         <Reveal keyframes={ fadeInUp } delay={ 200 } duration={ 1000 } triggerOnce>
                                             <div className="banner banner-overlay">
-                                                <ALink href="/shop/directorios/list">
+                                                <ALink href="/productos/list">
                                                     <div className="lazy-overlay"></div>
 
                                                     <LazyLoadImage
@@ -205,11 +205,11 @@ function Home() {
 
                                                 <div className="banner-content">
                                                     <h4 className="banner-subtitle text-white d-none d-sm-block">
-                                                        <ALink href="/shop/directorios/list">Hottest Deals</ALink>
+                                                        <ALink href="/productos/list">Hottest Deals</ALink>
                                                     </h4>
 
                                                     <h3 className="banner-title text-white">
-                                                        <ALink href="/shop/directorios/list">
+                                                        <ALink href="/productos/list">
                                                             Detox And Beautify
 													<br />For Spring
 													<br />
@@ -218,7 +218,7 @@ function Home() {
                                                     </h3>
 
                                                     <ALink
-                                                        href="/shop/directorios/3cols"
+                                                        href="/productos/3cols"
                                                         className="banner-link"
                                                     >
                                                         Shop Now
@@ -232,7 +232,7 @@ function Home() {
                                     <div className="col-md-6">
                                         <Reveal keyframes={ fadeInUp } delay={ 300 } duration={ 1000 } triggerOnce>
                                             <div className="banner banner-overlay">
-                                                <ALink href="/shop/directorios/list">
+                                                <ALink href="/productos/list">
                                                     <div className="lazy-overlay"></div>
 
                                                     <LazyLoadImage
@@ -247,11 +247,11 @@ function Home() {
 
                                                 <div className="banner-content">
                                                     <h4 className="banner-subtitle text-white d-none d-sm-block">
-                                                        <ALink href="/shop/directorios/list">Deal of the Day</ALink>
+                                                        <ALink href="/productos/list">Deal of the Day</ALink>
                                                     </h4>
 
                                                     <h3 className="banner-title text-white">
-                                                        <ALink href="/shop/directorios/list">
+                                                        <ALink href="/productos/list">
                                                             Headphones
 													<br />
                                                             <span>Up To 30% Off</span>
@@ -259,7 +259,7 @@ function Home() {
                                                     </h3>
 
                                                     <ALink
-                                                        href="/shop/directorios/3cols"
+                                                        href="/productos/3cols"
                                                         className="banner-link"
                                                     >
                                                         Shop Now
@@ -276,7 +276,7 @@ function Home() {
                             <div className="col-12 col-xxl-5col d-none d-xxl-block">
                                 <Reveal keyframes={ fadeInUp } delay={ 400 } duration={ 1000 } triggerOnce>
                                     <div className="banner banner-overlay">
-                                        <ALink href="/shop/directorios/list">
+                                        <ALink href="/productos/list">
                                             <div className="lazy-overlay"></div>
 
                                             <LazyLoadImage
@@ -291,17 +291,17 @@ function Home() {
 
                                         <div className="banner-content">
                                             <h4 className="banner-subtitle text-white">
-                                                <ALink href="/shop/directorios/list">Clearance</ALink>
+                                                <ALink href="/productos/list">Clearance</ALink>
                                             </h4>
 
                                             <h3 className="banner-title text-white">
-                                                <ALink href="/shop/directorios/list">
+                                                <ALink href="/productos/list">
                                                     Seating and Tables Clearance
                                             </ALink>
                                             </h3>
 
                                             <ALink
-                                                href="/shop/directorios/3cols"
+                                                href="/productos/3cols"
                                                 className="banner-link"
                                             >
                                                 Shop Now
@@ -357,7 +357,7 @@ function Home() {
                             <div className="col-md-6">
                                 <Reveal keyframes={ fadeInLeftShorter } delay={ 200 } duration="1000" triggerOnce>
                                     <div className="banner home-banner banner-overlay">
-                                        <ALink href="/shop/directorios/list">
+                                        <ALink href="/productos/list">
                                             <div className="lazy-overlay"></div>
 
                                             <LazyLoadImage
@@ -372,11 +372,11 @@ function Home() {
 
                                         <div className="banner-content">
                                             <h4 className="banner-subtitle text-white d-none d-sm-block">
-                                                <ALink href="/shop/directorios/list">Spring Sale is Coming</ALink>
+                                                <ALink href="/productos/list">Spring Sale is Coming</ALink>
                                             </h4>
 
                                             <h3 className="banner-title text-white">
-                                                <ALink href="/shop/directorios/list">
+                                                <ALink href="/productos/list">
                                                     Floral T-shirts and Vests
 											<br />
                                                     <span>Spring Sale</span>
@@ -384,7 +384,7 @@ function Home() {
                                             </h3>
 
                                             <ALink
-                                                href="/shop/directorios/3cols"
+                                                href="/productos/3cols"
                                                 className="banner-link"
                                             >
                                                 Shop Now
@@ -397,7 +397,7 @@ function Home() {
                             <div className="col-md-6">
                                 <Reveal keyframes={ fadeInRightShorter } delay={ 200 } duration="1000" triggerOnce>
                                     <div className="banner home-banner banner-overlay">
-                                        <ALink href="/shop/directorios/list">
+                                        <ALink href="/productos/list">
                                             <div className="lazy-overlay"></div>
 
                                             <LazyLoadImage
@@ -412,11 +412,11 @@ function Home() {
 
                                         <div className="banner-content">
                                             <h4 className="banner-subtitle text-white d-none d-sm-block">
-                                                <ALink href="/shop/directorios/list">Amazing Value</ALink>
+                                                <ALink href="/productos/list">Amazing Value</ALink>
                                             </h4>
 
                                             <h3 className="banner-title text-white">
-                                                <ALink href="/shop/directorios/list">
+                                                <ALink href="/productos/list">
                                                     Upgrade and Save
 											<br />
                                                     <span>On The Latest Apple Devices</span>
@@ -424,7 +424,7 @@ function Home() {
                                             </h3>
 
                                             <ALink
-                                                href="/shop/directorios/3cols"
+                                                href="/productos/3cols"
                                                 className="banner-link"
                                             >
                                                 Shop Now
@@ -524,7 +524,7 @@ function Home() {
                                     <div className="col-xl-12">
                                         <div className="widget widget-banner">
                                             <div className="banner banner-overlay">
-                                                <ALink href="/shop/directorios/list">
+                                                <ALink href="/productos/list">
                                                     <div className="lazy-overlay"></div>
 
                                                     <LazyLoadImage
@@ -539,14 +539,14 @@ function Home() {
 
                                                 <div className="banner-content banner-content-top banner-content-right text-right">
                                                     <h3 className="banner-title text-white">
-                                                        <ALink href="/shop/directorios/list">
+                                                        <ALink href="/productos/list">
                                                             Maximum Comfort<br />
                                                             <span>Sofas -20% Off</span>
                                                         </ALink>
                                                     </h3>
 
                                                     <ALink
-                                                        href="/shop/directorios/3cols"
+                                                        href="/productos/3cols"
                                                         className="banner-link"
                                                     >
                                                         Shop Now
@@ -580,7 +580,7 @@ function Home() {
                                     <div className="col-xl-12">
                                         <div className="widget widget-banner">
                                             <div className="banner banner-overlay">
-                                                <ALink href="/shop/directorios/list">
+                                                <ALink href="/productos/list">
                                                     <div className="lazy-overlay"></div>
 
                                                     <LazyLoadImage
@@ -595,7 +595,7 @@ function Home() {
 
                                                 <div className="banner-content banner-content-top">
                                                     <h3 className="banner-title text-white">
-                                                        <ALink href="/shop/directorios/list">
+                                                        <ALink href="/productos/list">
                                                             Take Better Photos
 													<br />
                                                             <span>With</span> Canon EOS
@@ -605,7 +605,7 @@ function Home() {
                                                     </h3>
 
                                                     <ALink
-                                                        href="/shop/directorios/3cols"
+                                                        href="/productos/3cols"
                                                         className="banner-link"
                                                     >
                                                         Shop Now

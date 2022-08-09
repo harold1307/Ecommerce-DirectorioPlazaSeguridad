@@ -55,7 +55,7 @@ function Wishlist ( props ) {
                             <ALink href="/">Home</ALink>
                         </li>
                         <li className="breadcrumb-item">
-                            <ALink href="/shop/directorios/list">Shop</ALink>
+                            <ALink href="/productos/list">Shop</ALink>
                         </li>
                         <li className="breadcrumb-item active">Wishlist</li>
                     </ol>
@@ -199,7 +199,7 @@ function Wishlist ( props ) {
                                 <i className="icon-heart-o wishlist-empty d-block" style={ { fontSize: '15rem', lineHeight: '1' } }></i>
                                 <span className="d-block mt-2">No products added to wishlist</span>
                                 <ALink
-                                    href="/shop/directorios/list"
+                                    href="/productos/list"
                                     className="btn btn-primary mt-2"
                                 >Go Shop</ALink>
                             </div>

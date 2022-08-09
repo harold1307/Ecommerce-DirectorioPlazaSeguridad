@@ -16,30 +16,30 @@ function ElectronicsCollection( props ) {
                     <div className="cat-banner-list col-sm-6 d-xl-none d-xxl-flex" style={ { backgroundImage: `url(images/home/banners/banner-bg-1.jpg)` } }>
                         <div className="banner-list-content">
                             <h2>
-                                <ALink href="/shop/directorios/list">Electronics</ALink>
+                                <ALink href="/productos/list">Electronics</ALink>
                             </h2>
 
                             <ul>
                                 <li>
-                                    <ALink href="/shop/directorios/list">Cell Phones</ALink>
+                                    <ALink href="/productos/list">Cell Phones</ALink>
                                 </li>
                                 <li>
-                                    <ALink href="/shop/directorios/list">Computers</ALink>
+                                    <ALink href="/productos/list">Computers</ALink>
                                 </li>
                                 <li>
-                                    <ALink href="/shop/directorios/list">TV & Video</ALink>
+                                    <ALink href="/productos/list">TV & Video</ALink>
                                 </li>
                                 <li>
-                                    <ALink href="/shop/directorios/list">Smart Home</ALink>
+                                    <ALink href="/productos/list">Smart Home</ALink>
                                 </li>
                                 <li>
-                                    <ALink href="/shop/directorios/list">Audio</ALink>
+                                    <ALink href="/productos/list">Audio</ALink>
                                 </li>
                                 <li>
-                                    <ALink href="/shop/directorios/list">Home Audio & Theater</ALink>
+                                    <ALink href="/productos/list">Home Audio & Theater</ALink>
                                 </li>
                                 <li className="list-all-link">
-                                    <ALink href="/shop/directorios/list">See All Departments</ALink>
+                                    <ALink href="/productos/list">See All Departments</ALink>
                                 </li>
                             </ul>
                         </div>
@@ -47,7 +47,7 @@ function ElectronicsCollection( props ) {
 
                     <div className="col-sm-6 col-xl-12 col-xxl-6">
                         <div className="banner banner-overlay">
-                            <ALink href="/shop/directorios/list">
+                            <ALink href="/productos/list">
                                 <div className="lazy-overlay"></div>
 
                                 <LazyLoadImage
@@ -62,11 +62,11 @@ function ElectronicsCollection( props ) {
 
                             <div className="banner-content">
                                 <h4 className="banner-subtitle text-white">
-                                    <ALink href="/shop/directorios/list">Best Deals</ALink>
+                                    <ALink href="/productos/list">Best Deals</ALink>
                                 </h4>
 
                                 <h3 className="banner-title text-white">
-                                    <ALink href="/shop/directorios/list">
+                                    <ALink href="/productos/list">
                                         Canon EOS
                                     <br />Mega Sale
                                     <br />
@@ -75,7 +75,7 @@ function ElectronicsCollection( props ) {
                                 </h3>
 
                                 <ALink
-                                    href="/shop/directorios/3cols"
+                                    href="/productos/3cols"
                                     className="banner-link"
                                 >
                                     Shop Now

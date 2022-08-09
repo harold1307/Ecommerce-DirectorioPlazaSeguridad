@@ -33,22 +33,13 @@ const AdminLayoud = ({children}) => {
 
             <div className="site-layout-background">
               
-            <Breadcrumb
-              style={{
-                margin: '16px 0',
-              }}
-            >
-              <Breadcrumb.Item>Administrador</Breadcrumb.Item>
-              <Breadcrumb.Item>query</Breadcrumb.Item>
-            </Breadcrumb>
            
-           <div className="container">
-              <div className="row">
-                  <div className="">
-                        {children}
+                  
+                  <div className="container">                
+                        <div className="row">             
+                            {children}                 
+                        </div>
                   </div>
-              </div>
-           </div>
              
   
   

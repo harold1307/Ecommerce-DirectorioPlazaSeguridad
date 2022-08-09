@@ -61,7 +61,7 @@ function Cart ( props ) {
                                 <ALink href="/">Inicio</ALink>
                             </li>
                             <li className="breadcrumb-item">
-                                <ALink href="/shop/directorios/list">Shop</ALink>
+                                <ALink href="/productos/list">Shop</ALink>
                             </li>
                             <li className="breadcrumb-item active">Carrito de compra</li>
                         </ol>
@@ -235,7 +235,7 @@ function Cart ( props ) {
                                                 </ALink>
                                             </div>
 
-                                            <ALink href="/shop/directorios/list" className="btn btn-outline-dark-2 btn-block mb-3"><span>CONTINUE SHOPPING</span><i className="icon-refresh"></i></ALink>
+                                            <ALink href="/productos/list" className="btn btn-outline-dark-2 btn-block mb-3"><span>CONTINUE SHOPPING</span><i className="icon-refresh"></i></ALink>
                                         </aside>
                                     </div>
                                     :
@@ -246,7 +246,7 @@ function Cart ( props ) {
                                                 <p className="px-3 py-2 cart-empty mb-3">No products added to the cart</p>
                                                 <p className="return-to-shop mb-0">
                                                     <ALink
-                                                        href="/shop/directorios/list"
+                                                        href="/productos/list"
                                                         className="btn btn-primary"
                                                     >RETURN TO SHOP</ALink>
                                                 </p>

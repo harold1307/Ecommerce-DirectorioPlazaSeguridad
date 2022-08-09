@@ -16,30 +16,30 @@ function CookingCollection( props ) {
                     <div className="cat-banner-list col-sm-6 d-xl-none d-xxl-flex" style={ { backgroundImage: `url(images/home/banners/banner-bg-4.jpg)` } }>
                         <div className="banner-list-content">
                             <h2>
-                                <ALink href="/shop/directorios/list">Cooking</ALink>
+                                <ALink href="/productos/list">Cooking</ALink>
                             </h2>
 
                             <ul>
                                 <li>
-                                    <ALink href="/shop/directorios/list">Cookware</ALink>
+                                    <ALink href="/productos/list">Cookware</ALink>
                                 </li>
                                 <li>
-                                    <ALink href="/shop/directorios/list">Dinnerware</ALink>
+                                    <ALink href="/productos/list">Dinnerware</ALink>
                                 </li>
                                 <li>
-                                    <ALink href="/shop/directorios/list">Cups</ALink>
+                                    <ALink href="/productos/list">Cups</ALink>
                                 </li>
                                 <li>
-                                    <ALink href="/shop/directorios/list">Microwaves</ALink>
+                                    <ALink href="/productos/list">Microwaves</ALink>
                                 </li>
                                 <li>
-                                    <ALink href="/shop/directorios/list">Toasters</ALink>
+                                    <ALink href="/productos/list">Toasters</ALink>
                                 </li>
                                 <li>
-                                    <ALink href="/shop/directorios/list">Coffee Makers</ALink>
+                                    <ALink href="/productos/list">Coffee Makers</ALink>
                                 </li>
                                 <li className="list-all-link">
-                                    <ALink href="/shop/directorios/list">See All Departments</ALink>
+                                    <ALink href="/productos/list">See All Departments</ALink>
                                 </li>
                             </ul>
                         </div>
@@ -47,7 +47,7 @@ function CookingCollection( props ) {
 
                     <div className="col-sm-6 col-xl-12 col-xxl-6">
                         <div className="banner banner-overlay">
-                            <ALink href="/shop/directorios/list">
+                            <ALink href="/productos/list">
                                 <div className="lazy-overlay"></div>
 
                                 <LazyLoadImage
@@ -62,11 +62,11 @@ function CookingCollection( props ) {
 
                             <div className="banner-content">
                                 <h4 className="banner-subtitle text-white">
-                                    <ALink href="/shop/directorios/list">Best Deals</ALink>
+                                    <ALink href="/productos/list">Best Deals</ALink>
                                 </h4>
 
                                 <h3 className="banner-title text-white">
-                                    <ALink href="/shop/directorios/list">
+                                    <ALink href="/productos/list">
                                         Cooking
                                     <br />Appliances
                                     <br />
@@ -75,7 +75,7 @@ function CookingCollection( props ) {
                                 </h3>
 
                                 <ALink
-                                    href="/shop/directorios/3cols"
+                                    href="/productos/3cols"
                                     className="banner-link"
                                 >
                                     Shop Now
