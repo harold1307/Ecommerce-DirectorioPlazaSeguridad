@@ -13,6 +13,7 @@ import { isSafariBrowser, isEdgeBrowser } from "../utils";
 import { useDispatch }  from "react-redux";
 import { cargarCategoriasAll } from "../store/actions/categoriesAllAction";
 import { cargarProductosAll } from "../store/actions/productsAllAction";
+import { cargarCompaniasAll } from "../store/actions/companiesAllAction";
 
 function Layout ( {children} ) {
     const router = useRouter( "" );
@@ -20,7 +21,8 @@ function Layout ( {children} ) {
     const dispatch = useDispatch();
     useEffect(() => {
          dispatch( cargarCategoriasAll() );      
-         dispatch( cargarProductosAll() );     
+         dispatch( cargarProductosAll() );   
+         dispatch( cargarCompaniasAll() );       
     }, [ dispatch])
    
 

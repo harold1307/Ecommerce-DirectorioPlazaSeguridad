@@ -9,9 +9,9 @@ import thunk from 'redux-thunk';
         storage:  storageSession,            
  }
 
-const myPersistReducer = persistReducer(storageConfig, reducer);
+const PersistReducer = persistReducer(storageConfig, reducer);
 const store = configureStore({
-  reducer: myPersistReducer,
+  reducer: PersistReducer,
   devTools: process.env.NODE_ENV !== 'production',
   middleware: [thunk]
 })

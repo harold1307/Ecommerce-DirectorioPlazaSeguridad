@@ -1,19 +1,25 @@
-import { useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import Reveal from 'react-awesome-reveal';
+import { useSelector }  from "react-redux";
 import StickyBox from 'react-sticky-box';
-
 import ALink from '../../components/features/alink';
 import OwlCarousel from '../../components/features/owl-carousel';
 import TrendyCollection from '../../components/partials/home/trendy-collection';
 
-
-
-
 import { homeData, introSlider, brandSlider, fadeInUpShorter, fadeInLeftShorter, fadeInUp, fadeInRightShorter } from '../../utils/data';
 
-function Home() {
+const Home = () =>{
+    const [ fakeArray, setFakeArray ] = useState( [] );
+    useEffect( () => {
+        let temp = [];
+        for ( let i = 0; i < 6; i++ ) {
+            temp.push( i );
+        }
+        setFakeArray( temp );
+    }, [ ] )
 
+    const  companiesAll =  useSelector(state => state.companiesAll);
 
     const toggleSidebar = () => {
         if (
@@ -153,7 +159,6 @@ function Home() {
                         <div className="banner intro-banner banner-overlay banner-content-stretch">
                             <ALink href="/productos/3cols">
                                 <div className="lazy-overlay bg-transparent"></div>
-
                                 <LazyLoadImage
                                     alt="Banner"
                                     src="images/home/banners/banner-1.png"
@@ -318,13 +323,19 @@ function Home() {
                         <Reveal keyframes={ fadeInUp } delay={ 500 } duration="500" triggerOnce>
                             <OwlCarousel adClass="brands-slider brands-carousel brands-border" options={ brandSlider }>
                                 {
-                                    homeData.brands.map( ( brand, index ) => {
-                                        return (
-                                            <ALink href="#" className="brand" key={ index } >
-                                                <img src={ brand.image } alt="brand" width={ brand.width } height={ brand.height } />
-                                            </ALink>
-                                        )
-                                    } )
+                                    companiesAll.loading?
+                                        companiesAll.companias.map( ( brand, index ) => {
+                                            return (
+                                                <ALink href="#" className={brand.name.split(' ').join('-')} key={ index } >
+                                                    <img src={ brand.image.location } alt={brand.name}  height={ 60 } width={ 50 } />
+                                                </ALink>
+                                            )
+                                        } )
+                                        :
+                                        fakeArray.map( ( item, index ) => (
+                                        <div className="skel-pro skel-pro-list" key={ index }></div>
+                                    ) )
+
                                 }
                             </OwlCarousel>
                         </Reveal>

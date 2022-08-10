@@ -55,7 +55,7 @@ const LoginModal = ()  => {
 
     return (
         <div className="login">
-            <a href="#" onClick={ openModal }><i className="icon-user"></i>Inicio</a>
+            <a href="#" onClick={ openModal }><i className="icon-user"></i>Iniciar Sesión</a>
             {
                 open ?
                     <Modal

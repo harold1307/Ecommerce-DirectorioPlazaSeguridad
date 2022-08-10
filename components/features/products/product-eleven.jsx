@@ -11,14 +11,12 @@ const ProductEleven = ( props ) => {
     const { product } = props;
     const [ maxPrice, setMaxPrice ] = useState( 0 );
     const [ minPrice, setMinPrice ] = useState( 99999 );
-    const dispatch = useDispatch();
-  
+    const dispatch = useDispatch(); 
 
     function onCartClick ( e ) {
         e.preventDefault();
         dispatch( addCartAction(product) );  
     }
-
 
     return (
 

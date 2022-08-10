@@ -3,16 +3,14 @@ import { useRouter } from 'next/router';
 import SlideToggle from 'react-slide-toggle';
 import ALink from '../../../features/alink';
 import Qty from '../../../features/qty';
-
-
-
-
-
+import { useDispatch }  from "react-redux";
+import { addCartAction } from "../../../../store/actions/AddCartAction";
 
 function DetailOne ( props ) {
     const router = useRouter();
     const ref = useRef( null );
     const { product } = props;
+    const dispatch = useDispatch();
 
   console.log('====>', product)
     useEffect( () => {
@@ -26,9 +24,10 @@ function DetailOne ( props ) {
     }, [ ] )
 
 
-
-
-
+    function onCartClick ( e ) {
+        e.preventDefault();
+        dispatch( addCartAction(product) );  
+    }
 
     function scrollHandler () {
         if ( router.pathname.includes( '/product/default' ) ) {
@@ -65,33 +64,6 @@ function DetailOne ( props ) {
             <p>{product[0].shortDescription}</p>
         </div>
 
-        {
-          
-                <>
-        
-                    <div className="details-filter-row details-row-size">
-                        <label htmlFor="size">Size:</label>
-                        <div className="select-custom">
-                            <select
-                                name="size"
-                                className="form-control"
-                                value={ ''}
-                                onChange={ '' }
-                            >
-                                <option value="">Select a size</option>
-                                
-                            </select>
-                        </div>
-
-                        <ALink href="#" className="size-guide mr-4">
-                            <i className="icon-th-list"></i>size guide
-                        </ALink>
-                     
-                    </div>
-                   
-                </>
-                
-        }
 
         <div className="details-filter-row details-row-size">
             <label htmlFor="qty">Qty:</label>
@@ -104,12 +76,12 @@ function DetailOne ( props ) {
                 className={ `btn-product btn-cart` }
                 onClick={ e => onCartClick( e, 0 ) }
             >
-                <span>add to cart</span>
+                <span>Agragar al carrito</span>
             </a>
             <div className="details-action-wrapper">
                 {
                    
-                        <a href="#" className="btn-product btn-wishlist" onClick={ '' }><span>Add to Wishlist</span></a>
+                        <a href="#" className="btn-product btn-wishlist" onClick={ onCartClick  }><span>Agragar a favoritos</span></a>
 
                 }
             </div>
@@ -117,12 +89,12 @@ function DetailOne ( props ) {
 
         <div className="product-details-footer">
             <div className="product-cat w-100 text-truncate">
-                <span>Category:</span>
-                
+                <span>Categorí:</span>
+                {product[0].category}
             </div>
 
             <div className="social-icons social-icons-sm">
-                <span className="social-label">Share:</span>
+                <span className="social-label">Compartir:</span>
                 <ALink href="#" className="social-icon" title="Facebook">
                     <i className="icon-facebook-f"></i>
                 </ALink>
@@ -153,7 +125,7 @@ function DetailOne ( props ) {
                     <div className="col-6 justify-content-end">
                         {
                             
-                                product.stockQuantity == 0 ?
+                                product.stockStatus == 0 ?
                                     <div className="product-price">
                                         <span className="out-price">0</span>
                                     </div>

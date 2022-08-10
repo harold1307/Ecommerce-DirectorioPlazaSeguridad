@@ -17,7 +17,7 @@ const CategoryMenu = () =>{
             document.querySelector( '.category-dropdown .dropdown-menu' ).classList.add( 'show' );
         }
     }
-
+    
     useEffect( () => {
         document.querySelector( '.category-dropdown .dropdown-menu' ).classList.remove( 'show' )
 
