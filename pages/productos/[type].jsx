@@ -154,13 +154,7 @@ function ShopGrid() {
                                    <li className="breadcrumb-item active">Todos</li>
                                 }
                             
-                            {
-                                query.categoria ?
-                                    <li className="breadcrumb-item">
-                                        <span> {query.categoria}</span>
-                                    </li>
-                                    : ""
-                            }
+                          
                         </ol>
                     </div>
                 </nav>

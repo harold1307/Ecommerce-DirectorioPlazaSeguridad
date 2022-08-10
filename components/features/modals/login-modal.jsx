@@ -54,8 +54,8 @@ const LoginModal = ()  => {
     }
 
     return (
-        <li className="login">
-            <a href="#" onClick={ openModal }>Sign in / Sign up</a>
+        <div className="login">
+            <a href="#" onClick={ openModal }><i className="icon-user"></i>Inicio</a>
             {
                 open ?
                     <Modal
@@ -188,7 +188,7 @@ const LoginModal = ()  => {
                     </Modal>
                     : ''
             }
-        </li>
+        </div>
     )
 }
 

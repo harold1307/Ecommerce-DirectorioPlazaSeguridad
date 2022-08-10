@@ -38,7 +38,7 @@ function ShopListOne ( props ) {
                     <>
                         {
                             type == 'list' ?
-                                loading ?
+                            !loading ?
                                     fakeArray.map( ( item, index ) => (
                                         <div className="skel-pro skel-pro-list" key={ index }></div>
                                     ) )

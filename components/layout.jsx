@@ -22,6 +22,7 @@ function Layout ( {children} ) {
          dispatch( cargarCategoriasAll() );      
          dispatch( cargarProductosAll() );     
     }, [ dispatch])
+   
 
     useEffect( () => {
         if ( router.pathname.includes( 'pages/coming-soon' ) ) {

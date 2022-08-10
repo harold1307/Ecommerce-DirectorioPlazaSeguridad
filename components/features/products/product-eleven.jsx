@@ -1,75 +1,55 @@
 import React, { useState, useEffect, Fragment } from 'react';
 import { useRouter } from 'next/router';
-
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import ALink from '~/components/features/alink';
+import { useDispatch }  from "react-redux";
+import { addCartAction } from "../../../store/actions/AddCartAction";
 
-
-
-
-
-function ProductEleven ( props ) {
+const ProductEleven = ( props ) => {
     const router = useRouter();
     const query = router.query ; 
     const { product } = props;
     const [ maxPrice, setMaxPrice ] = useState( 0 );
     const [ minPrice, setMinPrice ] = useState( 99999 );
+    const dispatch = useDispatch();
   
-
-
-    useEffect( () => {
-        let min = minPrice;
-        let max = maxPrice;
-      
-
-     
-        setMinPrice( min );
-        setMaxPrice( max );
-    }, [] )
 
     function onCartClick ( e ) {
         e.preventDefault();
-        props.addToCart( product );
+        dispatch( addCartAction(product) );  
     }
-
-    function onWishlistClick ( e ) {
-        e.preventDefault();
-        if ( !isInWishlist( props.wishlist, product ) ) {
-            props.addToWishlist( product );
-        } else {
-            router.push( '/pages/wishlist' );
-        }
-    }
-
-    function onCompareClick ( e ) {
-        e.preventDefault();
-        if ( !isInCompare( props.comparelist, product ) ) {
-            props.addToCompare( product );
-        }
-    }
-
-    function onQuickView ( e ) {
-        e.preventDefault();
-        props.showQuickView( product.slug );
-    }
-
 
 
     return (
 
         <Fragment>
                 
-                
-        
                 <div className="product product-7 text-center w-100">
                     <figure className="product-media">
-                            
-                    
+                    {
+                            product.new ?
+                                <span className="product-label label-new">New</span>
+                                : ""
+                        }
 
-                    
+                        {
+                            product.salePrice ?
+                                <span className="product-label label-sale">Oferta</span>
+                                : ""
+                        }
 
-                        <ALink href={ `/producto/${product.COMPANY._id}/${product._id}/${product.name}` }
-                        >
+                        {
+                            product.top ?
+                                <span className="product-label label-top">Top</span>
+                                : ""
+                        }
+
+                        {
+                            !product.stockStatus || product.stockStatus == 0 ?
+                                <span className="product-label label-out">Agotado</span>
+                                : ""
+                        }
+                        <ALink href={ `/producto/${product.COMPANY._id}/${product._id}/${product.name}` } >
                             <LazyLoadImage
                                 alt="product"
                                 src={`${product.image.location }` } // Se debe cambiar por la imagen del producto principal.
@@ -90,15 +70,25 @@ function ProductEleven ( props ) {
                             }
                         </ALink>
 
+                        {
+                            product.stockStatus && product.stockStatus !== 0 ?
+                            <div className="product-action">
+                                {              
+                                                          
+                                        <button className="btn-product btn-cart" onClick={ onCartClick }>
+                                            <span>Agregar</span>
+                                        </button>
+                                }
+                            </div>
+                            : ""
+                        }
                     
-
-                
 
                     </figure>
 
                     <div className="product-body">
                         <div className="product-cat">
-                        
+                          <small>{product.category}</small> 
                         </div>
 
                         <h3 className="product-title">
@@ -106,21 +96,10 @@ function ProductEleven ( props ) {
                         </h3>
 
                         {
-                            true ?
-                                <div className="product-price">
-                                    <span className="out-price">${ product.regularPrice.toFixed( 2 ) }</span>
-                                </div>
+                               product.salePrice ?                   
+                                <div className="product-price"><span className='mr-2'>${product.salePrice.toFixed( 2 ) }  </span><span className='text-decoration-line'>${product.regularPrice.toFixed( 2 ) }</span></div>
                                 :
-                                minPrice == maxPrice ?
-                                    <div className="product-price">${ minPrice.toFixed( 2 ) }</div>
-                                    :
-                                    product.variants.length == 0 ?
-                                        <div className="product-price">
-                                            <span className="new-price">${ minPrice.toFixed( 2 ) }</span>
-                                            <span className="old-price">${ maxPrice.toFixed( 2 ) }</span>
-                                        </div>
-                                        :
-                                        <div className="product-price">${ minPrice.toFixed( 2 ) }&ndash;${ maxPrice.toFixed( 2 ) }</div>
+                                <div className="product-price">${product.regularPrice.toFixed( 2 ) }</div>
                     
                         }
 
