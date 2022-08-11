@@ -19,6 +19,8 @@ const Home = () =>{
         setFakeArray( temp );
     }, [ ] )
 
+   
+
     const  companiesAll =  useSelector(state => state.companiesAll);
 
     const toggleSidebar = () => {
@@ -324,11 +326,17 @@ const Home = () =>{
                             <OwlCarousel adClass="brands-slider brands-carousel brands-border" options={ brandSlider }>
                                 {
                                     companiesAll.loading?
-                                        companiesAll.companias.map( ( brand, index ) => {
+                                        companiesAll.companias.map( ( compania, index ) => {
                                             return (
-                                                <ALink href="#" className={brand.name.split(' ').join('-')} key={ index } >
-                                                    <img src={ brand.image.location } alt={brand.name}  height={ 60 } width={ 50 } />
+                                                compania.logo==true || !(/undefined/).test(compania.logo) ?
+                                                
+                                                <ALink href={ { pathname:  `/companies`, query: {compania: compania._id     } } } className="sidebar-filter-clear" scroll={ false }>
+                                                     <img src={ compania.logo  } alt={compania.logo }  height={ 50 } width={ 50 } />
                                                 </ALink>
+                                                :
+                                                <img src={ '/images/brands/8.png'} />
+
+
                                             )
                                         } )
                                         :

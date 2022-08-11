@@ -10,7 +10,7 @@ export function cargarCompaniasAll() {
     return async (dispatch) => {
         dispatch( CompaniasAll_Inicio() );    
         try {               
-            const products = await clienteAxios.get('/products');                   
+            const products = await clienteAxios.get('/companies');                   
            dispatch( CompaniasAll_Exito(products.data) );  
            
 

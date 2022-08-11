@@ -45,7 +45,7 @@ const CategoryMenu = () =>{
                                                 <div className="row">                                                    
                                                     <i className={'fa '+` ${categoria.icon}`} aria-hidden="true"></i>                                                   
                                   
-                                                     <small> {categoria.name}</small>
+                                                    <small className='text-uppercase'> {categoria.name}</small>
 
                                                 </div>
                                             

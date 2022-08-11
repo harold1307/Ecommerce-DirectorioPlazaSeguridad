@@ -110,4 +110,4 @@ const ProductEleven = ( props ) => {
     )
 }
 
-export default ProductEleven;
+export default React.memo(ProductEleven);

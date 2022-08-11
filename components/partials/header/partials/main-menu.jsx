@@ -81,6 +81,13 @@ function MainMenu() {
                         </div>
                     </div>
                 </li>
+                <li className={ `megamenu-container ${ path === '/' ? 'active' : '' }` } id="menu-home">
+                    <ALink href="/empresas" >Empresas</ALink>
+                </li>
+                
+                <li className={ `megamenu-container ${ path === '/' ? 'active' : '' }` } id="menu-home">
+                </li>
+                
                 <li className={ path.indexOf( "product/" ) > -1 ? 'active' : '' }>
                     <ALink href="/product/default/dark-yellow-lace-cut-out-swing-dress" className="sf-with-ul">Product</ALink>
 
@@ -115,33 +122,7 @@ function MainMenu() {
                             </div>
                         </div>
                     </div>
-                </li>
-                <li className={ path.indexOf( "pages" ) > -1 ? 'active' : '' }>
-                    <ALink href="#" className="sf-with-ul">Pages</ALink>
-
-                    <ul>
-                        <li className={ path.indexOf( "pages/about" ) > -1 ? 'active' : '' }>
-                            <ALink href="/pages/about" className="sf-with-ul">About</ALink>
-
-                            <ul>
-                                <li className={ path.indexOf( "pages/about" ) > -1 && path.indexOf( "pages/about-2" ) === -1 ? 'active' : '' }><ALink href="/pages/about">About 01</ALink></li>
-                                <li className={ path.indexOf( "pages/about-2" ) > -1 ? 'active' : '' }><ALink href="/pages/about-2">About 02</ALink></li>
-                            </ul>
-                        </li>
-                        <li className={ path.indexOf( "pages/contact" ) > -1 ? 'active' : '' }>
-                            <ALink href="/pages/contact" className="sf-with-ul">Contact</ALink>
-
-                            <ul>
-                                <li className={ path.indexOf( "pages/contact" ) > -1 && path.indexOf( "pages/contact-2" ) === -1 ? 'active' : '' }><ALink href="/pages/contact">Contact 01</ALink></li>
-                                <li className={ path.indexOf( "pages/contact-2" ) > -1 ? 'active' : '' }><ALink href="/pages/contact-2">Contact 02</ALink></li>
-                            </ul>
-                        </li>
-                        <li className={ path.indexOf( "/login" ) > -1 ? 'active' : '' }><ALink href="/login">Login</ALink></li>
-                        <li className={ path.indexOf( "pages/faq" ) > -1 ? 'active' : '' }><ALink href="/pages/faq">FAQs</ALink></li>
-                        <li className={ path.indexOf( "404" ) > -1 ? 'active' : '' }><ALink href="/404">Error 404</ALink></li>
-                        <li className={ path.indexOf( "pages/coming-soon" ) > -1 ? 'active' : '' }><ALink href="/pages/coming-soon">Coming Soon</ALink></li>
-                    </ul>
-                </li>
+                </li>              
                 <li className={ path.indexOf( "blog/" ) > -1 ? 'active' : '' }>
                 <ALink href="/login">Login</ALink>
 
@@ -181,27 +162,53 @@ function MainMenu() {
                                 <li className={ path.indexOf( "blog/single/sidebar" ) > -1 ? 'active' : '' }><ALink href="/blog/single/sidebar/utaliquam-sollicitzdvudin-leo">Fullwidth with sidebar</ALink></li>
                             </ul>
                         </li>
-                    </ul>
-                </li>
-                <li className={ path.indexOf( "element" ) > -1 ? 'active' : '' }>
-                    <ALink href="/elements" className="sf-with-ul">Elements</ALink>
+                        <li className={ path.indexOf( "element" ) > -1 ? 'active' : '' }>
+                            <ALink href="/elements" className="sf-with-ul">Elements</ALink>
+                            <ul>
+                                <li className={ path.indexOf( "elements/products" ) > -1 ? "active" : '' }><ALink href="/elements/products">Products</ALink></li>
+                                <li className={ path.indexOf( "elements/typography" ) > -1 ? "active" : '' }><ALink href="/elements/typography">Typography</ALink></li>
+                                <li className={ path.indexOf( "elements/titles" ) > -1 ? "active" : '' }><ALink href="/elements/titles">Titles</ALink></li>
+                                <li className={ path.indexOf( "elements/banners" ) > -1 ? "active" : '' }><ALink href="/elements/banners">Banners</ALink></li>
+                                <li className={ path.indexOf( "elements/categories" ) > -1 ? "active" : '' }><ALink href="/elements/categories">Product Category</ALink></li>
+                                <li className={ path.indexOf( "elements/video-banners" ) > -1 ? "active" : '' }><ALink href="/elements/video-banners">Video Banners</ALink></li>
+                                <li className={ path.indexOf( "elements/buttons" ) > -1 ? "active" : '' }><ALink href="/elements/buttons">Buttons</ALink></li>
+                                <li className={ path.indexOf( "elements/accordions" ) > -1 ? "active" : '' }><ALink href="/elements/accordions">Accordions</ALink></li>
+                                <li className={ path.indexOf( "elements/tabs" ) > -1 ? "active" : '' }><ALink href="/elements/tabs">Tabs</ALink></li>
+                                <li className={ path.indexOf( "elements/testimonials" ) > -1 ? "active" : '' }><ALink href="/elements/testimonials">Testimonials</ALink></li>
+                                <li className={ path.indexOf( "elements/blog-posts" ) > -1 ? "active" : '' }><ALink href="/elements/blog-posts">Blog Posts</ALink></li>
+                                <li className={ path.indexOf( "elements/cta" ) > -1 ? "active" : '' }><ALink href="/elements/cta">Call to Action</ALink></li>
+                                <li className={ path.indexOf( "elements/icon-boxes" ) > -1 ? "active" : '' }><ALink href="/elements/icon-boxes">Icon Boxes</ALink></li>
+                            </ul>
+                        </li>
+                        <li className={ path.indexOf( "pages" ) > -1 ? 'active' : '' }>
+                    <ALink href="#" className="sf-with-ul">Pages</ALink>
 
                     <ul>
-                        <li className={ path.indexOf( "elements/products" ) > -1 ? "active" : '' }><ALink href="/elements/products">Products</ALink></li>
-                        <li className={ path.indexOf( "elements/typography" ) > -1 ? "active" : '' }><ALink href="/elements/typography">Typography</ALink></li>
-                        <li className={ path.indexOf( "elements/titles" ) > -1 ? "active" : '' }><ALink href="/elements/titles">Titles</ALink></li>
-                        <li className={ path.indexOf( "elements/banners" ) > -1 ? "active" : '' }><ALink href="/elements/banners">Banners</ALink></li>
-                        <li className={ path.indexOf( "elements/categories" ) > -1 ? "active" : '' }><ALink href="/elements/categories">Product Category</ALink></li>
-                        <li className={ path.indexOf( "elements/video-banners" ) > -1 ? "active" : '' }><ALink href="/elements/video-banners">Video Banners</ALink></li>
-                        <li className={ path.indexOf( "elements/buttons" ) > -1 ? "active" : '' }><ALink href="/elements/buttons">Buttons</ALink></li>
-                        <li className={ path.indexOf( "elements/accordions" ) > -1 ? "active" : '' }><ALink href="/elements/accordions">Accordions</ALink></li>
-                        <li className={ path.indexOf( "elements/tabs" ) > -1 ? "active" : '' }><ALink href="/elements/tabs">Tabs</ALink></li>
-                        <li className={ path.indexOf( "elements/testimonials" ) > -1 ? "active" : '' }><ALink href="/elements/testimonials">Testimonials</ALink></li>
-                        <li className={ path.indexOf( "elements/blog-posts" ) > -1 ? "active" : '' }><ALink href="/elements/blog-posts">Blog Posts</ALink></li>
-                        <li className={ path.indexOf( "elements/cta" ) > -1 ? "active" : '' }><ALink href="/elements/cta">Call to Action</ALink></li>
-                        <li className={ path.indexOf( "elements/icon-boxes" ) > -1 ? "active" : '' }><ALink href="/elements/icon-boxes">Icon Boxes</ALink></li>
+                        <li className={ path.indexOf( "pages/about" ) > -1 ? 'active' : '' }>
+                            <ALink href="/pages/about" className="sf-with-ul">About</ALink>
+
+                            <ul>
+                                <li className={ path.indexOf( "pages/about" ) > -1 && path.indexOf( "pages/about-2" ) === -1 ? 'active' : '' }><ALink href="/pages/about">About 01</ALink></li>
+                                <li className={ path.indexOf( "pages/about-2" ) > -1 ? 'active' : '' }><ALink href="/pages/about-2">About 02</ALink></li>
+                            </ul>
+                        </li>
+                        <li className={ path.indexOf( "pages/contact" ) > -1 ? 'active' : '' }>
+                            <ALink href="/pages/contact" className="sf-with-ul">Contact</ALink>
+
+                            <ul>
+                                <li className={ path.indexOf( "pages/contact" ) > -1 && path.indexOf( "pages/contact-2" ) === -1 ? 'active' : '' }><ALink href="/pages/contact">Contact 01</ALink></li>
+                                <li className={ path.indexOf( "pages/contact-2" ) > -1 ? 'active' : '' }><ALink href="/pages/contact-2">Contact 02</ALink></li>
+                            </ul>
+                        </li>
+                        <li className={ path.indexOf( "/login" ) > -1 ? 'active' : '' }><ALink href="/login">Login</ALink></li>
+                        <li className={ path.indexOf( "pages/faq" ) > -1 ? 'active' : '' }><ALink href="/pages/faq">FAQs</ALink></li>
+                        <li className={ path.indexOf( "404" ) > -1 ? 'active' : '' }><ALink href="/404">Error 404</ALink></li>
+                        <li className={ path.indexOf( "pages/coming-soon" ) > -1 ? 'active' : '' }><ALink href="/pages/coming-soon">Coming Soon</ALink></li>
                     </ul>
                 </li>
+                    </ul>
+                </li>
+                
             </ul>
         </nav>
     );

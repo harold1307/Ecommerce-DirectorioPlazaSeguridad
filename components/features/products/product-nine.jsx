@@ -122,4 +122,4 @@ const mapStateToProps = ( state ) => {
     }
 }
 
-export default  ProductSix;
+export default  React.memo( ProductSix);

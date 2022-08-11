@@ -1183,3 +1183,36 @@
 		width: auto;
 	}
 }
+
+.campo-password {
+	position: relative;
+	margin-bottom: 14px;
+	i {
+		position: absolute;
+		top: 45%;
+		right: 6%;
+		font-size: 25px;
+		color: #8a8a8a;
+		&:hover {
+			color: #474747;
+			cursor: pointer;
+		}
+	}
+  }
+
+ .bg-btn-ingreso{
+	.btn.btn-login, .btn.btn-login {	
+		i{
+			color: #474747 !important
+		}
+	}
+	.btn.btn-login:hover, .btn.btn-login:focus {	
+		background-color: #e1a02a;
+		i{
+			color:#ebebeb !important
+		}
+	}
+	
+	  
+ }
+

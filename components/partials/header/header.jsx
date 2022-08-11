@@ -8,7 +8,7 @@ import CategoryMenu from '../../partials/header/partials/category-menu';
 import LoginModal from '~/components/features/modals/login-modal';
 import MainMenu from '../../partials/header/partials/main-menu';
 import StickyHeader from '../../features/sticky-header';
-
+import RegistroModal from '~/components/features/modals/registro-modal';
 import CartMenu from '../../partials/header/partials/cart-menu';
 
 
@@ -30,15 +30,16 @@ function Header() {
                 <div className={`${ containerClass } py-ms-2 py-lg-3 `}>
                     <div className="header-left pl-4">
                         <a href="tel:#">
-                            <i className="icon-phone"></i>Call: +0123 456 789
+                            <i className="icon-phone"></i>Teléfono: +0123 456 789
                         </a>
                     </div>
                     <div className="header-right pr-4">
-                        <ul className="top-menu">
-                            <li>                                                         
-                                <LoginModal />                                  
-                            </li>
-                        </ul>
+                        <div className="top-menu d-flex"> 
+                            <span className='text-capitalize mr-1'><ALink href="/registro" >Crear una cuenta</ALink></span>
+                            <span className='px-3'>  </span>
+                            <span className='text-capitalize'><LoginModal /></span>                              
+                                                                                                                                       
+                        </div>
                     </div>
                 </div>
             </div>
