@@ -42,9 +42,9 @@ const CategoryMenu = () =>{
                                                 <li className="megamenu-container" key={ index }>
              
                                                 <ALink href={ { pathname:  `/productos/todos`, query: {categoria: categoria.value     } } } className="sidebar-filter-clear" scroll={ false }>
-                                                <div className="row">                                                    
-                                                    <i className={'fa '+` ${categoria.icon}`} aria-hidden="true"></i>                                                   
-                                  
+                                                <div className="row">   
+
+                                                    <i className={'fa '+` ${categoria.icon}`} aria-hidden="true"></i>                                                    
                                                     <small className='text-uppercase'> {categoria.name}</small>
 
                                                 </div>

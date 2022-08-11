@@ -8,7 +8,6 @@ function GalleryDefault ( props ) {
     const [ photoIndex, setPhotoIndex ] = useState( 0 );
  
 
-   console.log('Targeta producto=>', product[0].name)
 
     const imagenes=[
         '/images/products/product-1.jpg',

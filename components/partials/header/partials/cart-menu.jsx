@@ -12,8 +12,8 @@ function CartMenu( props ) {
         <div className="dropdown cart-dropdown">
             <ALink href="/shop/cart" className="dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-display="static">
                 <i className="icon-shopping-cart"></i>
-                <span className="cart-count">catidadTotal</span>
-                <span className="cart-txt">Cart</span>
+                <span className="cart-count">1</span>
+                <span className="cart-txt">Cesta</span>
             </ALink>
 
             <div className={ `dropdown-menu dropdown-menu-right ${ 1 === 0 ? 'text-center' : '' }` } >
