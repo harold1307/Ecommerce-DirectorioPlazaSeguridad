@@ -69,8 +69,8 @@ function Header() {
 
 
 
-                                       <p>CompareMenu </p>
-                                        <p>WishlistMenu</p>
+                                      
+                                        <i className="icon-heart-o"></i>
                                         <CartMenu/>
 
 

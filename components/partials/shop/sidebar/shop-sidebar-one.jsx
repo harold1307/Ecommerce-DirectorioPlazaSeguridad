@@ -23,10 +23,7 @@ function ShopSidebarOne ( props ) {
     }, [ query ] )
 
     function onChangePriceRange ( value ) {
-        setRange( value );
-        //router.push( '/productos' );
-        console.log('varia precio', { pathname: `/productos/.*/${value}`})
-        
+        setRange( value );       
     }
 
     function containsAttrInUrl ( type, value ) {
@@ -99,7 +96,7 @@ function ShopSidebarOne ( props ) {
                         { ( { onToggle, setCollapsibleElement, toggleState } ) => (
                             <div className="widget widget-collapsible">
                                 <h3 className="widget-title mb-2">
-                                    <a href="#price" className={ `${toggleState.toLowerCase() == 'collapsed' ? 'collapsed' : ''}` } onClick={ ( e ) => { onToggle( e ); e.preventDefault() } }>Price</a>
+                                    <a href="#price" className={ `${toggleState.toLowerCase() == 'collapsed' ? 'collapsed' : ''}` } onClick={ ( e ) => { onToggle( e ); e.preventDefault() } }>Precio</a>
                                 </h3>
 
                                 <div ref={ setCollapsibleElement }>
@@ -107,11 +104,11 @@ function ShopSidebarOne ( props ) {
                                         <div className="filter-price">
                                             <div className="filter-price-text d-flex justify-content-between">
                                                 <span>
-                                                    Price Range:&nbsp;
+                                                    <span>Rango de precio: </span>
                                                     <span className="filter-price-range">${ priceRange.min } - ${ priceRange.max }</span>
                                                 </span>
 
-                                                <ALink href={ { pathname: router.pathname, query: { ...query, minPrice: priceRange.min, maxPrice: priceRange.max, page: 1 } } } className="pr-2" scroll={ false }>Filter</ALink>
+                                                <ALink href={ { pathname: router.pathname, query: { ...query, minPrice: priceRange.min, maxPrice: priceRange.max, page: 1 } } } className="pr-2" scroll={ false }>Filtrar</ALink>
                                             </div>
 
                                             <div className="price-slider">

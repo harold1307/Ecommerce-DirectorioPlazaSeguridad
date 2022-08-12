@@ -17,10 +17,13 @@ function ProductDefault () {
 
     const  productosState =  useSelector(state => state.productsAll);
     const  productosloading = productosState.loading;
-    console.log('carga de producto', productosloading? 'exito' : productosState.error)
-    console.log('=>',query); 
-    console.log('=>=>',productosState );
     const producto = productosState.productos.filter( producto => producto._id==query.productoId);
+    //const compania = producto.COMPANY._id
+    //const companyProducts = productosState.productos.filter( producto => producto.COMPANY._id==compania);
+
+    console.log('producto=>',producto)
+
+
     return (
         <Layout>
             <div className="main">
@@ -31,9 +34,9 @@ function ProductDefault () {
                             <ALink href="/">Inicio</ALink>
                         </li>
                         <li className="breadcrumb-item">
-                            <ALink href="/productos/todos">Directorio</ALink>
+                            <ALink href="/productos/todos">producto</ALink>
                         </li>
-                        <li className="breadcrumb-item active">{producto.category}</li>
+                        <li className="breadcrumb-item active">{producto[0].name}</li>
                     </ol>
                 </div>
             </nav>

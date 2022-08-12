@@ -36,15 +36,10 @@ function ShopGrid() {
     const  loading = productosState.loading;
 
     var products = productosState.productos.filter(producto=> (producto.category== (query.categoria || producto.category)));
-    var ordenados = productosState.productos.filter(producto=> (producto.category== (query.categoria || producto.category)));;
+    var productoFiltrado = products.filter(producto=> ( producto.regularPrice >= (Number(query.minPrice) )     ));
 
+    console.log(productoFiltrado  )
 
-    ordenados.sort((a, b) => {
-       var rr = a.regularPrice - b.regularPrice;
-        return  console.log( rr );
-        });
-    
- 
     const totalCount = productosState.productos.length;
 
     useEffect( () => {

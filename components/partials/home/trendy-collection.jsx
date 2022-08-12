@@ -50,23 +50,17 @@ function TrendyCollection( props ) {
         </div>
         <div className="tab-content tab-content-carousel">
         {
-                categoriasDestacada.map((categoria, index)=>{
-                    return(
-                        <TabPanel key={index}>
+            categoriasDestacada.map((categoria, index)=>{
+                return(
+                    <TabPanel key={index}>
                         {
                             productosState.loading?
                             <OwlCarousel adClass="owl-simple carousel-equal-height carousel-with-shadow" options={ productSlider }>
                                     {
                                         productosState.productos.map( ( producto, index ) =>{   
-                                                                                     
-                                                  
-                                           
-                                                          <div className="skel-pro" key={ index }>{producto.name}</div>
-                                                       
-                                                        
-                                                  
-                                          
-                  
+
+                                            <div className="skel-pro" key={ index }>{ producto.name }</div>
+            
                                         })
                                     }
                                 </OwlCarousel>
@@ -77,13 +71,11 @@ function TrendyCollection( props ) {
                                             <div className="skel-pro" key={ index }></div>
                                         )
                                     }
-                                </OwlCarousel>
-                            
+                                </OwlCarousel>                            
                         }
-                    </TabPanel>  
-                        
-                    )
-                })
+                    </TabPanel>                          
+                )
+            })
         }
         </div>
         
