@@ -10,13 +10,12 @@ import { verificarUsuario } from "../../../store/actions/Auth";
 
 const customStyles = {
     overlay: {
-        backgroundColor: 'rgba(77,77,77,0.6)',
+        backgroundColor: 'rgba(00,00,00,0.7)',        
         zIndex: '9000'
     }
 }
 
 Modal.setAppElement( 'body' );
-
 const LoginModal = ()  => {
     const router = useRouter()
     const dispatch = useDispatch();
@@ -26,10 +25,8 @@ const LoginModal = ()  => {
         };  
 
     const verifyUser =  useSelector(state => state.authReducer.dataUser);
-
     const [ open, setOpen ] = useState( false );
-    let timer;
-    
+    let timer;    
     const [passwordShown, setPasswordShown] = useState(false);
     const togglePasswordVisiblity = () => {
       setPasswordShown(passwordShown ? false : true);

@@ -21,70 +21,60 @@ function TrendyCollection( props ) {
     } } );
     console.log( categoriasDestacada);
     
-
     return (
         <Tabs defaultIndex={ 0 } selectedTabClassName="show" >
         <div className="bg-lighter trending-products trendy">
-   
+            <div className="heading heading-flex mb-3">
+                <div className="heading-left">
+                    <h2 className="title">Producto</h2>
+                </div>
 
-        <div className="heading heading-flex mb-3">
-            <div className="heading-left">
-                <h2 className="title">Producto</h2>
+                <div className="heading-right">
+                    <TabList className="nav nav-pills justify-content-center">
+                    {
+                        categoriasDestacada.map((categoria, index)=>{
+                            return(
+                                <Tab className="nav-item" key={index}>
+                                <span className="nav-link">{categoria.name}</span>
+                            </Tab>
+                            )
+                        })
+                        
+                    }
+                    
+                    </TabList>
+                </div>
             </div>
-
-            <div className="heading-right">
-                <TabList className="nav nav-pills justify-content-center">
+            <div className="tab-content tab-content-carousel">
                 {
                     categoriasDestacada.map((categoria, index)=>{
                         return(
-                            <Tab className="nav-item" key={index}>
-                              <span className="nav-link">{categoria.name}</span>
-                           </Tab>
+                            <TabPanel key={index}>
+                                {
+                                    productosState.loading?
+                                    <OwlCarousel adClass="owl-simple carousel-equal-height carousel-with-shadow" options={ productSlider }>
+                                            {
+                                                productosState.productos.map( ( producto, index ) =>{   
+
+                                                    <div className="skel-pro" key={ index }>{ producto.name }</div>
+                    
+                                                })
+                                            }
+                                        </OwlCarousel>
+                                    :
+                                        <OwlCarousel adClass="owl-simple carousel-equal-height carousel-with-shadow" options={ productSlider }>
+                                            {
+                                                [ 1, 2, 3, 4, 5, 6 ].map( ( item, index ) =>
+                                                    <div className="skel-pro" key={ index }></div>
+                                                )
+                                            }
+                                        </OwlCarousel>                            
+                                }
+                            </TabPanel>                          
                         )
                     })
-                       
                 }
-                
-                </TabList>
             </div>
-        </div>
-        <div className="tab-content tab-content-carousel">
-        {
-            categoriasDestacada.map((categoria, index)=>{
-                return(
-                    <TabPanel key={index}>
-                        {
-                            productosState.loading?
-                            <OwlCarousel adClass="owl-simple carousel-equal-height carousel-with-shadow" options={ productSlider }>
-                                    {
-                                        productosState.productos.map( ( producto, index ) =>{   
-
-                                            <div className="skel-pro" key={ index }>{ producto.name }</div>
-            
-                                        })
-                                    }
-                                </OwlCarousel>
-                            :
-                                <OwlCarousel adClass="owl-simple carousel-equal-height carousel-with-shadow" options={ productSlider }>
-                                    {
-                                        [ 1, 2, 3, 4, 5, 6 ].map( ( item, index ) =>
-                                            <div className="skel-pro" key={ index }></div>
-                                        )
-                                    }
-                                </OwlCarousel>                            
-                        }
-                    </TabPanel>                          
-                )
-            })
-        }
-        </div>
-        
-                                     
-            
-       
-
-
-
         </div>
     </Tabs>
     )

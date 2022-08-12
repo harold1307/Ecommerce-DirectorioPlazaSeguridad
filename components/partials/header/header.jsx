@@ -85,7 +85,7 @@ function Header() {
             </div>
 
             <StickyHeader>
-                <div className="header-bottom sticky-header">
+                <div className="header-bottom sticky-header px-5">
                     <div className={ containerClass }>
                         <div className="row">
                             <div className="col-auto col-lg-3 col-xl-3 col-xxl-2 header-left">
@@ -96,7 +96,8 @@ function Header() {
                             </div>
 
                             <div className="col col-lg-3 col-xl-3 col-xxl-2 header-right">
-                                <i className="la la-lightbulb-o"></i><p>Clearance Up to 30% Off</p>
+                            <i className="icon-user"></i><span className="pr-5">Registro  </span>                           
+                            <i className="icon-user"></i>Acceso
                             </div>
                         </div>
                     </div>
