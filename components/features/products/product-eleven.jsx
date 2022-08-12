@@ -22,7 +22,7 @@ const ProductEleven = ( props ) => {
 
         <Fragment>
                 
-                <div className="product product-7 text-center w-100">
+                <div className="product product-4 text-center w-100">
                     <figure className="product-media">
                     {
                             product.new ?

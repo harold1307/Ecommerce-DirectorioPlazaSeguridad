@@ -11,9 +11,7 @@ export function cargarCompaniasAll() {
         dispatch( CompaniasAll_Inicio() );    
         try {               
             const products = await clienteAxios.get('/companies');                   
-           dispatch( CompaniasAll_Exito(products.data) );  
-           
-
+           dispatch( CompaniasAll_Exito(products.data) ); 
         } catch (error) {
             console.log(error);               
             dispatch( CompaniasAll_Error(error) );        

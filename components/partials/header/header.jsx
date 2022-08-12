@@ -46,15 +46,15 @@ function Header() {
 
             <div className="header-middle">
                 <div className={ containerClass }>
-                    <div className="row">
-                        <div className="col-auto col-lg-3 col-xl-3 col-xxl-2">
+                    <div className="row px-md-3">
+                        <div className="col-auto col-lg-3 col-xl-3 col-xxl-2 justify-content-center">
                             <button className="mobile-menu-toggler" onClick={ openMobileMenu }>
                                 <span className="sr-only">Toggle mobile menu</span>
                                 <i className="icon-bars"></i>
                             </button>
 
                             <ALink href="/" className="logo">
-                                <img src="/images/logo.png" alt="Logo" width={ 105 } height={ 27 } />
+                                <img src="/Logo-Directorio-de-Seguridad.png" alt="Logo" width={ 150 } />
                             </ALink>
                         </div>
 

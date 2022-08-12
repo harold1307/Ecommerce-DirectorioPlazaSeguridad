@@ -87,7 +87,6 @@ const LoginModal = ()  => {
                                                 <span className="nav-link">Ingresar</span>
                                             </Tab>
                                         </TabList>
-
                                         <div className="tab-content">
                                             <TabPanel style={ { paddingTop: "2rem" } }>                                       
                                                 <div>                                            
@@ -111,21 +110,22 @@ const LoginModal = ()  => {
                                                                 <input type="checkbox" className="custom-control-input" id="signin-remember-2" />
                                                                 <label className="custom-control-label" htmlFor="signin-remember-2">Recordarme</label>
                                                             </div>
-
-                                                            <ALink href="/pages/login" className="forgot-link">¿Olvido su clave?</ALink>
+                                                            <ALink href="/pages/login" className="forgot-link">¿Recuperar clave?</ALink>
                                                         </div>
                                                     </form>    
                                                     <div className="form-choice">                                                
-                                                    <div className="row">
-                                                        <div className="col-sm-12 bg-btn-ingreso">
-                                                            <ALink href="/pages/login" className="btn  btn-primary btn-login btn-rounded btn-shadow btn-g my-3">
-                                                                <i className="icon-user"></i>
-                                                                Crear cuenta
-                                                        </ALink>
+                                                        <div className="row">
+                                                            <div className='col-12'>
+                                                                    <p className="text-center pt-3">¿Aun no tiene una cuenta?</p>
+                                                            </div>
+                                                            <div className="col-12 bg-btn-ingreso">
+                                                                <ALink href="/registro" className="btn  btn-primary btn-login btn-rounded btn-shadow btn-g my-3">
+                                                                    <i className="icon-user"></i>
+                                                                    Crear cuenta
+                                                            </ALink>
+                                                            </div>                                                        
                                                         </div>
-                                                        
-                                                    </div>
-                                                </div>                                              
+                                                    </div>                                              
                                                 </div>
                                             </TabPanel>
                                         </div>

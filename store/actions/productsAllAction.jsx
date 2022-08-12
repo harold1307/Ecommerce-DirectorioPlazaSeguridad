@@ -5,15 +5,12 @@ import {
     } from '../types/typesProductsAll';
 import clienteAxios from '../../configuracion/axios';
 
-
 export function cargarProductosAll() {
     return async (dispatch) => {
         dispatch( cargarProductosAll_Inicio() );    
         try {               
             const products = await clienteAxios.get('/products');                   
-           dispatch( cargarProductosAll_Exito(products.data) );  
-           
-
+            dispatch( cargarProductosAll_Exito(products.data) );  
         } catch (error) {
             console.log(error);               
             dispatch( cargarProductosAll_Error(error) );        

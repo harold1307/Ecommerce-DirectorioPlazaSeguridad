@@ -1,3 +1,2 @@
-export const ADDCART_INICIO = "ADDCART_INICIO";
-export const ADDCART_EXITO = "ADDCART_EXITO";
-export const ADDCART_ERROR = "ADDCART_ERROR";
+export const ADD_CART = "ADD_CART";
+export const REMOVE_CART = "REMOVE_CART";

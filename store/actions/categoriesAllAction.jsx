@@ -10,9 +10,8 @@ import {
             dispatch( cargarCategoriasAll_Inicio() );    
             try {               
                 const categories = await clienteAxios.get('/categories');                   
-               dispatch( cargarCategoriasAll_Exito(categories.data) );  
-               
-    
+                dispatch( cargarCategoriasAll_Exito(categories.data) );  
+
             } catch (error) {
                 console.log(error);               
                 dispatch( cargarCategoriasAll_Error(error) );        
@@ -42,6 +41,5 @@ import {
             categorias : [],
             loading: false,
             error: error.code
-        }
-        
+        }   
     });    

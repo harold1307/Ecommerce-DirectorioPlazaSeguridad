@@ -1,7 +1,6 @@
 import {
-    ADDCART_INICIO,
-    ADDCART_EXITO ,
-    ADDCART_ERROR
+    ADD_CART,
+    REMOVE_CART    
     } from '../types/typesAddCart';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -20,9 +19,8 @@ export function addCartAction( producto ) {
         try {     
             
                 
-                    
-           dispatch( addCartAction_Exito(producto) );   
-               
+            console.log('addCart:', producto);       
+           dispatch( addCartAction_Exito(producto) );              
            toast.success('Producto agregado.', {
            position: "top-right",
             autoClose: 3000,
@@ -33,9 +31,7 @@ export function addCartAction( producto ) {
             progress: '' ,
             });
 
-        } catch (error) {
-            console.log(error);               
-            dispatch( addCartAction_Error(error) );             
+        } catch (error) {            
             toast.error('Upp, parece que hubo un error', {
                 position: "bottom-center",
                 autoClose: 5000,
@@ -50,29 +46,13 @@ export function addCartAction( producto ) {
 }
 
 
-const addCartAction_Inicio = () => ({
-    type: ADDCART_INICIO,
-    payload: {
-        producto  : [],
-        loading: false,
-        error: false
-    }
-});
+
 const addCartAction_Exito = (producto) => ({
-    type: ADDCART_EXITO,
+    type: ADD_CART,
      payload: {
-        producto  : producto,
-        loading: true,
-        error: false
+        producto : producto
     }
 });
 
-const addCartAction_Error = (error) => ({
-    type: ADDCART_ERROR,
-     payload: {
-        producto  : [],
-        loading: true,
-        error: error.message
-    }
-});
+
  

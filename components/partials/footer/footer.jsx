@@ -34,8 +34,8 @@ function Footer() {
                     <div className="row">
                         <div className="col-sm-12 col-xl-4">
                             <div className="widget widget-about">
-                                <img src="/images/logo-footer.png" className="footer-logo" alt="Footer Logo" width="105" height="25" />
-                                <p>Praesent dapibus, neque id cursus ucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus.</p>
+                                <img src="/Logo-Directorio-de-Seguridad.png" className="footer-logo" alt="Logo" width="200" />
+                                <p>Plaza Seguridad® es una plataforma tecnológica de negocios que conecta a las personas con necesidades de seguridad y a las empresas que pueden proveer soluciones innovadoras para su protección y la de sus bienes en el ámbito en el que se desarrolla.</p>
 
                                 <div className="widget-about-info">
                                     <div className="row">

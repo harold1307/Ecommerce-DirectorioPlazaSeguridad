@@ -1,7 +1,7 @@
 /* Product */
 .product {
 	position: relative;
-	margin-bottom: 1rem;
+	margin-bottom: 4.5rem;
 	transition: box-shadow .35s ease;
 	background-color: #fff;
 
@@ -11,7 +11,7 @@
 }
 
 .product:hover {
-	box-shadow: 0 5px 15px rgba(0,0,0, .05);
+	box-shadow: 0 3px 16px rgb(0 0 0 / 15%);
 }
 
 
@@ -326,17 +326,17 @@
 
 	&.label-sale {
 		color: #fff;
-		background-color: #ef837b;
+		background-color: #fb9902;
 	}
 
 	&.label-new {
 		color: #fff;
-		background-color: #a6c76c;
+		background-color: #d0ea2b;
 	}
 
 	&.label-top {
 		color: #fff;
-		background-color: #7dd2ea;
+		background-color: #3d01a4;
 	}
 
 	&.label-out {
@@ -1640,7 +1640,7 @@
 /* Product List */
 .product.product-list {
 	box-shadow: none;
-	padding-bottom: 2rem;
+	padding-bottom: 0;
 	border-bottom: .1rem solid #ebebeb;
 	margin-bottom: 2rem;
 

@@ -1,38 +1,24 @@
 import {
-    ADDCART_INICIO,
-    ADDCART_EXITO ,
-    ADDCART_ERROR
+    ADD_CART,
+    REMOVE_CART  
     } from '../types/typesAddCart';
 
 const initialState = {
-    producto : [],
-    loading: false,
-    error: false
+    producto :null
 }
 
 const addCartReducer = (state = initialState, action)=> {
     switch(action.type) {
-        case ADDCART_INICIO: 
+        case ADD_CART: 
             return {
-                ...state,
-                producto  : action.payload.producto,
-                loading: action.payload.loading,
-                error: action.payload.error,
+                ...state,             
+                producto    :  action.payload.producto               
             }
-        case ADDCART_EXITO: 
+        case REMOVE_CART: 
             return {
-                ...state,
-                producto  :action.payload.producto,
-                loading: action.payload.loading,
-                error: action.payload.error,
+                producto: [ ]
             }    
-        case ADDCART_ERROR: 
-            return {
-                ...state,
-                producto  : action.payload.producto,
-                loading: action.payload.loading,
-                error: action.payload.error,
-            }                            
+                                  
         default:
             return state;     
     }

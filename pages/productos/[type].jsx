@@ -19,6 +19,7 @@ function ShopGrid() {
     const router = useRouter();
     const type = router.query.type;
     const query = router.query;
+    console.log(query)
   
     const getProducts = ()=>{
         return []
@@ -34,7 +35,16 @@ function ShopGrid() {
     const  productosState =  useSelector(state => state.productsAll);
     const  loading = productosState.loading;
 
-    const products = productosState.productos.filter(producto=> producto.category== (query.categoria || producto.category));
+    var products = productosState.productos.filter(producto=> (producto.category== (query.categoria || producto.category)));
+    var ordenados = productosState.productos.filter(producto=> (producto.category== (query.categoria || producto.category)));;
+
+
+    ordenados.sort((a, b) => {
+       var rr = a.regularPrice - b.regularPrice;
+        return  console.log( rr );
+        });
+    
+ 
     const totalCount = productosState.productos.length;
 
     useEffect( () => {
@@ -100,12 +110,12 @@ function ShopGrid() {
         let queryObject = router.query;
         let url = router.pathname.replace( '[type]', query.type ) + '?';
         for ( let key in queryObject ) {
-            if ( key !== "type" && key !== "por" ) {
+            if ( key !== "type" && key !== "ordenar" ) {
                 url += key + '=' + queryObject[ key ] + '&';
             }
         }
 
-        router.push( url + 'por=' + e.target.value );
+        router.push( url + 'ordenar=' + e.target.value );
     }
 
     function toggleSidebar() {
@@ -148,11 +158,13 @@ function ShopGrid() {
                                 <ALink href="/productos/todos">Productos</ALink>
                             </li>
                                 {
-                                    query.categoria ?
-                                   <li className="breadcrumb-item active">{query.categoria}</li>
+                                    query.categoria ?                               
+                                  
+                                    <li className="breadcrumb-item active"><ALink href={ { pathname:  `/productos/todos`, query: {categoria: query.categoria    } } }  scroll={ false }>{ query.categoria }</ALink></li>
                                    :
                                    <li className="breadcrumb-item active">Todos</li>
                                 }
+
                             
                           
                         </ol>
@@ -179,19 +191,19 @@ function ShopGrid() {
 
                                     <div className="toolbox-right">
                                         <div className="toolbox-sort">
-                                            <label htmlFor="sortby">Sort by:</label>
+                                            <label htmlFor="sortby">ordenar:</label>
                                             <div className="select-custom">
                                                 <select
                                                     name="sortby"
                                                     id="sortby"
                                                     className="form-control"
                                                     onChange={ onSortByChange }
-                                                    value={ query.sortBy ? query.sortBy : 'default' }
+                                                    value={ query.sortBy ? query.sortBy : 'normal' }
                                                 >
-                                                    <option value="default">Default</option>
-                                                    <option value="featured">Most Popular</option>
-                                                    <option value="rating">Most Rated</option>
-                                                    <option value="new">Date</option>
+                                                    <option value="normal">Normal</option>
+                                                    <option value="ordenDescendente">Precio descendente</option>
+                                                    <option value="ordenAscendente">Precio ascendente</option>
+                                                    
                                                 </select>
                                             </div>
                                         </div>
@@ -299,5 +311,5 @@ const mapStateToProps = ( state ) => {
     }
 }
 
-export default React.memo(ShopGrid) ;
+export default ShopGrid ;
 
