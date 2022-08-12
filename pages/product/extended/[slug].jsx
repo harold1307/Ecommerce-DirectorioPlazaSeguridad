@@ -58,7 +58,7 @@ function ProductDefault () {
                             </div>
                         </div>
                     </div>
-                </div >
+                </div>
                 {
                     loading ?
                         <div className="skel-pro-tabs"></div>
@@ -70,8 +70,8 @@ function ProductDefault () {
                 <div className="container">
                     <RelatedProductsOne products={ related } loading={ loading } />
                 </div>
-            </div >
-        </div >
+            </div>
+        </div>
     )
 }
 

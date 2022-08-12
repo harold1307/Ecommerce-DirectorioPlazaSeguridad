@@ -204,7 +204,7 @@ function ShopNoSidebar() {
                                 </div>
                             </div>
                         </div>
-                    </div >
+                    </div>
 
                     <ShopListThree products={ products } loading={ loading }></ShopListThree>
                     <div className={ `load-more-container text-center ${ ( ( totalCount > perPage ) || moreLoading ) ? '' : 'd-none' }` }>
@@ -224,8 +224,8 @@ function ShopNoSidebar() {
                     <button className="sidebar-fixed-toggler d-lg-none" onClick={ toggleSidebar }>
                         <i className="icon-cog"></i>
                     </button>
-                </div >
-            </div >
+                </div>
+            </div>
         </main >
     )
 }

@@ -19,6 +19,7 @@ function ShopGrid() {
     const router = useRouter();
     const type = router.query.type;
     const query = router.query;
+    const slug = router.query.slug;
     console.log(query)
   
     const getProducts = ()=>{
@@ -36,6 +37,9 @@ function ShopGrid() {
     const  loading = productosState.loading;
 
     var products = productosState.productos.filter(producto=> (producto.category== (query.categoria || producto.category)));
+    
+    
+    //FILTRO PRECIOFALTA
     var productoFiltrado = products.filter(producto=> ( producto.regularPrice >= (Number(query.minPrice) )     ));
 
     console.log(productoFiltrado  )
@@ -59,27 +63,9 @@ function ShopGrid() {
             setToggle( false );
     }
 
-    useEffect( () => {
-        getProducts( {
-            variables: {
-                searchTerm: query.searchTerm,
-                color: query.color ? query.color.split( ',' ) : [],
-                size: query.size ? query.size.split( ',' ) : [],
-                brand: query.brand ? query.brand.split( ',' ) : [],
-                minPrice: parseInt( query.minPrice ),
-                maxPrice: parseInt( query.maxPrice ),
-                category: query.category,
-                sortBy: query.sortBy ? query.sortBy : 'default',
-                page: query.page ? parseInt( query.page ) : 1,
-                perPage: perPage,
-                list: true
-            }
-        } );
-
+    useEffect( () => {    
         scrollToPageContent();
     }, [ query, perPage ] )
-
-    console.log()
 
     useEffect( () => {
         if ( products ) setFirstLoading( true );
@@ -142,7 +128,7 @@ function ShopGrid() {
     return (
         <Layout>
             <main className="main shop">
-                <PageHeader title={ pageTitle } subTitle="Shop" />
+                <PageHeader title={ 'Productos'} subTitle={   `Categoría: ${query.categoria || 'Todos'} `} />
                 <nav className="breadcrumb-nav mb-2">
                     <div className="container">
                         <ol className="breadcrumb">

@@ -226,8 +226,8 @@ function CategoryBoxed() {
                 </div>
                 <div className="sidebar-filter-overlay" onClick={ closeSidebar }></div>
                 <ShopSidebarTwo></ShopSidebarTwo>
-            </div >
-        </div >
+            </div>
+        </div>
     )
 }
 

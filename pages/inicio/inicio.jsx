@@ -361,13 +361,13 @@ const Home = () =>{
                         <div className="mb-5"></div>
 
                         <Reveal keyframes={ fadeInRightShorter } delay={ 300 } duration="1000" triggerOnce>
-                            <p>"ElectronicsCollection"</p>
+                            <p>ElectronicsCollection</p>
                         </Reveal>
 
                         <div className="mb-3"></div>
 
                         <Reveal keyframes={ fadeInRightShorter } delay={ 300 } duration="1000" triggerOnce>
-                            <p>'FurnitureCollection '</p>
+                            <p>FurnitureCollection</p>
                         </Reveal>
 
                         <div className="mb-3"></div>
@@ -458,13 +458,13 @@ const Home = () =>{
                         <div className="mb-3"></div>
 
                         <Reveal keyframes={ fadeInRightShorter } delay={ 300 } duration="1000" triggerOnce>
-                        <p>'CookingCollection'</p>
+                        <p>CookingCollection</p>
                         </Reveal>
 
                         <div className="mb-3"></div>
 
                         <Reveal keyframes={ fadeInRightShorter } delay={ 300 } duration="1000" triggerOnce>
-                            <p>'CookingCollection'</p>
+                            <p>CookingCollection</p>
                         </Reveal>
 
                         <div className="mb-3"></div>
@@ -637,7 +637,7 @@ const Home = () =>{
                                     </div>
 
                                     <div className="col-xl-12">
-                                        <p>'BlogCollection'</p>
+                                        <p>BlogCollection</p>
                                     </div>
                                 </div>
                             </div>

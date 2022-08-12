@@ -66,9 +66,9 @@ function ProductCentered () {
                     }
 
                     <RelatedProductsOne products={ related } loading={ loading } />
-                </div >
-            </div >
-        </div >
+                </div>
+            </div>
+        </div>
     )
 }
 

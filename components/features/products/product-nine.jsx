@@ -22,6 +22,10 @@ function ProductSix ( props ) {
         e.preventDefault();
         dispatch( addCartAction(product) );  
     }
+    function onQuickView ( e ) {
+        e.preventDefault();
+        props.showQuickView( product );
+    }
 
 
 
@@ -32,13 +36,13 @@ function ProductSix ( props ) {
                     <figure className="product-media">
                         {
                             product.new ?
-                                <span className="product-label label-new">New</span>
+                                <span className="product-label label-new">Nuevo</span>
                                 : ""
                         }
 
                         {
                             product.salePrice ?
-                                <span className="product-label label-sale">Sale</span>
+                                <span className="product-label label-sale">Oferta</span>
                                 : ""
                         }
 
@@ -54,7 +58,7 @@ function ProductSix ( props ) {
                                 : ""
                         }
 
-                        <ALink href={ `/product/default/${product.slug}` }>
+                        <ALink href={ `/producto/${product.COMPANY._id}/${product._id}/${product.name.split(' ').join('_')}` }>{ product.name }
                             <LazyLoadImage
                                 alt="product"
                                 src={ product.image.location }
@@ -85,7 +89,7 @@ function ProductSix ( props ) {
                         </div>
 
                         <h3 className="product-title">
-                            <ALink href={ `/product/default/${product.value}` }>{ product.name }</ALink>
+                            <ALink href={ `/producto/${product.COMPANY._id}/${product._id}/${product.name.split(' ').join('_')}` }>{ product.name }</ALink>
                         </h3>
 
                         <div className="product-content">
@@ -98,12 +102,38 @@ function ProductSix ( props ) {
 
                 <div className="col-md-3 col-6 order-md-last order-lg-last">
                 {
-                      product.stockStatus && product.stockStatus !== 0 ?
-                    <div className="product-list-action">
-                        
+                    product.stockStatus && product.stockStatus !== 0 ?
+                    <div className="product-list-action">  
+                          {
+                            !product.stockStatus || product.stockStatus == 0 ?
+                                <div className="product-price">
+                                    <span className="out-price">Agotado</span>
+                                </div>
+                                :
+                               
+                                    product.salePrice?
+                                        <div className="product-price">
+                                            <span className="new-price">${product.salePrice}</span>
+                                            <span className="old-price">${product.regularPrice}</span>
+                                        </div>
+                                        :
+                                        <div className="product-price">${product.regularPrice}</div>                                      
+                        }
+                       
+                        {
+                        product.stockStatus && product.stockStatus !== 0 ?
+                            <div className="product-action">    
+                                                          
                                 <button className="btn-product btn-cart" onClick={ onCartClick }>
                                     <span>Agregar</span>
                                 </button>
+                                <button className="btn-product btn-quickview" title="Quick View" onClick={ onQuickView }>
+                                        <span>Vista</span>
+                                </button>
+                                        
+                            </div>
+                            : ""
+                        }
                         
                     </div>
                     :
@@ -113,13 +143,6 @@ function ProductSix ( props ) {
             </div>
         </div>
     )
-}
-
-const mapStateToProps = ( state ) => {
-    return {
-        wishlist: state.wishlist.data,
-        comparelist: state.comparelist.data
-    }
 }
 
 export default  React.memo( ProductSix);

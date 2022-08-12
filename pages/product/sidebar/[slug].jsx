@@ -79,9 +79,9 @@ function ProductSidebar () {
                             </StickyBox>
                         </div>
                     </div>
-                </div >
-            </div >
-        </div >
+                </div>
+            </div>
+        </div>
     )
 }
 

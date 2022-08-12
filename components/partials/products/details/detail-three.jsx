@@ -333,7 +333,7 @@ function DetailThree ( props ) {
 
                                 }
                             </div>
-                        </div >
+                        </div>
 
                         <div className="product-details-footer details-footer-col">
                             <div className="product-cat">
@@ -348,7 +348,7 @@ function DetailThree ( props ) {
                                         </span>
                                     ) )
                                 }
-                            </div >
+                            </div>
 
                             <div className="social-icons social-icons-sm">
                                 <span className="social-label">Share:</span>
@@ -365,19 +365,13 @@ function DetailThree ( props ) {
                                     <i className="icon-pinterest"></i>
                                 </ALink>
                             </div>
-                        </div >
+                        </div>
                     </div>
                 </div>
             </div>
-        </div >
+        </div>
     )
 }
 
-const mapStateToProps = ( state ) => {
-    return {
-        cartlist: state.cartlist.data,
-        wishlist: state.wishlist.data,
-    }
-}
 
-export default connect( mapStateToProps, { ...wishlistAction, ...cartAction } )( DetailThree );
+export default  DetailThree ;

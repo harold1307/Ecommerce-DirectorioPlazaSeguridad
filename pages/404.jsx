@@ -31,7 +31,7 @@ function ErrorPage () {
                 <div className="container">
                     <h1 className="error-title">Error 404</h1>
 
-                    <p>We are sorry, the page you've requested is not available.</p>
+                    <p>We are sorry, the page you have  requested is not available.</p>
                     <a onClick={ (  ) => { retornar( ); } }className="btn btn-outline-primary-2 btn-minwidth-lg">
                         <span>RETORNAR</span>
                         <i className="icon-long-arrow-right"></i>

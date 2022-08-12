@@ -63,7 +63,7 @@ function Qty ( props ) {
                     </button>
                 </div>
             </div>
-        </div >
+        </div>
     )
 }
 

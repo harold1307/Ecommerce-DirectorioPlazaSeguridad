@@ -17,6 +17,10 @@ const ProductEleven = ( props ) => {
         e.preventDefault();
         dispatch( addCartAction(product) );  
     }
+    function onQuickView ( e ) {
+        e.preventDefault();
+        props.showQuickView( product );
+    }
 
     return (
 
@@ -31,7 +35,7 @@ const ProductEleven = ( props ) => {
                         }
 
                         {
-                            product.salePrice ?
+                            product.salePrice?
                                 <span className="product-label label-sale">Oferta</span>
                                 : ""
                         }
@@ -69,14 +73,18 @@ const ProductEleven = ( props ) => {
                         </ALink>
 
                         {
-                            product.stockStatus && product.stockStatus !== 0 ?
+                        product.stockStatus && product.stockStatus !== 0 ?
                             <div className="product-action">
                                 {              
                                                           
                                         <button className="btn-product btn-cart" onClick={ onCartClick }>
                                             <span>Agregar</span>
                                         </button>
+                                        
                                 }
+                                <button className="btn-product btn-quickview" title="Quick View" onClick={ onQuickView }>
+                                     <span>Vista</span>
+                               </button>
                             </div>
                             : ""
                         }
@@ -94,11 +102,19 @@ const ProductEleven = ( props ) => {
                         </h3>
 
                         {
-                               product.salePrice ?                   
-                                <div className="product-price"><span className='mr-2'>${product.salePrice.toFixed( 2 ) }  </span><span className='text-decoration-line'>${product.regularPrice.toFixed( 2 ) }</span></div>
+                            !product.stockStatus || product.stockStatus == 0 ?
+                                <div className="product-price">
+                                    <span className="out-price">Agotado</span>
+                                </div>
                                 :
-                                <div className="product-price">${product.regularPrice.toFixed( 2 ) }</div>
-                    
+                               
+                                    product.salePrice?
+                                        <div className="product-price">
+                                            <span className="new-price">${product.salePrice}</span>
+                                            <span className="old-price">${product.regularPrice}</span>
+                                        </div>
+                                        :
+                                        <div className="product-price">${product.regularPrice}</div>
                         }
 
                     

@@ -295,7 +295,7 @@ function About2 () {
                     <div className="row">
                         <div className="col-lg-10 offset-lg-1">
                             <div className="brands-text text-center mx-auto mb-6">
-                                <h2 className="title">The world's premium design brands in one destination.</h2>
+                                <h2 className="title">The world is premium design brands in one destination.</h2>
                                 <p>Phasellus hendrerit. Pellentesque aliquet nibh nec urna. In nisi neque, aliquet vel, dapibus id, mattis vel, nis</p>
                             </div>
                             <div className="brands-display">
@@ -309,13 +309,13 @@ function About2 () {
                                             </div>
                                         )
                                     }
-                                </div >
-                            </div >
-                        </div >
-                    </div >
-                </div >
-            </div >
-        </div >
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     )
 }
 

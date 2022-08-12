@@ -13,6 +13,7 @@ const WrappedApp = ({ Component, pageProps }) => {
       <Fragment>      
                 <Helmet>
                     <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
+                    <meta charset="utf-8" />
                     <meta name="keywords" content="Molla React Template" />
                     <meta name="description" content="Molla –  eCommerce React Template is a multi-use React template. It is designed to go well with multi-purpose websites."/>
                     <meta name="author" content="d-themes" />

@@ -95,9 +95,9 @@ function Header() {
                                 <MainMenu />
                             </div>
 
-                            <div className="col col-lg-3 col-xl-3 col-xxl-2 header-right">
-                            <i className="icon-user"></i><span className="pr-5">Registro  </span>                           
-                            <i className="icon-user"></i>Acceso
+                            <div className="col col-lg-3 col-xl-3 col-xxl-2 header-right scrollVisible">
+                               <i className="icon-user"></i><span className="pr-5">Registro  </span>                           
+                               <i className="icon-user"></i>Acceso
                             </div>
                         </div>
                     </div>

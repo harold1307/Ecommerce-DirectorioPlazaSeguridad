@@ -299,7 +299,7 @@ function DetailTwo ( props ) {
                                     <a href="#" onClick={ clearSelection }>clear</a>
                                     : ""
                             }
-                        </div >
+                        </div>
                         <SlideToggle collapsed={ true }>
                             { ( { onToggle, setCollapsibleElement, toggleState } ) => (
                                 <div>
@@ -336,7 +336,7 @@ function DetailTwo ( props ) {
 
                     }
                 </div>
-            </div >
+            </div>
 
             <div className="product-details-footer">
                 <div className="product-cat">
@@ -351,7 +351,7 @@ function DetailTwo ( props ) {
                             </span>
                         ) )
                     }
-                </div >
+                </div>
 
                 <div className="social-icons social-icons-sm">
                     <span className="social-label">Share:</span>
@@ -368,8 +368,8 @@ function DetailTwo ( props ) {
                         <i className="icon-pinterest"></i>
                     </ALink>
                 </div>
-            </div >
-        </div >
+            </div>
+        </div>
     )
 }
 

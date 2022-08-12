@@ -71,9 +71,9 @@ function ProductFullwidth () {
                             </StickyBox>
                         </div>
                     </div>
-                </div >
-            </div >
-        </div >
+                </div>
+            </div>
+        </div>
     )
 }
 

@@ -2,16 +2,13 @@ import Modal from 'react-modal';
 import { connect } from 'react-redux';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import { Magnifier } from 'react-image-magnifiers';
-import { useRouter } from 'next/router';
-import { useQuery } from '@apollo/react-hooks';
+import { useRouter,  } from 'next/router';
+
 
 import OwlCarousel from '~/components/features/owl-carousel';
 import DetailOne from '~/components/partials/products/details/detail-one';
 
-import withApollo from '~/server/apollo';
-import { GET_PRODUCT } from '~/server/queries';
 
-import { actions as demoAction } from '~/store/demo';
 import React, { useState, useEffect } from 'react';
 
 const customStyles = {
@@ -28,10 +25,10 @@ function QuickViewModal ( props ) {
     if ( !slug ) {
         return <div></div>
     }
-    const { data, loading, error } = useQuery( GET_PRODUCT, { variables: { slug, onlyData: true } } );
-    const product = data && data.product.single;
-    const router = useRouter();
-    const [ carouselRef, setCarouselRef ] = useState( null );
+    const { data, loading, error } = [[], false, false];
+
+    const product = []; 
+    
 
     const events = {
         onTranslate: function ( e ) {
@@ -48,7 +45,8 @@ function QuickViewModal ( props ) {
         return () => {
             router.events.off( 'routeChangeStart', closeModal );
         }
-    }, [] )
+    }, [ ] )
+    const [ carouselRef, setCarouselRef ]= useState( false);
 
     function closeModal () {
         if ( document.querySelector( ".ReactModal__Content" ) ) {
@@ -121,16 +119,16 @@ function QuickViewModal ( props ) {
                                                         : ""
                                                 }
                                                 <OwlCarousel adClass="product-gallery-carousel owl-full owl-nav-dark cols-1 cols-md-2 cols-lg-3" onChangeRef={ setCarouselRef } events={ events } options={ { 'dots': false, 'nav': false } }>
-                                                    { product.pictures.map( ( item, index ) =>
+                                                    { product.map( ( item, index ) =>
                                                         <Magnifier
-                                                            imageSrc={ process.env.NEXT_PUBLIC_ASSET_URI + item.url }
+                                                            imageSrc={ item.image.location }
                                                             imageAlt="product"
-                                                            largeImageSrc={ process.env.NEXT_PUBLIC_ASSET_URI + item.url } // Optional
+                                                            largeImageSrc={ '' } // Optional
                                                             dragToMove={ false }
                                                             mouseActivation="hover"
                                                             cursorStyleActive="crosshair"
                                                             className="product-gallery-image"
-                                                            style={ { paddingTop: `${product.pictures[ 0 ].height / product.pictures[ 0 ].width * 100}%` } }
+                                                          
                                                             key={ "gallery-" + index }
                                                         />
                                                     ) }
@@ -139,14 +137,14 @@ function QuickViewModal ( props ) {
 
                                             <div className="product-sm row px-2" id="owl-dots">
                                                 {
-                                                    product.pictures.map( ( item, index ) =>
+                                                    product.map( ( item, index ) =>
                                                         <button className={ `product-gallery-item mb-0 ${0 === index ? 'active' : ''}` } key={ product.id + '-' + index } onClick={ e => changeBgImage( e, index ) }>
                                                             <div className="lazy-media">
                                                                 <figure className="mb-0">
                                                                     <div className="lazy-overlay"></div>
                                                                     <LazyLoadImage
                                                                         alt="Thumbnail"
-                                                                        src={ process.env.NEXT_PUBLIC_ASSET_URI + product.sm_pictures[ index ].url }
+                                                                        src={ item.image.location }
                                                                         width="100%"
                                                                         height="auto"
                                                                         className="d-block"

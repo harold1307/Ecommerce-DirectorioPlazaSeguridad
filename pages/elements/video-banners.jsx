@@ -96,7 +96,7 @@ function VideoBanners ( props ) {
                             </div>
                         </div>
                     </div>
-                </div >
+                </div>
 
                 <div className="container">
                     <hr className="mt-5 mb-4" />
@@ -136,7 +136,7 @@ function VideoBanners ( props ) {
                             </div>
                         </div>
                     </div>
-                </div >
+                </div>
 
                 <div className="container">
                     <hr className="mt-5 mb-4" />
@@ -190,10 +190,10 @@ function VideoBanners ( props ) {
                             </div>
                         </div>
                     </div>
-                </div >
-            </div >
+                </div>
+            </div>
             <ElementList />
-        </div >
+        </div>
     )
 }
 

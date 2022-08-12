@@ -1216,3 +1216,10 @@
 	  
  }
 
+ .sticky-header .header-right.scrollVisible{
+	display:none !important
+ }
+ .fixed .header-right.scrollVisible{
+	display:flex!important
+ }
+

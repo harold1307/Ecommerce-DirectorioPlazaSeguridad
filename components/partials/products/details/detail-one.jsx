@@ -142,11 +142,11 @@ function DetailOne ( props ) {
                                 className={ `btn-product btn-cart` }
                                 
                             >
-                                <span>add to cart</span>
+                                <span>Agregar</span>
                             </a>
                             {
                                 
-                                    <a href="#" className="btn-product btn-wishlist" ><span>Add to Wishlist</span></a>
+                                    <a href="#" className="btn-product btn-wishlist" ><span>Sumar a favorito</span></a>
 
                             }
                         </div>
