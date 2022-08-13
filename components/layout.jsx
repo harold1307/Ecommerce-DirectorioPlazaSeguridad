@@ -15,7 +15,7 @@ import { cargarCategoriasAll } from "../store/actions/categoriesAllAction";
 import { cargarProductosAll } from "../store/actions/productsAllAction";
 import { cargarCompaniasAll } from "../store/actions/companiesAllAction";
 
-function Layout ( {children} ) {
+function Layout ( {children} ) {   
     const router = useRouter( "" );
     let scrollTop;
     const dispatch = useDispatch();
@@ -67,7 +67,6 @@ function Layout ( {children} ) {
     function hideMobileMenu () {
         document.querySelector( 'body' ).classList.remove( 'mmenu-active' );
     }
-
     return (
         <>
             <div className="page-wrapper">

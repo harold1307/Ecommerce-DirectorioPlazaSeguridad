@@ -11,7 +11,7 @@ export default class MyDocument extends Document {
                     <link rel="stylesheet" type="text/css" href="/css/fonts-molla.min.css" />
                     <link rel="stylesheet" type="text/css" href="/vendor/line-awesome/css/line-awesome.min.css" />                              
                 </Head>
-                <body>
+                <body>                     
                     <Main />
                     <script src="/js/jquery.min.js" async></script>                    
                     <NextScript />

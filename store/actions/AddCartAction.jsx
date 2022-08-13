@@ -16,10 +16,9 @@ export function addCartAction( producto ) {
             draggable: true
             });
         
-        try {     
-            
-                
-            console.log('addCart:', producto);       
+        try {    
+           
+        console.log('addCart:', producto);       
            dispatch( addCartAction_Exito(producto) );              
            toast.success('Producto agregado.', {
            position: "top-right",

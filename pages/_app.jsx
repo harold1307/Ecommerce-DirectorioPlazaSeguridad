@@ -8,9 +8,9 @@ import '../public/scss/plugins/owl-carousel/owl.carousel.scss';
 import "../public/scss/style.scss";
 
 const WrappedApp = ({ Component, pageProps }) => {
-
+  
     return (
-      <Fragment>      
+      <Fragment>       
                 <Helmet>
                     <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
                     <meta charset="utf-8" />

@@ -11,17 +11,10 @@ const cors = initMiddleware(
 );
 
 export default async function handler(req, res) {
-  
   await cors(req, res);
   const credenciales = req.body;
- 
     try {               
       const datos = await clienteAxios.post('/login', JSON.stringify(credenciales) );  
-
-
-
-
-      
       res.json({
         credenciales :credenciales, 
         datos:datos
