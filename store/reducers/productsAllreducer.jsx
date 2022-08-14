@@ -3,9 +3,7 @@ import {
     CARGANDO_PRODUCTOS_EXITO ,
     CARGANDO_PRODUCTOS_ERROR
     } from '../types/typesProductsAll';
-
-
-    
+   
 const initialState = {
     productos : [],
     loading: false,

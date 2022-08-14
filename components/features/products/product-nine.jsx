@@ -24,7 +24,7 @@ function ProductSix ( props ) {
     }
     function onQuickView ( e ) {
         e.preventDefault();
-        props.showQuickView( product );
+       
     }
 
 

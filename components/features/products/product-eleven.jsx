@@ -15,11 +15,11 @@ const ProductEleven = ( props ) => {
 
     function onCartClick ( e ) {
         e.preventDefault();
-        dispatch( addCartAction(product) );  
+        dispatch( addCartAction(JSON.stringify(product)));  
     }
     function onQuickView ( e ) {
         e.preventDefault();
-        props.showQuickView( product );
+      
     }
 
     return (

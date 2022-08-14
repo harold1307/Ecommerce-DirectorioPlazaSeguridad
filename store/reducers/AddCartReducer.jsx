@@ -4,27 +4,23 @@ import {
     } from '../types/typesAddCart';
 
 const initialState = {
-    producto :null
+    producto :[]
 }
 
 const addCartReducer = (state = initialState, action)=> {
     switch(action.type) {
         case ADD_CART: 
-            return {
-                ...state.producto,
-               
-                producto    :  action.payload.producto           
 
-              
-                    
-            }
+        
+
+        return { ...state, producto: [...state.producto, { ...action.payload.producto, producto:  action.payload.producto }]}
+   
+        
+
         case REMOVE_CART: 
             return {
-                producto: [
-                    ...state.producto,
-                    addProductsJSON.stringify(action.payload.producto) 
-                       
-                ]
+                ...state,
+                producto :  [...state.producto, action.payload.producto]     
             }    
                                   
         default:

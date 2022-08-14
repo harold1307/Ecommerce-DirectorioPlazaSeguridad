@@ -15,28 +15,25 @@ function TrendyCollection( props ) {
 
     const  categoriasState =  useSelector(state => state.categoriesAll);
     const  productosState =  useSelector(state => state.productsAll);
-    const  categoriasDestacadas = categoriasState.categorias.map( (categoria, index) => {if (index < 5) {
-        categoriasDestacada.push(categoria); 
-        return categoriasDestacada
-    } } );
-    console.log( categoriasDestacada);
+    const  categoriasDestacadas = categoriasState.categorias.slice(0 , 5)
+    console.log( productosState.productos);
     
     return (
         <Tabs defaultIndex={ 0 } selectedTabClassName="show" >
         <div className="bg-lighter trending-products trendy">
             <div className="heading heading-flex mb-3">
                 <div className="heading-left">
-                    <h2 className="title">Producto</h2>
+                    <h2 className="title">Producto Destacados</h2>
                 </div>
 
                 <div className="heading-right">
                     <TabList className="nav nav-pills justify-content-center">
                     {
-                        categoriasDestacada.map((categoria, index)=>{
+                        categoriasDestacadas.map((categoria, index)=>{
                             return(
                                 <Tab className="nav-item" key={index}>
-                                <span className="nav-link">{categoria.name}</span>
-                            </Tab>
+                                     <span className="nav-link"><small>{categoria.name}</small></span>
+                                </Tab>
                             )
                         })
                         
@@ -47,17 +44,19 @@ function TrendyCollection( props ) {
             </div>
             <div className="tab-content tab-content-carousel">
                 {
-                    categoriasDestacada.map((categoria, index)=>{
+                    categoriasDestacadas.map((categoria, index)=>{
                         return(
                             <TabPanel key={index}>
                                 {
-                                    productosState.loading?
+                                 true?
                                     <OwlCarousel adClass="owl-simple carousel-equal-height carousel-with-shadow" options={ productSlider }>
-                                            {
-                                                productosState.productos.map( ( producto, index ) =>{   
-
-                                                    <div className="skel-pro" key={ index }>{ producto.name }</div>
-                    
+                                             {
+                                                productosState.productos.map((producto, index)=>{
+                                                    return(
+                                                       
+                                                        <div className="skel-pro" key={ index }>{ producto.name }</div>
+                                                        
+                                                    )
                                                 })
                                             }
                                         </OwlCarousel>

@@ -44,10 +44,54 @@ export function addCartAction( producto ) {
     }
 }
 
+export function removeCartAction( productoId ) {
+    return async (dispatch) => {          
+           toast.info('Borrando del carrito', {
+            position: "top-right",
+            autoClose: 1500,
+            hideProgressBar: true,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true
+            });
+        
+        try {    
+           dispatch( removeCart_Exito(productoId) );              
+           toast.success('producto borrado', {
+           position: "top-right",
+            autoClose: 3000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: '' ,
+            });
+
+        } catch (error) {            
+            toast.error('Upp, parece que hubo un error', {
+                position: "bottom-center",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: ''
+            }); 
+        }
+    }
+}
+
+
 
 
 const addCartAction_Exito = (producto) => ({
     type: ADD_CART,
+     payload: {
+        producto : producto
+    }
+});
+const removeCart_Exito = (producto) => ({
+    type: REMOVE_CART,
      payload: {
         producto : producto
     }

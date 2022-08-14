@@ -35,7 +35,7 @@ function Header() {
                     </div>
                     <div className="header-right pr-4">
                         <div className="top-menu d-flex"> 
-                            <span className='text-capitalize mr-1'><ALink href="/registro" >Crear una cuenta</ALink></span>
+                            <span className='text-capitalize mr-1'><ALink href="/registro" ><i className="icon-cog"></i> Crear una cuenta</ALink></span>
                             <span className='px-3'>  </span>
                             <span className='text-capitalize'><LoginModal /></span>                              
                                                                                                                                        
@@ -64,18 +64,9 @@ function Header() {
                                     <HeaderSearch />
                                 </div>
                                 <div className="col-lg-4 col-xxl-5col d-flex justify-content-end align-items-center">
-                                    <div className="header-dropdown-link">
-
-
-
-
-                                      
+                                    <div className="header-dropdown-link">                            
                                         <i className="icon-heart-o"></i>
                                         <CartMenu/>
-
-
-
-
                                     </div>
                                 </div>
                             </div>
@@ -91,13 +82,14 @@ function Header() {
                             <div className="col-auto col-lg-3 col-xl-3 col-xxl-2 header-left">
                                 <CategoryMenu />
                             </div>
-                            <div className="col col-lg-6 col-xl-6 col-xxl-8 header-center">
+                            <div className="col col-lg-5 col-xl-5 col-xxl-7 header-center">
                                 <MainMenu />
                             </div>
 
-                            <div className="col col-lg-3 col-xl-3 col-xxl-2 header-right scrollVisible">
-                               <i className="icon-user"></i><span className="pr-5">Registro  </span>                           
-                               <i className="icon-user"></i>Acceso
+                            <div className="col col-lg-4 col-xl-4 col-xxl-3 header-right scrollVisible">
+                               <span className="mr-4 d-flex login"><ALink href="/registro" ><i className="icon-cog"></i> Crear una cuenta</ALink>   </span>  
+                               <span className="mr-4 d-flex"><i className="icon-user"></i><LoginModal /></span>                        
+                               
                             </div>
                         </div>
                     </div>

@@ -14,7 +14,7 @@ function ShopSidebarOne ( props ) {
     const [ priceRange, setRange ] = useState( { min: 0, max: 1000 } );
     const  categoriasState =  useSelector(state => state.categoriesAll);
 
-    useEffect( () => {
+      useEffect( () => {
         if ( query.minPrice && query.maxPrice ) {
             setRange( { min: parseInt( query.minPrice ), max: parseInt( query.maxPrice ) } );
         } else {

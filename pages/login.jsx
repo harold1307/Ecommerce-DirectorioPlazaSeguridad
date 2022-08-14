@@ -16,7 +16,7 @@ function Login () {
     const dataFormSesion = (sendDataForm) =>  {
        dispatch( verificarUsuario(sendDataForm)); 
     };  
-    const [passwordShown, setPasswordShown] = useState(false);
+    const [passwordShown, setPasswordShown] = useState(true);
     const togglePasswordVisiblity = () => {
       setPasswordShown(passwordShown ? false : true);
     };
@@ -33,11 +33,8 @@ function Login () {
                         <ol className="breadcrumb">
                             <li className="breadcrumb-item">
                                 <ALink href="/">Inicio</ALink>
-                            </li>
-                            <li className="breadcrumb-item">
-                                <ALink href="#">Pages</ALink>
-                            </li>
-                            <li className="breadcrumb-item active">Login</li>
+                            </li>                            
+                            <li className="breadcrumb-item active">Iniciar sesión</li>
                         </ol>
                     </div>
                 </nav>
@@ -64,8 +61,8 @@ function Login () {
 
                                                     <div className="form-group campo-password">
                                                         <label htmlFor="singin-password-2">Clave *</label>
-                                                        <input type={passwordShown ? "text" : "password"} onClick={togglePasswordVisiblity} className="form-control"  placeholder="" {...register("password", {required: true, maxLength: 25})} />                                            
-                                                        <i className="icon-eye" onClick={togglePasswordVisiblity}></i>
+                                                        <input type={passwordShown ? "text" : "password"}  className="form-control"  placeholder="" {...register("password", {required: true, maxLength: 25})} />                                            
+                                                        <i className={`icon-eye ${passwordShown ? "icon-eye-yellow" : "icon-eye-gris"}`} onClick={togglePasswordVisiblity}></i>
                                                     </div>
 
                                                     <div className="form-footer py-4 my-2">
@@ -73,19 +70,14 @@ function Login () {
                                                             <span>Acceder</span>
                                                             <i className="icon-long-arrow-right"></i>
                                                         </button>
-
-                                                        <div className="custom-control custom-checkbox">
-                                                            <input type="checkbox" className="custom-control-input" id="signin-remember-2" />
-                                                            <label className="custom-control-label" htmlFor="signin-remember-2">Recordarme</label>
-                                                        </div>
-
-                                                        <ALink href="/pages/login" className="forgot-link">¿Olvido su clave?</ALink>
+                                                     
+                                                        <ALink href="" className="forgot-link">¿Olvido su clave?</ALink>
                                                     </div>
                                                 </form>
                                                 <div className="form-choice">                                                
                                                     <div className="row">
                                                         <div className="col-sm-12 bg-btn-ingreso">
-                                                            <ALink href="/pages/login" className="btn  btn-primary btn-login btn-rounded btn-shadow btn-g my-3">
+                                                            <ALink href="/login" className="btn  btn-primary btn-login btn-rounded btn-shadow btn-g my-3">
                                                                 <i className="icon-user"></i>
                                                                 Crear cuenta
                                                         </ALink>

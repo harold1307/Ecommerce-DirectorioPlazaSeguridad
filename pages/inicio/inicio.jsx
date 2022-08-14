@@ -3,6 +3,7 @@ import { LazyLoadImage } from 'react-lazy-load-image-component';
 import Reveal from 'react-awesome-reveal';
 import { useSelector }  from "react-redux";
 import StickyBox from 'react-sticky-box';
+import { Image } from 'next/image';
 import ALink from '../../components/features/alink';
 import OwlCarousel from '../../components/features/owl-carousel';
 import TrendyCollection from '../../components/partials/home/trendy-collection';
@@ -18,8 +19,6 @@ const Home = () =>{
         }
         setFakeArray( temp );
     }, [ ] )
-
-   
 
     const  companiesAll =  useSelector(state => state.companiesAll);
 
@@ -72,7 +71,7 @@ const Home = () =>{
                             <OwlCarousel adClass="owl-simple intro-slider owl-nav-inside" options={ introSlider }>
                                 <div className="intro-slide">
                                     <figure className="slide-image mb-0">
-                                        <img
+                                        <Image
                                             alt="Slide"
                                             src="images/home/sliders/slide-1.jpg"
                                             width="1180"
@@ -98,7 +97,7 @@ const Home = () =>{
                                 </div>
                                 <div className="intro-slide">
                                     <figure className="slide-image mb-0">
-                                        <img
+                                        <Image
                                             alt="Slide"
                                             src="images/home/sliders/slide-2.jpg"
                                             width="1180"
@@ -130,7 +129,7 @@ const Home = () =>{
                                 </div>
                                 <div className="intro-slide">
                                     <figure className="slide-image mb-0">
-                                        <img
+                                        <Image
                                             alt="Slide"
                                             src="images/home/sliders/slide-3.jpg"
                                             width="1180"
@@ -328,14 +327,12 @@ const Home = () =>{
                                     companiesAll.loading?
                                         companiesAll.companias.map( ( compania, index ) => {
                                             return (
-                                                compania.logo==true || !(/undefined/).test(compania.logo) ?
-                                                
+                                                compania.logo==true || !(/undefined/).test(compania.logo) ?                                                
                                                 <ALink href={ { pathname:  `/companies`, query: {compania: compania._id     } } } className="sidebar-filter-clear" scroll={ false }>
-                                                     <img src={ compania.logo  } alt={compania.logo }  height={ 50 } width={ 50 } />
+                                                     <Image src={ compania.logo  } alt={compania.logo }  height={ 50 } width={ 50 } />
                                                 </ALink>
                                                 :
-                                                <img src={ '/images/brands/8.png'} />
-
+                                                <Image src='/images/brands/8.png' alt=""  height={ 50 } width={ 50 } />
 
                                             )
                                         } )
@@ -350,12 +347,8 @@ const Home = () =>{
 
                         <div className="mb-3"></div>
 
-                        <Reveal keyframes={ fadeInRightShorter } delay={ 300 } duration="1000" triggerOnce>
-                            
-                                <TrendyCollection />
-
-
-
+                        <Reveal keyframes={ fadeInRightShorter } delay={ 300 } duration="1000" triggerOnce>                          
+                            <TrendyCollection />
                         </Reveal>
 
                         <div className="mb-5"></div>

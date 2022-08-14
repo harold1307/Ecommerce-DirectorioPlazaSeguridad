@@ -9,18 +9,14 @@ import Pagination from '~/components/features/pagination';
 import ShopSidebarOne from '../../components/partials/shop/sidebar/shop-sidebar-one';
 import Layout from '../../components/layout';
 import { useSelector }  from "react-redux";
-//import { cargarCategoriasAll } from "../../../../store/actions/categoriesAllAction";
-
-
 import { scrollToPageContent } from '~/utils';
-
 
 function ShopGrid() {
     const router = useRouter();
     const type = router.query.type;
     const query = router.query;
     const slug = router.query.slug;
-    console.log(query)
+    console.log(slug)
   
     const getProducts = ()=>{
         return []
@@ -36,14 +32,11 @@ function ShopGrid() {
     const  productosState =  useSelector(state => state.productsAll);
     const  loading = productosState.loading;
 
+    //Filtrar por categoria
     var products = productosState.productos.filter(producto=> (producto.category== (query.categoria || producto.category)));
-    
-    
-    //FILTRO PRECIOFALTA
-    var productoFiltrado = products.filter(producto=> ( producto.regularPrice >= (Number(query.minPrice) )     ));
 
-    console.log(productoFiltrado  )
-
+    //Filtrar por precio
+    query.minPrice && query.maxPrice? products = products.filter(producto=> ( producto.regularPrice >= Number(query.minPrice)  || producto.regularPrice >= Number(query.maxPrice) )): "";  
     const totalCount = productosState.productos.length;
 
     useEffect( () => {
@@ -52,8 +45,7 @@ function ShopGrid() {
        
         return () => {
             window.removeEventListener( "resize", resizeHandle );
-        }
-        
+        }        
     }, [] )
 
     function resizeHandle() {
@@ -95,7 +87,6 @@ function ShopGrid() {
                 url += key + '=' + queryObject[ key ] + '&';
             }
         }
-
         router.push( url + 'ordenar=' + e.target.value );
     }
 
@@ -124,7 +115,6 @@ function ShopGrid() {
     if ( error ) {
         return <div></div>
     }
-
     return (
         <Layout>
             <main className="main shop">
@@ -144,10 +134,7 @@ function ShopGrid() {
                                     <li className="breadcrumb-item active"><ALink href={ { pathname:  `/productos/todos`, query: {categoria: query.categoria    } } }  scroll={ false }>{ query.categoria }</ALink></li>
                                    :
                                    <li className="breadcrumb-item active">Todos</li>
-                                }
-
-                            
-                          
+                                } 
                         </ol>
                     </div>
                 </nav>
@@ -284,13 +271,4 @@ function ShopGrid() {
     )
 }
 
-
-const mapStateToProps = ( state ) => {
-    return {
-        categoriesAll: state.categoriesAll,
-        productsAll: state.productsAll,
-    }
-}
-
 export default ShopGrid ;
-

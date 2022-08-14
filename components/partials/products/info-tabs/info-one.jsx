@@ -31,7 +31,7 @@ function InfoOne ( props ) {
                     <TabPanel className="tab-pane">
                         <div className="product-desc-content">
                             <h3>Información de producto:</h3>
-                            {product[0].longDescription}
+                            {product.longDescription}
                         </div>
                     </TabPanel>
 
