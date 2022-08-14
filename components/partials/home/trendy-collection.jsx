@@ -4,42 +4,37 @@ import OwlCarousel from '../../../components/features/owl-carousel';
 import ProductTwelve from '../../../components/features/products/product-twelve';
 import { useSelector }  from "react-redux";
 import ALink from '../../features/alink';
-
-import { catFilter } from '../../../utils';
+import { catFiltrar } from '../../../utils';
 import { productSlider, slideTapProducts  } from '../../../utils/data';
 
 
 function TrendyCollection( props ) {
     const { products = [], loading } = props;
-    const categoriasDestacada=[];
 
     const  categoriasState =  useSelector(state => state.categoriesAll);
     const  productosState =  useSelector(state => state.productsAll);
-    const  categoriasDestacadas = categoriasState.categorias.map( (categoria, index) => {if (index < 5) {
-        categoriasDestacada.push(categoria); 
-        return categoriasDestacada
-    } } );
-    console.log( categoriasDestacada);
+    const  categoriasDestacadas = categoriasState.categorias.slice(0,4)
+     
+    console.log( categoriasDestacadas);
     
     return (
         <Tabs defaultIndex={ 0 } selectedTabClassName="show" >
         <div className="bg-lighter trending-products trendy">
             <div className="heading heading-flex mb-3">
                 <div className="heading-left">
-                    <h2 className="title">Producto</h2>
+                    <h2 className="title">Productos Nuevos</h2>
                 </div>
 
                 <div className="heading-right">
                     <TabList className="nav nav-pills justify-content-center">
                     {
-                        categoriasDestacada.map((categoria, index)=>{
+                        categoriasDestacadas.map((categoria, index)=>{
                             return(
                                 <Tab className="nav-item" key={index}>
                                 <span className="nav-link">{categoria.name}</span>
                             </Tab>
                             )
-                        })
-                        
+                        })                        
                     }
                     
                     </TabList>
@@ -47,19 +42,27 @@ function TrendyCollection( props ) {
             </div>
             <div className="tab-content tab-content-carousel">
                 {
-                    categoriasDestacada.map((categoria, index)=>{
+                    categoriasDestacadas.map((categoria, index)=>{
                         return(
                             <TabPanel key={index}>
                                 {
-                                    productosState.loading?
+                                true?
                                     <OwlCarousel adClass="owl-simple carousel-equal-height carousel-with-shadow" options={ productSlider }>
-                                            {
-                                                productosState.productos.map( ( producto, index ) =>{   
+                                        {
+                                                
+                                            productosState.productos.slice(0,7).map( ( producto, index ) =>
+                                                        <ProductTwelve
+                                                           product ={ producto }
+                                                           key={ index } 
+                                                         />
+                                                )
+                                        }
+                                           
 
-                                                    <div className="skel-pro" key={ index }>{ producto.name }</div>
-                    
-                                                })
-                                            }
+                                        
+
+
+
                                         </OwlCarousel>
                                     :
                                         <OwlCarousel adClass="owl-simple carousel-equal-height carousel-with-shadow" options={ productSlider }>

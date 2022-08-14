@@ -40,9 +40,8 @@ function ShopGrid() {
     
     
     //FILTRO PRECIOFALTA
-    var productoFiltrado = products.filter(producto=> ( producto.regularPrice >= (Number(query.minPrice) )     ));
-
-    console.log(productoFiltrado  )
+    query.minPrice && query.maxPrice?
+    products = products.filter(producto=> (producto.regularPrice >= Number(query.minPrice)) && ( producto.regularPrice <= Number(query.maxPrice))   ) : products;
 
     const totalCount = productosState.productos.length;
 
@@ -139,15 +138,11 @@ function ShopGrid() {
                                 <ALink href="/productos/todos">Productos</ALink>
                             </li>
                                 {
-                                    query.categoria ?                               
-                                  
+                                query.categoria ?                                                               
                                     <li className="breadcrumb-item active"><ALink href={ { pathname:  `/productos/todos`, query: {categoria: query.categoria    } } }  scroll={ false }>{ query.categoria }</ALink></li>
                                    :
                                    <li className="breadcrumb-item active">Todos</li>
-                                }
-
-                            
-                          
+                                }    
                         </ol>
                     </div>
                 </nav>
@@ -251,7 +246,6 @@ function ShopGrid() {
                                 </div>
 
                                 <ShopListOne products={ products } perPage={ perPage } loading={ loading }></ShopListOne>
-
                                 {
                                     totalCount > perPage ?
                                         <Pagination perPage={ perPage } total={ totalCount }></Pagination>

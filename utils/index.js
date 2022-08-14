@@ -126,6 +126,13 @@ export const catFilter = function ( products = [], category, flag = false ) {
     } )
 }
 
+
+export const catFiltrar = function ( products = [], categoria ) {
+    
+
+    return products.filter( producto=> { producto.category == categoria } )
+}
+
 /**
  * filter products by attribute
  * @param {Array} products 

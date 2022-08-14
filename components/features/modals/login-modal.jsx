@@ -58,7 +58,7 @@ const LoginModal = ()  => {
 
     return (
         <div className="login">
-            <a href="#" onClick={ openModal }>Iniciar Sesión</a>
+            <a href="#" onClick={ openModal }><i className="icon-user"></i>Ingresar</a>
             {
                 open ?
                     <Modal
@@ -94,20 +94,15 @@ const LoginModal = ()  => {
                                                         </div>
                                                         <div className="form-group campo-password">
                                                             <label htmlFor="singin-password-2">Clave *</label>
-                                                            <input type={passwordShown ? "text" : "password"} onClick={togglePasswordVisiblity} className="form-control"  placeholder="" {...register("password", {required: true, maxLength: 25})} />                                            
-                                                            <i className="icon-eye" onClick={togglePasswordVisiblity}></i>
+                                                            <input type={passwordShown ? "text" : "password"}  className="form-control"  placeholder="" {...register("password", {required: true, maxLength: 25})} />                                            
+                                                            <i className={`icon-eye ${passwordShown ? "icon-eye-gris" : "icon-eye-yellow"}`} onClick={togglePasswordVisiblity}></i>
                                                         </div>
                                                         <div className="form-footer py-4 my-2">
                                                             <button type="submit" className="btn btn-outline-primary-2 btn-rounded">
                                                                 <span>Acceder</span>
                                                                 <i className="icon-long-arrow-right"></i>
                                                             </button>
-
-                                                            <div className="custom-control custom-checkbox">
-                                                                <input type="checkbox" className="custom-control-input" id="signin-remember-2" />
-                                                                <label className="custom-control-label" htmlFor="signin-remember-2">Recordarme</label>
-                                                            </div>
-                                                            <ALink href="/pages/login" className="forgot-link">¿Recuperar clave?</ALink>
+                                                            <ALink href="" className="forgot-link">¿Recuperar clave?</ALink>
                                                         </div>
                                                     </form>    
                                                     <div className="form-choice">                                                
@@ -117,7 +112,7 @@ const LoginModal = ()  => {
                                                             </div>
                                                             <div className="col-12 bg-btn-ingreso">
                                                                 <ALink href="/registro" className="btn  btn-primary btn-login btn-rounded btn-shadow btn-g my-3">
-                                                                    <i className="icon-user"></i>
+                                                                    <i className="icon-cog"></i>
                                                                     Crear cuenta
                                                             </ALink>
                                                             </div>                                                        

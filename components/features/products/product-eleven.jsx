@@ -19,7 +19,7 @@ const ProductEleven = ( props ) => {
     }
     function onQuickView ( e ) {
         e.preventDefault();
-        props.showQuickView( product );
+       
     }
 
     return (

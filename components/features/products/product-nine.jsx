@@ -23,10 +23,8 @@ function ProductSix ( props ) {
         dispatch( addCartAction(product) );  
     }
     function onQuickView ( e ) {
-        e.preventDefault();
-        props.showQuickView( product );
+        e.preventDefault();     
     }
-
 
 
     return (
