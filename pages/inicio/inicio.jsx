@@ -615,7 +615,6 @@ const Home = () =>{
                                                             <span>Up To 20% Off</span>
                                                         </ALink>
                                                     </h3>
-
                                                     <ALink
                                                         href="/productos/3cols"
                                                         className="banner-link"
