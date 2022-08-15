@@ -1,9 +1,10 @@
 import { Magnifier, MOUSE_ACTIVATION } from 'react-image-magnifiers';
 import React, { useState, useEffect } from 'react';
 import LightBox from 'react-image-lightbox';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 function GalleryDefault ( props ) {
-    const { product, adClass = "product-gallery-vertical" } = props;
+    const { producto, adClass = "product-gallery-vertical" } = props;
     const [ isOpen, setIsOpen ] = useState( false );
     const [ photoIndex, setPhotoIndex ] = useState( 0 );
  
@@ -17,11 +18,11 @@ function GalleryDefault ( props ) {
     ]
 
     useEffect( () => {
-        if ( product ) {
+        if ( producto ) {
             setIsOpen( false );
             setPhotoIndex( 0 );
         }
-    }, [ product ] )
+    }, [ producto ] )
 
     function moveNextPhoto () {
         setPhotoIndex( ( photoIndex + 1 ) % imagenes.length );
@@ -50,14 +51,12 @@ function GalleryDefault ( props ) {
         for ( let i = 0; i < imgs.length; i++ ) {
             imgs[ i ].src = image;
         }
-
         document.querySelector( '.product-image-gallery .active' ).classList.remove( 'active' );
-
         document.querySelector( '.product-main-image' ).setAttribute( 'index', index );
         e.currentTarget.classList.add( 'active' );
     }
 
-    if ( !product ) {
+    if ( !producto ) {
         return <div></div>
     }
 
@@ -67,33 +66,33 @@ function GalleryDefault ( props ) {
                 <div className="row m-0">
                     <figure className="product-main-image" index="0">
                         {
-                            product.new ?
+                            producto.new ?
                                 <span className="product-label label-new">New</span>
                                 : ""
                         }
 
                         {
-                            product.sale_price ?
+                            producto.sale_price ?
                                 <span className="product-label label-sale">Sale</span>
                                 : ""
                         }
 
                         {
-                            product.top ?
+                            producto.top ?
                                 <span className="product-label label-top">Top</span>
                                 : ""
                         }
 
                         {
-                            !product[0].stockStatus || product.stockStatus == 0 ?
+                            !producto.stockStatus || producto.stockStatus == 0 ?
                                 <span className="product-label label-out">No disponible</span>
                                 : ""
                         }
                      
                         <Magnifier
-                            imageSrc={ product[0].image.location }
+                            imageSrc={ producto.image.location }
                             imageAlt="product"
-                            largeImageSrc={ product[0].image.location } // Optional
+                            largeImageSrc={ producto.image.location } // Optional
                             dragToMove={ true }
                             //mouseActivation="hover"
                             cursorStyleActive="crosshair"
@@ -101,9 +100,7 @@ function GalleryDefault ( props ) {
                             className="zoom-image position-relative "
                             width= "792"
                             height= "800"
-                            mouseActivation={MOUSE_ACTIVATION.DOUBLE_CLICK} 
-                          
-            
+                            mouseActivation={MOUSE_ACTIVATION.DOUBLE_CLICK}                                   
                             style={ { paddingTop: `${800 / 792 * 100}%` } }
                         />
 
@@ -117,7 +114,7 @@ function GalleryDefault ( props ) {
                             imagenes.map( ( item, index ) =>
                                 <button className={ `product-gallery-item ${0 === index ? 'active' : ''}` } key={ index } onClick={ e => changeBgImage( e, `${item}`, index ) }>
                                     <div className="img-wrapper h-100">
-                                        <img src={  imagenes[ index ] } alt="product back" />
+                                        <LazyLoadImage src={  imagenes[ index ] } alt="product back" />
                                     </div>
                                 </button>
                             )

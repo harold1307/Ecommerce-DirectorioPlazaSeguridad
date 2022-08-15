@@ -9,10 +9,9 @@ import { addCartAction } from "../../../../store/actions/AddCartAction";
 function DetailOne ( props ) {
     const router = useRouter();
     const ref = useRef( null );
-    const { product } = props;
+    const { producto } = props;
     const dispatch = useDispatch();
 
-  console.log('====>', product)
     useEffect( () => {
         window.addEventListener( 'scroll', scrollHandler, {
             passive: true
@@ -26,7 +25,7 @@ function DetailOne ( props ) {
 
     function onCartClick ( e ) {
         e.preventDefault();
-        dispatch( addCartAction(product) );  
+        dispatch( addCartAction(producto) );  
     }
 
     function scrollHandler () {
@@ -46,31 +45,28 @@ function DetailOne ( props ) {
 
     return (
         <div className="product-details" ref={ ref }>
-        <h1 className="product-title">{ product[0].name }</h1>
-
-
+        <h1 className="product-title">{ producto.name }</h1>
         {
-      
+            !producto.stockStatus || producto.stockStatus == 0 ?
                 <div className="product-price">
-                    <span className="out-price">
-                      $ { product[0].regularPrice }
-                    </span>
+                    <span className="out-price">Agotado</span>
                 </div>
-                
-   
+                :                
+                producto.salePrice?
+                    <div className="product-price">
+                        <span className="new-price">${producto.salePrice}</span>
+                        <span className="old-price">${producto.regularPrice}</span>
+                    </div>
+                    :
+                    <div className="product-price">${producto.regularPrice}</div>                                      
         }
+        <div className='py-2'><strong>Marca:</strong><span className='px-2'>{producto.brand}</span></div>
 
         <div className="product-content">
-            <p>{product[0].shortDescription}</p>
+            <p>{producto.shortDescription}</p>
         </div>
 
-
-        <div className="details-filter-row details-row-size">
-            <label htmlFor="qty">Qty:</label>
-            <Qty changeQty={ '' } max={ ''} value={ '' }></Qty>
-        </div>
-
-        <div className="product-details-action">
+        <div className="product-details-action py-4">
             <a
                 href="#"
                 className={ `btn-product btn-cart` }
@@ -79,18 +75,24 @@ function DetailOne ( props ) {
                 <span>Agragar al carrito</span>
             </a>
             <div className="details-action-wrapper">
-                {
-                   
-                        <a href="#" className="btn-product btn-wishlist" onClick={ onCartClick  }><span>Agragar a favoritos</span></a>
-
+                {                   
+                     <a href="#" className="btn-product btn-wishlist" onClick={ onCartClick  }><span>Agragar a favoritos</span></a>
                 }
             </div>
         </div>
 
         <div className="product-details-footer">
             <div className="product-cat w-100 text-truncate">
-                <span>Categorí:</span>
-                {product[0].category}
+                <span><strong>Categoría:</strong></span>
+                {producto.category}
+            </div>
+            <div className="product-cat w-100 text-truncate">
+                <span><strong>Sub-categoría:</strong></span>
+                {producto.subCategory}
+            </div>
+            <div className="product-cat w-100 text-truncate">
+                <span><strong>Empresa:</strong></span>
+                {producto.COMPANY.name}
             </div>
 
             <div className="social-icons social-icons-sm">
@@ -114,18 +116,18 @@ function DetailOne ( props ) {
                 <div className="row">
                     <div className="col-6">
                         <figure className="product-media">
-                            <ALink href={ `/product/default/${product.slug}` }>
+                            <ALink href={ `/product/default/${producto.value}` }>
                                 <img src={ '' } alt="product" width='500' height='500'  />
                             </ALink>
                         </figure>
                         <h3 className="product-title">
-                            <ALink href={ `/product/default/${product.slug}` }>{ product.name }</ALink>
+                            <ALink href={ `/product/default/${producto.value}` }>{ producto.name }</ALink>
                         </h3>
                     </div>
                     <div className="col-6 justify-content-end">
                         {
                             
-                                product.stockStatus == 0 ?
+                                producto.stockStatus == 0 ?
                                     <div className="product-price">
                                         <span className="out-price">0</span>
                                     </div>

@@ -9,14 +9,11 @@
 
 .intro-slider-container,
 .intro-slider .slide-image {
-	min-height: 494.5px;
-	&:before {
-		@include aspect-ratio(1180, 500);
-	}
-	
-	&:before {
+	min-height: 494.5px;		
+	//**Harold Caraballo Revisando
+	&:before {	
 		@include mq('xl', 'max') {
-			padding-top:49.45rem;
+			padding-top:0px !important;
 		}
 	}
 
@@ -553,7 +550,7 @@
 		margin-top: 2.5rem;
 	}
 	.product-media {
-		padding: 2rem 2rem;
+		padding: 0;
 		background-color: #fff;
 	}
 	.product-body {

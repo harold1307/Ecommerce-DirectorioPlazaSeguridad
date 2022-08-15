@@ -1,35 +1,42 @@
 import { useRouter } from 'next/router';
+import { connect } from 'react-redux';
 import React, { useState, useEffect } from 'react';
 import StickyBox from 'react-sticky-box';
 import ALink from '~/components/features/alink';
 import PageHeader from '~/components/features/page-header';
-import ShopListOne from '../../components/partials/shop/list/shop-list-one';
+import ShopListOneEmpresas from '../../components/partials/shop/list/shop-list-one-empresas';
 import Pagination from '~/components/features/pagination';
-import ShopSidebarOne from '../../components/partials/shop/sidebar/shop-sidebar-one';
+import ShopSidebarOneEmpresas from '../../components/partials/shop/sidebar/shop-sidebar-one-empresas';
 import Layout from '../../components/layout';
 import { useSelector }  from "react-redux";
 import { scrollToPageContent } from '~/utils';
 
-function ShopGrid() {
+function Empresas() {
     const router = useRouter();
     const type = router.query.type;
     const query = router.query;
-    const slug = router.query.slug; 
+    const slug = router.query.slug;
+    console.log(query)
+  
+    const getProducts = ()=>{
+        return []
+    }
+    const data=[];
     const error="";
+
     const [ firstLoading, setFirstLoading ] = useState( false );
     const [ perPage, setPerPage ] = useState( 5 );
     const [ pageTitle, setPageTitle ] = useState( 'Todos' );
-    const [ toggle, setToggle ] = useState( false );   
-    const  productosState =  useSelector(state => state.productsAll);
-    const  loading = productosState.loading;
-    var products = productosState.productos.filter(producto=> (producto.category== (query.categoria || producto.category)));
-    query.minPrice && query.maxPrice?
-    products = products.filter(producto=> (producto.regularPrice >= Number(query.minPrice)) && ( producto.regularPrice <= Number(query.maxPrice))   ) : products;
-    const totalCount = productosState.productos.length;
+    const [ toggle, setToggle ] = useState( false );
+    
+    const  companiesState =  useSelector(state => state.companiesAll);
+    const  empresas = companiesState.companias;
+    const  loading = companiesState.loading;
+    const totalCount = companiesState.companias.length;
+
     useEffect( () => {
         window.addEventListener( "resize", resizeHandle );
-        resizeHandle();
-       
+        resizeHandle();       
         return () => {
             window.removeEventListener( "resize", resizeHandle );
         }
@@ -46,23 +53,22 @@ function ShopGrid() {
     useEffect( () => {    
         scrollToPageContent();
     }, [ query, perPage ] )
-
     useEffect( () => {
-        if ( products ) setFirstLoading( true );
-    }, [ products ] )
+        if ( empresas ) setFirstLoading( true );
+    }, [ empresas  ] )
 
     useEffect( () => {
         if ( type == 'list' ) {
-            setPageTitle( 'Lista de productos' );
+            setPageTitle( 'Lista de Empresas' );
             setPerPage( 5 );
         } else if ( type == '2cols' ) {
-            setPageTitle( 'Lista de productos' );
+            setPageTitle( 'Lista de Empresas' );
             setPerPage( 6 );
         } else if ( type == '3cols' ) {
-            setPageTitle( 'Lista de productos' );
+            setPageTitle( 'Lista de Empresas' );
             setPerPage( 9 );
         } else if ( type == 'todos' ) {
-            setPageTitle( 'Lista de productos' );
+            setPageTitle( 'Lista de Empresas' );
             setPerPage( 12 );
         }
     }, [ type ] )
@@ -108,7 +114,7 @@ function ShopGrid() {
     return (
         <Layout>
             <main className="main shop">
-                <PageHeader title={ 'Productos'} subTitle={   `Categoría: ${query.categoria || 'Todos'} `} />
+                <PageHeader title={ 'Empresas'} subTitle={   `Servivios: ${query.services || 'Todos'} `} />
                 <nav className="breadcrumb-nav mb-2">
                     <div className="container">
                         <ol className="breadcrumb">
@@ -116,11 +122,11 @@ function ShopGrid() {
                                 <ALink href="/">Inicio</ALink>
                             </li>
                             <li className="breadcrumb-item">
-                                <ALink href="/productos/todos">Productos</ALink>
+                                <ALink href="/empresas/todos">Empresas</ALink>
                             </li>
                                 {
                                 query.categoria ?                                                               
-                                    <li className="breadcrumb-item active"><ALink href={ { pathname:  `/productos/todos`, query: {categoria: query.categoria    } } }  scroll={ false }>{ query.categoria }</ALink></li>
+                                    <li className="breadcrumb-item active"><ALink href={ { pathname:  `/empresas/todos`, query: {categoria: query.categoria    } } }  scroll={ false }>{ query.categoria }</ALink></li>
                                    :
                                    <li className="breadcrumb-item active">Todos</li>
                                 }    
@@ -137,10 +143,10 @@ function ShopGrid() {
                                 <div className="toolbox">
                                     <div className="toolbox-left">
                                         {
-                                             products ?
+                                            empresas ?
                                                 <div className="toolbox-info">
                                                     Mostrando
-                                                    <span> { products.length } de { totalCount }</span> Productos
+                                                    <span> { empresas.length } de { totalCount }</span> Empresas
                                                 </div>
                                                 : ""
                                         }
@@ -158,15 +164,15 @@ function ShopGrid() {
                                                     value={ query.sortBy ? query.sortBy : 'normal' }
                                                 >
                                                     <option value="normal">Normal</option>
-                                                    <option value="ordenDescendente">Precio descendente</option>
-                                                    <option value="ordenAscendente">Precio ascendente</option>
+                                                    <option value="ordenDescendente">Más nuevas</option>
+                                                    <option value="ordenAscendente">Más antiguas</option>
                                                     
                                                 </select>
                                             </div>
                                         </div>
                                         <div className="toolbox-layout">
                                             <ALink
-                                                href="/productos/list"
+                                                href="/empresas/list"
                                                 className={ `btn-layout ${ type == 'list' ? 'active' : '' }` }
                                                 scroll={ false }
                                             >
@@ -179,7 +185,7 @@ function ShopGrid() {
                                             </ALink>
 
                                             <ALink
-                                                href="/productos/2cols"
+                                                href="/empresas/2cols"
                                                 className={ `btn-layout ${ type == '2cols' ? 'active' : '' }` }
                                                 scroll={ false }
                                             >
@@ -192,7 +198,7 @@ function ShopGrid() {
                                             </ALink>
 
                                             <ALink
-                                                href="/productos/3cols"
+                                                href="/empresas/3cols"
                                                 className={ `btn-layout ${ type == '3cols' ? 'active' : '' }` }
                                                 scroll={ false }
                                             >
@@ -207,7 +213,7 @@ function ShopGrid() {
                                             </ALink>
 
                                             <ALink
-                                                href="/productos/4cols"
+                                                href="/empresas/4cols"
                                                 className={ `btn-layout ${ type == '4cols' ? 'active' : '' }` }
                                                 scroll={ false }
                                             >
@@ -226,7 +232,7 @@ function ShopGrid() {
                                     </div>
                                 </div>
 
-                                <ShopListOne products={ products } perPage={ perPage } loading={ loading }></ShopListOne>
+                                <ShopListOneEmpresas empresas={  empresas } perPage={ perPage } loading={ loading }></ShopListOneEmpresas>
                                 {
                                     totalCount > perPage ?
                                         <Pagination perPage={ perPage } total={ totalCount }></Pagination>
@@ -240,7 +246,7 @@ function ShopGrid() {
                                 <div className="skel-widget"></div>
                                 <div className="skel-widget"></div>
                                 <StickyBox className="sticky-content" offsetTop={ 70 }>
-                                    <ShopSidebarOne toggle={ toggle }></ShopSidebarOne>
+                                    <ShopSidebarOneEmpresas toggle={ toggle }></ShopSidebarOneEmpresas>
                                 </StickyBox>
                                 {
                                     toggle ?
@@ -260,12 +266,7 @@ function ShopGrid() {
 }
 
 
-const mapStateToProps = ( state ) => {
-    return {
-        categoriesAll: state.categoriesAll,
-        productsAll: state.productsAll,
-    }
-}
 
-export default ShopGrid ;
+
+export default Empresas ;
 

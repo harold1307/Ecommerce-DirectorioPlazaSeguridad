@@ -4,20 +4,14 @@ import {
     } from '../types/typesAddCart';
 
 const initialState = {
-    producto :null
+    producto :[]
 }
 
-const addCartReducer = (state = initialState, action)=> {
+const addCartReducer = (state = [], action)=> {
     switch(action.type) {
         case ADD_CART: 
-            return {
-                ...state.producto,
-               
-                producto    :  action.payload.producto           
-
-              
-                    
-            }
+            return  [...state, {...action.payload.producto, producto }      ]   
+                
         case REMOVE_CART: 
             return {
                 producto: [

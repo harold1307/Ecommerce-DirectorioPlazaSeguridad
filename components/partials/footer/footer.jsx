@@ -1,6 +1,5 @@
 import { useRouter } from 'next/router';
 import React, { useState, useEffect } from 'react';
-
 import ALink from '../../features/alink';
 
 function Footer() {
@@ -29,10 +28,10 @@ function Footer() {
 
     return (
         <footer className="footer footer-2">
-            <div className="footer-middle px-5">
+            <div className="footer-middle px-5 pt-5">
                 <div className={ containerClass }>
                     <div className="row">
-                        <div className="col-sm-12 col-xl-4">
+                        <div className="col-sm-12 col-xl-4 px-lg-2">
                             <div className="widget widget-about">
                                 <img src="/Logo-Directorio-de-Seguridad.png" className="footer-logo" alt="Logo" width="200" />
                                 <p>Plaza Seguridad® es una plataforma tecnológica de negocios que conecta a las personas con necesidades de seguridad y a las empresas que pueden proveer soluciones innovadoras para su protección y la de sus bienes en el ámbito en el que se desarrolla.</p>
@@ -40,13 +39,13 @@ function Footer() {
                                 <div className="widget-about-info">
                                     <div className="row">
                                         <div className="col-sm-6 col-md-4">
-                                            <span className="widget-about-title">Got Question? Call us 24/7</span>
+                                            <span className="widget-about-title">¿Tiene alguna pregunta? Llamanos 24/7</span>
                                             <ALink href="tel:123456789">+0123 456 789</ALink>
                                         </div>
                                         <div className="col-sm-6 col-md-8">
-                                            <span className="widget-about-title">Payment Method</span>
+                                            <span className="widget-about-title">Métodos de pago</span>
                                             <figure className="footer-payments">
-                                                <img src="/images/payments.png" alt="Payment methods" width="272" height="20" />
+                                                <img src="/images/payments.png" alt="metodos de pago" width="272" height="20" />
                                             </figure>
                                         </div>
                                     </div>
@@ -54,73 +53,56 @@ function Footer() {
                             </div>
                         </div>
 
-                        <div className="col-sm-4 col-xl-2">
+                        <div className="col-sm-4 col-xl-2 px-lg-2">
                             <div className="widget">
-                                <h4 className="widget-title">Useful links</h4>
-
+                                <h4 className="widget-title">Accesos Directos</h4>
                                 <ul className="widget-list">
-                                    <li><ALink href="/pages/about">About Molla</ALink></li>
-                                    <li><ALink href="/pages/about">How to shop on Molla</ALink></li>
-                                    <li><ALink href="/pages/faq">FAQ</ALink></li>
-                                    <li><ALink href="/pages/contact">Contact us</ALink></li>
-                                    <li><ALink href="/pages/login">Log in</ALink></li>
+                                    <li><ALink href="/nosotros">Acerca de Nosotros</ALink></li>
+                                    <li><ALink href="/porque">¿Por qué Plaza Seguridad?</ALink></li>
+                                    <li><ALink href="/faq">FAQ</ALink></li>
+                                    <li><ALink href="/login">Iniciar Sesión</ALink></li>
+                                    <li><ALink href="/registro">Registrarme</ALink></li>
                                 </ul>
                             </div>
                         </div>
 
-                        <div className="col-sm-4 col-xl-2">
+                        <div className="col-sm-4 col-xl-2 px-lg-2">
                             <div className="widget">
-                                <h4 className="widget-title">Customer Service</h4>
-
+                                <h4 className="widget-title">Servicios</h4>
                                 <ul className="widget-list">
-                                    <li><ALink href="#">Payment Methods</ALink></li>
-                                    <li><ALink href="#">Money-back guarantee!</ALink></li>
-                                    <li><ALink href="#">Returns</ALink></li>
-                                    <li><ALink href="#">Shipping</ALink></li>
-                                    <li><ALink href="#">Terms and conditions</ALink></li>
-                                    <li><ALink href="#">Privacy Policy</ALink></li>
+                                    <li><ALink href="#">Empresas</ALink></li>
+                                    <li><ALink href="#">Productos</ALink></li>
+                                    <li><ALink href="#">Categorías</ALink></li>
+                                    <li><ALink href="#">Terminos y condiciones</ALink></li>
+                                    <li><ALink href="#">Política de privacidad</ALink></li>
                                 </ul>
                             </div>
                         </div>
 
-                        <div className="col-sm-4 col-xl-2">
+                        <div className="col-sm-4 col-xl-2 px-lg-2">
                             <div className="widget">
-                                <h4 className="widget-title">My Account</h4>
-
+                                <h4 className="widget-title">Cuenta</h4>
                                 <ul className="widget-list">
-                                    <li><ALink href="#">Sign In</ALink></li>
-                                    <li><ALink href="/shop/cart">View Cart</ALink></li>
-                                    <li><ALink href="/shop/wishlist">My Wishlist</ALink></li>
-                                    <li><ALink href="#">Track My Order</ALink></li>
-                                    <li><ALink href="#">Help</ALink></li>
+                                    <li><ALink href="#">Inicio de sesión</ALink></li>
+                                    <li><ALink href="/shop/cart">Carrito</ALink></li>
+                                    <li><ALink href="/shop/wishlist">favoritos</ALink></li>
+                                    <li><ALink href="#">Historico</ALink></li>
+                                    <li><ALink href="#">Ayuda</ALink></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div className="col-sm-4 col-xl-2 px-lg-2">
+                            <div className="widget">
+                                <h4 className="widget-title">Publicarme</h4>
+                                <ul className="widget-list">
+                                    <li><ALink href="#">Quiero publicarme</ALink></li>
+                                    <li><ALink href="/shop/cart">Como publicarte</ALink></li>
+                                    <li><ALink href="/shop/wishlist">Porque publicarte</ALink></li>                                    
                                 </ul>
                             </div>
                         </div>
 
-                        <div className="col-sm-6 col-xl-2">
-                            <div className="widget widget-newsletter">
-                                <h4 className="widget-title">Sign up to newsletter</h4>
-
-                                <p>Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan.</p>
-
-                                <form action="#">
-                                    <div className="input-group">
-                                        <input
-                                            type="email"
-                                            className="form-control"
-                                            placeholder="Enter your Email Address"
-                                            aria-label="Email Adress"
-                                            required
-                                        />
-                                        <div className="input-group-append">
-                                            <button className="btn btn-dark" type="submit">
-                                                <i className="icon-long-arrow-right"></i>
-                                            </button>
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
+                        
                     </div>
                 </div>
             </div>

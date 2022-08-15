@@ -25,7 +25,6 @@ function MainMenu() {
                 </li>
                 <li className={ ( path.indexOf( "productos" ) > -1 && query.type == 'todos' ) ? "active" : '' }>
                         <ALink href="/productos/todos" scroll={ false }>Productos</ALink>
-
                     <div className="megamenu megamenu-md">
                         <div className="row no-gutters">
                             <div className="col-md-8">
@@ -70,7 +69,7 @@ function MainMenu() {
                             <div className="col-md-4">
                                 <div className="banner banner-overlay">
                                     <ALink href="/productos/list" className="banner banner-menu">
-                                        <img src="images/menu/banner-1.jpg" alt="Banner" />
+                                        <img src="/images/menu/banner-1.jpg" alt="Banner" />
 
                                         <div className="banner-content banner-content-top">
                                             <div className="banner-title text-white">Last <br />Chance<br /><span><strong>Sale</strong></span></div>
@@ -81,11 +80,14 @@ function MainMenu() {
                         </div>
                     </div>
                 </li>
-                <li className={ `megamenu-container ${ path === '/' ? 'active' : '' }` } id="menu-home">
-                    <ALink href="/empresas" >Empresas</ALink>
+                <li className={ `megamenu-container ${ path === '/empresas' ? 'active' : '' }` } id="menu-home">
+                    <ALink href="/empresas/todos" >Empresas</ALink>
+                </li>                
+                <li className={ `megamenu-container ${ path === '/publicarme' ? 'active' : '' }` } id="menu-home">
+                    <ALink href="/publicarme" >Publicarme</ALink>
                 </li>
-                
-                <li className={ `megamenu-container ${ path === '/' ? 'active' : '' }` } id="menu-home">
+                <li className={ `megamenu-container ${ path === '/login' ? 'active' : '' }` } id="menu-home">
+                       <ALink href="/login">Login</ALink>
                 </li>
                 
                 <li className={ path.indexOf( "product/" ) > -1 ? 'active' : '' }>
@@ -105,28 +107,14 @@ function MainMenu() {
                                         <li className={ path.indexOf( "product/sidebar" ) > -1 ? 'active' : '' }><ALink href="/product/sidebar/beige-v-neck-button-cardigan">Boxed With Sidebar</ALink></li>
                                         <li className={ path.indexOf( "product/fullwidth" ) > -1 ? 'active' : '' }><ALink href="/product/fullwidth/black-faux-leather-chain-trim-sandals">Full Width</ALink></li>
                                         <li className={ path.indexOf( "product/masonry" ) > -1 ? 'active' : '' }><ALink href="/product/masonry/black-denim-dungaree-dress">Masonry Sticky Info</ALink></li>
+                                  
                                     </ul>
-                                </div>
-                            </div>
 
-                            <div className="col-md-6">
-                                <div className="banner banner-overlay">
-                                    <ALink href="/product/centered/dark-yellow-lace-cut-out-swing-dress">
-                                        <img src="images/menu/banner-2.jpg" alt="Banner" />
 
-                                        <div className="banner-content banner-content-bottom">
-                                            <div className="banner-title text-white">New Trends<br /><span><strong>spring { ( new Date() ).getFullYear() }</strong></span></div>
-                                        </div>
-                                    </ALink>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </li>              
-                <li className={ path.indexOf( "blog/" ) > -1 ? 'active' : '' }>
-                <ALink href="/login">Login</ALink>
 
-                    <ul>
+
+
+                                    <ul>
                         <li className={ path.indexOf( "blog/classic" ) > -1 ? 'active' : '' }><ALink href="/blog/classic">Classic</ALink></li>
                         <li className={ path.indexOf( "blog/listing" ) > -1 ? 'active' : '' }><ALink href="/blog/listing" >Listing</ALink></li>
                         <li className={ path.indexOf( "blog/grid" ) > -1 ? 'active' : '' }>
@@ -183,31 +171,48 @@ function MainMenu() {
                         <li className={ path.indexOf( "pages" ) > -1 ? 'active' : '' }>
                     <ALink href="#" className="sf-with-ul">Pages</ALink>
 
-                    <ul>
-                        <li className={ path.indexOf( "pages/about" ) > -1 ? 'active' : '' }>
-                            <ALink href="/pages/about" className="sf-with-ul">About</ALink>
+                        <ul>
+                            <li className={ path.indexOf( "pages/about" ) > -1 ? 'active' : '' }>
+                                <ALink href="/pages/about" className="sf-with-ul">About</ALink>
 
-                            <ul>
-                                <li className={ path.indexOf( "pages/about" ) > -1 && path.indexOf( "pages/about-2" ) === -1 ? 'active' : '' }><ALink href="/pages/about">About 01</ALink></li>
-                                <li className={ path.indexOf( "pages/about-2" ) > -1 ? 'active' : '' }><ALink href="/pages/about-2">About 02</ALink></li>
-                            </ul>
-                        </li>
-                        <li className={ path.indexOf( "pages/contact" ) > -1 ? 'active' : '' }>
-                            <ALink href="/pages/contact" className="sf-with-ul">Contact</ALink>
+                                <ul>
+                                    <li className={ path.indexOf( "pages/about" ) > -1 && path.indexOf( "pages/about-2" ) === -1 ? 'active' : '' }><ALink href="/pages/about">About 01</ALink></li>
+                                    <li className={ path.indexOf( "pages/about-2" ) > -1 ? 'active' : '' }><ALink href="/pages/about-2">About 02</ALink></li>
+                                </ul>
+                            </li>
+                            <li className={ path.indexOf( "pages/contact" ) > -1 ? 'active' : '' }>
+                                <ALink href="/pages/contact" className="sf-with-ul">Contact</ALink>
 
-                            <ul>
-                                <li className={ path.indexOf( "pages/contact" ) > -1 && path.indexOf( "pages/contact-2" ) === -1 ? 'active' : '' }><ALink href="/pages/contact">Contact 01</ALink></li>
-                                <li className={ path.indexOf( "pages/contact-2" ) > -1 ? 'active' : '' }><ALink href="/pages/contact-2">Contact 02</ALink></li>
-                            </ul>
-                        </li>
-                        <li className={ path.indexOf( "/login" ) > -1 ? 'active' : '' }><ALink href="/login">Login</ALink></li>
-                        <li className={ path.indexOf( "pages/faq" ) > -1 ? 'active' : '' }><ALink href="/pages/faq">FAQs</ALink></li>
-                        <li className={ path.indexOf( "404" ) > -1 ? 'active' : '' }><ALink href="/404">Error 404</ALink></li>
-                        <li className={ path.indexOf( "pages/coming-soon" ) > -1 ? 'active' : '' }><ALink href="/pages/coming-soon">Coming Soon</ALink></li>
-                    </ul>
-                </li>
-                    </ul>
-                </li>
+                                <ul>
+                                    <li className={ path.indexOf( "pages/contact" ) > -1 && path.indexOf( "pages/contact-2" ) === -1 ? 'active' : '' }><ALink href="/pages/contact">Contact 01</ALink></li>
+                                    <li className={ path.indexOf( "pages/contact-2" ) > -1 ? 'active' : '' }><ALink href="/pages/contact-2">Contact 02</ALink></li>
+                                </ul>
+                            </li>
+                            <li className={ path.indexOf( "/login" ) > -1 ? 'active' : '' }><ALink href="/login">Login</ALink></li>
+                            <li className={ path.indexOf( "pages/faq" ) > -1 ? 'active' : '' }><ALink href="/pages/faq">FAQs</ALink></li>
+                            <li className={ path.indexOf( "404" ) > -1 ? 'active' : '' }><ALink href="/404">Error 404</ALink></li>
+                            <li className={ path.indexOf( "pages/coming-soon" ) > -1 ? 'active' : '' }><ALink href="/pages/coming-soon">Coming Soon</ALink></li>
+                        </ul>
+                    </li>
+                        </ul>                       
+                                </div>
+                            </div>
+
+                            <div className="col-md-6">
+                                <div className="banner banner-overlay">
+                                    <ALink href="/product/centered/dark-yellow-lace-cut-out-swing-dress">
+                                        <img src="/images/menu/banner-2.jpg" alt="Banner" />
+
+                                        <div className="banner-content banner-content-bottom">
+                                            <div className="banner-title text-white">New Trends<br /><span><strong>spring { ( new Date() ).getFullYear() }</strong></span></div>
+                                        </div>
+                                    </ALink>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>              
+              
                 
             </ul>
         </nav>

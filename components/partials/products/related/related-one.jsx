@@ -9,7 +9,7 @@ function RelatedProductsOne ( props ) {
 
     return (
         <>
-            <h2 className="title text-center mb-4">Otros productos de la empresa</h2>
+            <h2 className="title text-center mb-4">Catálogo de la Empresa</h2>
 
             {
                 true ?

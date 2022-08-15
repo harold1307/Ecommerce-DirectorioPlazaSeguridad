@@ -7,18 +7,18 @@ import 'react-input-range/lib/css/index.css';
 import ALink from '~/components/features/alink';
 import { shopData } from '~/utils/data';
 
-function ShopSidebarOne ( props ) {
+function ShopSidebarOneEmpresas ( props ) {
     const { toggle = false , queryPath } = props;
     const router = useRouter();
     const query = useRouter().query;
-    const [ priceRange, setRange ] = useState( { min: 0, max: 100000 } );
+    const [ priceRange, setRange ] = useState( { min: 0, max: 1000 } );
     const  categoriasState =  useSelector(state => state.categoriesAll);
 
     useEffect( () => {
         if ( query.minPrice && query.maxPrice ) {
             setRange( { min: parseInt( query.minPrice ), max: parseInt( query.maxPrice ) } );
         } else {
-            setRange( { min: 0, max: 100000 } );
+            setRange( { min: 0, max: 1000 } );
         }
     }, [ query ] )
 
@@ -114,7 +114,7 @@ function ShopSidebarOne ( props ) {
                                             <div className="price-slider">
                                                 <InputRange
                                                     formatLabel={ value => `${value}` }
-                                                    maxValue={ 100000}
+                                                    maxValue={ 1000 }
                                                     minValue={ 0 }
                                                     step={ 50 }
                                                     value={ priceRange }
@@ -133,4 +133,4 @@ function ShopSidebarOne ( props ) {
     );
 }
 
-export default React.memo( ShopSidebarOne );
+export default React.memo( ShopSidebarOneEmpresas );

@@ -10,99 +10,100 @@ function onCartClick ( e ) {
 }
 function onQuickView ( e ) {
     e.preventDefault();
-   
 }
 
-function ProductTwelve( props ) {
+function onWishlistClick( e ) {
+    e.preventDefault();
+  
+}
+
+const ProductTwelve = ( props ) => {
     const router = useRouter();
     const { product, index } = props;
-
-
-  
-
+   
 
     return (
-        <Fragment>
-                
-        <div className="product product-4 text-center w-100">
-            <figure className="product-media">
-            {
-                    product.new ?
-                        <span className="product-label label-new">New</span>
-                        : ""
-                }
-
-                {
-                    product.salePrice?
-                        <span className="product-label label-sale">Oferta</span>
-                        : ""
-                }
-
-                {
-                    product.top ?
-                        <span className="product-label label-top">Top</span>
-                        : ""
-                }
-
-                {
-                    !product.stockStatus || product.stockStatus == 0 ?
-                        <span className="product-label label-out">Agotado</span>
-                        : ""
-                }
-                <ALink href={ `/producto/${product.COMPANY._id}/${product._id}/${product.name}` } >
-                    <LazyLoadImage
-                        alt="product"
-                        src={`${product.image.location }` } // Se debe cambiar por la imagen del producto principal.
-                        threshold={ 500 }
-                        effect="black and white"
-                        wrapperClassName="product-image"
-                    />
+        <Fragment>                
+            <div className="product text-center w-100">
+                <figure className="product-media">
                     {
-                        4 >= 2 ?
-                            <LazyLoadImage
-                                alt="product"
-                                src={ ''}
-                                threshold={ 500 }
-                                effect="black and white"
-                                wrapperClassName="product-image-hover"
-                            />
+                        product.new ?
+                            <span className="product-label label-new">Nuevo</span>
                             : ""
                     }
-                </ALink>
 
-                {
-                product.stockStatus && product.stockStatus !== 0 ?
-                    <div className="product-action">
-                        {              
-                                                  
+                    {
+                        product.salePrice?
+                            <span className="product-label label-sale">Oferta</span>
+                            : ""
+                    }
+
+                    {
+                        product.top ?
+                            <span className="product-label label-top">Top</span>
+                            : ""
+                    }
+
+                    {
+                        !product.stockStatus || product.stockStatus == 0 ?
+                            <span className="product-label label-out">Agotado</span>
+                            : ""
+                    }
+                    <ALink href={ { pathname: `/producto/${product._id}`}} >
+                        <LazyLoadImage
+                            alt="product"
+                            src={`${product.image.location }`} 
+                            threshold={ 500 }
+                            effect="black and white"
+                            wrapperClassName="product-image"
+                        />
+                        {
+                            true ?
+                                <LazyLoadImage
+                                    alt="product"
+                                    src={ `https://directorioseguridadgeneralpublic.s3.amazonaws.com/products/${product._id}/thumbnail/2.jpg`}
+                                    threshold={ 500 }
+                                    effect="black and white"
+                                    wrapperClassName="product-image-hover"
+                                />
+                                : ""
+                        }
+                    </ALink>
+                    <div className="product-action-vertical">
+                        {                         
+                            <a href="#" className="btn-product-icon btn-wishlist btn-expandable" onClick={ onWishlistClick }><span>Favorito</span></a>
+                        }
+                        <a href="#" className="btn-product-icon btn-quickview" title="Quick View" onClick={ onQuickView }><span>Ver</span></a>
+                    </div>
+
+                    {
+                    product.stockStatus && product.stockStatus !== 0 ?
+                        <div className="product-action">
+                            {                                                       
                                 <button className="btn-product btn-cart" onClick={ onCartClick }>
                                     <span>Agregar</span>
-                                </button>
-                                
-                        }                       
-                    </div>
-                    : ""
-                }
-            
-
-            </figure>
-
-            <div className="product-body">
-                <div className="product-cat">
-                  <small>{product.category}</small> 
-                </div>
-
-                <h3 className="product-title">
-                    <ALink href={ `/producto/${product.COMPANY._id}/${product._id}/${product.name.split(' ').join('_')}` }>{ product.name }</ALink>
-                </h3>
-
-                {
-                    !product.stockStatus || product.stockStatus == 0 ?
-                        <div className="product-price">
-                            <span className="out-price">Agotado</span>
+                                </button>                            
+                            }                       
                         </div>
-                        :
-                       
+                        : ""
+                    }          
+                </figure>
+
+                <div className="product-body">
+                    <div className="product-cat">
+                    <small>{product.category}</small> 
+                    </div>
+
+                    <h3 className="product-title">
+                    <ALink href={ { pathname: `/producto/${product._id}`}} >{ product.name }</ALink>
+                    </h3>
+
+                    {
+                        !product.stockStatus || product.stockStatus == 0 ?
+                            <div className="product-price">
+                                <span className="out-price">Agotado</span>
+                            </div>
+                            :                       
                             product.salePrice?
                                 <div className="product-price">
                                     <span className="new-price">${product.salePrice}</span>
@@ -110,17 +111,12 @@ function ProductTwelve( props ) {
                                 </div>
                                 :
                                 <div className="product-price">${product.regularPrice}</div>
-                }
-
-            
-
-            
+                    }
+    
+                </div>
             </div>
-        </div>
-</Fragment>
+        </Fragment>
     )
 }
-
-
 
 export default  ProductTwelve;

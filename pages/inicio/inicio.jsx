@@ -24,18 +24,10 @@ const Home = () =>{
     const  companiesAll =  useSelector(state => state.companiesAll);
 
     const toggleSidebar = () => {
-        if (
-            document
-                .querySelector( 'body' )
-                .classList.contains( 'sidebar-home-active' )
-        ) {
-            document
-                .querySelector( 'body' )
-                .classList.remove( 'sidebar-home-active' );
+        if ( document) {
+            document.querySelector( 'body' ).classList.remove( 'sidebar-home-active' );
         } else {
-            document
-                .querySelector( 'body' )
-                .classList.add( 'sidebar-home-active' );
+            document.querySelector( 'body' ).classList.add( 'sidebar-home-active' );
         }
     }
 
@@ -72,25 +64,25 @@ const Home = () =>{
                             <OwlCarousel adClass="owl-simple intro-slider owl-nav-inside" options={ introSlider }>
                                 <div className="intro-slide">
                                     <figure className="slide-image mb-0">
-                                        <img
+                                    <LazyLoadImage
                                             alt="Slide"
-                                            src="images/home/sliders/slide-1.jpg"
-                                            width="1180"
-                                            height="500"
+                                            src="/images/home/sliders/slide-1.jpg"
+                                            width= {1180}
+                                            height={500}                                           
                                         />
                                     </figure>
                                     <div className="intro-content">
                                         <Reveal keyframes={ fadeInUpShorter } delay={ 100 } duration={ 1000 }>
-                                            <h3 className="intro-subtitle">New Arrivals</h3>
+                                            <h3 className="intro-subtitle">Busca en</h3>
 
                                             <h1 className="intro-title text-white">
-                                                The New Way
-                                                <br />To Buy Furniture
+                                                Directorio
+                                                <br />Seguridad Plaza
                                             </h1>
 
-                                            <div className="intro-text text-white">Spring Collections 2021</div>
+                                            <div className="intro-text text-white">Servicios, Insumos.</div>
                                             <ALink href="/productos/list" className="btn btn-primary">
-                                                <span>Discover Now</span>
+                                                <span>Ver productos</span>
                                                 <i className="icon-long-arrow-right"></i>
                                             </ALink>
                                         </Reveal>
@@ -98,11 +90,11 @@ const Home = () =>{
                                 </div>
                                 <div className="intro-slide">
                                     <figure className="slide-image mb-0">
-                                        <img
+                                    <LazyLoadImage
                                             alt="Slide"
-                                            src="images/home/sliders/slide-2.jpg"
-                                            width="1180"
-                                            height="500"
+                                            src="/images/home/sliders/slide-2.jpg"
+                                            width={ 1180 }
+                                            height={ 500 }
                                         />
                                     </figure>
                                     <div className="intro-content">
@@ -130,11 +122,11 @@ const Home = () =>{
                                 </div>
                                 <div className="intro-slide">
                                     <figure className="slide-image mb-0">
-                                        <img
+                                    <LazyLoadImage
                                             alt="Slide"
-                                            src="images/home/sliders/slide-3.jpg"
-                                            width="1180"
-                                            height="500"
+                                            src="/images/home/sliders/slide-3.jpg"
+                                            width={ 1180 }
+                                            height={ 500 }
                                         />
                                     </figure>
                                     <div className="intro-content">
@@ -163,7 +155,7 @@ const Home = () =>{
                                 <div className="lazy-overlay bg-transparent"></div>
                                 <LazyLoadImage
                                     alt="Banner"
-                                    src="images/home/banners/banner-1.png"
+                                    src="/images/home/banners/banner-1.png"
                                     threshold={ 200 }
                                     width="280"
                                     height="500"
@@ -202,7 +194,7 @@ const Home = () =>{
 
                                                     <LazyLoadImage
                                                         alt="Banner"
-                                                        src="images/home/banners/banner-2.jpg"
+                                                        src="/images/home/banners/banner-2.jpg"
                                                         threshold={ 200 }
                                                         width="580"
                                                         height={ 250 }
@@ -244,7 +236,7 @@ const Home = () =>{
 
                                                     <LazyLoadImage
                                                         alt="Banner"
-                                                        src="images/home/banners/banner-3.png"
+                                                        src="/images/home/banners/banner-3.png"
                                                         threshold={ 200 }
                                                         width="580"
                                                         height={ 250 }
@@ -288,7 +280,7 @@ const Home = () =>{
 
                                             <LazyLoadImage
                                                 alt="Banner"
-                                                src="images/home/banners/banner-4.jpg"
+                                                src="/images/home/banners/banner-4.jpg"
                                                 threshold={ 200 }
                                                 width="280"
                                                 height={ 250 }
@@ -330,11 +322,11 @@ const Home = () =>{
                                             return (
                                                 compania.logo==true || !(/undefined/).test(compania.logo) ?
                                                 
-                                                <ALink href={ { pathname:  `/companies`, query: {compania: compania._id     } } } className="sidebar-filter-clear" scroll={ false }>
-                                                     <img src={ compania.logo  } alt={compania.logo }  height={ 50 } width={ 50 } />
+                                                <ALink href={ { pathname:  `/companies`, query: {compania: compania._id     } } } className="sidebar-filter-clear" scroll={ false } key={index} >
+                                                     <LazyLoadImage src={ compania.logo  } alt={compania.logo }  height={ 150 } width={ 150 } />
                                                 </ALink>
                                                 :
-                                                <img src={ '/images/brands/8.png'} />
+                                                <LazyLoadImage src={ '/images/brands/8.png'} height={ 150 } width={ 150 }  alt="" />
 
 
                                             )
@@ -350,21 +342,11 @@ const Home = () =>{
 
                         <div className="mb-3"></div>
 
-                        <Reveal keyframes={ fadeInRightShorter } delay={ 300 } duration="1000" triggerOnce>
-                            
+                        <Reveal keyframes={ fadeInRightShorter } delay={ 300 } duration="1000" triggerOnce>                            
                                 <TrendyCollection />
-
-
-
                         </Reveal>
 
                         <div className="mb-5"></div>
-
-                        <Reveal keyframes={ fadeInRightShorter } delay={ 300 } duration="1000" triggerOnce>
-                            <p>ElectronicsCollection</p>
-                        </Reveal>
-
-                        <div className="mb-3"></div>
 
                         <Reveal keyframes={ fadeInRightShorter } delay={ 300 } duration="1000" triggerOnce>
                             <p>FurnitureCollection</p>
@@ -457,18 +439,6 @@ const Home = () =>{
 
                         <div className="mb-3"></div>
 
-                        <Reveal keyframes={ fadeInRightShorter } delay={ 300 } duration="1000" triggerOnce>
-                        <p>CookingCollection</p>
-                        </Reveal>
-
-                        <div className="mb-3"></div>
-
-                        <Reveal keyframes={ fadeInRightShorter } delay={ 300 } duration="1000" triggerOnce>
-                            <p>CookingCollection</p>
-                        </Reveal>
-
-                        <div className="mb-3"></div>
-
                         <div className="icon-boxes-container">
                             <div className="container-fluid">
                                 <div className="row">
@@ -536,7 +506,6 @@ const Home = () =>{
                     <aside className="col-xl-3 col-xxl-2 order-xl-first">
                         <button className="sidebar-fixed-toggler" onClick={ toggleSidebar }><i className="icon-cog"></i></button>
                         <div className="sidebar-filter-overlay" onClick={ hideSidebar }></div>
-
                         <StickyBox className="sticky-content" offsetTop={ 70 }>
                             <div className="sidebar sidebar-home">
                                 <div className="row">
@@ -545,10 +514,9 @@ const Home = () =>{
                                             <div className="banner banner-overlay">
                                                 <ALink href="/productos/list">
                                                     <div className="lazy-overlay"></div>
-
                                                     <LazyLoadImage
                                                         alt="Banner"
-                                                        src="images/home/banners/banner-11.jpg"
+                                                        src="/images/home/banners/banner-11.jpg"
                                                         threshold={ 200 }
                                                         width="280"
                                                         height={ 400 }
@@ -563,7 +531,6 @@ const Home = () =>{
                                                             <span>Sofas -20% Off</span>
                                                         </ALink>
                                                     </h3>
-
                                                     <ALink
                                                         href="/productos/3cols"
                                                         className="banner-link"
@@ -573,7 +540,6 @@ const Home = () =>{
                                                     </ALink>
                                                 </div>
                                             </div>
-
                                         </div>
                                     </div>
 
@@ -581,8 +547,7 @@ const Home = () =>{
                                         <div className="widget widget-products">
                                             <h4 className="widget-title">
                                                 <span>Bestsellers</span>
-                                            </h4>
-                                            
+                                            </h4>                                            
                                         </div>
                                     </div>
 
@@ -590,9 +555,7 @@ const Home = () =>{
                                         <div className="widget widget-deals">
                                             <h4 className="widget-title">
                                                 <span>Special Offer</span>
-                                            </h4>
-
-                                       
+                                            </h4>                                    
                                         </div>
                                     </div>
 
@@ -604,7 +567,7 @@ const Home = () =>{
 
                                                     <LazyLoadImage
                                                         alt="Banner"
-                                                        src="images/home/banners/banner-12.jpg"
+                                                        src="/images/home/banners/banner-12.jpg"
                                                         threshold={ 200 }
                                                         width="280"
                                                         height={ 400 }
@@ -632,21 +595,14 @@ const Home = () =>{
                                                     </ALink>
                                                 </div>
                                             </div>
-
                                         </div>
-                                    </div>
-
-                                    <div className="col-xl-12">
-                                        <p>BlogCollection</p>
                                     </div>
                                 </div>
                             </div>
                         </StickyBox>
                     </aside>
                 </div>
-            </div>
-
-         
+            </div> 
         </div>
     )
 }

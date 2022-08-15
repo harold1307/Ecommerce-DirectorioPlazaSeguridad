@@ -4,23 +4,28 @@ import { LazyLoadImage } from 'react-lazy-load-image-component';
 import ALink from '~/components/features/alink';
 import { useDispatch }  from "react-redux";
 import { addCartAction } from "../../../store/actions/AddCartAction";
+import countImage from '../../../controladors/countProductImages.jsx';
 
 const ProductEleven = ( props ) => {
     const router = useRouter();
     const query = router.query ; 
     const { product } = props;
-    const [ maxPrice, setMaxPrice ] = useState( 0 );
-    const [ minPrice, setMinPrice ] = useState( 99999 );
     const dispatch = useDispatch(); 
 
-    function onCartClick ( e ) {
+    function onCartClick ( e) {
         e.preventDefault();
-        dispatch( addCartAction(product) );  
+        dispatch( addCartAction(product));  
+        console.log(product)
     }
     function onQuickView ( e ) {
         e.preventDefault();
        
     }
+    function onWishlistClick( e ) {
+        e.preventDefault();
+      
+    }
+
 
     return (
 
@@ -51,7 +56,7 @@ const ProductEleven = ( props ) => {
                                 <span className="product-label label-out">Agotado</span>
                                 : ""
                         }
-                        <ALink href={ `/producto/${product.COMPANY._id}/${product._id}/${product.name}` } >
+                        <ALink href={ { pathname: `/producto/${product._id}`}} >
                             <LazyLoadImage
                                 alt="product"
                                 src={`${product.image.location }` } // Se debe cambiar por la imagen del producto principal.
@@ -71,7 +76,12 @@ const ProductEleven = ( props ) => {
                                     : ""
                             }
                         </ALink>
-
+                        <div className="product-action-vertical">
+                            {                         
+                                <a href="#" className="btn-product-icon btn-wishlist btn-expandable" onClick={ onWishlistClick }><span>Favorito</span></a>
+                            }
+                            <a href="#" className="btn-product-icon btn-quickview" title="Quick View" onClick={ onQuickView }><span>Ver</span></a>                      
+                        </div>
                         {
                         product.stockStatus && product.stockStatus !== 0 ?
                             <div className="product-action">
@@ -81,10 +91,7 @@ const ProductEleven = ( props ) => {
                                             <span>Agregar</span>
                                         </button>
                                         
-                                }
-                                <button className="btn-product btn-quickview" title="Quick View" onClick={ onQuickView }>
-                                     <span>Vista</span>
-                               </button>
+                                }                               
                             </div>
                             : ""
                         }
@@ -98,7 +105,7 @@ const ProductEleven = ( props ) => {
                         </div>
 
                         <h3 className="product-title">
-                            <ALink href={ `/producto/${product.COMPANY._id}/${product._id}/${product.name.split(' ').join('_')}` }>{ product.name }</ALink>
+                            <ALink href={ { pathname: `/producto/${product._id}`}} >{ product.name }</ALink>
                         </h3>
 
                         {
@@ -116,10 +123,7 @@ const ProductEleven = ( props ) => {
                                         :
                                         <div className="product-price">${product.regularPrice}</div>
                         }
-
-                    
-
-                    
+                 
                     </div>
                 </div>
         </Fragment>

@@ -3,15 +3,25 @@ const nextConfig = {
   reactStrictMode: false,
   swcMinify: false,
 
-  async redirects() {
+  images: {
+    domains: ['directorioseguridadgeneralpublic.s3.amazonaws.com'],
+  
+  },
+  async headers() {
     return [
       {
-        source: '/productos',
-        destination: '/productos/todos',
-        permanent: true,
+        source: '/login',
+        headers: [
+          {
+            key: 'Referrer-Policy',
+            value: 'unsafe-url'
+          },          
+        ],
       },
     ]
   },
+
+ 
 }
 
 module.exports = nextConfig

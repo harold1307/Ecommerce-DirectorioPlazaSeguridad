@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { useRouter } from 'next/router';
 import { useSelector }  from "react-redux";
 import GalleryDefault from '~/components/partials/products/gallery/gallery-default';
@@ -7,26 +7,21 @@ import InfoOne from '~/components/partials/products/info-tabs/info-one';
 import RelatedProductsOne from '~/components/partials/products/related/related-one';
 import Layout from '~/components/layout';
 import ALink  from '~/components/features/alink'
+import countImage from '../../controladors/countProductImages'
 
-function ProductDefault () {
-    const slug = useRouter().query.slug;
-    console.log('Slug:',slug)
- 
-    const query = useRouter().query;
-    console.log(query)
+const ProductDefault = () => {
 
-    const  productosState =  useSelector(state => state.productsAll);
+    const router = useRouter()
+    const  query = router.query
+    const  productosState =  useSelector(state => state.productsAll);   
+    var producto = productosState.productos.filter( producto => producto._id ==String(query.productoId));
     const  productosloading = productosState.loading;
-    const producto = productosState.productos.filter( producto => producto._id==query.productoId);
-    //const compania = producto.COMPANY._id
-    //const companyProducts = productosState.productos.filter( producto => producto.COMPANY._id==compania);
 
-    console.log('producto=>',producto)
-
+    console.log(countImage(producto._id))
 
     return (
         <Layout>
-            <div className="main">
+        <div className="main">
             <nav className="breadcrumb-nav">
                 <div className="container">
                     <ol className="breadcrumb">
@@ -36,21 +31,20 @@ function ProductDefault () {
                         <li className="breadcrumb-item">
                             <ALink href="/productos/todos">producto</ALink>
                         </li>
-                        <li className="breadcrumb-item active">{producto.name}</li>
+                        <li className="breadcrumb-item active">{producto.name }</li>
                     </ol>
                 </div>
-            </nav>
-            
-                <div className="page-content mt-5">
+            </nav>            
+            <div className="page-content mt-5">
                     <div className="container skeleton-body">
                         <div className="product-details-top">
                             <div className={ `row skel-pro-single ${!productosloading? '' : 'loaded'}` }>
                                 <div className="col-md-6">
                                     <div className="skel-product-gallery"></div>
                                     {
-                                        productosloading ?
-                                            <GalleryDefault product={ producto } />
-                                            : "GalleryDefault"
+                                        producto.length>0 ?
+                                            <GalleryDefault producto = { producto[0] } />
+                                            : ''
                                     }
                                 </div>
 
@@ -64,32 +58,33 @@ function ProductDefault () {
                                         </div>
                                     </div>
                                     {
-                                        productosloading ?
-                                            <DetailOne product={ producto } />
-                                            : "DetailOne"
+                                        producto.length>0 ?
+                                            <DetailOne producto={ producto[0]  } />
+                                            : ''
                                     }
                                 </div>
                             </div>
                         </div>
 
                         {
-                            !productosloading ?
+                            producto.length>0 ?
+                                <InfoOne producto ={ producto[0] } />                                
+                                    :
                                 <div className="skel-pro-tabs"></div>
-                                :
-                                <InfoOne product={ producto } />
+                                
                         }
                         {
-                            productosloading ?
+                            producto.length>0 ?
                             <RelatedProductsOne products={ [] } loading={ true } />
                                 :
-                               ""
+                            ""
                         }
 
                         
                     </div>
-                </div>
             </div>
-        </Layout>
+        </div>
+    </Layout>
     )
 }
 

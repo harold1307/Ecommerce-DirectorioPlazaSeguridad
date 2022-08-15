@@ -25,7 +25,6 @@ function Layout ( {children} ) {
          dispatch( cargarCompaniasAll() );       
     }, [ dispatch])
    
-
     useEffect( () => {
         if ( router.pathname.includes( 'pages/coming-soon' ) ) {
             document.querySelector( "header" ).classList.add( "d-none" );
