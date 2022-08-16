@@ -3,9 +3,7 @@ const nextConfig = {
   reactStrictMode: false,
   swcMinify: false,
   images: {
-    domains: ['directorioseguridadgeneralpublic.s3.amazonaws.com'],
-  
+    domains: ['directorioseguridadgeneralpublic.s3.amazonaws.com'],  
   }
 }
-
 module.exports = nextConfig
