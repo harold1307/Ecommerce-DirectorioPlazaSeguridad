@@ -73,25 +73,25 @@ const ProductTwelve = ( props ) => {
                         {                         
                             <a href="#" className="btn-product-icon btn-wishlist btn-expandable" onClick={ onWishlistClick }><span>Favorito</span></a>
                         }
-                        <a href="#" className="btn-product-icon btn-quickview" title="Quick View" onClick={ onQuickView }><span>Ver</span></a>
+                            <a href="#" className="btn-product-icon btn-quickview" title="Quick View" onClick={ onQuickView }><span>Ver</span></a>
                     </div>
 
                     {
-                    product.stockStatus && product.stockStatus !== 0 ?
-                        <div className="product-action">
-                            {                                                       
-                                <button className="btn-product btn-cart" onClick={ onCartClick }>
-                                    <span>Agregar</span>
-                                </button>                            
-                            }                       
-                        </div>
-                        : ""
+                        product.stockStatus && product.stockStatus !== 0 ?
+                            <div className="product-action">
+                                {                                                       
+                                    <button className="btn-product btn-cart" onClick={ onCartClick }>
+                                        <span>Agregar</span>
+                                    </button>                            
+                                }                       
+                            </div>
+                            : ""
                     }          
                 </figure>
 
                 <div className="product-body">
                     <div className="product-cat">
-                    <small>{product.category}</small> 
+                       <small>{product.category}</small> 
                     </div>
 
                     <h3 className="product-title">
@@ -111,8 +111,7 @@ const ProductTwelve = ( props ) => {
                                 </div>
                                 :
                                 <div className="product-price">${product.regularPrice}</div>
-                    }
-    
+                    }    
                 </div>
             </div>
         </Fragment>

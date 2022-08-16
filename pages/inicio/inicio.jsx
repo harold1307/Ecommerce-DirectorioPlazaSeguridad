@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
+import Image from 'next/image';
 import Reveal from 'react-awesome-reveal';
 import { useSelector }  from "react-redux";
 import StickyBox from 'react-sticky-box';
@@ -323,10 +324,10 @@ const Home = () =>{
                                                 compania.logo==true || !(/undefined/).test(compania.logo) ?
                                                 
                                                 <ALink href={ { pathname:  `/companies`, query: {compania: compania._id     } } } className="sidebar-filter-clear" scroll={ false } key={index} >
-                                                     <LazyLoadImage src={ compania.logo  } alt={compania.logo }  height={ 150 } width={ 150 } />
+                                                     <Image  src={ compania.logo  } alt={compania.logo }  height= '150' width='150' />
                                                 </ALink>
                                                 :
-                                                <LazyLoadImage src={ '/images/brands/8.png'} height={ 150 } width={ 150 }  alt="" />
+                                                <Image  src={ '/images/brands/8.png'} height='120' width='120' alt="" />
 
                                             )
                                         } )
