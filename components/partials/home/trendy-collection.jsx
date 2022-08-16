@@ -7,23 +7,17 @@ import ALink from '../../features/alink';
 import { catFiltrar } from '../../../utils';
 import { productSlider, slideTapProducts  } from '../../../utils/data';
 
-
-
 function TrendyCollection( props ) {
     const { products = [], loading } = props;
-
     const  categoriasState =  useSelector(state => state.categoriesAll);
     const  productosState =  useSelector(state => state.productsAll);
-    const  categoriasDestacadas = categoriasState.categorias.slice(4,9);
-     
-    console.log( categoriasDestacadas);
-    
+    const  categoriasDestacadas = categoriasState.categorias.slice(4,9);     
     return (
         <Tabs defaultIndex={ 0 } selectedTabClassName="show" >
         <div className="bg-lighter trending-products trendy">
             <div className="heading heading-flex mb-3">
                 <div className="heading-left">
-                    <h2 className="title">Productos Nuevos</h2>
+                    <h2 className="title">Produstos en Ofertas</h2>
                 </div>
 
                 <div className="heading-right">

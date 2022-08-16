@@ -58,7 +58,7 @@ const ProductTwelve = ( props ) => {
                             wrapperClassName="product-image"
                         />
                         {
-                            true ?
+                            false ?
                                 <LazyLoadImage
                                     alt="product"
                                     src={ `https://directorioseguridadgeneralpublic.s3.amazonaws.com/products/${product._id}/thumbnail/2.jpg`}

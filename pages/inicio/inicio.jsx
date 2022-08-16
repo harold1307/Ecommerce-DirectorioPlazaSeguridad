@@ -328,7 +328,6 @@ const Home = () =>{
                                                 :
                                                 <LazyLoadImage src={ '/images/brands/8.png'} height={ 150 } width={ 150 }  alt="" />
 
-
                                             )
                                         } )
                                         :
@@ -347,12 +346,6 @@ const Home = () =>{
                         </Reveal>
 
                         <div className="mb-5"></div>
-
-                        <Reveal keyframes={ fadeInRightShorter } delay={ 300 } duration="1000" triggerOnce>
-                            <p>FurnitureCollection</p>
-                        </Reveal>
-
-                        <div className="mb-3"></div>
 
                         <div className="row">
                             <div className="col-md-6">
