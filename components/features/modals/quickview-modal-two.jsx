@@ -24,13 +24,14 @@ const customStyles = {
 Modal.setAppElement( 'body' );
 
 function QuickViewModalTwo ( props ) {
+    const router = useRouter();
     const { slug } = props;
     if ( !slug ) {
         return <div></div>
     }
     const { data, loading, error } = [];
     const product = data && data.product.single;
-    const router = useRouter();
+    
     const [ carouselRef, setCarouselRef ] = useState( null );
     const events = {
         onTranslate: function ( e ) {

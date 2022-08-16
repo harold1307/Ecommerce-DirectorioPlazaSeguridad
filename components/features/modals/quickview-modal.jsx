@@ -20,7 +20,8 @@ const customStyles = {
 
 Modal.setAppElement( 'body' );
 
-function QuickViewModal ( props ) {
+function QuickViewModal ( props ) {  
+    const router = useRouter();
     const { slug } = props;
     if ( !slug ) {
         return <div></div>
