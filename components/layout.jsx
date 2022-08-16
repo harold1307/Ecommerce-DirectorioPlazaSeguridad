@@ -10,7 +10,7 @@ import Footer from "./partials/footer/footer";
 //import QuickViewModal from "./features/modals/quickview-modal";
 import MobileMenu from "./features/mobile-menu";
 import { isSafariBrowser, isEdgeBrowser } from "../utils";
-import { useDispatch }  from "react-redux";
+import { useDispatch, useSelector }  from "react-redux";
 import { cargarCategoriasAll } from "../store/actions/categoriesAllAction";
 import { cargarProductosAll } from "../store/actions/productsAllAction";
 import { cargarCompaniasAll } from "../store/actions/companiesAllAction";
@@ -19,6 +19,7 @@ function Layout ( {children} ) {
     const router = useRouter( "" );
     let scrollTop;
     const dispatch = useDispatch();
+    
     useEffect(() => {
          dispatch( cargarCategoriasAll() );      
          dispatch( cargarProductosAll() );   

@@ -28,7 +28,7 @@ function QuickViewModalTwo ( props ) {
     if ( !slug ) {
         return <div></div>
     }
-    const { data, loading, error } = useQuery( GET_PRODUCT, { variables: { slug, onlyData: true } } );
+    const { data, loading, error } = [];
     const product = data && data.product.single;
     const router = useRouter();
     const [ carouselRef, setCarouselRef ] = useState( null );

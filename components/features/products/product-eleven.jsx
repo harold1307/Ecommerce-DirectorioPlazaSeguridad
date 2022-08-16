@@ -1,6 +1,7 @@
 import React, { useState, useEffect, Fragment } from 'react';
 import { useRouter } from 'next/router';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
+import Image from 'next/image';
 import ALink from '~/components/features/alink';
 import { useDispatch }  from "react-redux";
 import { addCartAction } from "../../../store/actions/AddCartAction";
@@ -56,6 +57,7 @@ const ProductEleven = ( props ) => {
                                 <span className="product-label label-out">Agotado</span>
                                 : ""
                         }
+                     
                         <ALink href={ { pathname: `/producto/${product._id}`}} >
                             <LazyLoadImage
                                 alt="product"

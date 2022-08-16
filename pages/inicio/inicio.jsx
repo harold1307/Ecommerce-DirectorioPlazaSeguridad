@@ -343,7 +343,7 @@ const Home = () =>{
                         <div className="mb-3"></div>
 
                         <Reveal keyframes={ fadeInRightShorter } delay={ 300 } duration="1000" triggerOnce>                            
-                                <TrendyCollection />
+                            <TrendyCollection />
                         </Reveal>
 
                         <div className="mb-5"></div>
@@ -373,7 +373,7 @@ const Home = () =>{
                                             <h3 className="banner-title text-white">
                                                 <ALink href="/productos/list">
                                                     Floral T-shirts and Vests
-											<br />
+											    <br />
                                                     <span>Spring Sale</span>
                                                 </ALink>
                                             </h3>
@@ -443,7 +443,6 @@ const Home = () =>{
                                             </span>
                                             <div className="icon-box-content">
                                                 <h3 className="icon-box-title">Free Shipping</h3>
-
                                                 <p>Orders $50 or more</p>
                                             </div>
                                         </div>
@@ -457,7 +456,6 @@ const Home = () =>{
 
                                             <div className="icon-box-content">
                                                 <h3 className="icon-box-title">Free Returns</h3>
-
                                                 <p>Within 30 days</p>
                                             </div>
                                         </div>
@@ -471,7 +469,6 @@ const Home = () =>{
 
                                             <div className="icon-box-content">
                                                 <h3 className="icon-box-title">Get 20% Off 1 Item</h3>
-
                                                 <p>When you sign up</p>
                                             </div>
                                         </div>
@@ -485,7 +482,6 @@ const Home = () =>{
 
                                             <div className="icon-box-content">
                                                 <h3 className="icon-box-title">We Support</h3>
-
                                                 <p>24/7 amazing services</p>
                                             </div>
                                         </div>

@@ -33,7 +33,7 @@ function ShopListOne ( props ) {
                 ( [products].length == 0 && !loading ) ?
                     <p
                         className="no-results"
-                    >No hay producto en esta categoría.</p>
+                    >No hay productos en esta categoría.</p>
                     :
                     <>
                         {

@@ -21,7 +21,6 @@ const ProductTwelve = ( props ) => {
     const router = useRouter();
     const { product, index } = props;
    
-
     return (
         <Fragment>                
             <div className="product text-center w-100">
@@ -49,6 +48,7 @@ const ProductTwelve = ( props ) => {
                             <span className="product-label label-out">Agotado</span>
                             : ""
                     }
+                                     
                     <ALink href={ { pathname: `/producto/${product._id}`}} >
                         <LazyLoadImage
                             alt="product"

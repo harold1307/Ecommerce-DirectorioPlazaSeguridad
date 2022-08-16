@@ -64,6 +64,14 @@
 		z-index: 2;
 		transform: translateY(-50%);
 	}
+	.product-logo{
+		position: absolute;
+		top: 50%;
+		left: 0;
+		width: 30px;
+		height: 30px;
+		z-index: 3;
+	} 
 } 	
 
 .product-image {

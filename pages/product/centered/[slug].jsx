@@ -14,7 +14,7 @@ function ProductCentered () {
     const slug = useRouter().query.slug;
     if ( !slug ) return <div></div>;
 
-    const { data, loading, error } = useQuery( GET_PRODUCT, { variables: { slug } } );
+    const { data, loading, error } = [];
     const product = data && data.product.single;
     const related = data && data.product.related;
     const prev = data && data.product.prev;

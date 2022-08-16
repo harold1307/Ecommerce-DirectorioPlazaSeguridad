@@ -32,3 +32,6 @@ yarn-error.log*
 .vercel
 
 /storeX
+
+.gitignore
+server.js

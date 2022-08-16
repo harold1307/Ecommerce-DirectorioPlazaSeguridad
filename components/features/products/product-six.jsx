@@ -1,12 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
-import { connect } from 'react-redux';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
-
 import ALink from '~/components/features/alink';
-
-
-
 import { isInWishlist, isInCompare } from '~/utils';
 
 function ProductSix ( props ) {

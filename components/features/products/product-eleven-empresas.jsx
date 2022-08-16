@@ -9,19 +9,14 @@ const ProductElevenEmpresas = ( props ) => {
     const { empresa } = props;
 
     function onCartClick ( e ) {
-        e.preventDefault();
-       
+        e.preventDefault();       
     }
     function onQuickView ( e ) {
-        e.preventDefault();
-       
+        e.preventDefault();      
     }
     function onWishlistClick( e ) {
-        e.preventDefault();
-      
+        e.preventDefault();    
     }
-
-
 
     return (
 
@@ -29,8 +24,8 @@ const ProductElevenEmpresas = ( props ) => {
                 
                 <div className="product product-4 text-center w-100">
                     <figure className="product-media">
-                 
-                        <ALink href={ `/empresas/${empresa._id}/${ empresa.name}` } >
+
+                            <ALink href={ `/empresa/${empresa._id}`}>
                             <LazyLoadImage
                                 alt="product"
                                 src={`${ empresa.logo }` } // Se debe cambiar por la imagen del producto principal.
@@ -56,21 +51,16 @@ const ProductElevenEmpresas = ( props ) => {
                             }
                             <a href="#" className="btn-product-icon btn-quickview" title="Quick View" onClick={ onQuickView }><span>Ver</span></a>                      
                         </div>
-                      
-                     
-                            <div className="product-action">
-                                {              
-                                                          
-                                        <button className="btn-product btn-cart" onClick={ onCartClick }>
-                                            <span>Ver empresa</span>
-                                        </button>
-                                        
-                                }                               
-                            </div>
-                            
-                        
-                    
-
+                                       
+                        <div className="product-action">
+                            {              
+                                                    
+                                <button className="btn-product btn-cart" onClick={ onCartClick }>
+                                    <span>Ver empresa</span>
+                                </button>
+                                
+                            }                               
+                        </div>
                     </figure>
 
                     <div className="product-body">
@@ -79,10 +69,9 @@ const ProductElevenEmpresas = ( props ) => {
                         </div>
 
                         <h3 className="product-title">
-                        <ALink href={ `/empresas/${empresa._id}/${ empresa.name}` } ></ALink>
-                        </h3>
+                          <ALink href={ `/empresa/${empresa._id}`}></ALink>
+                        </h3>  
 
-                                       
                     </div>
                 </div>
         </Fragment>

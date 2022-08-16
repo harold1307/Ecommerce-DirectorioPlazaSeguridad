@@ -7,7 +7,6 @@ import InfoOne from '~/components/partials/products/info-tabs/info-one';
 import RelatedProductsOne from '~/components/partials/products/related/related-one';
 import Layout from '~/components/layout';
 import ALink  from '~/components/features/alink'
-import countImage from '../../controladors/countProductImages'
 
 const ProductDefault = () => {
 
@@ -16,8 +15,6 @@ const ProductDefault = () => {
     const  productosState =  useSelector(state => state.productsAll);   
     var producto = productosState.productos.filter( producto => producto._id ==String(query.productoId));
     const  productosloading = productosState.loading;
-
-    console.log(countImage(producto._id))
 
     return (
         <Layout>
@@ -47,7 +44,6 @@ const ProductDefault = () => {
                                             : ''
                                     }
                                 </div>
-
                                 <div className="col-md-6">
                                     <div className="entry-summary row">
                                         <div className="col-md-12">
@@ -65,22 +61,18 @@ const ProductDefault = () => {
                                 </div>
                             </div>
                         </div>
-
                         {
                             producto.length>0 ?
                                 <InfoOne producto ={ producto[0] } />                                
                                     :
-                                <div className="skel-pro-tabs"></div>
-                                
+                                <div className="skel-pro-tabs"></div>                               
                         }
                         {
                             producto.length>0 ?
-                            <RelatedProductsOne products={ [] } loading={ true } />
+                                 <RelatedProductsOne productos = { productosState.productos }  productoId = { producto._id } loading ={ productosState.loading } />
                                 :
                             ""
-                        }
-
-                        
+                        }                     
                     </div>
             </div>
         </div>

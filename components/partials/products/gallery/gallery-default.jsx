@@ -8,13 +8,13 @@ function GalleryDefault ( props ) {
     const [ isOpen, setIsOpen ] = useState( false );
     const [ photoIndex, setPhotoIndex ] = useState( 0 );
  
-
+   console.log('Image=',typeof `https://directorioseguridadgeneralpublic.s3.amazonaws.com/products/${producto._id}/thumbnail/1.jpg`)
 
     const imagenes=[
-        '/images/products/product-1.jpg',
-        '/images/products/product-2.jpg',
-        '/images/products/product-3.jpg',
-        '/images/products/product-4.jpg',
+       `https://directorioseguridadgeneralpublic.s3.amazonaws.com/products/${producto._id}/thumbnail/1.jpg`,
+       `https://directorioseguridadgeneralpublic.s3.amazonaws.com/products/${producto._id}/thumbnail/2.jpg`,
+       `https://directorioseguridadgeneralpublic.s3.amazonaws.com/products/${producto._id}/thumbnail/3.jpg`,
+       `https://directorioseguridadgeneralpublic.s3.amazonaws.com/products/${producto._id}/thumbnail/4.jpg`,
     ]
 
     useEffect( () => {
@@ -136,7 +136,7 @@ function GalleryDefault ( props ) {
                             overlay: {
                                 zIndex: 1041
                             },
-                        }                        
+                          }                        
                         }
                         enableZoom={true}
                     />

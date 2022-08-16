@@ -73,7 +73,7 @@ function About () {
                     <div className="row">
                         <div className="col-lg-5">
                             <div className="brands-text">
-                                <h2 className="title">The world's premium design brands in one destination.</h2>
+                                <h2 className="title">The world is premium design brands in one destination.</h2>
                                 <p>Phasellus hendrerit. Pellentesque aliquet nibh nec urna. In nisi neque, aliquet vel, dapibus id, mattis vel, nis</p>
                             </div>
                         </div>

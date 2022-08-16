@@ -3,6 +3,7 @@
   "version": "v0.0.2",
   "private": true,
   "scripts": {
+    "server": "node server.js",
     "dev": "next dev",
     "build": "next build",
     "start": "next start -p $PORT",
@@ -12,6 +13,7 @@
     "node": "<=16.15.1",
     "npm": "<=8.13.2"
   },
+  
   "dependencies": {
     "@reduxjs/toolkit": "^1.8.4",
     "axios": "^0.27.2",

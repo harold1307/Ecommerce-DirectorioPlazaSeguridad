@@ -46,8 +46,8 @@ function QuickViewModal ( props ) {
             router.events.off( 'routeChangeStart', closeModal );
         }
     }, [ ] )
-    const [ carouselRef, setCarouselRef ]= useState( false);
 
+    const [ carouselRef, setCarouselRef ]= useState( false);
     function closeModal () {
         if ( document.querySelector( ".ReactModal__Content" ) ) {
             document.querySelector( ".ReactModal__Content" ).classList.remove( "ReactModal__Content--after-open" );
