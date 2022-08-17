@@ -1,45 +1,13 @@
 import React, { useState, useEffect } from 'react';
-import { connect } from 'react-redux';
-
 import ALink from '~/components/features/alink';
 import PageHeader from '~/components/features/page-header';
-
-import { actions as wishlistAction } from '~/store/wishlist';
-import { actions as cartAction } from '~/store/cart';
 
 function Wishlist ( props ) {
     const [ wishItems, setWishItems ] = useState( [] );
 
-    useEffect( () => {
-        setWishItems( props.wishlist.reduce( ( acc, product ) => {
-            let max = 0;
-            let min = 999999;
-            product.variants.map( item => {
-                if ( min > item.price ) min = item.price;
-                if ( max < item.price ) max = item.price;
-            }, [] );
-
-            if ( product.variants.length == 0 ) {
-                min = product.sale_price
-                    ? product.sale_price
-                    : product.price;
-                max = product.price;
-            }
-
-            return [
-                ...acc,
-                {
-                    ...product,
-                    minPrice: min,
-                    maxPrice: max
-                }
-            ];
-        }, [] ) );
-    }, [ props.wishlist ] )
 
     function moveToCart ( product ) {
-        props.removeFromWishlist( product );
-        props.addToCart( product );
+   
     }
 
     return (
@@ -129,7 +97,7 @@ function Wishlist ( props ) {
                                                                     { product.stock == '0' ? 'read more' : 'select' }
                                                                 </ALink>
                                                                 :
-                                                                <button className="btn btn-block btn-outline-primary-2" onClick={ e => moveToCart( product ) }>
+                                                                <button className="btn btn-block btn-outline-primary-2" >
                                                                     <i className="icon-cart-plus"></i>
                                                                     add to cart
                                                                 </button>
@@ -139,7 +107,7 @@ function Wishlist ( props ) {
                                                 <td className="remove-col">
                                                     <button
                                                         className="btn-remove"
-                                                        onClick={ e => props.removeFromWishlist( product ) }
+                                                       
                                                     >
                                                         <i className="icon-close"></i>
                                                     </button>
@@ -211,8 +179,5 @@ function Wishlist ( props ) {
     )
 }
 
-const mapStateToProps = ( state ) => ( {
-    wishlist: state.wishlist.data
-} )
 
-export default connect( mapStateToProps, { ...wishlistAction, ...cartAction } )( Wishlist );
+export default Wishlist;
