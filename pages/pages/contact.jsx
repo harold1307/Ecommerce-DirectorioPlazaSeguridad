@@ -1,4 +1,3 @@
-import GoogleMapReact from 'google-map-react';
 import ALink from '~/components/features/alink';
 
 const MapComponent = ( { text } ) => <div>{ text }</div>;
@@ -173,17 +172,7 @@ function Contact () {
                     </div>
                 </div>
                 <div id="map" className="w-100">
-                    <GoogleMapReact
-                        bootstrapURLKeys={ { key: 'AIzaSyBgVsModMpsR59_OIK-2sEcmhBBkW4xUuw' } }
-                        defaultCenter={ { lat: 59.95, lng: 30.33 } }
-                        defaultZoom={ 11 }
-                    >
-                        <MapComponent
-                            lat={ 59.955413 }
-                            lng={ 30.337844 }
-                            text="My Marker"
-                        />
-                    </GoogleMapReact>
+                 
                 </div>
             </div>
         </div>
