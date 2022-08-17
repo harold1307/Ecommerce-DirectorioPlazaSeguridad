@@ -12,16 +12,12 @@ import axios from 'axios';
 
 
 export function verificarUsuario(credencialesUsuario ) {
-
     function postUserAccount() {
         return axios.post('https://directorioseguridad.dte.gt/api/login', credencialesUsuario);
-      }
-      
+      }      
       function getUserPermissions() {
         return axios.get('https://directorioseguridad.dte.gt/api/login/success'); 
       }
-
-
     return  (dispatch) => {       
            dispatch( verificarUsuario_Inicio() );        
            toast.info('Verificando credenciales', {
@@ -34,13 +30,13 @@ export function verificarUsuario(credencialesUsuario ) {
             draggable: true
             });       
                          
-          Promise.all([getUserAccount(), getUserPermissions()])
-            .then(function (results) {
-              const acct = results[0];
-              const perm = results[1];
-              console.log('acct: ', ' =>  ', acct)
-              console.log('perm: ', ' =>  ', perm)
-              console.log('results: ', ' =>  ', results)
+          Promise.all([postUserAccount(), getUserPermissions()])
+            .then((res) => {
+              const acc = res[0];
+              const perm = res[1];
+              console.log('acc: ', ' =>  ', acc)
+              console.log('perm: ', ' =>  ', perm.body)
+              console.log('results: ', ' =>  ', res)
               dispatch( verificarUsuario_Exito( perm ) ); 
               toast.success('Iniciando sesión', {
                 position: "bottom-center",
@@ -66,28 +62,15 @@ export function verificarUsuario(credencialesUsuario ) {
                     progress: ''
                     }); 
               })
-
-
-
-
-
-
-
-
-
-
-
-        }   
-           
-
+        }             
 }
 
 export function cerrarSesion() {
     return async (dispatch) => {       
-        dispatch( cerrarSesion_Inicio() );  
-       
+        dispatch( cerrarSesion_Inicio() );      
            toast.info('Cerrando sesion', {
             position: "bottom-center",
+            theme: "light",
             autoClose: 4000,
             hideProgressBar: false,
             closeOnClick: true,
