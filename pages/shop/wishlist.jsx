@@ -4,8 +4,6 @@ import PageHeader from '~/components/features/page-header';
 
 function Wishlist ( props ) {
     const [ wishItems, setWishItems ] = useState( [] );
-
-
     function moveToCart ( product ) {
    
     }
