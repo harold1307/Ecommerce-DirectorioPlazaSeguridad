@@ -20,7 +20,7 @@ function ShopListOneEmpresas ( props ) {
     }, [ perPage ] )
 
     useEffect( () => {
-        if ( type === 'todos' ) setGridClass( 'col-2 col-md-3 col-lg-4' );
+        if ( type === 'todos' ) setGridClass( 'col-6 col-md-3 col-lg-4' );
         if ( type === 'list' || type === '2cols' ) setGridClass( 'col-6' );
         if ( type === '3cols' ) setGridClass( 'col-6 col-md-4 col-lg-4' );
         if ( type === '4cols' )

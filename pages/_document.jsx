@@ -13,7 +13,7 @@ export default class MyDocument extends Document {
                 </Head>
                 <body>                     
                     <Main />
-                    <script src="/js/jquery.min.js" async></script>                    
+                            
                     <NextScript />
                 </body>
             </Html>
