@@ -24,7 +24,7 @@ export function verificarUsuario(credencialesUsuario ) {
         try {     
             
                 
-           let { data } = await clienteAxios.post('/login',credencialesUsuario);                   
+           let { data } = await clienteAxios.post('/login',JSON.stringify(credencialesUsuario));                   
            dispatch( verificarUsuario_Exito(data) );   
            console.log('dataUser=', data)       
            toast.success('Iniciando sesión', {
