@@ -7,7 +7,6 @@ import StickyBox from 'react-sticky-box';
 import ALink from '../../components/features/alink';
 import OwlCarousel from '../../components/features/owl-carousel';
 import TrendyCollection from '../../components/partials/home/trendy-collection';
-
 import { homeData, introSlider, brandSlider, fadeInUpShorter, fadeInLeftShorter, fadeInUp, fadeInRightShorter } from '../../utils/data';
 
 const Home = () =>{

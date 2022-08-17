@@ -38,6 +38,7 @@
     "react-owl-carousel2": "^0.3.0",
     "react-redux": "^7.2.8",
     "react-router-dom": "^6.3.0",
+    "react-slick": "^0.29.0",
     "react-slide-toggle": "^0.3.5",
     "react-sticky-box": "^1.0.2",
     "react-tabs": "^3.2.2",

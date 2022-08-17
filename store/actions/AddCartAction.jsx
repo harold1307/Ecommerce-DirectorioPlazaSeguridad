@@ -47,6 +47,6 @@ export function addCartAction( producto ) {
 const addCartAction_Exito = (producto) => ({
     type: ADD_CART,
      payload: {
-        producto : producto
+        producto : producto[0]
     }
 }); 

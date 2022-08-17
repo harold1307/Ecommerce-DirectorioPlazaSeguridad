@@ -10,7 +10,12 @@ const initialState = {
 const addCartReducer = (state = [], action)=> {
     switch(action.type) {
         case ADD_CART: 
-            return  [...state, {...action.payload.producto, producto }      ]   
+            return  
+                producto: [
+                    ...state.producto,
+                    addProductsJSON.stringify(action.payload.producto) 
+                    
+                ]
                 
         case REMOVE_CART: 
             return {

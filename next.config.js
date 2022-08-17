@@ -1,8 +1,10 @@
+var webpack = require('webpack');
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: false,
   swcMinify: false,
+  compress: true,
 
   images: {
     domains: ['directorioseguridadgeneralpublic.s3.amazonaws.com'],
@@ -11,11 +13,7 @@ const nextConfig = {
     return [
       {
         source: '/login',
-        headers: [
-          {
-            key: 'Referrer-Policy',
-            value: 'unsafe-url'
-          },  
+        headers: [            
           { 
             key: "Access-Control-Allow-Credentials", 
             value: "true" 
@@ -34,5 +32,6 @@ const nextConfig = {
     ]
   },
 
- 
 }
+
+module.exports = nextConfig

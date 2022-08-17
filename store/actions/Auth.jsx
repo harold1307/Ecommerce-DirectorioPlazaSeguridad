@@ -3,54 +3,83 @@ import {
     AUTH_EXITO ,
     AUTH_ERROR,
     AUTH_CERRAR
-
     } from '../types/typesAuth';
 import clienteAxios from '../../configuracion/axios';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import axios from 'axios';
+
+
 
 export function verificarUsuario(credencialesUsuario ) {
-    return async (dispatch) => {       
-        dispatch( verificarUsuario_Inicio() );        
+
+    function postUserAccount() {
+        return axios.post('https://directorioseguridad.dte.gt/api/login', credencialesUsuario);
+      }
+      
+      function getUserPermissions() {
+        return axios.get('https://directorioseguridad.dte.gt/api/login/success'); 
+      }
+
+
+    return  (dispatch) => {       
+           dispatch( verificarUsuario_Inicio() );        
            toast.info('Verificando credenciales', {
             position: "bottom-center",
+            theme: "light",
             autoClose: 5000,
             hideProgressBar: false,
             closeOnClick: true,
             pauseOnHover: true,
             draggable: true
-            });
-        
-        try {     
-            
-                
-           let  data  = await clienteAxios.post('/login',JSON.stringify(credencialesUsuario));                   
-           dispatch( verificarUsuario_Exito(data) );   
-           console.log('dataUser=', data)       
-           toast.success('Iniciando sesión', {
-           position: "bottom-center",
-            autoClose: 5000,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-            progress: '' ,
-            });
-
-        } catch (error) {
-            console.log(error);               
-            dispatch( verificarUsuario_Error(error) );             
-            toast.error('Upp, parece que hubo un error', {
+            });       
+                         
+          Promise.all([getUserAccount(), getUserPermissions()])
+            .then(function (results) {
+              const acct = results[0];
+              const perm = results[1];
+              console.log('acct: ', ' =>  ', acct)
+              console.log('perm: ', ' =>  ', perm)
+              console.log('results: ', ' =>  ', results)
+              dispatch( verificarUsuario_Exito( perm ) ); 
+              toast.success('Iniciando sesión', {
                 position: "bottom-center",
+                theme: "light",
                 autoClose: 5000,
                 hideProgressBar: false,
                 closeOnClick: true,
                 pauseOnHover: true,
                 draggable: true,
-                progress: ''
-                }); 
-        }
-    }
+                progress: '' ,
+                });  
+
+            }) .catch(function (error) {
+                dispatch( verificarUsuario_Error(error) );             
+                toast.error('Upp, parece que hubo un error', {
+                    position: "bottom-center",
+                    theme: "light",
+                    autoClose: 5000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: ''
+                    }); 
+              })
+
+
+
+
+
+
+
+
+
+
+
+        }   
+           
+
 }
 
 export function cerrarSesion() {
@@ -64,8 +93,7 @@ export function cerrarSesion() {
             closeOnClick: true,
             pauseOnHover: true,
             draggable: true
-            });        
-       
+            });             
     }
 }
 
@@ -77,7 +105,7 @@ const verificarUsuario_Inicio = () => ({
         error: false
     }
 });
-const verificarUsuario_Exito = (dataUser) => ({
+const verificarUsuario_Exito = ( dataUser ) => ({
     type: AUTH_EXITO,
      payload: {
         dataUser  : dataUser,
