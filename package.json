@@ -13,11 +13,11 @@
     "node": "<=16.15.1",
     "npm": "<=8.13.2"
   },
-  
   "dependencies": {
     "@reduxjs/toolkit": "^1.8.4",
     "axios": "^0.27.2",
     "cors": "^2.8.5",
+    "jquery": "^3.5.1",
     "magnifier-test-fork": "^3.0.4",
     "next": "12.2.3",
     "nextjs-cors": "^2.1.1",

@@ -97,7 +97,7 @@ function Cart ( props ) {
                                                                     <div className="product">
                                                                         <figure className="product-media">
                                                                             <ALink href={ `/product/default/${item.slug}` } className="product-image">
-                                                                                <img src={ '/public/images/products/single/extended/bg-2.jpg' } alt="product" />
+                                                                                 <img src={ '/public/images/products/single/extended/bg-2.jpg' } alt="product" />
                                                                                 imagen
                                                                             </ALink>
                                                                         </figure>
