@@ -5,10 +5,6 @@ import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 import ALink from '~/components/features/alink';
 
-import { actions as wishlistAction } from '~/store/wishlist';
-import { actions as cartAction } from '~/store/cart';
-import { actions as compareAction } from '~/store/compare';
-import { actions as demoAction } from '~/store/demo';
 
 import { isInWishlist, isInCompare } from '~/utils';
 
