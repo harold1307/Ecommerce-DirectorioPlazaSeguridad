@@ -7,7 +7,6 @@ function Wishlist ( props ) {
     function moveToCart ( product ) {
    
     }
-
     return (
         <main className="main">
             <PageHeader
