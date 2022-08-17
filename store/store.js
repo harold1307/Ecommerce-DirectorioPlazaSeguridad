@@ -12,7 +12,8 @@ import thunk from 'redux-thunk';
 const PersistReducer = persistReducer(storageConfig, reducer);
 const store = configureStore({
   reducer: PersistReducer,
-  devTools: process.env.NODE_ENV !== 'production',
+  //devTools: process.env.NODE_ENV !== 'production',
+  devTools: true,
   middleware: [thunk]
 })
 
