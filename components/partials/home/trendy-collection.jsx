@@ -25,9 +25,9 @@ function TrendyCollection( props ) {
                     {
                         categoriasDestacadas.map((categoria, index)=>{
                             return(                              
-                                    <Tab className="nav-item" key={index}>
-                                        <span className="nav-link"><small>{categoria.name}</small></span>
-                                    </Tab>                             
+                                <Tab className="nav-item" key={index}>
+                                    <span className="nav-link"><small>{categoria.name}</small></span>
+                                </Tab>                             
                             )
                         })                        
                     }

@@ -53,24 +53,18 @@ const ProductElevenEmpresas = ( props ) => {
                         </div>
                                        
                         <div className="product-action">
-                            {              
-                                                    
-                                <button className="btn-product btn-cart" onClick={ onCartClick }>
-                                    <span>Ver empresa</span>
-                                </button>
-                                
-                            }                               
+                            <ALink  className="btn-product btn-cart"  href={ `/empresa/${empresa._id}`}>                                                 
+                                <span>Ver empresas</span>
+                            </ALink>                               
                         </div>
                     </figure>
 
-                    <div className="product-body">
-                        <div className="product-cat">
-                          <small>{empresa.name}</small> 
+                    <div className="product-body">   
+                        <div className='product-cat'>{empresa.bussiness}</div>                     
+                        <div className="product-title">                        
+                           <ALink href={ `/empresa/${empresa._id}`}> {empresa.name}</ALink>                          
                         </div>
 
-                        <h3 className="product-title">
-                          <ALink href={ `/empresa/${empresa._id}`}></ALink>
-                        </h3>  
 
                     </div>
                 </div>

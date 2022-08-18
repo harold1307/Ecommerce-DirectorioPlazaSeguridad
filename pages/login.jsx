@@ -10,17 +10,16 @@ import { verificarUsuario } from "../store/actions/Auth";
 
 
 function Login () {
-    const router = useRouter()
+    const router = useRouter()   
     const dispatch = useDispatch();
     const { register, handleSubmit, formState: { errors } } = useForm();
     const dataFormSesion = (sendDataForm) =>  {
-       dispatch( verificarUsuario(sendDataForm)); 
+       dispatch( verificarUsuario(sendDataForm));       
     };  
     const [passwordShown, setPasswordShown] = useState(false);
     const togglePasswordVisiblity = () => {
       setPasswordShown(passwordShown ? false : true);
     };
-
 
     const verifyUser =  useSelector(state => state.authReducer.dataUser);
     //verifyUser.success? router.push('/dashboard') : '';  
@@ -56,9 +55,10 @@ function Login () {
                                                 <form onSubmit={handleSubmit(dataFormSesion) }>
                                                     <div className="form-group">
                                                         <label htmlFor="singin-email-2">Correo electrónico *</label>
-                                                        <input type="text" className="form-control" placeholder="" {...register("username", {required: true, pattern: /^\S+@\S+$/i})} />                                               
+                                                        <input id="email" type="text" className="form-control" placeholder="" {...register("username", {required: true, pattern: { value: /\S+@\S+\.\S+/, message: "Verifique su correo." }  })} />                                                                                         
                                                     </div>
-
+                                                    {errors.email && <span role="alert">{errors.email.message}</span>}
+                                                   
                                                     <div className="form-group campo-password">
                                                         <label htmlFor="singin-password-2">Clave *</label>
                                                         <input type={passwordShown ? "text" : "password"} className="form-control"  placeholder="" {...register("password", {required: true, maxLength: 25})} />                                            

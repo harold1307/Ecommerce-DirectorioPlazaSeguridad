@@ -5,10 +5,11 @@ import {
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-export function addCartAction( producto ) {
+export function addCartAction( productoId , qty ) {
     return async (dispatch) => {          
-           toast.info('Agrenando a al carrito', {
-            position: "top-right",
+           toast.info('Agrenando al carrito', {
+            position: "bottom-center",
+            theme: "light",
             autoClose: 1500,
             hideProgressBar: false,
             closeOnClick: true,
@@ -16,13 +17,13 @@ export function addCartAction( producto ) {
             draggable: true
             });
         
-        try {    
-           
-        console.log('addCart:', producto);       
-           dispatch( addCartAction_Exito(producto) );              
+        try {        
+           console.log( 'productoId:', productoId , qty )
+           dispatch( addCartAction_Exito(productoId, qty ) );              
            toast.success('Producto agregado.', {
-           position: "top-right",
-            autoClose: 3000,
+            position: "bottom-center",
+            theme: "light",
+            autoClose: 4000,
             hideProgressBar: false,
             closeOnClick: true,
             pauseOnHover: true,
@@ -33,6 +34,7 @@ export function addCartAction( producto ) {
         } catch (error) {            
             toast.error('Upp, parece que hubo un error', {
                 position: "bottom-center",
+                theme: "light",
                 autoClose: 5000,
                 hideProgressBar: false,
                 closeOnClick: true,
@@ -40,13 +42,16 @@ export function addCartAction( producto ) {
                 draggable: true,
                 progress: ''
                 }); 
+                console.table(error)
         }
     }
 }
 
-const addCartAction_Exito = (producto) => ({
-    type: ADD_CART,
-     payload: {
-        producto : producto[0]
-    }
+const addCartAction_Exito = (productoId, qty) => ({
+    type: ADD_CART,  
+    payload : {
+        productoId, 
+        qty
+    } 
+        
 }); 

@@ -23,8 +23,8 @@ const Empresa = () => {
     const  loading = companiesState.loading;
     var companiaFilt = companiesState.companias.filter(compania=> (compania._id== query.empresaId));
     var compania = [];
-    var compania2 = companiaFilt[0];
-    console.log('companiaFilt ',  compania2  )
+    var company = companiaFilt[0];
+    console.log('companiaFilt ',  company )
  
 
 
@@ -96,10 +96,17 @@ const Empresa = () => {
                     <div className='row'>
                     <div className='col-md-3'>
                             <aside>
+                            {
+
+                                loading? 
                             <div>
-                                <img src = { compania.logo}  />
+                                <img src = { company.logo}  alt="" width='100%' height ='auto'/>
                             </div>
-                            <div className='mt-4'></div>
+                            : ''
+
+                            }
+                            
+                            
 
         
                             </aside>

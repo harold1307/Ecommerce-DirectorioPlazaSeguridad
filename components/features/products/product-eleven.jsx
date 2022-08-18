@@ -6,7 +6,7 @@ import ALink from '~/components/features/alink';
 import { useDispatch }  from "react-redux";
 import { addCartAction } from "../../../store/actions/AddCartAction";
 import countImage from '../../../controladors/countProductImages.jsx';
-
+const qty =1;
 const ProductEleven = ( props ) => {
     const router = useRouter();
     const query = router.query ; 
@@ -14,9 +14,8 @@ const ProductEleven = ( props ) => {
     const dispatch = useDispatch(); 
 
     function onCartClick ( e) {
-        e.preventDefault();
-        dispatch( addCartAction(product));  
-        console.log(product)
+        e.preventDefault();        
+        dispatch( addCartAction(product, qty));     
     }
     function onQuickView ( e ) {
         e.preventDefault();
@@ -96,9 +95,7 @@ const ProductEleven = ( props ) => {
                                 }                               
                             </div>
                             : ""
-                        }
-                    
-
+                        }                   
                     </figure>
 
                     <div className="product-body">
@@ -115,17 +112,15 @@ const ProductEleven = ( props ) => {
                                 <div className="product-price">
                                     <span className="out-price">Agotado</span>
                                 </div>
-                                :
-                               
-                                    product.salePrice?
-                                        <div className="product-price">
-                                            <span className="new-price">${product.salePrice}</span>
-                                            <span className="old-price">${product.regularPrice}</span>
-                                        </div>
-                                        :
-                                        <div className="product-price">${product.regularPrice}</div>
-                        }
-                 
+                                :                               
+                                product.salePrice?
+                                    <div className="product-price">
+                                        <span className="new-price">${product.salePrice}</span>
+                                        <span className="old-price">${product.regularPrice}</span>
+                                    </div>
+                                    :
+                                    <div className="product-price">${product.regularPrice}</div>
+                        }                 
                     </div>
                 </div>
         </Fragment>

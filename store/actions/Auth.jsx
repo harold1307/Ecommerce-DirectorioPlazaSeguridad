@@ -21,13 +21,13 @@ export function verificarUsuario(credencialesUsuario ) {
     return  (dispatch) => {       
            dispatch( verificarUsuario_Inicio() );        
            toast.info('Verificando credenciales', {
-            position: "bottom-center",
-            theme: "light",
-            autoClose: 5000,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true
+                position: "bottom-center",
+                theme: "light",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true
             });       
                          
           Promise.all([postUserAccount(), getUserPermissions()])
@@ -35,7 +35,7 @@ export function verificarUsuario(credencialesUsuario ) {
               const acc = res[0];
               const perm = res[1];
               console.log('acc: ', ' =>  ', acc)
-              console.log('perm: ', ' =>  ', perm.body)
+              console.log('perm: ', ' =>  ', perm.request)
               console.log('results: ', ' =>  ', res)
               dispatch( verificarUsuario_Exito( perm ) ); 
               toast.success('Iniciando sesión', {

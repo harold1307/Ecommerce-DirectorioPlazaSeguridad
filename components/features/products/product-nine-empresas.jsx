@@ -41,7 +41,7 @@ function ProductSixEmpresas ( props ) {
                         }
 
 
-                        <ALink  href={ { pathname: '/empresa', query: { empresaId : empresa._id }}} >{ empresa.name }
+                        <ALink href={ `/empresa/${empresa._id}`}>
                             <LazyLoadImage
                                 alt="product"
                                 src={ empresa.logo }
@@ -72,14 +72,9 @@ function ProductSixEmpresas ( props ) {
                 </div>
                 <div className="col-md-6 order-last">
                     <div className="product-body product-action-inner">
-                        <div className="product-cat">
-                            {
-                                empresa.name
-                            }
-                        </div>
-
+                         <div className='product-cat'>{empresa.bussiness}</div>                
                         <h3 className="product-title">
-                        <ALink  href={ { pathname: '/empresa', query: { empresaId : empresa._id }}} >{ empresa.name }</ALink>
+                        <ALink href={ `/empresa/${empresa._id}`}>{ empresa.name }</ALink>
                         </h3>
 
                         <div className="product-content">
@@ -88,23 +83,14 @@ function ProductSixEmpresas ( props ) {
                     </div>
                 </div>
 
-                <div className="col-md-3 col-6 order-md-last order-lg-last">
-             
+                <div className="col-md-3 col-6 order-md-last order-lg-last">        
                     <div className="product-list-action">  
-                        
-                     
-                            <div className="product-action">    
-                                                          
-                                <ALink className="btn btn-primary"  href={ { pathname: '/empresa', query: { empresaId : empresa._id }}} scroll={ false }>                            
+            
+                            <div className="product-action">   
+                                <ALink  className="btn btn-primary"  href={ `/empresa/${empresa._id}`}>                                                 
                                     <span>Ver empresas</span>
-                                </ALink>   
-
-                          
-
-                                                          
-                            </div>
-                         
-                        
+                                </ALink>                                            
+                            </div>            
                     </div>                    
                
                 </div>
