@@ -10,6 +10,7 @@ import MainMenu from '../../partials/header/partials/main-menu';
 import StickyHeader from '../../features/sticky-header';
 import RegistroModal from '~/components/features/modals/registro-modal';
 import CartMenu from '../../partials/header/partials/cart-menu';
+import WishlistMenu from '../../partials/header/partials/wishlist-menu';
 
 
 function Header() {
@@ -64,11 +65,8 @@ function Header() {
                                 </div>
                                 <div className="col-lg-4 col-xxl-5col d-flex justify-content-end align-items-center">
                                     <div className="header-dropdown-link">
-
-
-                                        <i className="icon-heart-o"></i>
-                                        <CartMenu/>
-
+                                        <WishlistMenu />
+                                        <CartMenu />
                                     </div>
                                 </div>
                             </div>

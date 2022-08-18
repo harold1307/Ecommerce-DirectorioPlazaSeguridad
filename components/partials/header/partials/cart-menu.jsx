@@ -4,25 +4,24 @@ import { useSelector }  from "react-redux";
 function CartMenu( props ) {
     const  cartState =  useSelector(state => state.addCartReducer);
     const  loading = cartState .loading;
-    console.log(cartState)
+    console.log('cart', typeof  cartState.cart.length)
 
     function removeFromCart(id) {
-        console.log(id)
-
+        console.log(cartState.cart)
     }
 
     return (
         <div className="dropdown cart-dropdown">
-            <ALink href="/shop/cart" className="dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-display="static">
-                <i className="icon-shopping-cart"></i>
-                <span className="cart-count">{cartState.cart.length}</span>
-                <span className="cart-txt">Cesta</span>
+            <ALink href="/carrito" className="dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-display="static">
+                <i className="icon-shopping-cart display-4"></i>
+                <span className="cart-count">{cartState.cart.length}</span>                
             </ALink>
 
-            <div className={ `dropdown-menu dropdown-menu-right ${ 1 === 0 ? 'text-center' : '' }` } >
+            <div className={ `dropdown-menu dropdown-menu-right ${ cartState.cart.length === 0 ? 'text-center' : '' }` } >
                 {
-                   false ?
-                        <p>No products in the cart.</p> :
+                    cartState.cart==0 ?
+                        <p>Ningun producto en el carrito.</p> 
+                        :
                         <>
                             <div className="dropdown-cart-products">
                                 { cartState.cart.map( ( producto, index ) => (
@@ -64,8 +63,7 @@ function CartMenu( props ) {
                             </div>
 
                             <div className="dropdown-cart-action">
-                                <ALink href="/carrito" className="btn btn-primary">Ver Carrito</ALink>
-                                <ALink href="" className="btn btn-outline-primary-2"><span>Checkout</span><i className="icon-long-arrow-right"></i></ALink>
+                                <ALink href="/carrito" className="btn btn-primary">Ver Carrito</ALink>                               
                             </div>
                         </>
                 }

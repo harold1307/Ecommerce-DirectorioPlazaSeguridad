@@ -7,11 +7,15 @@ import Layout from '~/components/layout';
 import { useSelector }  from "react-redux";
 import { cartPriceTotal } from '~/utils/index';
 import CompanyModal from '~/components/features/modals/company-modal';
+import { useDispatch }  from "react-redux";
+import { removeCartAction } from "../store/actions/AddCartAction";
 
 function Cart ( props ) {
+    const dispatch = useDispatch();
     const [ cartList, setCartList ] = useState( [0] );
     const [ shippingCost, setShippingCost ] = useState( 0 );
     const addCartRecducerState =  useSelector( state => state.addCartReducer);
+    
     
     useEffect( () => {
         setCartList( props.cartItems );
@@ -19,6 +23,10 @@ function Cart ( props ) {
 
     function onChangeShipping ( value ) {
         setShippingCost( value );
+    }
+
+    function removeFromCart( productId){
+        dispatch( removeCartAction(productId) );     
     }
 
     function changeQty ( value, index ) {
@@ -118,7 +126,7 @@ function Cart ( props ) {
                                                                         <CompanyModal  producto = {producto} index = {index} />
                                                                     </td>
                                                                     <td className="remove-col text-center">
-                                                                        <button className="btn-remove" onClick={ () => props.removeFromCart( item ) }><i className="icon-close"></i></button>
+                                                                        <button  id= { producto._id }  className="btn-remove" onClick={ () => removeFromCart( producto._id ) }><i className="icon-close"></i></button>
                                                                     </td>
                                                                 </tr>
                                                             ) 
@@ -223,10 +231,10 @@ function Cart ( props ) {
                                         <div className="col-12">
                                             <div className="cart-empty-page text-center">
                                                 <i className="cart-empty icon-shopping-cart" style={ { lineHeight: 1, fontSize: '15rem' } }></i>
-                                                <p className="px-3 py-2 cart-empty mb-3">No products added to the cart</p>
+                                                <p className="px-3 py-2 cart-empty mb-3">Ningun producto agregado a la lista de productos.</p>
                                                 <p className="return-to-shop mb-0">
                                                     <ALink
-                                                        href="/productos/list"
+                                                        href="/productos/todos"
                                                         className="btn btn-primary"
                                                     >RETURNAR</ALink>
                                                 </p>

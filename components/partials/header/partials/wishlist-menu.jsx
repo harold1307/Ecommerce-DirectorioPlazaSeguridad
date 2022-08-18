@@ -9,17 +9,10 @@ function WishlistMenu( props ) {
 
     return (
         <ALink href="/shop/wishlist" className="wishlist-link" title="Wishlist">
-            <i className="icon-heart-o"></i>
-            <span className="wishlist-count">{ wishlist.length }</span>
-            <span className="wishlist-txt">Wishlist</span>
+            <i className="icon-heart-o display-4"></i>
+            <span className="wishlist-count">{ wishlist.length }</span>           
         </ALink>
     );
-}
-
-function mapStateToProps( state ) {
-    return {
-        wishlist: state.wishlist.data
-    }
 }
 
 export default WishlistMenu;
