@@ -80,30 +80,20 @@ const CompanyModal = (props)  => {
                                                    <img className='img-fluid' src={producto.COMPANY.logo} alt="..." />
                                                 </div>
                                                 <div className="col-md-8">
-                                                    <div className="card-body">
-                                                        <h5 className="card-title">Datos de contacto</h5>
+                                                    <div className="card-body pt-3">
+                                                        <h5 className="card-title pb-1">Datos de contacto</h5>
                                                         <div className='name'>
                                                                   <span className='text-bold'>Nombre completo: </span>
                                                                   <span>{producto.COMPANY.contact_firstName} </span>    
                                                                   <span>{producto.COMPANY.contact_lastName} </span>       
                                                         </div>
-                                                    </div>
+                                                    </div>                                                    
                                                 </div>
                                              </div>
                                         </div>
 
                                     </div>                                
-                            </div>
-                            <div className="modal-footer">
-                            <div className='container'>
-                                <div className='row'>
-                                    <div className='col-12 text-center h6 pt-2 text-center'> 
-                                        Footer
-                                    </div>
-
-                                </div>
-                            </div>  
-                            </div>
+                            </div>                            
                         </div>
                     </Modal>
                     : ''
