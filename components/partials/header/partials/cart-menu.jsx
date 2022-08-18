@@ -29,14 +29,22 @@ function CartMenu( props ) {
                                     <div className="product justify-content-between" key={index}>
                                         <div className="product-cart-details">
                                             <h4 className="product-title">
-                                                <ALink href={ `/product/default` }>{producto.name}</ALink>
+                                                <ALink href={ `/producto/${producto._id}` }>{producto.name}</ALink>
                                             </h4>
 
                                             <span className="cart-product-info">
                                                 <span className="cart-product-qty">1 </span>
                                                 <span>*</span>
-                                                <span className="cart-product-price">{producto.regularPrice} </span>
-                                                 
+                                                {
+                                                producto.salePrice?
+                                                    <div className="product-price position-relative">
+                                                        <span className="new-price ">${producto.salePrice}</span>                                                       
+                                                        <span className="old-price">${producto.regularPrice}</span>
+                                                        <span className="tip tip-new">Oferta</span>
+                                                    </div>
+                                                    :
+                                                    <div className="product-price">${producto.regularPrice}</div>
+                                                }
                                             </span>
                                         </div>
 
@@ -56,7 +64,7 @@ function CartMenu( props ) {
                             </div>
 
                             <div className="dropdown-cart-action">
-                                <ALink href="/shop/cart" className="btn btn-primary">Ver Carrito</ALink>
+                                <ALink href="/carrito" className="btn btn-primary">Ver Carrito</ALink>
                                 <ALink href="" className="btn btn-outline-primary-2"><span>Checkout</span><i className="icon-long-arrow-right"></i></ALink>
                             </div>
                         </>

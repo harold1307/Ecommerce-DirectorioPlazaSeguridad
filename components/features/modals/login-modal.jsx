@@ -16,6 +16,7 @@ const customStyles = {
 }
 
 Modal.setAppElement( 'body' );
+
 const LoginModal = ()  => {
     const router = useRouter()
     const dispatch = useDispatch();

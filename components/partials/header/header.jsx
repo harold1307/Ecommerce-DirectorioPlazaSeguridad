@@ -37,8 +37,7 @@ function Header() {
                         <div className="top-menu d-flex"> 
                             <span className='text-capitalize d-flex'><ALink href="/registro" ><i className="icon-cog"></i>Registro</ALink></span>
                             <span className='px-3'>  </span>
-                            <span className='text-capitalize d-flex'><LoginModal /></span>                              
-                                                                                                                                       
+                            <span className='text-capitalize d-flex'><LoginModal /></span>                                                                                                                                                                   
                         </div>
                     </div>
                 </div>

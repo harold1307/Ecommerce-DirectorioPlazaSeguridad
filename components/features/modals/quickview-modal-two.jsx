@@ -25,7 +25,7 @@ function QuickViewModalTwo ( props ) {
         return () => {
             router.events.off( 'routeChangeStart', closeModal );
         }
-    }, [] )
+    })
 
     
     const { slug } = props;
@@ -58,12 +58,6 @@ function QuickViewModalTwo ( props ) {
         }, 250 );
     }
 
-    function changeBgImage ( e, index ) {
-        e.preventDefault();
-        document.querySelector( '.quickView-content .product-gallery-item.active' ).classList.remove( 'active' );
-        e.currentTarget.classList.add( 'active' );
-        carouselRef.current.goTo( index );
-    }
 
 
     if ( !slug || error ) {
@@ -89,7 +83,7 @@ function QuickViewModalTwo ( props ) {
                                 <div className="skel-product-gallery"></div>
 
                                 {
-                                    !loading ?
+                                    true ?
                                         <>
                                             <div className="product-sm col-lg-2 row p-0 order-lg-first order-last px-2 p-lg-0 m-lg-0 position-relative" id="owl-dots">
                                                 {

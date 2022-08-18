@@ -26,14 +26,12 @@ const ProductEleven = ( props ) => {
       
     }
 
-
     return (
-
         <Fragment>
                 
                 <div className="product product-4 text-center w-100">
                     <figure className="product-media">
-                    {
+                         {
                             product.new ?
                                 <span className="product-label label-new">New</span>
                                 : ""

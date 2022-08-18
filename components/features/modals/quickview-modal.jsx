@@ -3,13 +3,10 @@ import { connect } from 'react-redux';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import { Magnifier } from 'react-image-magnifiers';
 import { useRouter,  } from 'next/router';
-
-
+import React, { useState, useEffect } from 'react';
 import OwlCarousel from '~/components/features/owl-carousel';
 import DetailOne from '~/components/partials/products/details/detail-one';
 
-
-import React, { useState, useEffect } from 'react';
 
 const customStyles = {
     overlay: {
@@ -30,7 +27,7 @@ function QuickViewModal ( props ) {
         return () => {
             router.events.off( 'routeChangeStart', closeModal );
         }
-    }, [ ] )   
+    } )   
     const { slug } = props;
     if ( !slug ) {
         return <div></div>
@@ -91,7 +88,7 @@ function QuickViewModal ( props ) {
                                 <div className="skel-product-gallery"></div>
 
                                 {
-                                    !loading ?
+                                    true ?
                                         <>
                                             <div className="product-lg mb-1 position-relative">
                                                 {
@@ -184,11 +181,4 @@ function QuickViewModal ( props ) {
     )
 }
 
-const mapStateToProps = ( state ) => {
-    return {
-        slug: state.demo.single,
-        modalShow: state.demo.quickShow,
-    }
-}
-
-export default withApollo( { ssr: typeof window == 'undefined' } )( connect( mapStateToProps, { ...demoAction } )( QuickViewModal ) );
+export default QuickViewModal;

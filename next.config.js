@@ -7,7 +7,12 @@ const nextConfig = {
   compress: true,
 
   images: {
-    domains: ['directorioseguridadgeneralpublic.s3.amazonaws.com'],
+    domains: [
+      'directorioseguridadgeneralpublic.s3.amazonaws.com',
+      'plazaseguridadgeneralpublic.s3.amazonaws.com'
+    ],
+    deviceSizes: [320, 480, 568, 768, 992, 1200, 1600, 1920, 2048 ],
+    
   },
   async headers() {
     return [
