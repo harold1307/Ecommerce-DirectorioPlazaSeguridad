@@ -1,4 +1,3 @@
-import { connect } from 'react-redux';
 import ALink from '../../../features/alink';
 import { useSelector }  from "react-redux";
 
@@ -6,6 +5,11 @@ function CartMenu( props ) {
     const  cartState =  useSelector(state => state.addCartReducer);
     const  loading = cartState .loading;
     console.log(cartState)
+
+    function removeFromCart(id) {
+        console.log(id)
+
+    }
 
     return (
         <div className="dropdown cart-dropdown">
@@ -41,7 +45,7 @@ function CartMenu( props ) {
                                                 <img src= {producto.image.location} alt="product" height='60' width= '60' />
                                             </ALink>
                                         </figure>
-                                        <button className="btn-remove" title="Remove Product" onClick={ () => props.removeFromCart( item ) }><i className="icon-close"></i></button>
+                                        <button className="btn-remove" title="Remove Product" onClick={ () => removeFromCart( producto._id ) }><i className="icon-close"></i></button>
                                     </div>
                                 ) ) }
                             </div>

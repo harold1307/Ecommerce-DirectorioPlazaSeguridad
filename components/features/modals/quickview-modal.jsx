@@ -21,15 +21,23 @@ const customStyles = {
 Modal.setAppElement( 'body' );
 
 function QuickViewModal ( props ) {  
+    const [ carouselRef, setCarouselRef ]= useState( false);
     const router = useRouter();
+    useEffect( () => {
+        router.events.on( 'routeChangeStart', closeModal );
+        carouselRef && carouselRef.current && carouselRef.current.goTo( 0 );
+
+        return () => {
+            router.events.off( 'routeChangeStart', closeModal );
+        }
+    }, [ ] )   
     const { slug } = props;
     if ( !slug ) {
         return <div></div>
     }
     const { data, loading, error } = [[], false, false];
 
-    const product = []; 
-    
+    const product = [];     
 
     const events = {
         onTranslate: function ( e ) {
@@ -38,17 +46,7 @@ function QuickViewModal ( props ) {
             items[ e.item.index ].classList.add( 'active' );
         }
     }
-
-    useEffect( () => {
-        router.events.on( 'routeChangeStart', closeModal );
-        carouselRef && carouselRef.current && carouselRef.current.goTo( 0 );
-
-        return () => {
-            router.events.off( 'routeChangeStart', closeModal );
-        }
-    }, [ ] )
-
-    const [ carouselRef, setCarouselRef ]= useState( false);
+    
     function closeModal () {
         if ( document.querySelector( ".ReactModal__Content" ) ) {
             document.querySelector( ".ReactModal__Content" ).classList.remove( "ReactModal__Content--after-open" );

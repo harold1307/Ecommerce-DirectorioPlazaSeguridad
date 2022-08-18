@@ -1,18 +1,10 @@
 import Modal from 'react-modal';
-import { connect } from 'react-redux';
 import { Magnifier } from 'react-image-magnifiers';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import React, { useState, useEffect } from 'react';
-import { useQuery } from '@apollo/react-hooks';
 import { useRouter } from 'next/router';
-
 import OwlCarousel from '~/components/features/owl-carousel';
 import DetailOne from '~/components/partials/products/details/detail-one';
-
-import withApollo from '~/server/apollo';
-import { GET_PRODUCT } from '~/server/queries';
-
-import { actions as demoAction } from '~/store/demo';
 
 const customStyles = {
     overlay: {
@@ -24,23 +16,8 @@ const customStyles = {
 Modal.setAppElement( 'body' );
 
 function QuickViewModalTwo ( props ) {
+    const [carouselRef, setCarouselRef] = useState( null);
     const router = useRouter();
-    const { slug } = props;
-    if ( !slug ) {
-        return <div></div>
-    }
-    const { data, loading, error } = [];
-    const product = data && data.product.single;
-    
-    const [ carouselRef, setCarouselRef ] = useState( null );
-    const events = {
-        onTranslate: function ( e ) {
-            let items = document.querySelectorAll( '.quickView-content .product-gallery-item' );
-            document.querySelector( '.quickView-content .product-gallery-item.active' ).classList.remove( 'active' );
-            items[ e.item.index ].classList.add( 'active' );
-        }
-    }
-
     useEffect( () => {
         router.events.on( 'routeChangeStart', closeModal );
         carouselRef && carouselRef.current && carouselRef.current.goTo( 0 );
@@ -49,6 +26,23 @@ function QuickViewModalTwo ( props ) {
             router.events.off( 'routeChangeStart', closeModal );
         }
     }, [] )
+
+    
+    const { slug } = props;
+    if ( !slug ) {
+        return <div></div>
+    }
+    const { data, loading, error } = [];
+    const product = [];
+
+
+    const events = {
+        onTranslate: function ( e ) {
+            let items = document.querySelectorAll( '.quickView-content .product-gallery-item' );
+            document.querySelector( '.quickView-content .product-gallery-item.active' ).classList.remove( 'active' );
+            items[ e.item.index ].classList.add( 'active' );
+        }
+    }
 
     function closeModal () {
         if ( document.querySelector( ".ReactModal__Content" ) ) {
@@ -187,11 +181,4 @@ function QuickViewModalTwo ( props ) {
     )
 }
 
-const mapStateToProps = ( state ) => {
-    return {
-        slug: state.demo.single,
-        modalShow: state.demo.quickShow,
-    }
-}
-
-export default withApollo( { ssr: typeof window == 'undefined' } )( connect( mapStateToProps, { ...demoAction } )( QuickViewModalTwo ) );
+export default QuickViewModalTwo ;
