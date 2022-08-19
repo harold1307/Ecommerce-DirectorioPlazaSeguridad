@@ -325,6 +325,9 @@
 		opacity: 0;
 		// height: 0;
 	    transition: opacity .2s;
+		@media only screen and (min-width: 992px){
+			width: 350px;
+		}
 
 	    &:before {
 	    	content: '';

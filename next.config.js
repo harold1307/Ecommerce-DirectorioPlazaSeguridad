@@ -5,14 +5,12 @@ const nextConfig = {
   reactStrictMode: false,
   swcMinify: false,
   compress: true,
-
   images: {
     domains: [
       'directorioseguridadgeneralpublic.s3.amazonaws.com',
       'plazaseguridadgeneralpublic.s3.amazonaws.com'
     ],
-    deviceSizes: [320, 480, 568, 768, 992, 1200, 1600, 1920, 2048 ],
-    
+    deviceSizes: [320, 480, 568, 768, 992, 1200, 1600, 1920, 2048 ],  
   },
   async headers() {
     return [
@@ -31,8 +29,29 @@ const nextConfig = {
           },
           { 
             key: "Access-Control-Allow-Headers", value: "X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version" 
-          },        
+          }            
         ],
+        has: [
+          {
+            type: 'cookie',
+            key: 'authorized',
+            value: 'true',
+          },
+        ]
+      },
+    ]
+  },
+  async redirects() {
+    return [
+      {
+        source: '/empresas',
+        destination: '/empresas/todos',
+        permanent: true,
+      },
+      {
+        source: '/productos',
+        destination: '/productos/todos',
+        permanent: true,
       },
     ]
   },
@@ -40,3 +59,8 @@ const nextConfig = {
 }
 
 module.exports = nextConfig
+
+
+
+
+

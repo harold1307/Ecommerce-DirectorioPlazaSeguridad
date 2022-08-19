@@ -4,10 +4,9 @@ import ALink from '~/components/features/alink';
 import Qty from '~/components/features/qty';
 import PageHeader from '~/components/features/page-header';
 import Layout from '~/components/layout';
-import { useSelector }  from "react-redux";
+import { useSelector,  useDispatch  }  from "react-redux";
 import { cartPriceTotal } from '~/utils/index';
 import CompanyModal from '~/components/features/modals/company-modal';
-import { useDispatch }  from "react-redux";
 import { removeCartAction } from "../store/actions/AddCartAction";
 
 function Cart ( props ) {
@@ -15,8 +14,7 @@ function Cart ( props ) {
     const [ cartList, setCartList ] = useState( [0] );
     const [ shippingCost, setShippingCost ] = useState( 0 );
     const addCartRecducerState =  useSelector( state => state.addCartReducer);
-    
-    
+      
     useEffect( () => {
         setCartList( props.cartItems );
     }, [ props.cartItems ] )

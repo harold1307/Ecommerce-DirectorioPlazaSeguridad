@@ -16,7 +16,7 @@ import { cargarProductosAll } from "../store/actions/productsAllAction";
 import { cargarCompaniasAll } from "../store/actions/companiesAllAction";
 
 function Layout ( {children} ) {   
-    const router = useRouter( "" );
+    const router = useRouter( );
     let scrollTop;
     const dispatch = useDispatch();
     
@@ -26,15 +26,7 @@ function Layout ( {children} ) {
          dispatch( cargarCompaniasAll() );       
     }, [ dispatch])
    
-    useEffect( () => {
-        if ( router.pathname.includes( 'pages/coming-soon' ) ) {
-            document.querySelector( "header" ).classList.add( "d-none" );
-            document.querySelector( "footer" ).classList.add( "d-none" );
-        } else {
-            document.querySelector( "header" ).classList.remove( "d-none" );
-            document.querySelector( "footer" ).classList.remove( "d-none" );
-        }
-    }, [ router.pathname ] )
+
 
     useEffect( () => {        
         scrollTop = document.querySelector( '#scroll-top' );

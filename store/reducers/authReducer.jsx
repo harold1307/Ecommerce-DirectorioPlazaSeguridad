@@ -3,10 +3,8 @@ import {
     AUTH_EXITO ,
     AUTH_ERROR,
     AUTH_CERRAR,
- 
+} from '../types/typesAuth'; 
 
-    } from '../types/typesAuth';
-    
     const initialState = {
         dataUser : [],
         loading: false,

@@ -1,13 +1,15 @@
 import ALink from '../../../features/alink';
-import { useSelector }  from "react-redux";
+import { useSelector,  useDispatch }  from "react-redux";
+import { removeCartAction } from "../../../../store/actions/AddCartAction";
 
 function CartMenu( props ) {
+    const dispatch = useDispatch();
     const  cartState =  useSelector(state => state.addCartReducer);
     const  loading = cartState .loading;
-    console.log('cart', typeof  cartState.cart.length)
+    
 
-    function removeFromCart(id) {
-        console.log(cartState.cart)
+    function removeFromCart( productId){
+        dispatch( removeCartAction(productId) );     
     }
 
     return (
