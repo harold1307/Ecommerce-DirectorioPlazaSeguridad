@@ -3,6 +3,7 @@ import {
     REMOVE_CART  
 } from '../types/typesAddCart';
 
+
 const addCartReducer = (state = {
     cart: []
 }, action)=> {
