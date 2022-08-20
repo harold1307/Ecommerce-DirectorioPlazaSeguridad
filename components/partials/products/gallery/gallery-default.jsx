@@ -2,14 +2,13 @@ import { Magnifier, MOUSE_ACTIVATION } from 'react-image-magnifiers';
 import React, { useState, useEffect } from 'react';
 import LightBox from 'react-image-lightbox';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
+import countImage from '../../../../controladors/countProductImages'
 
 function GalleryDefault ( props ) {
     const { producto, adClass = "product-gallery-vertical" } = props;
     const [ isOpen, setIsOpen ] = useState( false );
     const [ photoIndex, setPhotoIndex ] = useState( 0 );
- 
-   console.log('Image=',typeof `https://directorioseguridadgeneralpublic.s3.amazonaws.com/products/${producto._id}/thumbnail/1.jpg`)
-
+    console.log(countImage(producto._id) )
     const imagenes=[
        `https://directorioseguridadgeneralpublic.s3.amazonaws.com/products/${producto._id}/thumbnail/1.jpg`,
        `https://directorioseguridadgeneralpublic.s3.amazonaws.com/products/${producto._id}/thumbnail/2.jpg`,

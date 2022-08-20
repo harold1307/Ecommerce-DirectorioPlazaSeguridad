@@ -7,6 +7,7 @@ import {PersistGate} from 'redux-persist/lib/integration/react';
 import '../public/scss/plugins/owl-carousel/owl.carousel.scss';
 import "../public/scss/style.scss";
 
+
 const WrappedApp = ({ Component, pageProps }) => {
   
     return (

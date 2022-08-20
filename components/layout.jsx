@@ -6,8 +6,7 @@ import 'react-image-lightbox/style.css';
 import 'react-toastify/dist/ReactToastify.min.css';
 import Header from "./partials/header/header";
 import Footer from "./partials/footer/footer";
-//import VideoModal from "./features/modals/video-modal";
-//import QuickViewModal from "./features/modals/quickview-modal";
+import Helmet from "react-helmet";
 import MobileMenu from "./features/mobile-menu";
 import { isSafariBrowser, isEdgeBrowser } from "../utils";
 import { useDispatch, useSelector }  from "react-redux";
@@ -26,8 +25,6 @@ function Layout ( {children} ) {
          dispatch( cargarCompaniasAll() );       
     }, [ dispatch])
    
-
-
     useEffect( () => {        
         scrollTop = document.querySelector( '#scroll-top' );
         window.addEventListener( 'scroll', scrollHandler, false ); 

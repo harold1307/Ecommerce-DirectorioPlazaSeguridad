@@ -1,11 +1,7 @@
 import axios from "axios";
 
 const countImageInstancia= axios.create({
-    baseURL: 'https://directorioseguridad.dte.gt/api/products/img/product/',   
-    headers: {
-      'Content-Type': 'application/json'
-    }
-    
+    baseURL: 'https://directorioseguridad.dte.gt/api/products/img/product/' 
 });
 
 function getExt(word) {
@@ -13,22 +9,17 @@ function getExt(word) {
     return ext
 }
 
-
-const countImage = async (productoId)=>{
-    var loadedImages = [];
-    console.log('productoId=>', productoId)
-   
-    try{
-       const response = await countImageInstancia.get(`/${productoId}/thumbnail`);  
+const countImage = async (productoId)=>{  
+    const url = `https://directorioseguridad.dte.gt/api/products/img/product/${productoId}/thumbnail`;    
+    try{      
+      console.log(url);
+       const response = await countImageInstancia.get( url );  
        let data = response.data;
        let contents = data.Contents
-       console.log('folder =>', data  )
-   
-       return loadedImages
+       return contents 
     }catch(error){
       console.log(error)
     }
 }
-
 
 export default  countImage;

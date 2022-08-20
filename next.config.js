@@ -8,7 +8,8 @@ const nextConfig = {
   images: {
     domains: [
       'directorioseguridadgeneralpublic.s3.amazonaws.com',
-      'plazaseguridadgeneralpublic.s3.amazonaws.com'
+      'plazaseguridadgeneralpublic.s3.amazonaws.com',
+      'directorioseguridad.dte.gt'
     ],
     deviceSizes: [320, 480, 568, 768, 992, 1200, 1600, 1920, 2048 ],  
   },
@@ -36,7 +37,7 @@ const nextConfig = {
             type: 'cookie',
             key: 'authorized',
             value: 'true',
-          },
+          }         
         ]
       },
     ]
