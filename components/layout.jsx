@@ -6,7 +6,6 @@ import 'react-image-lightbox/style.css';
 import 'react-toastify/dist/ReactToastify.min.css';
 import Header from "./partials/header/header";
 import Footer from "./partials/footer/footer";
-import Helmet from "react-helmet";
 import MobileMenu from "./features/mobile-menu";
 import { isSafariBrowser, isEdgeBrowser } from "../utils";
 import { useDispatch, useSelector }  from "react-redux";
@@ -18,7 +17,7 @@ function Layout ( {children} ) {
     const router = useRouter( );
     let scrollTop;
     const dispatch = useDispatch();
-    
+
     useEffect(() => {
          dispatch( cargarCategoriasAll() );      
          dispatch( cargarProductosAll() );   
@@ -28,7 +27,6 @@ function Layout ( {children} ) {
     useEffect( () => {        
         scrollTop = document.querySelector( '#scroll-top' );
         window.addEventListener( 'scroll', scrollHandler, false ); 
-
     }, [] )
 
     function toScrollTop () {

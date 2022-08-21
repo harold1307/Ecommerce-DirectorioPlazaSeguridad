@@ -154,7 +154,7 @@ function Empresas() {
 
                                     <div className="toolbox-right">
                                         <div className="toolbox-sort">
-                                            <label htmlFor="sortby">ordenar:</label>
+                                            <label htmlFor="sortby">Ordenar:</label>
                                             <div className="select-custom">
                                                 <select
                                                     name="sortby"

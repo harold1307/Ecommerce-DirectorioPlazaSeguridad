@@ -41,14 +41,9 @@ const CategoryMenu = () =>{
                                             return(
                                                 <li className="megamenu-container" key={ index }>
              
-                                                <ALink href={ { pathname:  `/productos/todos`, query: {categoria: categoria.value     } } } className="sidebar-filter-clear" scroll={ false }>
-                                                <div className="row">   
-
-                                                    <i className={'fa '+` ${categoria.icon}`} aria-hidden="true"></i>                                                    
-                                                    <small className='text-uppercase'> {categoria.name}</small>
-
-                                                </div>
-                                            
+                                                <ALink href={ { pathname:  `/productos/todos`, query: {categoria: categoria.value     } } } className="sidebar-filter-clear" scroll={ false }>                                           
+                                                        <i className={'fa'+` ${categoria.icon}`+' color-primary ml-2 mr-1' } ></i>                                                    
+                                                        <small className='text-uppercase'> {categoria.name}</small>                                          
                                                 </ALink>                           
                                             </li>
                                             )                                            
@@ -60,12 +55,12 @@ const CategoryMenu = () =>{
                         }
                         {
                             !categoriasState.loading?
-                            ""
-                            :
-                            <li className="megamenu-container">
-                                 <ALink className="text-dark py-2 btn btn-primary text-center" href={ { pathname: '/categorias', query: { categoria:`todas`} } }>
-                                 <small>Más categorías</small></ALink>                           
-                            </li>
+                                ""
+                                :
+                                <li className="megamenu-container">
+                                    <ALink className="text-dark py-2 btn btn-primary text-center" href={ { pathname: '/categorias', query: { categoria:`todas`} } }>
+                                    <small>Más categorías</small></ALink>                           
+                                </li>
                         }
                     </ul>
                 </nav>

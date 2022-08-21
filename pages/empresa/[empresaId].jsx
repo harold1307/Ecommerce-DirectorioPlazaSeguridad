@@ -24,9 +24,7 @@ const ProductDefault = () => {
     var empresa = empresaFilt[0] || [];
     var productosEmpresa = productosState.productos.filter( producto => producto.COMPANY._id ==String(query.empresaId));
     const totalCount = productosState.productos.length;
-    console.log('type ',  query.typeCol  )
-
-
+   
     useEffect( () => {
         if ( type == 'list' ) {
             setPageTitle( 'Lista de productos' );
@@ -51,7 +49,6 @@ const ProductDefault = () => {
                 url += key + '=' + queryObject[ key ] + '&';
             }
         }
-
         router.push( url + 'ordenar=' + e.target.value );
     }
 
@@ -81,7 +78,7 @@ const ProductDefault = () => {
                     <div className="container skeleton-body">
                         <div className="product-details-top">
                             <div className={ `row skel-pro-single ${!loadingEmpresa? '' : 'loaded'}` }>
-                                <div className="col-md-4">
+                                <div className="col-md-4 ">
                                     
                                         {
                                             loadingEmpresa?
@@ -124,7 +121,7 @@ const ProductDefault = () => {
 
                                         <div className="toolbox-right">
                                             <div className="toolbox-sort">
-                                                <label htmlFor="sortby">ordenar:</label>
+                                                <label htmlFor="sortby">Ordenar:</label>
                                                 <div className="select-custom">
                                                     <select
                                                         name="sortby"

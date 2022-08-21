@@ -20,24 +20,26 @@ const nextConfig = {
         headers: [            
           { 
             key: "Access-Control-Allow-Credentials", 
-            value: "true" 
-          },
-          {
-             key: "Access-Control-Allow-Origin", value: "*" 
+            value: 'false'
           },
           { 
-            key: "Access-Control-Allow-Methods", value: "GET,OPTIONS,PATCH,DELETE,POST,PUT" 
+            key: "Access-control-allow-origin", 
+            value: "http://localhost" 
           },
           { 
-            key: "Access-Control-Allow-Headers", value: "X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version" 
-          }            
-        ],
-        has: [
-          {
-            type: 'cookie',
-            key: 'authorized',
-            value: 'true',
-          }         
+            key: "Access-Control-Allow-Methods", 
+            value: "GET, HEAD, POST, PUT, DELETE, CONNECT, OPTIONS, TRACE, PATCH" 
+          },
+          { 
+            key: "Access-Control-Allow-Headers", 
+            value: "Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token,X-Amz-User-Agent,content-type,content-length,date,x-amzn-requestid,access-control-allow-origin,access-control-allow-headers,x-amz-apigw-id,access-control-allow-methods,x-cache,via,x-amz-cf-pop,x-amz-cf-id" 
+          },{
+            key: 'Access-Control-Expose-Headers',
+            value: 'content-type, content-length, date, x-amzn-requestid, access-control-allow-origin, access-control-allow-headers, x-amz-apigw-id, access-control-allow-methods, x-cache, via, x-amz-cf-pop, x-amz-cf-id'
+          },{
+            key: 'Referrer-Policy',
+            value: 'origin-when-cross-origin'
+          }  
         ]
       },
     ]

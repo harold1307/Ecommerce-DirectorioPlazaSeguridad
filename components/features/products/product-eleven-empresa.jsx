@@ -2,14 +2,18 @@ import React, { useState, useEffect, Fragment } from 'react';
 import { useRouter } from 'next/router';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import ALink from '~/components/features/alink';
+import { useDispatch }  from "react-redux";
+import { addCartAction } from "../../../store/actions/AddCartAction";
 
 const ProductElevenEmpresa = ( props ) => {
     const router = useRouter();
     const query = router.query ; 
+    const dispatch = useDispatch();
     const { producto } = props;
 
     function onCartClick ( e ) {
-        e.preventDefault();       
+        e.preventDefault();
+        dispatch( addCartAction(producto) );  
     }
     function onQuickView ( e ) {
         e.preventDefault();      
@@ -52,20 +56,32 @@ const ProductElevenEmpresa = ( props ) => {
                             <a href="#" className="btn-product-icon btn-quickview" title="Quick View" onClick={ onQuickView }><span>Ver</span></a>                      
                         </div>
                                        
-                        <div className="product-action">
-                            <ALink  className="btn-product btn-cart"  href={ `/producto/${producto._id}`}>                                                 
-                                <span>Ver producto</span>
-                            </ALink>                               
+                        <div className="product-action">                             
+                            <button className="btn-product btn-cart" onClick={ onCartClick }>
+                                <span>Agregar</span>
+                            </button>                              
                         </div>
                     </figure>
 
                     <div className="product-body">   
                         <div className='product-cat'>{producto.category}</div>                     
                         <div className="product-title">                        
-                           <ALink href={ `/producto/${producto._id}`}> {producto.name}</ALink>                          
+                           <ALink href={ `/producto/${producto._id}`}> {producto.name}</ALink>   
+                           {
+                            !producto.stockStatus || producto.stockStatus == 0 ?
+                                <div className="product-price">
+                                    <span className="out-price">Agotado</span>
+                                </div>
+                                :                               
+                                producto.salePrice?
+                                    <div className="product-price">
+                                        <span className="new-price">${producto.salePrice}</span>
+                                        <span className="old-price">${producto.regularPrice}</span>
+                                    </div>
+                                    :
+                                    <div className="product-price">${producto.regularPrice}</div>
+                            }                     
                         </div>
-
-
                     </div>
                 </div>
         </Fragment>

@@ -13,7 +13,7 @@ import axios from 'axios';
 
 export function verificarUsuario(credencialesUsuario ) {
     function postUserAccount() {
-        return axios.post('https://directorioseguridad.dte.gt/api/login', credencialesUsuario);
+        return axios.post('https://directorioseguridad.dte.gt/api/login', credencialesUsuario, {credentials: 'omit'});
       }      
       function getUserPermissions() {
         return axios.get('https://directorioseguridad.dte.gt/api/login/success'); 

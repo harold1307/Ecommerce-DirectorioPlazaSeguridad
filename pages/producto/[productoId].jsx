@@ -8,15 +8,41 @@ import RelatedProductsOne from '~/components/partials/products/related/related-o
 import Layout from '~/components/layout';
 import ALink  from '~/components/features/alink';
 
+import Helmet from "react-helmet";
+
 const ProductDefault = () => {    
     const router = useRouter()
     const  query = router.query
     const  productosState =  useSelector(state => state.productsAll);   
     var producto = productosState.productos.filter( producto => producto._id ==String(query.productoId));
     const  productosloading = productosState.loading; 
+  
 
     return (
         <Layout>
+           {
+            productosloading?
+                <Helmet>                
+                        <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
+                        <meta charset="utf-8" />
+                        <title>{`${producto[0].name} | ${producto[0].COMPANY.name}`}</title>
+                        <meta name="keywords" content= { `${producto[0].brand}`} />
+                        <meta name="description" content=  { `${producto[0].shortDescription}`}  />
+                        <meta name="author" content=  { `Directorio  | ${producto[0].COMPANY.name}` }/>
+                        <meta name="apple-mobile-web-app-title" content= { `${producto[0].name}`} />
+                        <meta name="application-name" content="Directorio Plaza Seguridas" />
+                        <meta name="msapplication-TileColor" content="#cc9966" />
+                        <meta name="msapplication-config" content="images/icons/browserconfig.xml" />
+                        <meta name="theme-color" content="#cc9966" />                    
+                        <link rel="apple-touch-icon" sizes="180x180" href="images/icons/apple-touch-icon.png" />
+                        <link rel="icon" type="image/png" sizes="32x32" href="images/icons/favicon-32x32.png" />
+                        <link rel="icon" type="image/png" sizes="16x16" href="images/icons/favicon-16x16.png" />
+                        <link rel="mask-icon" href="images/icons/safari-pinned-tab.svg" color="#666666" />
+                        <link rel="shortcut icon" type="image/x-icon" href="https://cdndirectorio.s3.amazonaws.com/assets/images/favicon.svg"></link>
+                </Helmet>
+                :
+                ''
+           }
             <div className="main">
                 <nav className="breadcrumb-nav">
                     <div className="container">

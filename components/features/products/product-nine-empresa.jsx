@@ -13,7 +13,7 @@ function ProductSixEmpresa ( props ) {
 
     function onCartClick ( e ) {
         e.preventDefault();
-        dispatch( addCartAction(product) );  
+        dispatch( addCartAction(producto) );  
     }
     function onQuickView ( e ) {
         e.preventDefault();     
@@ -71,19 +71,20 @@ function ProductSixEmpresa ( props ) {
                     </figure>
                 </div>
                 <div className="col-md-6 order-last">
+
                     <div className="product-body product-action-inner">
-                        <div className="product-cat">
+                        <div className="product-cat py-2 mt-2 font-italic px-3">
                             {
-                                producto.category
+                                producto.category                                
                             }
                         </div>
 
-                        <h3 className="product-title">
-                          <ALink href={ { pathname: `/producto/${producto._id}`}} >{ producto.name }</ALink>
+                        <h3 className="product-title px-3">
+                            <ALink href={ { pathname: `/producto/${producto._id}`}} >{ producto.name }</ALink>
                         </h3>
 
-                        <div className="product-content">
-                            <p>{ producto.shortDescription }</p>
+                        <div className="product-content text-justify mb-3">
+                            <p className="px-3">{ producto.shortDescription }</p>
                         </div>
 
                   

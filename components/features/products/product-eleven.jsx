@@ -104,7 +104,6 @@ const ProductEleven = ( props ) => {
                         <h3 className="product-title">
                             <ALink href={ { pathname: `/producto/${product._id}`}} >{ product.name }</ALink>
                         </h3>
-
                         {
                             !product.stockStatus || product.stockStatus == 0 ?
                                 <div className="product-price">

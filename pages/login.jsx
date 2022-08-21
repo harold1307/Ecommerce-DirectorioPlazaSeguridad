@@ -21,6 +21,14 @@ function Login () {
       setPasswordShown(passwordShown ? false : true);
     };
 
+    useEffect(() => {
+        document.addEventListener('DOMContentLoaded', function () {
+          console.log("¡Estamos en vivo!" , 'cargando');
+      
+        });
+      })
+      
+
     const verifyUser =  useSelector(state => state.authReducer.dataUser);
     //verifyUser.success? router.push('/dashboard') : '';  
    

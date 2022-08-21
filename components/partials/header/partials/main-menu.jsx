@@ -79,10 +79,10 @@ function MainMenu() {
                             </div>
                         </div>
                     </div>
-                </li>
-                <li className={ `megamenu-container ${ path === '/empresas' ? 'active' : '' }` } id="menu-home">
-                    <ALink href="/empresas/todos" >Empresas</ALink>
-                </li>                
+                </li> 
+                <li className={ `megamenu-container ${ path === '/empresas' ? "active" : '' }` } id="menu-home">
+                       <ALink href="/empresas/todos">Empresas</ALink>
+                </li>              
                 <li className={ `megamenu-container ${ path === '/publicarme' ? 'active' : '' }` } id="menu-home">
                     <ALink href="/publicarme" >Publicarme</ALink>
                 </li>

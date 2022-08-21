@@ -41,10 +41,10 @@ const  DetailOneEmpresa  = ( props ) => {
  
 
     return (
-        <div className="product-details" ref={ ref }>
+    <div className="product-details px-4" ref={ ref }>
         <h1 className="product-title">{  empresa.name }</h1>
     
-          <div className="product-content">
+          <div className="product-content text-justify">
             <p>{empresa.description}</p>
         </div>
 

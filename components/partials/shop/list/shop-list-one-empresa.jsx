@@ -7,8 +7,8 @@ import ProductElevenEmpresa from '~/components/features/products/product-eleven-
 function ShopListOneEmpresa ( props ) {
     const { productosEmpresa,  perPage,  loadingProducto } = props;
     const router = useRouter();
-    const [ fakeArray, setFakeArray ] = useState( [] );
-    const [ gridClass, setGridClass ] = useState( 'col-6' );
+    const [ fakeArray, setFakeArray ] = useState( [1,2,3,4,5,6] );
+    const [ gridClass, setGridClass ] = useState( 'col-4' );
     const type = router.query.type;
     const query = router.query;
 
@@ -39,38 +39,38 @@ function ShopListOneEmpresa ( props ) {
                     <>
                         {
                             query.typeCol == 'list' ?
-                            !loadingProducto  ?
-                                    fakeArray.map( ( item, index ) => (
-                                        <div className="skel-pro skel-pro-list" key={ index }></div>
-                                    ) )
-                                    :
-                                    productosEmpresa.map( ( producto , index ) => (
-                                        <ProductNineEmpresa
-                                            producto = { producto }
-                                            key={ index }
-                                        />
-                                    ) )
-                                :
-                                <div className="row">
-                                    {
-                                        !productosEmpresa ?
-                                            fakeArray.map( ( item, index ) => (
-                                                <div className={ gridClass } key={ index }>
-                                                    <div className="skel-pro"></div>
-                                                </div>
-                                            ) )
-                                            :
-                                            productosEmpresa.map( ( producto, index ) => (
-                                                <div className={ gridClass } key={ index }>
-                                                    <ProductElevenEmpresa 
-                                                        producto = { producto } 
-                                                        key={ index }
-                                                    />
-                                                </div>
-                                            ) )
-                                    }
-                                </div>
-                        }
+                                !loadingProducto  ?
+                                        fakeArray.map( ( item, index ) => (
+                                            <div className="skel-pro skel-pro-list" key={ index }></div>
+                                        ) )
+                                        :
+                                        productosEmpresa.map( ( producto , index ) => (
+                                            <ProductNineEmpresa
+                                                producto = { producto }
+                                                key={ index }
+                                            />
+                                        ) )
+                            :
+                            <div className="row">
+                                {
+                                    !loadingProducto  ?
+                                        fakeArray.map( ( item, index ) => (
+                                            <div className={ gridClass } key={ index }>
+                                                <div className="skel-pro"></div>
+                                            </div>
+                                        ) )
+                                        :
+                                        productosEmpresa.map( ( producto, index ) => (
+                                            <div className={ gridClass } key={ index }>
+                                                <ProductElevenEmpresa 
+                                                    producto = { producto } 
+                                                    key={ index }
+                                                />
+                                            </div>
+                                        ) )
+                                }
+                            </div>
+                    }
                     </>
             }
         </div>
