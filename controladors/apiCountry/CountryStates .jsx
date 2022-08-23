@@ -1,12 +1,8 @@
 import React, {useState} from 'react';
 
-export default CountryStates = (country)=>{
-
-      var estados=[];
-       
-          
-
-        fetch("https://countriesnow.space/api/v0.1/countries/states", {
+export function  CountryStates(country){
+        var estados=[];
+        fetch("https://countriesnow.space/api/v0.1/countries/cities", {
                 method: 'POST',
                 credentials: 'same-origin',
                 body: JSON.stringify({
@@ -19,11 +15,7 @@ export default CountryStates = (country)=>{
             })
             .then(response => response.text())
             .then(result => {
-                data_received = JSON.parse(result)
-                estados = data_received.data.states;
-                console.log(estados)
-               
-
+                estados = JSON.parse(result).data         
             })
             .catch(error => console.log('error', error));
 

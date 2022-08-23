@@ -2,7 +2,7 @@ import React , {useState} from 'react';
 import { useForm } from 'react-hook-form';
 import { CountryDropdown, RegionDropdown, CountryRegionData } from 'react-country-region-selector';
 import {  Col, Row  } from 'antd';
-import CountryStates from '../../../../controladors/apiCountry/CountryStates '
+import {CountryStates} from '../../../../controladors/apiCountry/countryStates '
 
 export default function CrearEmpresa() {
   const { register, handleSubmit, formState: { errors } } = useForm();
@@ -14,7 +14,7 @@ export default function CrearEmpresa() {
       console.log(value)
   }
 
-  CountryStates('Guatemala')
+
   
   
   return (
