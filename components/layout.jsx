@@ -1,5 +1,4 @@
-import React from 'react';
-import { useEffect } from "react";
+import React, { useEffect } from 'react';
 import { ToastContainer } from 'react-toastify';
 import { useRouter } from 'next/router';
 import 'react-image-lightbox/style.css';

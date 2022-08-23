@@ -7,18 +7,9 @@ import {
 import clienteAxios from '../../configuracion/axios';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import axios from 'axios';
 
-
-
-export function verificarUsuario(credencialesUsuario ) {
-    function postUserAccount() {
-        return axios.post('https://directorioseguridad.dte.gt/api/login', credencialesUsuario, {credentials: 'omit'});
-      }      
-      function getUserPermissions() {
-        return axios.get('https://directorioseguridad.dte.gt/api/login/success'); 
-      }
-    return  (dispatch) => {       
+export function verificarUsuario(credencialesUsuario ) {  
+    return async (dispatch) => {       
            dispatch( verificarUsuario_Inicio() );        
            toast.info('Verificando credenciales', {
                 position: "bottom-center",
@@ -28,28 +19,25 @@ export function verificarUsuario(credencialesUsuario ) {
                 closeOnClick: true,
                 pauseOnHover: true,
                 draggable: true
-            });       
-                         
-          Promise.all([postUserAccount(), getUserPermissions()])
-            .then((res) => {
-              const acc = res[0];
-              const perm = res[1];
-              console.log('acc: ', ' =>  ', acc)
-              console.log('perm: ', ' =>  ', perm.request)
-              console.log('results: ', ' =>  ', res)
-              dispatch( verificarUsuario_Exito( perm ) ); 
-              toast.success('Iniciando sesión', {
-                position: "bottom-center",
-                theme: "light",
-                autoClose: 5000,
-                hideProgressBar: false,
-                closeOnClick: true,
-                pauseOnHover: true,
-                draggable: true,
-                progress: '' ,
-                });  
+            });   
 
-            }) .catch(function (error) {
+            try{
+                const dataUser = await clienteAxios.post('https://directorioseguridad.dte.gt/api/login', credencialesUsuario);
+                dispatch( verificarUsuario_Exito( dataUser) ); 
+                toast.success('Iniciando sesión', {
+                  position: "bottom-center",
+                  theme: "light",
+                  autoClose: 5000,
+                  hideProgressBar: false,
+                  closeOnClick: true,
+                  pauseOnHover: true,
+                  draggable: true,
+                  progress: '' ,
+                  });  
+                  const cookieToken = Cookies.get('token')
+                  console.log('cookieToken', cookieToken)
+     
+            }catch(error) {
                 dispatch( verificarUsuario_Error(error) );             
                 toast.error('Upp, parece que hubo un error', {
                     position: "bottom-center",
@@ -61,8 +49,9 @@ export function verificarUsuario(credencialesUsuario ) {
                     draggable: true,
                     progress: ''
                     }); 
-              })
-        }             
+                    console.log(error)
+            }              
+   }
 }
 
 export function cerrarSesion() {

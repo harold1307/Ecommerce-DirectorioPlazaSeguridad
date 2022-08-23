@@ -4,7 +4,6 @@ import { LazyLoadImage } from 'react-lazy-load-image-component';
 import ALink from '../../../features/alink';
 import { safeContent } from '../../../../utils/index';
 import { useSelector}  from "react-redux";
-import { cargarCategoriasAll } from "../../../../store/actions/categoriesAllAction";
 
 function HeaderSearch () {
     const router = useRouter( "" );
@@ -14,63 +13,17 @@ function HeaderSearch () {
     const [ searchProducts, { data } ] = useState( [] );
     const result = data && data.products.data;
     const [ timer, setTimer ] = useState( null );
-
-
     const  categoriasState =  useSelector(state => state.categoriesAll);
-    console.log( categoriasState )
-    
+    const  productosState =  useSelector(state => state.productsAll);      
 
     useEffect( () => {
         document.querySelector( "body" ).addEventListener( 'click', closeSearchForm );
-
         return ( () => {
             document.querySelector( "body" ).removeEventListener( 'click', closeSearchForm );
         } )
     }, [] );
 
-    useEffect( () => {
-        if ( result && searchTerm.length > 2 )
-            setProducts( result.reduce( ( acc, product ) => {
-                let max = 0;
-                let min = 999999;
-                product.variants.map( item => {
-                    if ( min > item.price ) min = item.price;
-                    if ( max < item.price ) max = item.price;
-                }, [] );
-
-                if ( product.variants.length == 0 ) {
-                    min = product.sale_price
-                        ? product.sale_price
-                        : product.price;
-                    max = product.price;
-                }
-
-                return [
-                    ...acc,
-                    {
-                        ...product,
-                        minPrice: min,
-                        maxPrice: max
-                    }
-                ];
-            }, [] ) )
-    }, [ result, searchTerm ] )
-
-    useEffect( () => {
-        if ( searchTerm.length > 2 ) {
-            if ( timer ) clearTimeout( timer );
-            let timerId = setTimeout( () => {
-                searchProducts( {
-                    variables: {
-                        searchTerm: searchTerm,
-                        category: cat
-                    }
-                } );
-            }, 500 );
-            setTimer( timerId );
-        }
-    }, [ searchTerm, cat ] );
-
+ 
     useEffect( () => {
         document.querySelector( '.header-search.show-results' ) && document.querySelector( '.header-search.show-results' ).classList.remove( 'show-results' );
     }, [ router.pathname ] );
@@ -98,9 +51,7 @@ function HeaderSearch () {
     }
 
     function showSearchForm ( e ) {
-        document
-            .querySelector( '.header .header-search' )
-            .classList.add( 'show' );
+        document.querySelector( '.header .header-search' ).classList.add( 'show' );
     }
 
     function onSubmitSearchForm ( e ) {
@@ -123,30 +74,23 @@ function HeaderSearch () {
         <div className="header-search header-search-extended header-search-visible header-search-no-radius d-none d-lg-block">
             <button className="search-toggle"><i className="icon-search"></i></button>
 
-            <form action="#" method="get" onSubmit={ onSubmitSearchForm } onClick={ showSearchForm }>
+            <form action="#" method="get" onSubmit={ onSubmitSearchForm } onChange={ showSearchForm }>
                 <div className="header-search-wrapper search-wrapper-wide">
                     <div className="select-custom" onChange={ ( e ) => onCatSelect( e ) }>
                         <select id="cat" name="cat">
-                         <option value={ null }>Categorias</option>
-                            {         
-                                
-                                (
-                                    
-                                    categoriasState.categorias.map((categoria, index)=>{
-                                            if(index<13){
-                                                return(
-                                                    <option key={index} value={`${categoria.value}`}>{categoria.name}</option>
-                                                )
-                                                
-                                            }
-
-                                
-                                    })
-                                )                           
-                                                    
-                            }
-                            
-                        
+                            <option value={ null }>Categorias</option>
+                                {                                          
+                                    (
+                                        
+                                        categoriasState.categorias.map((categoria, index)=>{
+                                                if(index<13){
+                                                    return(
+                                                        <option key={index} value={`${categoria.value}`}>{categoria.name}</option>
+                                                    )                                                
+                                                }                                
+                                        })
+                                    )                                                                               
+                                }                                              
                         </select>
                     </div>
                     <label htmlFor="q" className="sr-only" value={ searchTerm }
@@ -156,31 +100,26 @@ function HeaderSearch () {
                 </div>
                 <div className="live-search-list" onClick={ goProductPage }>
                     {
-                        ( products.length > 0 && searchTerm.length > 2 ) ?
+                        ( productosState.productos.length > 0 && searchTerm.length > 2  ) ?
+                          
                             <div className="autocomplete-suggestions">
                                 {
-                                    searchTerm.length > 2 && products.map( ( product, index ) => (
-                                        <ALink href={ `/product/default/${product.slug}` } className="autocomplete-suggestion" key={ `search-result-${index}` }>
-                                            <LazyLoadImage src={ process.env.NEXT_PUBLIC_ASSET_URI + product.sm_pictures[ 0 ].url } width={ 40 } height={ 40 } alt="product" />
-                                            <div className="search-name" dangerouslySetInnerHTML={ safeContent( matchEmphasize( product.name ) ) }></div>
+                                    searchTerm.length > 2 && productosState.productos.map( ( producto, index ) => (
+                                        <ALink href={ `/producto/${producto._id}` } className="autocomplete-suggestion" key={ `search-result-${index}` }>
+                                            <LazyLoadImage src={ producto.image.location } width={ 40 } height={ 40 } alt="product" />
+                                            <div className="search-name" dangerouslySetInnerHTML={ safeContent( matchEmphasize( producto.name ) ) }></div>
                                             <span className="search-price">
                                                 {
-                                                    product.stock == 0 ?
+                                                    producto.stockStatus == 0 ?
                                                         <div className="product-price mb-0">
-                                                            <span className="out-price">${ product.price.toFixed( 2 ) }</span>
+                                                            <span className="out-price">${ producto.salePrice.toFixed( 2 )} - </span>
+                                                            <span className="out-price"> ${ producto.regularPrice.toFixed( 2 ) }</span>    
+                                                                                                                 
                                                         </div>
                                                         :
-                                                        product.minPrice == product.maxPrice ?
-                                                            <div className="product-price mb-0">${ product.minPrice.toFixed( 2 ) }</div>
-                                                            :
-                                                            product.variants.length == 0 ?
-                                                                <div className="product-price mb-0">
-                                                                    <span className="new-price">${ product.minPrice.toFixed( 2 ) }</span>
-                                                                    <span className="old-price">${ product.maxPrice.toFixed( 2 ) }</span>
-                                                                </div>
-                                                                :
-                                                                <div className="product-price mb-0">${ product.minPrice.toFixed( 2 ) }&ndash;${ product.maxPrice.toFixed( 2 ) }</div>
-                                                }
+                                                      ''
+                                                                
+                                                }                                               
                                             </span>
                                         </ALink>
                                     ) )

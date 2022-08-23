@@ -18,15 +18,7 @@ const nextConfig = {
       {
         source: '/login',
         headers: [            
-          { 
-            key: "Access-Control-Allow-Credentials", 
-            value: 'false'
-          },
-          { 
-            key: "Access-control-allow-origin", 
-            value: "http://localhost" 
-          },
-          { 
+                    { 
             key: "Access-Control-Allow-Methods", 
             value: "GET, HEAD, POST, PUT, DELETE, CONNECT, OPTIONS, TRACE, PATCH" 
           },
@@ -39,7 +31,10 @@ const nextConfig = {
           },{
             key: 'Referrer-Policy',
             value: 'origin-when-cross-origin'
-          }  
+          } ,{
+            key: 'vary',
+            value: 'Accept'
+          } 
         ]
       },
     ]

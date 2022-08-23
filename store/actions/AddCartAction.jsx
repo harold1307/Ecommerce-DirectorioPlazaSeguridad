@@ -59,8 +59,7 @@ export function removeCartAction( productoId ) {
             draggable: true
             });
         
-        try {        
-           console.log( 'productoId:', productoId )
+        try {               
            dispatch( removeCartAction_Exito(productoId ));              
            toast.success('Producto agregado.', {
             position: "bottom-center",

@@ -9,20 +9,17 @@ import '../public/scss/plugins/owl-carousel/owl.carousel.scss';
 import "../public/scss/style.scss";
 
 const WrappedApp = ({ Component, pageProps }) => {
-  const [ loading, setLoading ] = useState(false);
+  const [ loading, setLoading ] = useState(true);
 
   useEffect(() => {
-    Router.events.on('routeChangeStart', ()=>{setLoading(true)});
-    Router.events.on('routeChangeComplete', ()=>{setLoading(false)});
-    
+    Router.events.on('routeChangeStart', ()=>{setLoading(false)});
+    Router.events.on('routeChangeComplete', ()=>{setLoading(true)});    
     return () => {
-      Router.events.off('routeChangeStart', ()=>{setLoading(true)});
-      Router.events.off('routeChangeComplete', ()=>{setLoading(false)});
-      console.log('loading', loading);
+      Router.events.off('routeChangeStart');
+      Router.events.off('routeChangeComplete');     
     }
-  }, [loading])
-  
-  
+  });
+
     return (
       <Fragment>       
                 <Helmet>
@@ -43,6 +40,27 @@ const WrappedApp = ({ Component, pageProps }) => {
                     <link rel="mask-icon" href="images/icons/safari-pinned-tab.svg" color="#666666" />
                     <link rel="shortcut icon" type="image/x-icon" href="https://cdndirectorio.s3.amazonaws.com/assets/images/favicon.svg"></link>
                 </Helmet>
+               {
+              !loading?
+                  <div className="preloader">                                 
+                    <div  className="sk-circle">
+                        <div  className="sk-circle-dot"></div>
+                        <div  className="sk-circle-dot"></div>
+                        <div  className="sk-circle-dot"></div>
+                        <div  className="sk-circle-dot"></div>
+                        <div  className="sk-circle-dot"></div>
+                        <div  className="sk-circle-dot"></div>
+                        <div  className="sk-circle-dot"></div>
+                        <div  className="sk-circle-dot"></div>
+                        <div  className="sk-circle-dot"></div>
+                        <div  className="sk-circle-dot"></div>
+                        <div  className="sk-circle-dot"></div>
+                        <div  className="sk-circle-dot"></div>
+                    </div>                                           
+                  </div>
+                  :
+                  ''
+               }                
                 <Provider store={store}>                 
                    <PersistGate persistor={persistor}>            
                         <Component {...pageProps} />

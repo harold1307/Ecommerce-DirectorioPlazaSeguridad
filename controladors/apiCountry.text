@@ -1,0 +1,194 @@
+import React from 'react'
+
+function apiCountry() {
+
+
+
+
+    function loadStates() {        
+        country = 'Guatemala';
+
+
+        fetch("https://countriesnow.space/api/v0.1/countries/states", {
+                method: 'POST',
+                credentials: 'same-origin',
+                body: JSON.stringify({
+                    "country": country
+                }),
+                headers: {
+                    'accept': '*/*',
+                    'Content-Type': 'application/json'
+                },
+            })
+            .then(response => response.text())
+            .then(result => {
+                data_received = JSON.parse(result)
+                all_states = data_received.data.states
+
+                let actual_state = 'Guatemala Department'
+
+                if (actual_state != states_input.value) {
+
+                    let index = all_states.findIndex(state => state == actual_state)
+                    all_states.splice(index, 1)
+
+                    let selected_option = document.createElement('option')
+                    selected_option.value = actual_state
+                    selected_option.innerText = `${actual_state + ' (Actual)'}`
+                    states_input.appendChild(selected_option)
+
+
+                    all_states.forEach(state => {
+                        let option = document.createElement('option')
+                        option.value = state.name
+                        option.innerText = state.name
+                        states_input.appendChild(option)
+                    });
+
+                } else {
+                    all_states.forEach(state => {
+                        let option = document.createElement('option')
+                        option.value = state.name
+                        option.innerText = state.name
+                        states_input.appendChild(option)
+                    });
+
+                }
+
+            })
+            .catch(error => console.log('error', error));
+
+        setTimeout(() => {
+            loadCities()
+        }, 1000);
+    }
+
+
+
+
+        cities_input.innerHTML = 'Selecciona un Departamento o Estado'
+
+
+        fetch("https://countriesnow.space/api/v0.1/countries/state/cities", {
+                method: 'POST',
+                credentials: 'same-origin',
+                body: JSON.stringify({
+                    "country": country,
+                    "state": state
+                }),
+                headers: {
+                    'accept': '*/*',
+                    'Content-Type': 'application/json'
+                },
+            })
+            .then(response => response.text())
+            .then(result => {
+                data_received = JSON.parse(result)
+                all_cities = data_received.data
+
+                let actual_city = ''
+                let actualState = 'Guatemala Department'
+
+                if (actualState == state) {
+                    // remove the actual_city from all_cities
+                    let index = all_cities.findIndex(city => city == actual_city)
+                    all_cities.splice(index, 1)
+
+                    let selected_option = document.createElement('option')
+                    selected_option.value = actual_city
+                    selected_option.innerText = `${actual_city + ' (Actual)'}`
+                    cities_input.appendChild(selected_option)
+
+                    all_cities.forEach(city => {
+                        let option = document.createElement('option')
+                        option.value = city
+                        option.innerText = city
+                        cities_input.appendChild(option)
+                    });
+
+
+                } else {
+                    all_cities.forEach(city => {
+                        let option = document.createElement('option')
+                        option.value = city
+                        option.innerText = city
+                        cities_input.appendChild(option)
+                    });
+
+
+                }
+
+
+            })
+            .catch(error => console.log('error', error));
+    }
+
+    const updateData = () => {
+
+        general_form.classList.add('was-validated')
+        update_button.innerHTML = '<i class="fa fa-spinner fa-spin"></i>';
+
+        let url = `/api/users/62e88c101719dc000932ab3a`
+        let data = {
+            "firstName": firstName.value,
+            "lastName": lastName.value,
+            "gender": gender.value,
+            "birthYear": birthdate.value.split('-')[0],
+            "birthMonth": birthdate.value.split('-')[1],
+            "birthDay": birthdate.value.split('-')[2],
+            "profesion": profesion.value,
+            "interest": interest.value,
+            "country": countries_input.value,
+            "state": states_input.value,
+            "city": cities_input.value,
+            "dial_code": dial_code.text,
+            "email": email.value,
+            "phone": phone.value,
+            "dial_code": dial_code.value,
+        }
+
+        fetch(url, {
+                method: 'PATCH',
+                credentials: 'same-origin',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data),
+            })
+            .then(response => {
+                if (response.status == 200) {
+                    return response.json();
+                } else {
+                    throw response;
+                }
+            })
+            .then(data => {
+                console.log(data);
+                myModal.show();
+                showMessage('Se actualizó la información con éxito', true, 'success');
+                general_form.classList.remove('was-validated')
+
+            })
+            .catch(error => {
+                // resolve error promise
+                console.log({
+                    ok: error.ok,
+                    status: error.status,
+                    statusText: error.statusText,
+                });
+                Promise.resolve(error.json())
+                    .then(data => {
+                        console.log('data', data);
+                        myModal.show();
+                        showMessage(data.message, false, 'danger');
+                    })
+            })
+    }
+
+
+  return (
+    <div>apiCountry</div>
+  )
+}
+
+export default apiCountry

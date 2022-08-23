@@ -1,54 +1,41 @@
-
-$color-fondo-primario: #303840;
-$color-fondo-secundario: #f5f7fa;
+$color-fondo-primario: #515d6f;
+$color-fondo-secundario: #f1f3f7;
 $color-boton-primario: #febf10;
 $color-boton-primario-hover: #e7ae11;
 
+#components-layout-demo-responsive .logo {
+  height: 32px;
+  margin: 16px;
+  background: $color-fondo-primario;
+}
 
+//Sidebar
 
+.ant-menu.ant-menu-dark, .ant-menu-dark .ant-menu-sub, .ant-menu.ant-menu-dark .ant-menu-sub{
+  background: transparent;
+}
 
-.ant-layout{
-  &-header {
-    background: $color-fondo-secundario !important;
-    box-shadow: 0 6px 6px -3px rgb(39 44 51 / 10%), 0 10px 14px 1px rgb(39 44 51 / 4%), 0 4px 18px 3px rgb(39 44 51 / 2%);
-  }
-  &-sider{
-    background: $color-fondo-primario !important;    
-  }
+.ant-layout-sider{
+  background: $color-fondo-primario;
+}
+
+.site-layout-sub-header-background {
+  background: $color-fondo-secundario;
+}
+
+.site-layout-background {
+  background: $color-fondo-secundario;
+}
+
+//Empresa Id
+
+.site-page-header-ghost-wrapper {
+  padding: 24px;
+  background-color: #f5f5f5;
+}
+
+//Header
+.ant-menu-horizontal {
   
-  &-content{
-    background: $color-fondo-secundario !important;
-    padding: 50px 0;
-  }
-
-  .breadcrumb {
-    align-items: center;
-    font-size: .8125rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-}
-}
-
-.ant-menu.ant-menu-dark{
-  background: transparent !important
-}
-.ant-menu-dark .ant-menu-inline.ant-menu-sub{
-  background: #272c33 !important
-}
-
-.ant-layout {
-  background: #ffffff;
-}
-
-.ant-layout-sider-trigger {
-  background-color: $color-boton-primario-hover !important;
-}
-
-.ant-menu-submenu-open{
-  background-color: $color-boton-primario-hover !important;
-}
-
-.ant-menu .ant-menu-item-icon {
-  font-size: 20px !important;
+  justify-content: flex-end;
 }

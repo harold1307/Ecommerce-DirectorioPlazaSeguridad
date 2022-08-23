@@ -12,8 +12,7 @@ export function cargarCompaniasAll() {
         try {               
             const products = await clienteAxios.get('/companies');                   
            dispatch( CompaniasAll_Exito(products.data) ); 
-        } catch (error) {
-            console.log(error);               
+        } catch (error) {             
             dispatch( CompaniasAll_Error(error) );        
         }
     }

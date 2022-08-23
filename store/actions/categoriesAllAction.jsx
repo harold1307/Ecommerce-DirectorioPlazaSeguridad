@@ -12,8 +12,7 @@ import {
                 const categories = await clienteAxios.get('/categories');                   
                 dispatch( cargarCategoriasAll_Exito(categories.data) );  
 
-            } catch (error) {
-                console.log(error);               
+            } catch (error) {               
                 dispatch( cargarCategoriasAll_Error(error) );        
             }
         }

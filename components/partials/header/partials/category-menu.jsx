@@ -37,7 +37,7 @@ const CategoryMenu = () =>{
                             categoriasState.loading?
                                 (                                    
                                     categoriasState.categorias.map((categoria, index)=>{
-                                        if(index<13){
+                                        if(index<12){
                                             return(
                                                 <li className="megamenu-container" key={ index }>
              
@@ -58,8 +58,9 @@ const CategoryMenu = () =>{
                                 ""
                                 :
                                 <li className="megamenu-container">
-                                    <ALink className="text-dark py-2 btn btn-primary text-center" href={ { pathname: '/categorias', query: { categoria:`todas`} } }>
-                                    <small>Más categorías</small></ALink>                           
+                                    <ALink className="text-dark mt-1 py-2 btn btn-primary text-center" href={ { pathname: '/categorias', query: { categoria:`todas`} } }>
+                                      Más Categorías
+                                    </ALink>                           
                                 </li>
                         }
                     </ul>

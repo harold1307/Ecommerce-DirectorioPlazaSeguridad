@@ -11,8 +11,7 @@ export function cargarProductosAll() {
         try {               
             const products = await clienteAxios.get('/products');                   
             dispatch( cargarProductosAll_Exito(products.data) );  
-        } catch (error) {
-            console.log(error);               
+        } catch (error) {             
             dispatch( cargarProductosAll_Error(error) );        
         }
     }
