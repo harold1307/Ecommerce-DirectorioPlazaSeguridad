@@ -36,6 +36,8 @@ $color-boton-primario-hover: #e7ae11;
 
 //Header
 .ant-menu-horizontal {
-  
   justify-content: flex-end;
+}
+.ant-menu-overflow {
+  background: #fafafa;
 }

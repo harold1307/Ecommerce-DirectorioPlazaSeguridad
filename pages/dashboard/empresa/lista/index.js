@@ -1,13 +1,12 @@
 import React from 'react';
 import AdminLayoud from '../../../../admin/adminLayoud';
-import EditarEmpresa  from './EditarEmpresa'
+import AllEmpresas from './allEmpresas'
 
 function index() {
   return (
     <AdminLayoud>
-            <EditarEmpresa/>
+            <AllEmpresas />
     </AdminLayoud>
   )
 }
-
-export default index
+export default index;

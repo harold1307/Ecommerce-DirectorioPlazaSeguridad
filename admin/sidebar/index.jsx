@@ -18,17 +18,17 @@ import { useDispatch }  from "react-redux";
   }
   
   const items = [
-    getItem( 'Empresas', 'sub1', <IdcardOutlined /> , [
-      getItem( <ALink href={ { pathname: '/dashboard/empresa/crear' }} scroll={ false }>Crear Empresa</ALink>, '1', <PlusCircleOutlined />, ),
-      getItem(<ALink href={ { pathname: '/dashboard/empresa/lista' }} scroll={ false }>Mis Empresa</ALink>, '2', <MenuUnfoldOutlined />),
+    getItem( 'Empresas', 'sub1', <IdcardOutlined style={{ fontSize: '18px', color: '#ffc107' }}  /> , [
+      getItem( <ALink href={ { pathname: '/dashboard/empresa/crear' }} scroll={ false }>Crear Empresa</ALink>, '1', <PlusCircleOutlined style={{ fontSize: '18px', color: '#ffc107' }} />, ),
+      getItem(<ALink href={ { pathname: '/dashboard/empresa/lista' }} scroll={ false }>Mis Empresa</ALink>, '2', <MenuUnfoldOutlined style={{ fontSize: '18px', color: '#ffc107' }}  />),
      
     ]),
-    getItem('Productos', 'sub2', <ShopOutlined />, [
-      getItem('Option 5', '5'),
-      getItem('Option 6', '6'),
+    getItem('Productos', 'sub2', <ShopOutlined style={{ fontSize: '18px', color: '#ffc107' }}  />, [
+      getItem( <ALink href={ { pathname: '/dashboard/producto/crear' }} scroll={ false }>Crear Producto</ALink>, '5', <PlusCircleOutlined style={{ fontSize: '18px', color: '#ffc107' }}  />, ),
+      getItem( <ALink href={ { pathname: '/dashboard/producto/lista' }} scroll={ false }>Mis Productos</ALink>, '6', <MenuUnfoldOutlined style={{ fontSize: '18px', color: '#ffc107' }}  />, ),
       getItem('Submenu', 'sub3', null, [getItem('Option 7', '7'), getItem('Option 8', '8')]),
     ]),
-    getItem('Navigation Three', 'sub4', <SettingOutlined />, [
+    getItem('Navigation Three', 'sub4', <SettingOutlined style={{ fontSize: '18px', color: '#ffc107' }}  />, [
       getItem('Option 9', '9'),
       getItem('Option 10', '10'),
       getItem('Option 11', '11'),

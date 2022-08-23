@@ -4,7 +4,8 @@ import productsAllreducer from './productsAllreducer';
 import authReducer from './authReducer';
 import addCartReducer from './AddCartReducer';
 import companiesAllreducer from './companiesAllreducer';
-import companyIdReducerGet from './companyIdReducerGet.jsx';
+import companyIdReducerGet from './companyIdReducerGet';
+import productoIdReducerGet from './productoIdReducerGet';
 
 export default combineReducers({
     categoriesAll: categoriesAllreducer,   
@@ -12,5 +13,6 @@ export default combineReducers({
     authReducer: authReducer,
     addCartReducer : addCartReducer,
     companiesAll : companiesAllreducer,
-    companyIdGet : companyIdReducerGet
+    companyIdGet : companyIdReducerGet,
+    productoIdGet: productoIdReducerGet,
 });

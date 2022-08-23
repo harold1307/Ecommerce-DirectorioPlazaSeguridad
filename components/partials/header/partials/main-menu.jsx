@@ -16,7 +16,6 @@ function MainMenu() {
         document.querySelector( '.view-all-demos' ).classList.toggle( 'disabled-hidden' );
         e.preventDefault();
     }
-
     return (
         <nav className="main-nav">
             <ul className="menu sf-arrows">
@@ -81,7 +80,7 @@ function MainMenu() {
                     </div>
                 </li> 
                 <li className={ `megamenu-container ${ path === '/empresas' ? "active" : '' }` } id="menu-home">
-                       <ALink href="/empresas/todos">Empresas</ALink>
+                       <ALink href="/empresas/list">Empresas</ALink>
                 </li>              
                 <li className={ `megamenu-container ${ path === '/publicarme' ? 'active' : '' }` } id="menu-home">
                     <ALink href="/publicarme" >Publicarme</ALink>

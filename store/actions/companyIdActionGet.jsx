@@ -19,7 +19,7 @@ export function cargarCompaniaId(companiaId) {
 const cargarCompaniaId_Inicio = () => ({
     type: CARGANDO_COMPANIA_INICIO,
     payload: {
-        companias   : [],
+        compania   : [],
         loading: false,
         error: false
     }

@@ -4,7 +4,7 @@ import { useSelector }  from "react-redux";
 import {useRouter} from 'next/router';
 import { EditOutlined, EyeOutlined, DeleteOutlined, QuestionCircleOutlined, PoweroffOutlined} from '@ant-design/icons';
 
-const Empresas = () => {
+const AllEmpresas = () => {
   const [loadings, setLoadings] = useState([]);
   const [top, setTop] = useState('topLeft');
   const [bottom, setBottom] = useState('bottomRight');
@@ -17,14 +17,14 @@ const Empresas = () => {
 
   var dataempresa = [];
   const  companiesState =  useSelector(state => state.companiesAll);
-  companiesState.companias.map((producto, index)=>{
+  companiesState.companias.map((empresa, index)=>{
     var modelempresa = {
       item: index,
       key: index,
-      name: producto.name,
-      create: formatofecha(producto.createdAt),
-      update: formatofecha(producto.updatedAt),
-      id: producto._id,
+      name: empresa.name,
+      create: formatofecha(empresa.createdAt),
+      update: formatofecha(empresa.updatedAt),
+      id: empresa._id,
     }
     dataempresa = [...dataempresa, modelempresa]
   });
@@ -133,4 +133,4 @@ const Empresas = () => {
   );
 };
 
-export default Empresas;
+export default AllEmpresas;

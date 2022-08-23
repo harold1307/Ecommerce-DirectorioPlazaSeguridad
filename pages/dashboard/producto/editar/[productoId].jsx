@@ -5,19 +5,20 @@ import { useForm } from 'react-hook-form';
 import { CountryDropdown, RegionDropdown, CountryRegionData } from 'react-country-region-selector';
 import AdminLayoud from '../../../../admin/adminLayoud';
 import { useDispatch ,useSelector }  from "react-redux";
-import { cargarCompaniaId } from "../../../../store/actions/companyIdActionGet";
+import { cargarProductoId } from "../../../../store/actions/productoIdActionGet";
 const { TabPane } = Tabs;
 
-export default function EditarEmpresa() {
+export default function EditarProducto() {
 const dispatch = useDispatch();
 const router = useRouter();
 const query = router.query;
-const empresa = query.empresaId;
-//console.log(toString(empresa));
+const producto = query.productoId;
+console.log('productoId', producto);
+
 useEffect(() => {   
-     dispatch( cargarCompaniaId(empresa) );       
+     dispatch( cargarProductoId(producto) );       
 }, [ dispatch])
-const  companyIdGetState =  useSelector(state => state.companyIdGet);
+const  productoIdGetState =  useSelector(state => state.productoIdGet);
 
 const formatofecha = (fecha)=>{
     var date = new Date(fecha);
@@ -35,20 +36,20 @@ const renderContent = (column = 2) => (
     <Descriptions size="small" column={column}>
       <Descriptions.Item label="Propietario">{
       <div>
-        <span>{companyIdGetState.compania.OWNER.firstName}</span>
+        <span>{productoIdGetState.producto.OWNER.firstName}</span>
         <span> </span>
-        <span> {companyIdGetState.compania.OWNER.lastName }</span>
+        <span> {productoIdGetState.producto.OWNER.lastName }</span>
        
       </div>
        }
        </Descriptions.Item>
       <Descriptions.Item label="Correo">
-        { companyIdGetState.loading? companyIdGetState.compania.contact_email : '...'}
+        { productoIdGetState.loading? productoIdGetState.producto.contact_email : '...'}
       </Descriptions.Item>
-      <Descriptions.Item label="Creada">{formatofecha( companyIdGetState.compania.createdAt)}</Descriptions.Item>
-      <Descriptions.Item label="Actualizada">{formatofecha(companyIdGetState.compania.updatedAt)}</Descriptions.Item>
+      <Descriptions.Item label="Creada">{formatofecha( productoIdGetState.producto.createdAt)}</Descriptions.Item>
+      <Descriptions.Item label="Actualizada">{formatofecha(productoIdGetState.producto.updatedAt)}</Descriptions.Item>
       <Descriptions.Item label="Productos">
-          { companyIdGetState.compania.products}
+          { productoIdGetState.producto.products}
       </Descriptions.Item>
     </Descriptions>
   );
@@ -65,11 +66,11 @@ const renderContent = (column = 2) => (
          <Row>
             <Col span={24} style= {{backgroundColor: '#ffffff'}}>  
             { 
-                companyIdGetState.loading?         
+                productoIdGetState.loading?         
                     <PageHeader
                         className="site-page-header-responsive"
                         onBack={() => window.history.back()}
-                        title={ companyIdGetState.compania.name } 
+                        title={ productoIdGetState.producto.name } 
                         extra={[                    
                         <Button key="2"  onBack={() => window.history.back()} >Cancelar</Button>,
                         <Button key="1" type="primary">
@@ -91,7 +92,7 @@ const renderContent = (column = 2) => (
         <Row className='bg-white my-5 py-5'>
             <Col span={14} offset={5}>   
                   {  
-                    companyIdGetState.loading?     
+                    productoIdGetState.loading?     
                         <>       
                             <div className="text-center">
                                     <h1 className="display-4 my-5 pb-3">Editar Empresa</h1>
@@ -101,7 +102,7 @@ const renderContent = (column = 2) => (
                                     <div className="form-row">
                                         <div  className="col-md-6 mb-3">
                                                 <label>Nombre de la compañia</label>
-                                                <input type="text"  className="form-control"  placeholder={companyIdGetState.compania.name} {...register("companyName", {required: true, maxLength: 100})} />
+                                                <input type="text"  className="form-control"  placeholder={productoIdGetState.producto.name} {...register("companyName", {required: true, maxLength: 100})} />
                                                 {errors.name?.type === 'required' && "Nombre de la empresa es requerido."}
                                         </div>
                                         <div  className="col-md-6 mb-3">
