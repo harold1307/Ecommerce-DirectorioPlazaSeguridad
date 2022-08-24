@@ -1,12 +1,12 @@
 import React from 'react';
 import AdminLayoud from '../../../../admin/adminLayoud';
-import CrearEmpresa    from './crearEmpresa'
+import CrearEmpresa  from './crearEmpresa'
 
-function index() {
+const Index= ()=> {
   return (
     <AdminLayoud>
       <CrearEmpresa/>
     </AdminLayoud>
   )
 }
-export default index;
+export default Index;
