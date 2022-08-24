@@ -132,9 +132,8 @@ export const catFilter = function ( products = [], category, flag = false ) {
 * @param {Array} categoria 
 */
 export const catFiltrar = function ( productos = [], categoria ) { 
-    const listproducto = productos.filter( producto => producto.category == categoria )
-    console.log('productos: ',productos , 'categoria: ', categoria, 'lista: ',  listproducto.length  )
-
+    var listproducto = productos.filter( producto => producto.category == categoria )
+    listproducto.length==0? listproducto=[] : listproducto ;
     return listproducto 
 }
 

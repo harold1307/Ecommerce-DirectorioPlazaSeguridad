@@ -27,7 +27,7 @@ const cargarCompaniaId_Inicio = () => ({
 const cargarProductoId_Exito = (producto) => ({
     type: CARGANDO_PRODUCTO_EXITO,
      payload: {
-        producto : compania,
+        producto : producto,
         loading: true,
         error: false
     }

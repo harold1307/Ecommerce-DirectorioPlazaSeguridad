@@ -8,7 +8,6 @@ import SidebarAdmin from './sidebar';
 import HeaderAdmin from './header';
 import ALink from '../components/features/alink';
 
-  
 const AdminLayoud = ({children}) => {
    const router = useRouter();
     const query = router.query;
@@ -21,7 +20,6 @@ const AdminLayoud = ({children}) => {
                 minHeight: '100vh',
               }}
             >
-
                 <SidebarAdmin />
                 <Layout className="site-layout">        
                   <HeaderAdmin />

@@ -35,7 +35,7 @@ const cargarCompaniaId_Exito = (compania) => ({
 const cargarCompaniaId_Error = (error) => ({
     type: CARGANDO_COMPANIA_ERROR,
     payload: {
-        companias : [],
+        compania : [],
         loading: false,
         error: error.code
     }

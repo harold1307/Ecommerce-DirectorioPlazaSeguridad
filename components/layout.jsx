@@ -22,7 +22,7 @@ function Layout ( {children} ) {
          dispatch( cargarProductosAll() );   
          dispatch( cargarCompaniasAll() );       
     }, [ dispatch])
-   
+
     useEffect( () => {        
         scrollTop = document.querySelector( '#scroll-top' );
         window.addEventListener( 'scroll', scrollHandler, false ); 

@@ -14,7 +14,6 @@ function onQuickView ( e ) {
 
 function onWishlistClick( e ) {
     e.preventDefault();
-  
 }
 
 const ProductTwelve = ( props ) => {

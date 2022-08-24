@@ -19,8 +19,7 @@ export function verificarUsuario(credencialesUsuario ) {
                 closeOnClick: true,
                 pauseOnHover: true,
                 draggable: true
-            });   
-
+            });  
             try{
                 const dataUser = await clienteAxios.post('https://directorioseguridad.dte.gt/api/login', credencialesUsuario);
                 dispatch( verificarUsuario_Exito( dataUser) ); 
@@ -33,10 +32,7 @@ export function verificarUsuario(credencialesUsuario ) {
                   pauseOnHover: true,
                   draggable: true,
                   progress: '' ,
-                  });  
-                  const cookieToken = Cookies.get('token')
-                  console.log('cookieToken', cookieToken)
-     
+                  });                   
             }catch(error) {
                 dispatch( verificarUsuario_Error(error) );             
                 toast.error('Upp, parece que hubo un error', {

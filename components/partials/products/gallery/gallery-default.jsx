@@ -63,7 +63,7 @@ function GalleryDefault ( props ) {
         <>
             <div className={ `product-gallery ${adClass}` }>
                 <div className="row m-0">
-                    <figure className="product-main-image" index="0">
+                    <figure className="product-main-image overflow-hidden" index="0">
                         {
                             producto.new ?
                                 <span className="product-label label-new">New</span>

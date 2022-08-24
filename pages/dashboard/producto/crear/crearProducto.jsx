@@ -15,7 +15,7 @@ export default function CrearProducto() {
 
   return (
     <Row className='bg-white my-5 py-5'>
-      <Col span={14} offset={5}>                
+      <Col  xs={{span: 22,offset: 1,}}  sm={{span: 20,offset: 2,}}  md={{span: 20,offset: 2,}}  lg={{span: 14,offset: 5,}}  xl={{span: 14,offset: 5,}} >                
               <div className="text-center">
                       <h1 className="display-4 my-5">Crear Producto</h1>
               </div>

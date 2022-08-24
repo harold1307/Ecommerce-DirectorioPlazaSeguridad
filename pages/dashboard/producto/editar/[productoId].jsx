@@ -13,7 +13,6 @@ const dispatch = useDispatch();
 const router = useRouter();
 const query = router.query;
 const producto = query.productoId;
-console.log('productoId', producto);
 
 useEffect(() => {   
      dispatch( cargarProductoId(producto) );       

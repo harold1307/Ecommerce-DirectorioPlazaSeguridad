@@ -45,11 +45,11 @@ function TrendyCollection( props ) {
                                  productosState.loading?
                                     <OwlCarousel adClass="owl-simple carousel-equal-height carousel-with-shadow" options={ productSlider }>
                                         {                                             
-                                            catFiltrar(productosState.productos, categoria.value).map( ( producto, index ) =>                                          
+                                            catFiltrar(productosState.productos, categoria.value).map( ( producto, index ) =>                                                           
                                                 <ProductTwelve
                                                     product ={ producto }
                                                     key={ index } 
-                                                />                                              
+                                                />                                                                                          
                                             )
                                         }
                                            

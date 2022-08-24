@@ -1,35 +1,41 @@
 import { useState, useEffect } from 'react'
 import { useRouter } from 'next/router';
-import { useSelector }  from "react-redux";
+import { useDispatch, useSelector }  from "react-redux";
 import GalleryDefault from '~/components/partials/products/gallery/gallery-default';
 import DetailOne from '~/components/partials/products/details/detail-one';
 import InfoOne from '~/components/partials/products/info-tabs/info-one';
 import RelatedProductsOne from '~/components/partials/products/related/related-one';
 import Layout from '~/components/layout';
 import ALink  from '~/components/features/alink';
-
 import Helmet from "react-helmet";
+import { cargarProductoId } from "../../store/actions/productoIdActionGet";
 
 const ProductDefault = () => {    
-    const router = useRouter()
-    const  query = router.query
-    const  productosState =  useSelector(state => state.productsAll);   
-    var producto = productosState.productos.filter( producto => producto._id ==String(query.productoId));
-    const  productosloading = productosState.loading; 
-  
+    const router = useRouter(); 
+    const dispatch = useDispatch();
+    const  query = router.query;
+    const  Id = query.productoId;
+    
+    useEffect(() => {   
+        dispatch( cargarProductoId(Id));       
+    }, [ dispatch]);
+
+    const  productoId =  useSelector(state => state.productoIdGet);
+    const  productosState =  useSelector(state => state.productsAll);
+    var producto = productoId.producto;
 
     return (
         <Layout>
            {
-            productosloading?
+            productoId.loading?
                 <Helmet>                
                         <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
                         <meta charset="utf-8" />
-                        <title>{`${producto[0].name} | ${producto[0].COMPANY.name}`}</title>
-                        <meta name="keywords" content= { `${producto[0].brand}`} />
-                        <meta name="description" content=  { `${producto[0].shortDescription}`}  />
-                        <meta name="author" content=  { `Directorio  | ${producto[0].COMPANY.name}` }/>
-                        <meta name="apple-mobile-web-app-title" content= { `${producto[0].name}`} />
+                        <title>{`${producto.name} | ${producto.COMPANY.name}`}</title>
+                        <meta name="keywords" content= { `${producto.brand}`} />
+                        <meta name="description" content=  { `${producto.shortDescription}`}  />
+                        <meta name="author" content=  { `Directorio  | ${producto.COMPANY.name}` }/>
+                        <meta name="apple-mobile-web-app-title" content= { `${producto.name}`} />
                         <meta name="application-name" content="Directorio Plaza Seguridas" />
                         <meta name="msapplication-TileColor" content="#cc9966" />
                         <meta name="msapplication-config" content="images/icons/browserconfig.xml" />
@@ -60,12 +66,12 @@ const ProductDefault = () => {
                 <div className="page-content mt-5">
                         <div className="container skeleton-body">
                             <div className="product-details-top">
-                                <div className={ `row skel-pro-single ${!productosloading? '' : 'loaded'}` }>
+                                <div className={ `row skel-pro-single ${!productoId.loading? '' : 'loaded'}` }>
                                     <div className="col-md-6">
                                         <div className="skel-product-gallery"></div>
                                         {
-                                            producto.length>0 ?
-                                                <GalleryDefault producto = { producto[0] } />
+                                            productoId.loading?
+                                                <GalleryDefault producto = { producto } />
                                                 : ''
                                         }
                                     </div>
@@ -79,21 +85,21 @@ const ProductDefault = () => {
                                             </div>
                                         </div>
                                         {
-                                            producto.length>0 ?
-                                                <DetailOne producto={ producto[0]  } />
+                                            productoId.loading?
+                                                <DetailOne producto={ producto  } />
                                                 : ''
                                         }
                                     </div>
                                 </div>
                             </div>
                             {
-                                producto.length>0 ?
-                                    <InfoOne producto ={ producto[0] } />                                
+                                productoId.loading ?
+                                    <InfoOne producto ={ producto} />                                
                                         :
                                     <div className="skel-pro-tabs"></div>                               
                             }
                             {
-                                producto.length>0 ?
+                                productoId.loading ?
                                     <RelatedProductsOne productos = { productosState.productos }  productoId = { producto._id } loading ={ productosState.loading } />
                                     :
                                 ""

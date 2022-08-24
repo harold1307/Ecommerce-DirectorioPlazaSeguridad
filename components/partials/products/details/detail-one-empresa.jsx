@@ -6,19 +6,22 @@ import ALink from '../../../features/alink';
 const  DetailOneEmpresa  = ( props ) => {
     const router = useRouter();
     const ref = useRef( null );
-    const { empresa } = props;
+    const { empresa } = props;  
 
-
+    useEffect(() => {
+        var str = empresa.description;
+        var tt = document.getElementById("descriction");
+        tt.innerHTML = str;  
+    }, [])
+          
     useEffect( () => {
         window.addEventListener( 'scroll', scrollHandler, {
             passive: true
         } );
-
         return () => {
             window.removeEventListener( 'scroll', scrollHandler );
         }
     }, [ ] )
-
 
     function onCartClick ( e ) {
         e.preventDefault();
@@ -38,35 +41,17 @@ const  DetailOneEmpresa  = ( props ) => {
         }
     }
 
- 
-
     return (
-    <div className="product-details px-4" ref={ ref }>
-        <h1 className="product-title">{  empresa.name }</h1>
-    
-          <div className="product-content text-justify">
-            <p>{empresa.description}</p>
-        </div>
-
-       
-        <div className="product-details-footer">
-             <div className="product-cat w-100 text-truncate">
-                <span><strong>Productos:</strong></span>
-                {empresa.products}
+    <div className="product-details px-4 py-2" ref={ ref }>
+        <h1 className="product-title text-center mt-2">{  empresa.name }</h1>    
+          <div className="product-content mt-3">
+            <h6>Sobre la empresa:</h6>
+            <div className='text-justify'>
+                 <div id='descriction'></div>
             </div>
-            <div className="product-cat w-100 text-truncate">
-                <span><strong>Sector de negocio:</strong></span>
-                {empresa.bussiness}
-            </div>
-            <div className="product-cat w-100 text-truncate">
-                <span><strong>Servicios:</strong></span>
-                {empresa.services}
-            </div>
-        </div>      
+        </div>         
     </div>
     )
 }
-
-
 
 export default  DetailOneEmpresa ;

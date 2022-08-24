@@ -155,10 +155,10 @@ const Home = () =>{
                                 <div className="lazy-overlay bg-transparent"></div>
                                 <LazyLoadImage
                                     alt="Banner"
-                                    src="/images/home/banners/banner-1.png"
+                                    src="/images/home/banners/banner-1.jpg"
                                     threshold={ 200 }
                                     width="280"
-                                    height="500"
+                                    height="550"
                                     effect="blur"
                                 />
                             </ALink>

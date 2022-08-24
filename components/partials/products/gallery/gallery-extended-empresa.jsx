@@ -10,17 +10,20 @@ function GalleryExtendedEmpresa ( props ) {
     }
 
     return (
-        <div className="product-lg position-relative w-75">             
-            <LazyLoadImage
-                 alt="product"
-                    src={`${ empresa.logo }` } 
-                    threshold={ 500 }
-                    effect="black and white"
-                    wrapperClassName="product-image" 
-                    width={300}        
-                    height={300}                 
-              
-            />      
+        <div className="product-lg position-relative p-4"> 
+            <div className='row justify-content-center'>    
+                <div className='col-8 col-md-6'>          
+                    <LazyLoadImage
+                        alt="product"
+                            src={`${ empresa.logo }` } 
+                            threshold={ 500 }
+                            effect="black and white"
+                            wrapperClassName="product-image" 
+                            width={300}        
+                            height={300}                              
+                    />   
+                </div>
+            </div>    
         </div>
     )
 }
