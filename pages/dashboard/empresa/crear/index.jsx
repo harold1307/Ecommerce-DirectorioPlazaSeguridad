@@ -1,6 +1,6 @@
 import React from 'react';
 import AdminLayoud from '../../../../admin/adminLayoud';
-import CrearEmpresa  from './crearEmpresa'
+import CrearEmpresa  from './crearEmpresa';
 
 const Index= ()=> {
   return (
