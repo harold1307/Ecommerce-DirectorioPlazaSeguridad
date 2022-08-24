@@ -9,5 +9,4 @@ function index() {
     </AdminLayoud>
   )
 }
-
 export default index;

@@ -4,9 +4,8 @@ import { AppstoreOutlined, MailOutlined, SettingOutlined, PlusCircleOutlined,Sho
 import { Layout, Menu } from 'antd';
 const { Sider } = Layout;
 import ALink from '../../components/features/alink';
-import { cargarCompaniasAll } from "../../store/actions/companiesAllAction";
-import { useDispatch }  from "react-redux";
 
+function SidebarAdmin() {
   function getItem(label, key, icon, children, type) {
     return {      
       key,
@@ -16,7 +15,6 @@ import { useDispatch }  from "react-redux";
       type
     };
   }
-  
   const items = [
     getItem( 'Empresas', 'sub1', <IdcardOutlined style={{ fontSize: '18px', color: '#ffc107' }}  /> , [
       getItem( <ALink href={ { pathname: '/dashboard/empresa/crear' }} scroll={ false }>Crear Empresa</ALink>, '1', <PlusCircleOutlined style={{ fontSize: '18px', color: '#ffc107' }} />, ),
@@ -36,17 +34,8 @@ import { useDispatch }  from "react-redux";
     ]),
   ];
 
+  const [collapsed, setCollapsed] = useState(false);
 
-function SidebarAdmin() {
-
-  const dispatch = useDispatch();
-
-    useEffect(() => {       
-         dispatch( cargarCompaniasAll() );       
-    }, [ dispatch])
-
-
-    const [collapsed, setCollapsed] = useState(false);
   return (
     <>
         <Sider 
