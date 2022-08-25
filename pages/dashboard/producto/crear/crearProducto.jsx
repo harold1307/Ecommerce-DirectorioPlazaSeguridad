@@ -2,6 +2,8 @@ import React , {useState} from 'react';
 import { useForm } from 'react-hook-form';
 import { CountryDropdown, RegionDropdown, CountryRegionData } from 'react-country-region-selector';
 import {  Col, Row  } from 'antd';
+import { Editor, EditorState, convertToRaw } from "draft-js";
+import "draft-js/dist/Draft.css";
 
 export default function CrearProducto() {
   const { register, handleSubmit, formState: { errors } } = useForm();

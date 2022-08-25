@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { useSelector }  from "react-redux";
 import {useRouter} from 'next/router';
 import { EditOutlined, EyeOutlined, DeleteOutlined, QuestionCircleOutlined, PoweroffOutlined} from '@ant-design/icons';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 const AllEmpresas = () => {
   const [loadings, setLoadings] = useState([]);
@@ -21,6 +22,7 @@ const AllEmpresas = () => {
     var modelempresa = {
       item: index,
       key: index,
+      image : empresa.logo,
       name: empresa.name,
       create: formatofecha(empresa.createdAt),
       update: formatofecha(empresa.updatedAt),
@@ -49,12 +51,23 @@ const AllEmpresas = () => {
     }, 6000);
   };
 
-
   const columns = [
     {
       title: 'item',
       dataIndex: 'item',
-      key: 'item'
+      key: 'item',
+      render: (text) => <a className='text-center'>{text}</a>,
+    },
+    {
+      title: 'Imagen',
+      dataIndex: 'image',
+      key: 'image',
+      render: (image) => <LazyLoadImage  
+          src={image} 
+          width={50} 
+          height={50} 
+          alt="producto" 
+      />,
     },
     {
       title: 'Nombre de la empresa',
@@ -123,8 +136,7 @@ const AllEmpresas = () => {
         pagination={
           {
             position: [bottom],
-            pageSize: 5
-          
+            pageSize: 5          
           }
         }
         dataSource={dataempresa}

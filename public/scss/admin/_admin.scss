@@ -59,3 +59,33 @@ $color-boton-primario-hover: #e7ae11;
   font-size: 18px;
   color: #ffc107;
 }
+
+//Formulario Dashboard
+
+.formularioAdmin{
+  label{
+    font-size: 1.8rem;
+  }
+}
+
+.quillForm{
+ 
+  .ql-editor {
+    min-height: 180px;    
+  }
+  .ql-container{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    &.ql-snow {
+      border: 1px solid #ebebeb;  
+      background-color: #f6f7ffe5;        
+    }    
+  }
+  .ql-toolbar{
+    &.ql-snow{
+     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+     border: 1px solid #ebebeb;
+     background-color: #fafafa;
+     border-radius: 2px 2px 0 0;
+   }
+ }
+}

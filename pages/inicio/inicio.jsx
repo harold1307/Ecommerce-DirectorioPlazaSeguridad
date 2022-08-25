@@ -73,8 +73,7 @@ const Home = () =>{
                                     </figure>
                                     <div className="intro-content">
                                         <Reveal keyframes={ fadeInUpShorter } delay={ 100 } duration={ 1000 }>
-                                            <h3 className="intro-subtitle">Busca en</h3>
-
+                                            <h3 className="intro-subtitle text-white">Busca en</h3>
                                             <h1 className="intro-title text-white">
                                                 Directorio
                                                 <br />Seguridad Plaza

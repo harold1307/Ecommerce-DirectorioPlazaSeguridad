@@ -27,16 +27,15 @@ const WrappedApp = ({ Component, pageProps }) => {
                     <meta charset="utf-8" />
                     <meta name="keywords" content="" />
                     <meta name="description" content=""/>
-                    <meta name="author" content="" />
-                    <meta name="apple-mobile-web-app-title" content="Molla" />
+                    <meta name="author" content="Directorio Plaza eguridas" />
+                    <meta name="apple-mobile-web-app-title" content="Directorio Plaza eguridas" />
                     <meta name="application-name" content="Directorio Plaza eguridas" />
                     <meta name="msapplication-TileColor" content="#cc9966" />
-                    <meta name="msapplication-config" content="images/icons/browserconfig.xml" />
                     <meta name="theme-color" content="#cc9966" />
                     <title>Directorio Plaza Seguridad</title>
-                    <link rel="apple-touch-icon" sizes="180x180" href="images/icons/apple-touch-icon.png" />
-                    <link rel="icon" type="image/png" sizes="32x32" href="images/icons/favicon-32x32.png" />
-                    <link rel="icon" type="image/png" sizes="16x16" href="images/icons/favicon-16x16.png" />
+                    <link rel="apple-touch-icon" sizes="180x180" href="https://cdndirectorio.s3.amazonaws.com/assets/images/favicon.svg" />
+                    <link rel="icon" type="image/png" sizes="32x32" href="https://cdndirectorio.s3.amazonaws.com/assets/images/favicon.svg" />
+                    <link rel="icon" type="image/png" sizes="16x16" href="https://cdndirectorio.s3.amazonaws.com/assets/images/favicon.svg" />
                     <link rel="mask-icon" href="images/icons/safari-pinned-tab.svg" color="#666666" />
                     <link rel="shortcut icon" type="image/x-icon" href="https://cdndirectorio.s3.amazonaws.com/assets/images/favicon.svg"></link>
                 </Helmet>

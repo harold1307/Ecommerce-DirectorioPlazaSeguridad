@@ -47,7 +47,7 @@ const Productos = () => {
       newLoadings[index] = true;
       return newLoadings;
     });
-    router.push('/dashboard/empresa/crear')
+    router.push('/dashboard/producto/crear')
     setTimeout(() => {
       setLoadings((prevLoadings) => {
         const newLoadings = [...prevLoadings];

@@ -26,7 +26,7 @@ function SidebarAdmin() {
       getItem( <ALink href={ { pathname: '/dashboard/producto/lista' }} scroll={ false }>Mis Productos</ALink>, '6', <MenuUnfoldOutlined style={{ fontSize: '18px', color: '#ffc107' }}  />, ),
       getItem('Submenu', 'sub3', null, [getItem('Option 7', '7'), getItem('Option 8', '8')]),
     ]),
-    getItem('Navigation Three', 'sub4', <SettingOutlined style={{ fontSize: '18px', color: '#ffc107' }}  />, [
+    getItem('Otros', 'sub4', <SettingOutlined style={{ fontSize: '18px', color: '#ffc107' }}  />, [
       getItem('Option 9', '9'),
       getItem('Option 10', '10'),
       getItem('Option 11', '11'),
@@ -51,7 +51,7 @@ function SidebarAdmin() {
           <div className="text-center m-5">
             <ALink href="/dashboard">
                 <Image
-                  src="/images/logo.png"
+                  src="/Logo-Directorio-de-Seguridad.png"
                   alt="Logo"
                   width= {200}
                   height={50}                 

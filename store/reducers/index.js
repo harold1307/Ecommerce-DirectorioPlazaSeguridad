@@ -6,6 +6,7 @@ import addCartReducer from './AddCartReducer';
 import companiesAllreducer from './companiesAllreducer';
 import companyIdReducerGet from './companyIdReducerGet';
 import productoIdReducerGet from './productoIdReducerGet';
+import crearEmpresaReducerPost from './crearEmpresaReducerPost'
 
 export default combineReducers({
     categoriesAll: categoriesAllreducer,   
@@ -15,4 +16,5 @@ export default combineReducers({
     companiesAll : companiesAllreducer,
     companyIdGet : companyIdReducerGet,
     productoIdGet: productoIdReducerGet,
+    crearEmpresaPost : crearEmpresaReducerPost
 });
