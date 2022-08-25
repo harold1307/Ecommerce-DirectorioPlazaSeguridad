@@ -55,7 +55,7 @@ const ProductDefault = () => {
     return (
         <Layout>
         <div className="main">
-        <PageHeader title={ 'Tienda Oficial'} subTitle={ empresa.name } icon={'icon-star'} />
+        <PageHeader title={ empresa.name } subTitle={ 'Tienda Oficial'}  icon={'icon-star'} />
             <nav className="breadcrumb-nav">
                 <div className="container">
                     <ol className="breadcrumb">

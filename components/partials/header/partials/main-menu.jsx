@@ -210,7 +210,10 @@ function MainMenu() {
                             </div>
                         </div>
                     </div>
-                </li>              
+                </li>       
+                 <li className={ `megamenu-container ${ path === '/dashboard' ? 'active' : '' }` } id="menu-home">
+                    <ALink href="/dashboard" >Dashboard</ALink>
+                </li>       
               
                 
             </ul>

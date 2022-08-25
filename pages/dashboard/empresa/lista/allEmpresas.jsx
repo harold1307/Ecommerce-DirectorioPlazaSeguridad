@@ -1,15 +1,20 @@
 import { Radio, Space, Table, Tag, Tooltip, Popconfirm, Button } from 'antd';
 import React, { useState, useEffect } from 'react';
-import { useSelector }  from "react-redux";
+import { useSelector, useDispatch }  from "react-redux";
 import {useRouter} from 'next/router';
 import { EditOutlined, EyeOutlined, DeleteOutlined, QuestionCircleOutlined, PoweroffOutlined} from '@ant-design/icons';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
+import { cargarCompaniasAll } from "../../../../store/actions/companiesAllAction";
 
 const AllEmpresas = () => {
   const [loadings, setLoadings] = useState([]);
   const [top, setTop] = useState('topLeft');
   const [bottom, setBottom] = useState('bottomRight');
   const router = useRouter();  
+  const dispatch = useDispatch();
+  useEffect(() => {    
+    dispatch( cargarCompaniasAll() );          
+  }, [ dispatch])
 
   const formatofecha = (fecha)=>{
       var date = new Date(fecha);

@@ -45,7 +45,7 @@ const AdminLayoud = ({children}) => {
                       <Row>
                           <Col span={24}>
                             <Breadcrumb style={{ margin: '16px 0'}}>
-                              <Breadcrumb.Item><strong>Ruta:</strong> {router.pathname}</Breadcrumb.Item>
+                              <Breadcrumb.Item><strong>Ruta:</strong> </Breadcrumb.Item>
                             </Breadcrumb>
                           </Col>
                       </Row>
