@@ -17,22 +17,13 @@ const empresaId = query.empresaId;
 const [valueText, setValueText] = useState('');
 const [statusForm, setStatusForm] = useState(false);
 const { quill, quillRef } = useQuill();
-
 const { register, handleSubmit, formState: { errors }, setValue  } = useForm();
 
 const onSubmit = (data) => {
     console.log(JSON.stringify(data));
   };
 
-console.log('errors', errors)
 var empresaData=[];
-useEffect(() => {
-    if (quill) {
-      quill.on('text-change', (delta, oldDelta, source) => {        
-        setValueText(quill.root.innerHTML);      
-      });
-    }
-  }, [quill, valueText]);
 
 const formatofecha = (fecha)=>{
     var date = new Date(fecha);
@@ -46,6 +37,15 @@ useEffect(() => {
 
 const  companyIdGetState =  useSelector(state => state.companyIdGet);
 
+useEffect(() => {
+    if (quill) {
+      quill.on('text-change', (delta, oldDelta, source) => {        
+        setValueText(quill.root.innerHTML);      
+      });      
+    }
+  }, [quill, valueText]);
+
+
 if(companyIdGetState.error=='ERR_NETWORK' && companyIdGetState.error=='ERR_BAD_RESPONSE'){  
     for(let i=0; i==2;i++){
         setInterval(() => {
@@ -54,9 +54,9 @@ if(companyIdGetState.error=='ERR_NETWORK' && companyIdGetState.error=='ERR_BAD_R
     }       
 }  
 
-if(companyIdGetState.loading){
+if(companyIdGetState.loading){ 
     setTimeout(() => {
-        empresaData = companyIdGetState.compania;
+        empresaData = companyIdGetState.compania;       
         setValue("name", `${empresaData.name}`),
         setValue("nit", `${empresaData.nit}`)
         setValue("bussiness", `${empresaData.bussiness}`),
@@ -75,9 +75,9 @@ if(companyIdGetState.loading){
         setValue("contact_position", `${empresaData.contact_position}`),
         setValue("contact_profesion", `${empresaData.contact_profesion}`),        
         setValue("contact_email", `${empresaData.contact_email}`),
-        setValue("contact_phone", `${empresaData.contact_phone}`),    
-        setValueText(empresaData.corporate_address);
+        setValue("contact_phone", `${empresaData.contact_phone}`),   
         setStatusForm(true);
+        
     }, 50);
 }
 
@@ -101,8 +101,7 @@ const renderContent = (column = 2) => (
         </Descriptions.Item>
         <Descriptions.Item label="Estatus">
             { companyIdGetState.compania.isListed? 'Activa' : 'Inactiva'}
-        </Descriptions.Item>
-        
+        </Descriptions.Item>        
     </Descriptions>
   );
    

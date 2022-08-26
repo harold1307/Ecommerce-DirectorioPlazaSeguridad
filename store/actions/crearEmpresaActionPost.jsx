@@ -39,6 +39,6 @@ import {
         payload: {
             empresaC : [],
             loading: false,
-            error: error
+            error: error.code
         }   
     });    

@@ -529,23 +529,7 @@ const Home = () =>{
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
-
-                                    <div className="col-xl-12 mb-2">
-                                        <div className="widget widget-products">
-                                            <h4 className="widget-title">
-                                                <span>Bestsellers</span>
-                                            </h4>                                            
-                                        </div>
-                                    </div>
-
-                                    <div className="col-12">
-                                        <div className="widget widget-deals">
-                                            <h4 className="widget-title">
-                                                <span>Special Offer</span>
-                                            </h4>                                    
-                                        </div>
-                                    </div>
+                                    </div>                     
 
                                     <div className="col-xl-12">
                                         <div className="widget widget-banner">

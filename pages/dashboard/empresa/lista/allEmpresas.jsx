@@ -15,14 +15,21 @@ const AllEmpresas = () => {
   useEffect(() => {    
     dispatch( cargarCompaniasAll() );          
   }, [ dispatch])
-
+  var dataempresa = [];
+  const  companiesState =  useSelector(state => state.companiesAll);
+  console.log(companiesState)
   const formatofecha = (fecha)=>{
       var date = new Date(fecha);
       return date.getDate() + "-" + (date.getMonth() + 1) + "-" + date.getFullYear()
   }
+  setInterval(() => {
+    if(companiesState.error=='ERR_NETWORK' || companiesState.error=='ERR_BAD_RESPONSE'){  
+     
+      console.log('Reconectando..')
+    }  
+  }, 20000);   
+  
 
-  var dataempresa = [];
-  const  companiesState =  useSelector(state => state.companiesAll);
   companiesState.companias.map((empresa, index)=>{
     var modelempresa = {
       item: index,
