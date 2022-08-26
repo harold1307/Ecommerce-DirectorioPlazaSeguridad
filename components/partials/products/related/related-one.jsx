@@ -5,15 +5,12 @@ import OwlCarousel from '~/components/features/owl-carousel';
 import { mainSlider8 } from '~/utils/data';
 
 function RelatedProductsOne ( props ) {
-    const { productos, productoId, loading } = props;
-    const productosPorEmpresa = productos.filter((producto, index)=>{ producto.COMPANY._id== productoId});
-    console.log('Empresas: ', productosPorEmpresa );
-
+    const { productos, empresaId, loading } = props;
+    const productosPorEmpresa = productos.filter( producto => producto.COMPANY._id== empresaId);
     return (
         productosPorEmpresa.length>0 ?      
         <>      
            <h2 className="title text-center mb-4">Catálogo de la Empresa</h2>
-
             {
                 !loading?
                     <OwlCarousel adClass="owl-simple carousel-equal-height carousel-with-shadow cols-xl-5 cols-lg-4 cols-md-3 cols-2" isTheme={ false } options={ mainSlider8 }>

@@ -100,7 +100,7 @@ const ProductDefault = () => {
                             }
                             {
                                 productoId.loading ?
-                                    <RelatedProductsOne productos = { productosState.productos }  productoId = { producto._id } loading ={ productosState.loading } />
+                                    <RelatedProductsOne productos = { productosState.productos }  empresaId = { producto.COMPANY._id } loading ={ productosState.loading } />
                                     :
                                 ""
                             }                     
