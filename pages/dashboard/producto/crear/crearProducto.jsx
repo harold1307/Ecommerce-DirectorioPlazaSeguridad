@@ -138,6 +138,35 @@ const handleChange = (value) => {
                             }}
                         />
                     </Form.Item>  
+                   
+                    <Form.Item label="Imagenes" valuePropName="fileList">
+                        <Upload action="/upload.do" listType="picture-card">
+                            <div>
+                            <PlusOutlined />
+                            <div
+                                style={{
+                                marginTop: 8,
+                                }}
+                            >
+                                Upload
+                            </div>
+                            </div>
+                        </Upload>
+                    </Form.Item>
+
+                    <Form.Item label="Nombre">
+                            <Input />
+                    </Form.Item>  
+                    <Form.Item label="Apellido">
+                        <Input />
+                    </Form.Item>  
+                    <Form.Item label="Teléfono">
+                            <Input />
+                    </Form.Item>  
+                    <Form.Item label="Correo">
+                        <Input />
+                    </Form.Item> 
+
 
                     <Form.Item >
                     <Button>Guardar</Button>
