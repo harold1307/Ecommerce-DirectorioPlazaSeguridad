@@ -32,9 +32,12 @@ const nextConfig = {
             key: 'Referrer-Policy',
             value: 'origin-when-cross-origin'
           } ,{
-            key: 'vary',
-            value: 'Accept'
-          } 
+            key: 'Access-Control-Allow-Credentials',
+            value: 'true'
+          } ,{
+            key: 'Accept',
+            value: '*/*'
+          }
         ]
       },
     ]

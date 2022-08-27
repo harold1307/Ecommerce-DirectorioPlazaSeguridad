@@ -1,7 +1,27 @@
 import React , {useState} from 'react';
 import { useForm } from 'react-hook-form';
 import { CountryDropdown, RegionDropdown, CountryRegionData } from 'react-country-region-selector';
-import {  Col, Row  } from 'antd';
+import { PlusOutlined } from '@ant-design/icons';
+import {
+    Row,
+    Col,
+  Form,
+  Input,
+  Button,
+  Radio,
+  Select,
+  Cascader,
+  DatePicker,
+  InputNumber,
+  TreeSelect,
+  Switch,
+  Checkbox,
+  Upload,
+  Space
+} from 'antd';
+const { RangePicker } = DatePicker;
+const { TextArea } = Input;
+const { Option } = Select;
 import { Editor, EditorState, convertToRaw } from "draft-js";
 import "draft-js/dist/Draft.css";
 
@@ -9,11 +29,29 @@ export default function CrearProducto() {
   const { register, handleSubmit, formState: { errors } } = useForm();
   const onSubmit = data => console.log(data);
 
-  const { region, setRegion } = useState({});
 
-  const selectRegion = ({value})=>{
-      console.log(value)
-  }
+<Select
+  defaultValue="add"
+  style={{
+  width: 60,
+  }}
+>
+  <Option value="add">+</Option>
+  <Option value="minus">-</Option>
+</Select>
+const onChange = (value) => {
+    console.log('changed', value);
+};
+
+const handleChange = (value) => {
+    console.log(`selected ${value}`);
+  };
+  const [valuedc, setValuedc] = useState('');
+  const [valuedl, setValuedcl] = useState('');
+
+
+
+
 
   return (
     <Row className='bg-white my-5 py-5'>
@@ -22,93 +60,94 @@ export default function CrearProducto() {
                       <h1 className="display-4 my-5">Crear Producto</h1>
               </div>
               <div className='formulariocrearEmpresa'>
-          
-                  <form onSubmit={handleSubmit(onSubmit)}>
-                  <div className="form-row">
-                      <div  className="col-md-6 mb-3">
-                              <label>Nombre de la compañia</label>
-                              <input type="text"  className="form-control" placeholder="..." {...register("companyName", {required: true, maxLength: 100})} />
-                              {errors.name?.type === 'required' && "Nombre de la empresa es requerido."}
-                      </div>
-                      <div  className="col-md-6 mb-3">
-                      <label>NIT</label>
-                              <input type="text"  className="form-control" placeholder="..." {...register("nit", {required: true, maxLength: 100})} />
-                      </div>
-                  </div>
-                  <div  className="form-row">
-                      <div  className="col-md-6 mb-3">
-                              <label>Giro de Negocio</label>
-                              <input type="text"  className="form-control" placeholder="..." {...register("giroNegocio", {required: true, maxLength: 80})} />
-                              {errors.services?.type === 'required' && "Servicio de la empresa es requerido."}
-                      </div>
-                      <div  className="col-md-6 mb-3">
-                      <label>Tipo de Productos</label>
-                              <input type="text"  className="form-control" placeholder="..." {...register("productoTipo", {required: true, maxLength: 100})} />
-                              {errors.bussiness?.type === 'required' && "Servicio de la empresa es requerido."}
-                      </div>
-                  </div>
-                  <div  className="form-row">
-                      <div  className="col-md-6 mb-3">
-                              <label>Servicios</label>
-                              <input type="text"  className="form-control" placeholder="Ingresar nombre de la empresa.." {...register("activity_time", {required: true, maxLength: 80})} />
-                              {errors.activity_time?.type === 'required' && "Servicio de la empresa es requerido."}
-                      </div>
-                      <div  className="col-md-6 mb-3">
-                      <label>Tipo de Servicios</label>
-                              <input type="text"  className="form-control" placeholder="..." {...register("tipoDeServicios", {required: true, maxLength: 100})} />
-                              {errors.country?.type === 'required' && "Servicio de la empresa es requerido."}
-                      </div>
-                  </div>
 
-                  <div  className="form-row">
-                      <div  className="col-md-6 mb-3">
-                          <label>Pais</label>
-                              <CountryDropdown
-                                  value="Guatemala"    
-                                  
-                              />
-                              {errors.activity_time?.type === 'required' && "Servicio de la empresa es requerido."}
-                      </div>
-                      <div  className="col-md-6 mb-3">
-                      <label>Region</label>
-                              <RegionDropdown
-                              country="Guatemala"   
-                              value={region}
-                              onChange={(value) => selectRegion(value)}               
-                              />
-                              {errors.country?.type === 'required' && "Servicio de la empresa es requerido."}
-                      </div>
-                  </div>
-              
+                <Form
+                    labelCol={{
+                    span: 4,
+                    }}
+                    wrapperCol={{
+                    span: 14,
+                    }}
+                >                
+                
+                    <Form.Item label="Nombre">
+                            <Input />
+                    </Form.Item>  
+                    <Form.Item label="Marca">
+                        <Input />
+                    </Form.Item>  
+                                            
+                    <Form.Item label="Tags">
+                            <Input />
+                    </Form.Item>         
+                    <Form.Item label="Precio Regular: ">           
+                            <InputNumber addonBefore="+" addonAfter="$" defaultValue={0} />                  
+                    </Form.Item>                  
+                    <Form.Item label="Precio de oferta">
+                            <InputNumber addonBefore="+" addonAfter="$" defaultValue={0} />
+                    </Form.Item>    
+                    <Form.Item label="Cantidad disponible">
+                        <InputNumber min={0} max={100000} defaultValue={0} onChange={onChange} />
+                    </Form.Item>     
 
-                  <div  className="form-row">
-                      <div  className="col-md-6 mb-3">
-                      <label>Correo</label>
-                          <input type="text" placeholder="..." {...register("correo", {required: true, pattern: /^\S+@\S+$/i})} />
-                          <p>{errors.mail?.message}</p>
-                      </div>
-                  </div>
+                    <Form.Item label="Disponibilidad">                                            
+                        <Select
+                            defaultValue="lucy"
+                            style={{
+                                width: 120,
+                            }}
+                            onChange={handleChange}
+                            >
+                            <Option value="Disponible">Disponible</Option>
+                            <Option value="Sin Stock">Sin Stock</Option>                                               
+                        </Select>         
+                    </Form.Item>   
+
+                    <Form.Item label="Sub-Categoría">                                            
+                        <Select
+                            defaultValue="lucy"
+                            style={{
+                                width: 120,
+                            }}
+                            onChange={handleChange}
+                            >
+                            <Option value="Disponible">categoria 1</Option>
+                            <Option value="Sin Stock">Categoria 2</Option>                                               
+                        </Select>         
+                    </Form.Item>  
+
+                    <Form.Item label="Descripción corta">  
+                        <TextArea
+                            value={valuedc}
+                            onChange={(e) => setValuedc(e.target.value)}
+                            placeholder="Controlled autosize"
+                            autoSize={{
+                            minRows: 3,
+                            maxRows: 5,
+                            }}
+                        />
+                    </Form.Item>  
+                    <Form.Item label="Descripción larga">  
+                        <TextArea
+                            value={valuedl}
+                            onChange={(e) => setValuedl(e.target.value)}
+                            placeholder="Controlled autosize"
+                            autoSize={{
+                            minRows: 5,
+                            maxRows: 10,
+                            }}
+                        />
+                    </Form.Item>  
 
 
-                      <input type="tel" placeholder="Mobile number" {...register("Mobile number", {required: true, minLength: 6, maxLength: 12})} />
-              
-
-                      <input {...register("Developer", { required: true })} type="radio" value="Yes" />
-                      <input {...register("Developer", { required: true })} type="radio" value="No" />
 
 
-                      <div  className="input-group is-invalid">
-                          <div  className="custom-file">
-                          <input type="file" className="custom-file-input" {...register("logo", {required: true, pattern: /^\S+@\S+$/i})} />
-                          <label  className="custom-file-label">Choose file...</label>
-                          </div>
-                          <div className="input-group-append">
-                              <button  className="btn btn-outline-secondary" type="button">Button</button>
-                          </div>
-                      </div>
-
-                      <input type="submit"  className="btn btn-primary mb-2" />
-                  </form>
+       
+                    <Form.Item >
+                    <Button>Guardar</Button>
+                    </Form.Item>
+                    </Form>          
+                 
               </div>                       
         
       </Col>

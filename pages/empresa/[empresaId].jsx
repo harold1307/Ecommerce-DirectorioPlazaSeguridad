@@ -55,7 +55,7 @@ const ProductDefault = () => {
     return (
         <Layout>
         <div className="main">
-        <PageHeader title={ empresa.name } subTitle={ 'Tienda Oficial'}  icon={'icon-star'} />
+            <PageHeader title={ empresa.name } subTitle={ 'Tienda Oficial'}  icon={'icon-star'} />
             <nav className="breadcrumb-nav">
                 <div className="container">
                     <ol className="breadcrumb">
@@ -74,11 +74,11 @@ const ProductDefault = () => {
                     </ol>
                 </div>
             </nav>            
-            <div className="page-content mt-5">
+            <div className="page-content mt-5 container">
                     <div className="container skeleton-body">
                         <div className="product-details-top">
                             <div className={ `row skel-pro-single ${!loadingEmpresa? '' : 'loaded'}` }>
-                                <div className="col-md-4 ">
+                                <div className="col-md-4 pr-md-5 ">
                                     
                                         {
                                             loadingEmpresa?

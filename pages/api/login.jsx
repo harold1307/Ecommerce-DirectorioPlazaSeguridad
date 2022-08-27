@@ -2,32 +2,31 @@ import Cors from 'cors';
 import initMiddleware from '../../middleware/initMiddleware';
 import clienteAxios from '../../configuracion/axios';
 
-const cors = initMiddleware(
-  Cors({ 
-    methods: ['POST'],
-    origin : true,
-    allowedHeaders: ['Content-Type', 'Authorization']
-  })
-);
 
-export default async function handler(req, res) {
-  await cors(req, res);
-  const credenciales = req.body;
-    try {               
-      const datos = await clienteAxios.post('/login', JSON.stringify(credenciales) );  
-      res.json({
-        credenciales :credenciales, 
-        datos:datos
 
-        });
- 
-    } catch (error) {
-      res.json({        
-        error: error
-      });            
-            
-    }
-    
+export default function handler(req, res) {
+
+      var url = 'https://directorioseguridad.dte.gt/api/login';
+      var credenciales  ={
+        "username": "rce.beteta@gmail.com",
+        "password": "12345"
+    };
 
   
+      fetch(url, {
+        method: 'POST', 
+        mode: 'cors',
+        body: JSON.stringify(credenciales), // data can be `string` or {object}!
+        headers:{
+            'Content-Type': 'application/json'
+        }
+    }).then(res => res.json())
+    .catch(error => console.error('Error:', error))
+    .then(response => console.log('Success:', response));
+
+
 }
+
+
+
+
