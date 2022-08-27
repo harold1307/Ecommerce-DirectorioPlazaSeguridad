@@ -139,10 +139,6 @@ const handleChange = (value) => {
                         />
                     </Form.Item>  
 
-
-
-
-       
                     <Form.Item >
                     <Button>Guardar</Button>
                     </Form.Item>
