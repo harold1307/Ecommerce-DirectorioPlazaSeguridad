@@ -1,0 +1,38 @@
+
+//Wit
+
+.widget-card{
+
+  .card { 
+    box-shadow: 0 0 5px 5px rgb(0 0 0 / 3%);
+    -webkit-box-shadow: 0 0 5px 5px rgb(0 0 0 / 3%);
+    border-radius: 6px;
+  }
+
+  .card-inner { 
+    padding: 1.8rem 2.2rem; 
+  }
+
+  .card-title-group { 
+    display: flex; align-items: center; 
+    justify-content: space-between; 
+    position: relative; 
+  }
+
+  .card-title-group .card-title { 
+    margin-bottom: 0; 
+  }
+
+  @media (min-width: 576px) { 
+      .card-inner { 
+        padding: 1.5rem; 
+      }
+    }
+}
+
+.change.up {
+  color: #1ee0ac !important;
+}
+.change.down {
+  color: #e85347 !important;
+}

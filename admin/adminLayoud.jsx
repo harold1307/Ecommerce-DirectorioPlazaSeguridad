@@ -37,7 +37,7 @@ const AdminLayoud = ({children}) => {
                   minHeight: '100vh',
                 }}
               >
-                  <SidebarAdmin />
+                  <SidebarAdmin />                        
                   <Layout className="site-layout">        
                     <HeaderAdmin />
                     <Content style={{ margin: '0 30px' }} >
@@ -62,9 +62,9 @@ const AdminLayoud = ({children}) => {
                         
                     </Content>
                     <Footer style={{ textAlign: 'center'}} > ©2022 Diseñado por Harold Caraballo</Footer>
-                  </Layout>
+                  </Layout>              
+              
               </Layout>
-
             </Col>           
         </Row>
       </Fragment>

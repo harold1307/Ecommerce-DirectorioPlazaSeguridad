@@ -15,15 +15,18 @@ const ProductDefault = () => {
     const dispatch = useDispatch();
     const  query = router.query;
     const  Id = query.productoId;
-    
+    console.log(Id );
+        
     useEffect(() => {   
-        dispatch( cargarProductoId(Id));       
-    }, [ dispatch]);
+        if(Id){  
+          dispatch( cargarProductoId(Id));    
+        }          
+    }, [ dispatch]);     
 
     const  productoId =  useSelector(state => state.productoIdGet);
     const  productosState =  useSelector(state => state.productsAll);
     var producto = productoId.producto;
-
+    
     return (
         <Layout>
            {

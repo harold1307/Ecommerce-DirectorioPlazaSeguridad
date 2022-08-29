@@ -4,10 +4,11 @@ import { LazyLoadImage } from 'react-lazy-load-image-component';
 import ALink from '../../../features/alink';
 import { safeContent } from '../../../../utils/index';
 import { useSelector}  from "react-redux";
+import JsonSearch from 'search-array'
 
 function HeaderSearch () {
     const router = useRouter( "" );
-    const [ cat, setCat ] = useState( "" );
+    const [ cat, setCat ] = useState( "todos" );
     const [ searchTerm, setSearchTerm ] = useState( "" );
     const [ products, setProducts ] = useState( [] );
     const [ searchProducts, { data } ] = useState( [] );
@@ -22,7 +23,6 @@ function HeaderSearch () {
             document.querySelector( "body" ).removeEventListener( 'click', closeSearchForm );
         } )
     }, [] );
-
  
     useEffect( () => {
         document.querySelector( '.header-search.show-results' ) && document.querySelector( '.header-search.show-results' ).classList.remove( 'show-results' );
@@ -35,7 +35,6 @@ function HeaderSearch () {
             ( match ) => "<strong>" + match + "</strong>"
         );
     }
-
     function closeSearchForm ( e ) {
         document
             .querySelector( '.header .header-search' )
@@ -44,6 +43,7 @@ function HeaderSearch () {
 
     function onCatSelect ( e ) {
         setCat( e.target.value );
+        console.log(cat)
     }
 
     function onSearchChange ( e ) {
@@ -64,24 +64,22 @@ function HeaderSearch () {
             }
         } );
     }
-
     function goProductPage () {
         setSearchTerm( '' );
         setProducts( [] );
     }
+    const searcherTerm = new JsonSearch(productosState.productos)
 
     return (
         <div className="header-search header-search-extended header-search-visible header-search-no-radius d-none d-lg-block">
             <button className="search-toggle"><i className="icon-search"></i></button>
-
             <form action="#" method="get" onSubmit={ onSubmitSearchForm } onChange={ showSearchForm }>
                 <div className="header-search-wrapper search-wrapper-wide">
                     <div className="select-custom" onChange={ ( e ) => onCatSelect( e ) }>
                         <select id="cat" name="cat">
-                            <option value={ null }>Categorias</option>
+                            <option value='todos'>Categorias</option>
                                 {                                          
-                                    (
-                                        
+                                    (                                        
                                         categoriasState.categorias.map((categoria, index)=>{
                                                 if(index<13){
                                                     return(
@@ -104,24 +102,28 @@ function HeaderSearch () {
                           
                             <div className="autocomplete-suggestions">
                                 {
-                                    searchTerm.length > 2 && productosState.productos.map( ( producto, index ) => (
-                                        <ALink href={ `/producto/${producto._id}` } className="autocomplete-suggestion" key={ `search-result-${index}` }>
-                                            <LazyLoadImage src={ producto.image.location } width={ 40 } height={ 40 } alt="product" />
-                                            <div className="search-name" dangerouslySetInnerHTML={ safeContent( matchEmphasize( producto.name ) ) }></div>
-                                            <span className="search-price">
-                                                {
-                                                    producto.stockStatus == 0 ?
-                                                        <div className="product-price mb-0">
-                                                            <span className="out-price">${ producto.salePrice.toFixed( 2 )} - </span>
-                                                            <span className="out-price"> ${ producto.regularPrice.toFixed( 2 ) }</span>    
-                                                                                                                 
-                                                        </div>
-                                                        :
-                                                      ''
-                                                                
-                                                }                                               
-                                            </span>
-                                        </ALink>
+                                    searchTerm.length > 2 &&  searcherTerm.query(searchTerm).map( ( producto, index ) => (
+                                            
+                                        (producto.category==cat || cat=='todos')?
+                                            <ALink href={ `/producto/${producto._id}` } className="autocomplete-suggestion" key={ `search-result-${index}` }>
+                                                <LazyLoadImage src={ producto.image.location } width={ 40 } height={ 40 } alt="product" />
+                                                <div className="search-name" dangerouslySetInnerHTML={ safeContent( matchEmphasize( producto.name ) ) }></div>
+                                                <span className="search-price">
+                                                    {
+                                                        producto.stockStatus == 0 ?
+                                                            <div className="product-price mb-0">
+                                                                <span className="out-price">${ producto.salePrice.toFixed( 2 )} - </span>
+                                                                <span className="out-price"> ${ producto.regularPrice.toFixed( 2 ) }</span>    
+                                                                                                                    
+                                                            </div>
+                                                            :
+                                                        ''
+                                                                    
+                                                    }                                               
+                                                </span></ALink>
+                                            :
+                                            'No encontrado..'
+                                                                           
                                     ) )
                                 }
                             </div>

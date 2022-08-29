@@ -163,14 +163,14 @@ const Home = () =>{
                             </ALink>
                             <div className="banner-content text-right">
                                 <div className="price text-center">
-                                    <sup className="text-white">from</sup>
+                                <sup className="text-white"> </sup>
                                     <span className="text-white">
-                                        <strong>$199</strong>
-                                        <sup className="text-white">,99</sup>
+                                        <strong> </strong>
+                                        <sup className="text-white"> </sup>
                                     </span>
                                 </div>
-                                <ALink href="/productos/list" className="banner-link">
-                                    Discover Now
+                                <ALink href="/productos/list" className="btn btn-primary btn-shadow">
+                                    Contactanos
                                     <i className="icon-long-arrow-right"></i>
                                 </ALink>
                             </div>
@@ -190,7 +190,6 @@ const Home = () =>{
                                             <div className="banner banner-overlay">
                                                 <ALink href="/productos/list">
                                                     <div className="lazy-overlay"></div>
-
                                                     <LazyLoadImage
                                                         alt="Banner"
                                                         src="/images/home/banners/banner-2.jpg"
@@ -202,25 +201,25 @@ const Home = () =>{
                                                 </ALink>
 
                                                 <div className="banner-content">
-                                                    <h4 className="banner-subtitle text-white d-none d-sm-block">
-                                                        <ALink href="/productos/list">Hottest Deals</ALink>
+                                                    <h4 className="banner-subtitle text-dark d-none d-sm-block">
+                                                        <ALink href="/productos/list">Venta e Instalación</ALink>
                                                     </h4>
 
-                                                    <h3 className="banner-title text-white">
+                                                    <h3 className="banner-title text-dark">
                                                         <ALink href="/productos/list">
-                                                            Detox And Beautify
-													<br />For Spring
+                                                            Cámaras De 
+													<br />Seguridad PTZ
 													<br />
-                                                            <span>Up To 20% Off</span>
+                                                            <span className='pt-2'><strong>10% de descuento</strong> </span>
                                                         </ALink>
                                                     </h3>
 
                                                     <ALink
                                                         href="/productos/3cols"
-                                                        className="banner-link"
+                                                        className="banner-link border border-light text-dark"
                                                     >
-                                                        Shop Now
-												<i className="icon-long-arrow-right"></i>
+                                                        Ver Producto
+												     <i className="icon-long-arrow-right"></i>
                                                     </ALink>
                                                 </div>
                                             </div>
@@ -235,7 +234,7 @@ const Home = () =>{
 
                                                     <LazyLoadImage
                                                         alt="Banner"
-                                                        src="/images/home/banners/banner-3.png"
+                                                        src="/images/home/banners/banner-3.jpg"
                                                         threshold={ 200 }
                                                         width="580"
                                                         height={ 250 }
@@ -245,22 +244,22 @@ const Home = () =>{
 
                                                 <div className="banner-content">
                                                     <h4 className="banner-subtitle text-white d-none d-sm-block">
-                                                        <ALink href="/productos/list">Deal of the Day</ALink>
+                                                        <ALink href="/productos/list">Protege tu patrimonio</ALink>
                                                     </h4>
 
                                                     <h3 className="banner-title text-white">
                                                         <ALink href="/productos/list">
-                                                            Headphones
+                                                            Poliza de Vehiculos
 													<br />
-                                                            <span>Up To 30% Off</span>
+                                                         <span className='pt-2'><strong>5% de descuento</strong> </span>
                                                         </ALink>
                                                     </h3>
 
                                                     <ALink
                                                         href="/productos/3cols"
-                                                        className="banner-link"
+                                                        className="banner-link "
                                                     >
-                                                        Shop Now
+                                                        Contáctanos Ahora
 												<i className="icon-long-arrow-right"></i>
                                                     </ALink>
                                                 </div>
@@ -322,7 +321,7 @@ const Home = () =>{
                                                 compania.logo==true || !(/undefined/).test(compania.logo) ?
                                                 
                                                 <ALink href={ { pathname:  `/companies`, query: {compania: compania._id     } } } className="sidebar-filter-clear" scroll={ false } key={index} >
-                                                     <Image  src={ compania.logo  } alt={compania.logo }  height= '150' width='150' />
+                                                     <Image className='border border-warning rounded-circle'  src={ compania.logo  } alt={compania.logo }  height= '150' width='150' />
                                                 </ALink>
                                                 :
                                                 <Image  src={ '/images/brands/8.png'} height='120' width='120' alt="" />
@@ -548,23 +547,15 @@ const Home = () =>{
                                                 </ALink>
 
                                                 <div className="banner-content banner-content-top">
-                                                    <h3 className="banner-title text-white">
+                                                    <h3 className="banner-title text-white mt-2">
                                                         <ALink href="/productos/list">
-                                                            Take Better Photos
+                                                            Vigilancia Privada
 													<br />
-                                                            <span>With</span> Canon EOS
-													<br />
-                                                            <span>Up To 20% Off</span>
+                                                            <span>Pide tu</span> Cotización													
                                                         </ALink>
                                                     </h3>
 
-                                                    <ALink
-                                                        href="/productos/3cols"
-                                                        className="banner-link"
-                                                    >
-                                                        Shop Now
-												<i className="icon-long-arrow-right"></i>
-                                                    </ALink>
+                                                   
                                                 </div>
                                             </div>
                                         </div>

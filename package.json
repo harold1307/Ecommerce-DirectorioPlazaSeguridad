@@ -3,7 +3,6 @@
   "version": "v0.0.2",
   "private": true,
   "scripts": {
-    "server": "node server.js",
     "dev": "next dev -p 3001",
     "build": "next build",
     "start": "next start -p $PORT",
@@ -48,10 +47,12 @@
     "react-sticky-box": "^1.0.2",
     "react-tabs": "^3.2.2",
     "react-toastify": "^9.0.8",
+    "recharts": "^2.1.12",
     "redux": "^4.2.0",
     "redux-persist": "^6.0.0",
     "redux-thunk": "^2.4.1",
     "sass": "^1.54.0",
+    "search-array": "^1.6.0",
     "sweetalert2": "^11.4.26"
   },
   "devDependencies": {

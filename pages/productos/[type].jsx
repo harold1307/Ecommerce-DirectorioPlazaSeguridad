@@ -28,12 +28,10 @@ function ShopGrid() {
     const totalCount = productosState.productos.length;
     useEffect( () => {
         window.addEventListener( "resize", resizeHandle );
-        resizeHandle();
-       
+        resizeHandle();       
         return () => {
             window.removeEventListener( "resize", resizeHandle );
-        }
-        
+        }        
     }, [] )
 
     function resizeHandle() {

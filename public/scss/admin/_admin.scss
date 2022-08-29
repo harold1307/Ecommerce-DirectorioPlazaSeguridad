@@ -1,7 +1,27 @@
 $color-fondo-primario: #515d6f;
-$color-fondo-secundario: #f1f3f7;
+$color-fondo-secundario: #f5f6fa;
 $color-boton-primario: #febf10;
 $color-boton-primario-hover: #e7ae11;
+
+//Fuentes
+/** 01. FONTS */
+@font-face { font-family: 'DM Sans'; src: url("./fonts/DMSans-Bold.eot"); src: local("DM Sans Bold"), local("DMSans-Bold"), url("./fonts/DMSans-Bold.eot?#iefix") format("embedded-opentype"), url("./fonts/DMSans-Bold.woff2") format("woff2"), url("./fonts/DMSans-Bold.woff") format("woff"), url("./fonts/DMSans-Bold.ttf") format("truetype"); font-weight: bold; font-style: normal; }
+@font-face { font-family: 'DM Sans'; src: url("./fonts/DMSans-Medium.eot"); src: local("DM Sans Medium"), local("DMSans-Medium"), url("./fonts/DMSans-Medium.eot?#iefix") format("embedded-opentype"), url("./fonts/DMSans-Medium.woff2") format("woff2"), url("./fonts/DMSans-Medium.woff") format("woff"), url("./fonts/DMSans-Medium.ttf") format("truetype"); font-weight: 500; font-style: normal; }
+@font-face { font-family: 'DM Sans'; src: url("./fonts/DMSans-Regular.eot"); src: local("DM Sans Regular"), local("DMSans-Regular"), url("./fonts/DMSans-Regular.eot?#iefix") format("embedded-opentype"), url("./fonts/DMSans-Regular.woff2") format("woff2"), url("./fonts/DMSans-Regular.woff") format("woff"), url("./fonts/DMSans-Regular.ttf") format("truetype"); font-weight: normal; font-style: normal; }
+
+.ant-layout {  
+  background: $color-fondo-secundario !important;
+}
+.ant-menu-horizontal {
+  line-height: 46px;
+  border: 0;
+  border-bottom: 1px solid #e5e9f2;
+  box-shadow: 0px 1px 3px 0px rgb(54 74 99 / 5%);
+  position: sticky;
+  top: 0px;
+  z-index: 9999999;
+}
+
 
 #components-layout-demo-responsive .logo {
   height: 32px;
@@ -88,4 +108,47 @@ $color-boton-primario-hover: #e7ae11;
      border-radius: 2px 2px 0 0;
    }
  }
+}
+
+//Step formularios
+
+.steps-content {
+  min-height: 200px;
+  margin-top: 16px;
+  padding-top: 80px;
+  text-align: center;
+  background-color: #fafafa;
+  border: 1px dashed #e9e9e9;
+  border-radius: 2px;
+}
+
+.steps-action {
+  margin-top: 24px;
+}
+.ant-steps-item-icon {
+  .ant-steps-icon {
+    position: relative;
+    top: -2.5px;
+    color: #1890ff;
+    line-height: 1;
+    &> .ant-steps-icon {
+      color: #4caf50;
+    }
+    .anticon {    
+      vertical-align: 0;    
+    }
+  }
+}
+
+.ant-steps-item-finish .ant-steps-item-icon { 
+  border-color: #4caf50 !important;
+}
+
+.visibilidadStep{
+  visibility: hidden;
+  display: none;
+}
+
+[class^='paso-'] {
+  min-height: 330px;
 }

@@ -13,6 +13,7 @@ function ShopSidebarOne ( props ) {
     const query = useRouter().query;
     const [ priceRange, setRange ] = useState( { min: 0, max: 100000 } );
     const  categoriasState =  useSelector(state => state.categoriesAll);
+    const  productosState =  useSelector(state => state.productsAll);
 
     useEffect( () => {
         if ( query.minPrice && query.maxPrice ) {
@@ -78,10 +79,12 @@ function ShopSidebarOne ( props ) {
                                     <div className="widget-body pt-0">
                                         <div className="filter-items filter-items-count">
                                             {
-                                                categoriasState.categorias.map( ( item, index ) =>
+                                                categoriasState.categorias.map( ( categoria, index ) =>
                                                     <div className="filter-item" key={ `cat_${index}` }>
-                                                        <ALink className={ `${query.category == item.value ? 'active' : ''}` } href={ {pathname: router.pathname, query: { type: query.type, categoria: item.value } } } scroll={ false }>{ item.name }</ALink>
-                                                        <span className="item-count">{ item.count }</span>
+                                                        <ALink className={ `${query.category == categoria.value ? 'active' : ''}` } href={ {pathname: router.pathname, query: { type: query.type, categoria: categoria.value } } } scroll={ false }>{ categoria.name }</ALink>
+                                                        <span className="item-count">{ 
+                                                            productosState.productos.filter((producto, index)=> producto.category==categoria.value).length
+                                                        }</span>
                                                     </div>
                                                 )
                                             }
@@ -111,7 +114,7 @@ function ShopSidebarOne ( props ) {
                                                 <ALink href={ { pathname: router.pathname, query: { ...query, minPrice: priceRange.min, maxPrice: priceRange.max, page: 1 } } } className="pr-2" scroll={ false }>Filtrar</ALink>
                                             </div>
 
-                                            <div className="price-slider">
+                                            <div className="price-slider mx-3">
                                                 <InputRange
                                                     formatLabel={ value => `${value}` }
                                                     maxValue={ 100000}
