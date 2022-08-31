@@ -49,6 +49,16 @@ $color-boton-primario-hover: #e7ae11;
       margin: 16px;
       background: $color-fondo-primario;
     }
+    //Footer
+    .ant-layout-footer {
+      padding: 14px 50px;
+      font-size: 14px;
+      background: #818181;
+      margin-top: auto;
+      background: #fff;
+      border-top: 1px solid #e5e9f2;
+      box-shadow: 0px 1px 3px 0px rgb(54 74 99 / 5%);
+  }
 
     //Sidebar
 
@@ -145,6 +155,12 @@ $color-boton-primario-hover: #e7ae11;
       left: 5px;
       font-size: 20px;
       color: #ffc107;
+    }
+
+    .overflow-md{
+      @media  (max-width : '767px') {
+          overflow-x: scroll;
+      }
     }
 
     //Formulario Dashboard

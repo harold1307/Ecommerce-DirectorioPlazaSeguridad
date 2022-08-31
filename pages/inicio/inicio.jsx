@@ -317,15 +317,14 @@ const Home = () =>{
                                     companiesAll.loading?
                                         companiesAll.companias.map( ( compania, index ) => {
                                             return (
-                                                (compania.logo ?? false) ?
-                                                
-                                                <ALink href={ `/empresa/${ compania._id }`} className="sidebar-filter-clear" scroll={ false } key={index} >               
-                                                     <Image className='border border-warning rounded-circle' src={ compania.logo  } alt={compania.name }  height= '150' width='150' />
-                                                </ALink>
-                                                :
-                                                <ALink href={ `/empresa/${ compania._id }`} className="sidebar-filter-clear" scroll={ false } key={index} >      
-                                                  <Image className='border border-warning rounded-circle' src={ '/images/brands/8.png'} height='150' width='150' alt="" />
-                                                </ALink>
+                                                (compania.logo ?? false) ?                                                
+                                                    <ALink href={ `/empresa/${ compania._id }`} className="sidebar-filter-clear" scroll={ false } key={index} >               
+                                                        <Image className='border border-warning rounded-circle' src={ compania.logo  } alt={compania.name }  height= '150' width='150' />
+                                                    </ALink>
+                                                    :
+                                                    <ALink href={ `/empresa/${ compania._id }`} className="sidebar-filter-clear" scroll={ false } key={index} >      
+                                                    <Image className='border border-warning rounded-circle' src={ '/images/brands/8.png'} height='150' width='150' alt="" />
+                                                    </ALink>
                                             )
                                         } )
                                         :

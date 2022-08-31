@@ -25,14 +25,12 @@ const { TextArea } = Input;
 const { Option } = Select;
 const { Step } = Steps;
 
-
 export default function CrearProducto() {
     const [valuedc, setValuedc] = useState('');
     const [valuedl, setValuedl] = useState('');
     const [current, setCurrent] = useState(0);
     const [ selectEmpresa , setSelectEmpresa ] = useState(false);
     
-
     <Select
     defaultValue="+"
     style={{
@@ -125,12 +123,12 @@ export default function CrearProducto() {
         
     };
    
-
     const handleChangeTags = (value) => {
         console.log(`selected ${value}`);
-        setSelectEmpresa( value.length==0? value.length: value.length);
+        setSelectEmpresa( true);
         console.log(selectEmpresa);
-      };
+    };
+    console.log(selectEmpresa);
 
  return (
     <>
@@ -147,7 +145,7 @@ export default function CrearProducto() {
 
 
         </Row>
-        <Row className='pt-5'>
+        <Row className='pt-2'>
                  <div className="text-center">
                     <h4 className="">Crear Producto</h4>
                 </div>
@@ -392,12 +390,18 @@ export default function CrearProducto() {
                                         </Modal>
                                     </Col>
                                 </Row>                             
-                            </div>                                                                          
-                        
-                            <Button type="primary" onClick={() => next()}  disabled={selectEmpresa? false : true} className={`${  current==5?   'visibilidadStep' : '' }`} > Siguiente </Button>
-                            <Button  style={{ margin: '0 8px',}} className={`${ current==0 ?  'visibilidadStep' : '' }`}   onClick={() => prev()}> Previo </Button>
-                            <Button htmlType='submit' className={`${  current==4?  '' : 'visibilidadStep' }`}  >Guardar</Button>
-                        
+                            </div>   
+                            {
+                            selectEmpresa?      
+                                <div className='controlBtn'>
+                                    <Button type="primary" onClick={() => next()}  className={`${  current==5?   'visibilidadStep' : '' }`} > Siguiente </Button>
+                                    <Button  style={{ margin: '0 8px',}} className={`${ current==0 ?  'visibilidadStep' : '' }`}   onClick={() => prev()}> Previo </Button>
+                                    <Button htmlType='submit' className={`${  current==4?  '' : 'visibilidadStep' }`}  >Guardar</Button>
+                                </div>
+                                : 
+                                ''
+                                }      
+
                         </Form>                                 
                     </div>                                     
             </Col>

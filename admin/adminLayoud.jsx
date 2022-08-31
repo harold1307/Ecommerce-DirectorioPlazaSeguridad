@@ -15,7 +15,6 @@ const AdminLayoudTest = ({children}) => {
     const [collapsed, setCollapsed] = useState(false);
     console.log(collapsed);
 
-
     function getItem(label, key, icon, children, type) {
         return {      
           key,
@@ -76,32 +75,42 @@ const AdminLayoudTest = ({children}) => {
                   }}
               >
                 <Sider 
-                        collapsible collapsed={collapsed} 
-                        onCollapse={(value) => setCollapsed(value)}  
-                        width={320}   
-                        breakpoint="md"
-                        onBreakpoint={broken => {
-                        console.log(broken);
-                        }}
-                        >
-                            
-                    <div className="text-center m-5">
-                        <ALink href="/dashboard">
-                            <Image
-                            src="/Logo-Directorio-de-Seguridad.png"
-                            alt="Logo"
-                            width= {200}
-                            height={50}                 
-                        />    
-                        </ALink>
-                    </div>                                                    
-                    <Menu
-                      theme='dark'                         
-                      defaultOpenKeys={['sub1']}
-                      selectedKeys={[0]}                
-                      mode="inline"
-                      items={items}
-                    />
+                  collapsible collapsed={collapsed} 
+                  onCollapse={(value) => setCollapsed(value)}  
+                  width={320}   
+                  breakpoint="md"
+                  onBreakpoint={broken => {
+                  console.log(broken);
+                  }}
+                >                            
+                  <div className="text-center m-5">
+                      { collapsed?
+                          <ALink href="/dashboard">
+                              <Image
+                              src="/favicon.png"
+                              alt="Logo"
+                              width= {25}
+                              height={25}                 
+                          />    
+                          </ALink>
+                          :
+                          <ALink href="/dashboard">
+                              <Image
+                              src="/Logo-Directorio-de-Seguridad.png"
+                              alt="Logo"
+                              width= {200}
+                              height={50}                 
+                          />    
+                          </ALink>
+                      }
+                  </div>                                                    
+                  <Menu
+                    theme='dark'                         
+                    defaultOpenKeys={['sub1']}
+                    selectedKeys={[0]}                
+                    mode="inline"
+                    items={items}
+                  />
                 </Sider>
                 <Layout>
                     <HeaderAdmin />
@@ -111,7 +120,7 @@ const AdminLayoudTest = ({children}) => {
                         {children}
                     </Content>
                     <Footer>
-                      <div className='text-center'>Desarrollado por</div>
+                      <div className='text-center'>© 2020 Desarrollado por Directorio Plaza Seguridad</div>
                     </Footer>
                 </Layout>
               </Layout>

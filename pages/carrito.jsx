@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import ALink from '~/components/features/alink';
 import Qty from '~/components/features/qty';
@@ -14,10 +14,9 @@ function Cart ( props ) {
     const [ cartList, setCartList ] = useState( [0] );
     const [ shippingCost, setShippingCost ] = useState( 0 );
     const addCartRecducerState =  useSelector( state => state.addCartReducer);
-      
-    useEffect( () => {
-        setCartList( props.cartItems );
-    }, [ props.cartItems ] )
+  
+
+
 
     function onChangeShipping ( value ) {
         setShippingCost( value );
@@ -25,23 +24,6 @@ function Cart ( props ) {
 
     function removeFromCart( productId){
         dispatch( removeCartAction(productId) );     
-    }
-
-    function changeQty ( value, index ) {
-        setCartList(
-            cartList.map( ( item, ind ) => {
-                if ( ind == index )
-                    return {
-                        ...item,
-                        qty: value,
-                        sum:
-                            ( item.sale_price
-                                ? item.sale_price
-                                : item.price ) * value
-                    };
-                return item;
-            } )
-        )
     }
 
     function updateCart ( e ) {
@@ -86,7 +68,8 @@ function Cart ( props ) {
                                                         <th className='h3'>Producto</th>
                                                         <th>Descripción</th>                                                          
                                                         <th>Empresa</th>  
-                                                        <th>Precio</th>                                                                                     
+                                                        <th>Precio</th>   
+                                                        <th>Qty</th>                                                                                  
                                                         <th>Datos de contacto</th>
                                                         <th>   </th>
                                                     </tr>
@@ -118,8 +101,13 @@ function Cart ( props ) {
                                                                        <ALink href={ `/empresa/${producto.COMPANY._id}` }>{ producto.COMPANY.name }</ALink>                                                                        
                                                                     </td>
                                                                     <td className="price-col text-center px-2">                                                                
-                                                                    <span>$ </span><span className='price'>{producto.regularPrice}</span> 
+                                                                    <span>$ </span><span className='price'>{ (producto.salePrice ??  producto.regularPrice )}</span> 
+                                                                   
                                                                     </td>
+                                                                    <td className="price-col text-center px-2"> 
+                                                                        <Qty value={ 1 }  adClass="cart-product-quantity"></Qty>
+                                                                    </td>
+
                                                                     <td className="text-justify px-2">
                                                                         <CompanyModal  producto = {producto} index = {index} />
                                                                     </td>
@@ -146,7 +134,7 @@ function Cart ( props ) {
                                                     <tbody>
                                                         <tr className="summary-subtotal">
                                                             <td>Subtotal:</td>
-                                                            <td>{addCartRecducerState.cart.map((producto,index)=> producto.regularPrice).reduce((a,b)=>a+b)}</td>
+                                                            <td>{addCartRecducerState.cart.map((producto,index)=> (producto.salePrice ?? producto.regularPrice)).reduce((a,b)=>a+b)}</td>
                                                         </tr>
                                                         <tr className="summary-shipping">
                                                             <td>Shipping:</td>
@@ -207,7 +195,7 @@ function Cart ( props ) {
                                                         <tr className="summary-total">
                                                             <td>Total:</td>
                                                             <td>
-                                                                 {addCartRecducerState.cart.map((producto,index)=> producto.regularPrice).reduce((a,b)=>a+b)}
+                                                                 {addCartRecducerState.cart.map((producto,index)=> ( producto.salePrice ?? producto.regularPrice)).reduce((a,b)=>a+b)}
                                                             </td>
                                                         </tr>
                                                     </tbody>

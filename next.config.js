@@ -54,6 +54,13 @@ const nextConfig = {
         destination: '/productos/todos',
         permanent: true,
       },
+      //TEMPORALES
+      {
+        source: '/nosotros',
+        destination: '/',
+        permanent: false,
+      },
+
     ]
   },
 
