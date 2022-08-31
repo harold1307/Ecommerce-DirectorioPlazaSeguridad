@@ -29,7 +29,7 @@ export default function CrearProducto() {
     const [valuedc, setValuedc] = useState('');
     const [valuedl, setValuedl] = useState('');
     const [current, setCurrent] = useState(0);
-    const [ selectEmpresa , setSelectEmpresa ] = useState(false);
+    const [ selectEmpresa , setSelectEmpresa ] = useState(0);
     
     <Select
     defaultValue="+"
@@ -124,9 +124,9 @@ export default function CrearProducto() {
     };
    
     const handleChangeTags = (value) => {
-        console.log(`selected ${value}`);
         setSelectEmpresa( true);
-        console.log(selectEmpresa);
+        console.log(`selected ${value}`);        
+        console.log('selectEmpresa',selectEmpresa);
     };
     console.log(selectEmpresa);
 
@@ -392,7 +392,7 @@ export default function CrearProducto() {
                                 </Row>                             
                             </div>   
                             {
-                            selectEmpresa?      
+                            true?      
                                 <div className='controlBtn'>
                                     <Button type="primary" onClick={() => next()}  className={`${  current==5?   'visibilidadStep' : '' }`} > Siguiente </Button>
                                     <Button  style={{ margin: '0 8px',}} className={`${ current==0 ?  'visibilidadStep' : '' }`}   onClick={() => prev()}> Previo </Button>
