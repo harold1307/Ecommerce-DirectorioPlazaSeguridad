@@ -56,7 +56,6 @@ const Home = () =>{
     return (
         <div className="main home-page skeleton-body">
             <div className="mb-lg-2"></div>
-
             <div className="container-fluid">
                 <div className="row">
                     <div className="col-xl-9 col-xxl-8 offset-lg-3 offset-xxl-2">
@@ -98,21 +97,21 @@ const Home = () =>{
                                     </figure>
                                     <div className="intro-content">
                                         <Reveal keyframes={ fadeInUpShorter } delay={ 100 } duration={ 1000 }>
-                                            <h3 className="intro-subtitle">Hottest Deals</h3>
+                                            <h3 className="intro-subtitle">Monitoreo de siembras</h3>
 
                                             <h1 className="intro-title">
-                                                <span>DONES</span>
-                                                <br />DJI Mavic 2 Pro
+                                                <span>DRONES</span>
+                                                <br />Agro Modernos
                                             </h1>
 
                                             <div className="intro-price">
-                                                <sup>from</sup>
+                                                <sup>desde</sup>
                                                 <span>
                                                     $1,948
                                                     <sup>.99</sup>
                                                 </span>
                                             </div>
-                                            <ALink href="/productos/list" className="btn btn-primary">
+                                            <ALink href="/empresa/6244d94b5bd149000937348c" className="btn btn-primary">
                                                 <span>Contactanos</span>
                                                 <i className="icon-long-arrow-right"></i>
                                             </ALink>
@@ -205,7 +204,6 @@ const Home = () =>{
                                             <div className="banner banner-overlay">
                                                 <ALink href="/productos/list">
                                                     <div className="lazy-overlay"></div>
-
                                                     <LazyLoadImage
                                                         alt="Banner"
                                                         src="/images/home/banners/banner-3.jpg"
@@ -220,7 +218,6 @@ const Home = () =>{
                                                     <h4 className="banner-subtitle text-white d-none d-sm-block">
                                                         <ALink href="/productos/list">Protege tu patrimonio</ALink>
                                                     </h4>
-
                                                     <h3 className="banner-title text-white">
                                                         <ALink href="/productos/list">
                                                             Poliza de Vehiculos
@@ -228,7 +225,6 @@ const Home = () =>{
                                                          <span className='pt-2'><strong>5% de descuento</strong> </span>
                                                         </ALink>
                                                     </h3>
-
                                                     <ALink
                                                         href="/productos/3cols"
                                                         className="banner-link "
@@ -263,18 +259,15 @@ const Home = () =>{
                                             <h4 className="banner-subtitle text-white">
                                                 <ALink href="/productos/list"> <span> </span></ALink>
                                             </h4>
-
                                             <h3 className="banner-title text-white">
                                                 <ALink href="/productos/list">
                                                    <span> </span>
-                                            </ALink>
+                                                </ALink>
                                             </h3>
-
                                             <ALink
-                                                href="/productos/3cols"
-                                                className="banner-link pt-3"
-                                            >
-                                                Contáctanos
+                                                href="/empresas"
+                                                className="banner-link mt-3"
+                                            > Contáctanos
 												<i className="icon-long-arrow-right"></i>
                                             </ALink>
                                         </div>
@@ -485,15 +478,15 @@ const Home = () =>{
                                                 <div className="banner-content banner-content-top banner-content-right text-right">
                                                     <h3 className="banner-title text-white">
                                                         <ALink href="/productos/list">
-                                                            Maximum Comfort<br />
-                                                            <span>Sofas -20% Off</span>
+                                                            Anuncio<br />
+                                                            <span> 20% Off</span>
                                                         </ALink>
                                                     </h3>
                                                     <ALink
-                                                        href="/productos/3cols"
+                                                        href="/productos/list"
                                                         className="banner-link"
                                                     >
-                                                        Shop Now
+                                                        Ver
 												<i className="icon-long-arrow-right"></i>
                                                     </ALink>
                                                 </div>
