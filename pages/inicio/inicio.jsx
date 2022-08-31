@@ -275,7 +275,6 @@ const Home = () =>{
                                     <div className="banner banner-overlay">
                                         <ALink href="/productos/list">
                                             <div className="lazy-overlay"></div>
-
                                             <LazyLoadImage
                                                 alt="Banner"
                                                 src="/images/home/banners/banner-4.jpg"
@@ -318,7 +317,7 @@ const Home = () =>{
                                     companiesAll.loading?
                                         companiesAll.companias.map( ( compania, index ) => {
                                             return (
-                                                compania.logo==true || !(/undefined/).test(compania.logo) ?
+                                                (compania.logo ?? false) ?
                                                 
                                                 <ALink href={ `/empresa/${ compania._id }`} className="sidebar-filter-clear" scroll={ false } key={index} >               
                                                      <Image className='border border-warning rounded-circle' src={ compania.logo  } alt={compania.name }  height= '150' width='150' />
