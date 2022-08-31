@@ -5,7 +5,7 @@ import CrearProducto   from './crearProducto'
 function index() {
   return (
     <AdminLayoud>
-            <CrearProducto/>
+      <CrearProducto/>
     </AdminLayoud>
   )
 }

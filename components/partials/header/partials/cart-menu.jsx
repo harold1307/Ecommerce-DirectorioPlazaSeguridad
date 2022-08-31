@@ -1,4 +1,5 @@
 import ALink from '../../../features/alink';
+import Image from 'next/image';
 import { useSelector,  useDispatch }  from "react-redux";
 import { removeCartAction } from "../../../../store/actions/AddCartAction";
 
@@ -14,10 +15,10 @@ function CartMenu( props ) {
 
     return (
         <div className="dropdown cart-dropdown">
-            <ALink href="/carrito" className="dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-display="static">
+            <div className="dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-display="static">
                 <i className="icon-shopping-cart display-4"></i>
                 <span className="cart-count">{cartState.cart.length}</span>                
-            </ALink>
+            </div>
 
             <div className={ `dropdown-menu dropdown-menu-right ${ cartState.cart.length === 0 ? 'text-center' : '' }` } >
                 {
@@ -51,17 +52,17 @@ function CartMenu( props ) {
 
                                         <figure className="product-image-container ml-2">
                                             <ALink href={ `/producto/${ producto._id }` } className="product-image">
-                                                <img src= {producto.image.location} alt="product" height='60' width= '60' />
+                                                <Image src= {producto.image.location} alt={producto.name} height={60} width={60}  />
                                             </ALink>
                                         </figure>
-                                        <button className="btn-remove" title="Remove Product" onClick={ () => removeFromCart( producto._id ) }><i className="icon-close"></i></button>
+                                        <button className="btn-remove p-2" title="Remove Product" onClick={ () => removeFromCart( producto._id ) }><i className="icon-close"></i></button>
                                     </div>
                                 ) ) }
                             </div>
                             <div className="dropdown-cart-total">
                                 <span>Total</span>
 
-                                <span className="cart-total-price">Precio Total</span>
+                                <span className="cart-total-price">$ {cartState.cart.map((producto,index)=>  (producto.salePrice ?? producto.regularPrice ) ).reduce((a,b)=>a+b)}</span>
                             </div>
 
                             <div className="dropdown-cart-action">

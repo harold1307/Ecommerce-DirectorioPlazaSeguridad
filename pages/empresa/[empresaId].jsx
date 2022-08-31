@@ -4,7 +4,6 @@ import { useRouter } from 'next/router';
 import { useSelector, useDispatch }  from "react-redux";
 import PageHeader from '~/components/features/page-header';
 import GalleryExtendedEmpresa from '~/components/partials/products/gallery/gallery-extended-empresa';
-import DetailOneEmpresa from '~/components/partials/products/details/detail-one-empresa';
 import InfoOneEmpresa from '~/components/partials/products/info-tabs/info-one-empresa';
 import Layout from '~/components/layout';
 import ALink  from '~/components/features/alink';
@@ -94,11 +93,7 @@ const ProductDefault = () => {
                                             <div className="entry-summary2"></div>
                                         </div>
                                     </div>
-                                    {
-                                        loadingEmpresa?
-                                            <DetailOneEmpresa empresa  = { empresa   } />
-                                            : ''
-                                    }
+                                 
                                     {
                                         loadingEmpresa?
                                             <InfoOneEmpresa empresa  ={ empresa  } />                                

@@ -17,21 +17,20 @@ function TrendyCollection( props ) {
         <div className="bg-lighter trending-products trendy">
             <div className="heading heading-flex mb-3">
                 <div className="heading-left">
-                    <h2 className="title">Produstos en Ofertas</h2>
+                    <h2 className="title">Productos Destacados</h2>
                 </div>
 
                 <div className="heading-right">
                     <TabList className="nav nav-pills justify-content-center">
-                    {
-                        categoriasDestacadas.map((categoria, index)=>{
-                            return(                              
-                                <Tab className="nav-item" key={index}>
-                                    <span className="nav-link"><small>{categoria.name}</small></span>
-                                </Tab>                             
-                            )
-                        })                        
-                    }
-                    
+                        {
+                            categoriasDestacadas.map((categoria, index)=>{
+                                return(                              
+                                    <Tab className="nav-item" key={index}>
+                                        <span className="nav-link"><small>{categoria.name}</small></span>
+                                    </Tab>                             
+                                )
+                            })                        
+                        }                    
                     </TabList>
                 </div>
             </div>
@@ -45,7 +44,7 @@ function TrendyCollection( props ) {
                                  productosState.loading?
                                     <OwlCarousel adClass="owl-simple carousel-equal-height carousel-with-shadow" options={ productSlider }>
                                         {                                             
-                                            catFiltrar(productosState.productos, categoria.value).map( ( producto, index ) =>                                                           
+                                            productosState.productos.map( ( producto, index ) =>                                                           
                                                 <ProductTwelve
                                                     product ={ producto }
                                                     key={ index } 

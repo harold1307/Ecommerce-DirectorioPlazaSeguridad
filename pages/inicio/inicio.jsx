@@ -60,7 +60,7 @@ const Home = () =>{
             <div className="container-fluid">
                 <div className="row">
                     <div className="col-xl-9 col-xxl-8 offset-lg-3 offset-xxl-2">
-                        <div className="intro-slider-container slider-container-ratio mb-2">
+                        <div className="intro-slider-container slider-container-ratio">
                             <OwlCarousel adClass="owl-simple intro-slider owl-nav-inside" options={ introSlider }>
                                 <div className="intro-slide">
                                     <figure className="slide-image mb-0">
@@ -216,7 +216,7 @@ const Home = () =>{
 
                                                     <ALink
                                                         href="/productos/3cols"
-                                                        className="banner-link border border-light text-dark"
+                                                        className="banner-link border border-light"
                                                     >
                                                         Ver Producto
 												     <i className="icon-long-arrow-right"></i>
@@ -288,20 +288,20 @@ const Home = () =>{
 
                                         <div className="banner-content">
                                             <h4 className="banner-subtitle text-white">
-                                                <ALink href="/productos/list">Clearance</ALink>
+                                                <ALink href="/productos/list"> <span> </span></ALink>
                                             </h4>
 
                                             <h3 className="banner-title text-white">
                                                 <ALink href="/productos/list">
-                                                    Seating and Tables Clearance
+                                                   <span> </span>
                                             </ALink>
                                             </h3>
 
                                             <ALink
                                                 href="/productos/3cols"
-                                                className="banner-link"
+                                                className="banner-link pt-3"
                                             >
-                                                Shop Now
+                                                Contáctanos
 												<i className="icon-long-arrow-right"></i>
                                             </ALink>
                                         </div>
@@ -320,12 +320,13 @@ const Home = () =>{
                                             return (
                                                 compania.logo==true || !(/undefined/).test(compania.logo) ?
                                                 
-                                                <ALink href={ { pathname:  `/companies`, query: {compania: compania._id     } } } className="sidebar-filter-clear" scroll={ false } key={index} >
-                                                     <Image className='border border-warning rounded-circle'  src={ compania.logo  } alt={compania.logo }  height= '150' width='150' />
+                                                <ALink href={ `/empresa/${ compania._id }`} className="sidebar-filter-clear" scroll={ false } key={index} >               
+                                                     <Image className='border border-warning rounded-circle' src={ compania.logo  } alt={compania.name }  height= '150' width='150' />
                                                 </ALink>
                                                 :
-                                                <Image  src={ '/images/brands/8.png'} height='120' width='120' alt="" />
-
+                                                <ALink href={ `/empresa/${ compania._id }`} className="sidebar-filter-clear" scroll={ false } key={index} >      
+                                                  <Image className='border border-warning rounded-circle' src={ '/images/brands/8.png'} height='150' width='150' alt="" />
+                                                </ALink>
                                             )
                                         } )
                                         :
@@ -351,7 +352,6 @@ const Home = () =>{
                                     <div className="banner home-banner banner-overlay">
                                         <ALink href="/productos/list">
                                             <div className="lazy-overlay"></div>
-
                                             <LazyLoadImage
                                                 alt="Banner"
                                                 src="images/home/banners/banner-7.jpg"
@@ -391,7 +391,6 @@ const Home = () =>{
                                     <div className="banner home-banner banner-overlay">
                                         <ALink href="/productos/list">
                                             <div className="lazy-overlay"></div>
-
                                             <LazyLoadImage
                                                 alt="Banner"
                                                 src="images/home/banners/banner-8.jpg"

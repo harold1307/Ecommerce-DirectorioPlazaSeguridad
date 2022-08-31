@@ -20,7 +20,7 @@ function ShopGrid() {
     const [ perPage, setPerPage ] = useState( 5 );
     const [ pageTitle, setPageTitle ] = useState( 'Todos' );
     const [ toggle, setToggle ] = useState( false );   
-    const  productosState =  useSelector(state => state.productsAll);
+    const  productosState =  useSelector(state => state.productsAll);    
     const  loading = productosState.loading;
     var products = productosState.productos.filter(producto=> (producto.category== (query.categoria || producto.category)));
     query.minPrice && query.maxPrice?

@@ -23,7 +23,7 @@ export function addCartAction( productoId , qty ) {
            toast.success('Producto agregado.', {
             position: "bottom-center",
             theme: "light",
-            autoClose: 4000,
+            autoClose: 4500,
             hideProgressBar: false,
             closeOnClick: true,
             pauseOnHover: true,
@@ -49,10 +49,10 @@ export function addCartAction( productoId , qty ) {
 
 export function removeCartAction( productoId ) {
     return async (dispatch) => {          
-           toast.info('Agrenando al carrito', {
+           toast.info('Borrado producto', {
             position: "bottom-center",
             theme: "light",
-            autoClose: 1500,
+            autoClose: 2000,
             hideProgressBar: false,
             closeOnClick: true,
             pauseOnHover: true,
@@ -61,10 +61,10 @@ export function removeCartAction( productoId ) {
         
         try {               
            dispatch( removeCartAction_Exito(productoId ));              
-           toast.success('Producto agregado.', {
+           toast.success('Producto borrado.', {
             position: "bottom-center",
             theme: "light",
-            autoClose: 4000,
+            autoClose: 4800,
             hideProgressBar: false,
             closeOnClick: true,
             pauseOnHover: true,

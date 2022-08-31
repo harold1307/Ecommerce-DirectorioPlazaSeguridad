@@ -22,7 +22,6 @@ const { register, handleSubmit, formState: { errors }, setValue  } = useForm();
 const onSubmit = (data) => {
     console.log(JSON.stringify(data));
   };
-
 var empresaData=[];
 
 const formatofecha = (fecha)=>{
@@ -30,10 +29,11 @@ const formatofecha = (fecha)=>{
     return date.getDate() + "-" + (date.getMonth() + 1) + "-" + date.getFullYear()
 }
 
-console.log('empresaId', empresaId);
 useEffect(() => {   
-    dispatch( cargarCompaniaId(empresaId) );       
-}, [ dispatch, empresaId]);
+    if(empresaId){
+     dispatch( cargarCompaniaId(empresaId) );   
+    }    
+}, [ dispatch]);
 
 const  companyIdGetState =  useSelector(state => state.companyIdGet);
 

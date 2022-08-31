@@ -88,7 +88,7 @@ function Cart ( props ) {
                                                         <th>Empresa</th>  
                                                         <th>Precio</th>                                                                                     
                                                         <th>Datos de contacto</th>
-                                                        <th>Remover</th>
+                                                        <th>   </th>
                                                     </tr>
                                                 </thead>
 
@@ -118,20 +118,20 @@ function Cart ( props ) {
                                                                        <ALink href={ `/empresa/${producto.COMPANY._id}` }>{ producto.COMPANY.name }</ALink>                                                                        
                                                                     </td>
                                                                     <td className="price-col text-center px-2">                                                                
-                                                                            {producto.regularPrice}
+                                                                    <span>$ </span><span className='price'>{producto.regularPrice}</span> 
                                                                     </td>
-                                                                    <td className="remove-col px-2">
+                                                                    <td className="text-justify px-2">
                                                                         <CompanyModal  producto = {producto} index = {index} />
                                                                     </td>
                                                                     <td className="remove-col text-center">
                                                                         <button  id= { producto._id }  className="btn-remove" onClick={ () => removeFromCart( producto._id ) }><i className="icon-close"></i></button>
                                                                     </td>
                                                                 </tr>
-                                                            ) 
-                                                        :
+                                                            )                                                         
+                                                            :
                                                             <tr>
                                                                 <td>
-                                                                    <p className="pl-2 pt-1 pb-1"> Ningún producto agregado al carrito.</p>
+                                                                    <p className="pl-2 py-4"> Ningún producto agregado al carrito.</p>
                                                                 </td>
                                                             </tr>
                                                     }
@@ -140,13 +140,13 @@ function Cart ( props ) {
                                         </div>
                                         <aside className="col-lg-3">
                                             <div className="summary summary-cart">
-                                                <h3 className="summary-title">Cart Total</h3>
+                                                <h3 className="summary-title">Cotizador</h3>
 
                                                 <table className="table table-summary">
                                                     <tbody>
                                                         <tr className="summary-subtotal">
                                                             <td>Subtotal:</td>
-                                                            <td>100</td>
+                                                            <td>{addCartRecducerState.cart.map((producto,index)=> producto.regularPrice).reduce((a,b)=>a+b)}</td>
                                                         </tr>
                                                         <tr className="summary-shipping">
                                                             <td>Shipping:</td>
@@ -207,7 +207,7 @@ function Cart ( props ) {
                                                         <tr className="summary-total">
                                                             <td>Total:</td>
                                                             <td>
-                                                            500
+                                                                 {addCartRecducerState.cart.map((producto,index)=> producto.regularPrice).reduce((a,b)=>a+b)}
                                                             </td>
                                                         </tr>
                                                     </tbody>

@@ -6,11 +6,16 @@ import Accordion from '~/components/features/accordion/accordion';
 
 function InfoOneEmpresa ( props ) {
     const { empresa } = props;
-    useEffect(() => {
-        var str = empresa.description;
-        var tt = document.getElementById("descriction");
-        tt.innerHTML = str;  
-    }, [])
+   //  useEffect(() => {
+   //     var str = empresa.description;
+   //     var tt = document.getElementById("descriction");
+   //     tt.innerHTML = str;  
+   // }, [])
+   const formatofecha = (fecha)=>{
+    var date = new Date(fecha);
+    return date.getDate() + "-" + (date.getMonth() + 1) + "-" + date.getFullYear()
+}    
+
     if ( !empresa ) {
         return <div></div>
     }
@@ -18,7 +23,7 @@ function InfoOneEmpresa ( props ) {
         <Accordion adClass="accordion-rounded">               
                 <Card title="Sobre la empresa" expanded="true" adClass="card-box card-sm bg-light">             
                     <div className='text-justify'>
-                        <div id='descriction'></div>
+                         { empresa.description }
                     </div>
                 </Card>
                 <Card title="Datos de contacto" adClass="card-box card-sm bg-light">
@@ -47,7 +52,7 @@ function InfoOneEmpresa ( props ) {
                 </Card>
                 <Card title="Datos de la empresa" adClass="card-box card-sm bg-light">
                         <div className="product-desc-content">
-                            <p>Inicio de actividad: {empresa.createdAt }</p>
+                            <p>Inicio de actividad: {formatofecha(empresa.createdAt)}</p>
                             <div className="product-cat w-100 text-truncate">
                             <p className="pl-1">Sector de negocio: <span>{empresa.bussiness}</span></p>                                
                         </div>

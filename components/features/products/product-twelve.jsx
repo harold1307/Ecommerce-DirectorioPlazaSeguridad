@@ -2,23 +2,26 @@ import React, { useState, useEffect, Fragment } from 'react';
 import { useRouter } from 'next/router';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import ALink from '../../../components/features/alink';
-import { rendererOne } from "../../../components/features/count-down";
+import { useDispatch }  from "react-redux";
+import { addCartAction } from "../../../store/actions/AddCartAction";
 
-function onCartClick ( e ) {
-    e.preventDefault();
-    dispatch( addCartAction(product) );  
-}
 function onQuickView ( e ) {
     e.preventDefault();
 }
-
 function onWishlistClick( e ) {
     e.preventDefault();
 }
+const qty =1;
 
 const ProductTwelve = ( props ) => {
     const router = useRouter();
     const { product, index } = props;
+    const dispatch = useDispatch(); 
+
+    function onCartClick ( e ) {
+        e.preventDefault();
+        dispatch( addCartAction(product, qty) );  
+    }
    
     return (
         <Fragment>                

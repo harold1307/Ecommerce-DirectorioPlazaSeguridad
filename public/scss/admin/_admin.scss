@@ -1,4 +1,4 @@
-$color-fondo-primario: #515d6f;
+$color-fondo-primario: #101924;
 $color-fondo-secundario: #f5f6fa;
 $color-boton-primario: #febf10;
 $color-boton-primario-hover: #e7ae11;
@@ -9,146 +9,279 @@ $color-boton-primario-hover: #e7ae11;
 @font-face { font-family: 'DM Sans'; src: url("./fonts/DMSans-Medium.eot"); src: local("DM Sans Medium"), local("DMSans-Medium"), url("./fonts/DMSans-Medium.eot?#iefix") format("embedded-opentype"), url("./fonts/DMSans-Medium.woff2") format("woff2"), url("./fonts/DMSans-Medium.woff") format("woff"), url("./fonts/DMSans-Medium.ttf") format("truetype"); font-weight: 500; font-style: normal; }
 @font-face { font-family: 'DM Sans'; src: url("./fonts/DMSans-Regular.eot"); src: local("DM Sans Regular"), local("DMSans-Regular"), url("./fonts/DMSans-Regular.eot?#iefix") format("embedded-opentype"), url("./fonts/DMSans-Regular.woff2") format("woff2"), url("./fonts/DMSans-Regular.woff") format("woff"), url("./fonts/DMSans-Regular.ttf") format("truetype"); font-weight: normal; font-style: normal; }
 
-.ant-layout {  
-  background: $color-fondo-secundario !important;
-}
-.ant-menu-horizontal {
-  line-height: 46px;
-  border: 0;
-  border-bottom: 1px solid #e5e9f2;
-  box-shadow: 0px 1px 3px 0px rgb(54 74 99 / 5%);
-  position: sticky;
-  top: 0px;
-  z-index: 9999999;
-}
+#main-dashboard{
 
 
-#components-layout-demo-responsive .logo {
-  height: 32px;
-  margin: 16px;
-  background: $color-fondo-primario;
-}
+//**************************************************
+//*
+//*                 Admin
+//*
+//**************************************************
 
-//Sidebar
-
-.ant-menu.ant-menu-dark, .ant-menu-dark .ant-menu-sub, .ant-menu.ant-menu-dark .ant-menu-sub{
-  background: transparent;
-}
-
-.ant-layout-sider{
-  background: $color-fondo-primario;
-}
-
-.site-layout-sub-header-background {
-  background: $color-fondo-secundario;
-}
-
-.site-layout-background {
-  background: $color-fondo-secundario;
-}
-
-//Empresa Id
-
-.site-page-header-ghost-wrapper {
-  padding: 24px;
-  background-color: #f5f5f5;
-}
-
-//Header
-.ant-menu-horizontal {
-  justify-content: flex-end;
-}
-.ant-menu-overflow {
-  background: #fafafa;
-}
-
-//Formularios
-
-.tagErrorForm{
-  position: relative;
-  top: -16px;
-  color: #ff5722;
-  left: 4px;
-}
-
-//Miscelaneos
-.icon-tienda{
-  position: relative;
-  top: -21px;
-  left: 5px;
-  font-size: 18px;
-  color: #ffc107;
-}
-
-//Formulario Dashboard
-
-.formularioAdmin{
-  label{
-    font-size: 1.8rem;
-  }
-}
-
-.quillForm{
- 
-  .ql-editor {
-    min-height: 180px;    
-  }
-  .ql-container{
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    &.ql-snow {
-      border: 1px solid #ebebeb;  
-      background-color: #f6f7ffe5;        
-    }    
-  }
-  .ql-toolbar{
-    &.ql-snow{
-     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-     border: 1px solid #ebebeb;
-     background-color: #fafafa;
-     border-radius: 2px 2px 0 0;
-   }
- }
-}
-
-//Step formularios
-
-.steps-content {
-  min-height: 200px;
-  margin-top: 16px;
-  padding-top: 80px;
-  text-align: center;
-  background-color: #fafafa;
-  border: 1px dashed #e9e9e9;
-  border-radius: 2px;
-}
-
-.steps-action {
-  margin-top: 24px;
-}
-.ant-steps-item-icon {
-  .ant-steps-icon {
-    position: relative;
-    top: -2.5px;
-    color: #1890ff;
-    line-height: 1;
-    &> .ant-steps-icon {
-      color: #4caf50;
+    *{
+      font-family: 'DM Sans';  
+      -webkit-font-smoothing: antialiased;
     }
-    .anticon {    
-      vertical-align: 0;    
+    .py-50{
+      padding: 50px;
     }
+    .py-60{
+      padding: 50px 0;
+    }
+
+    .ant-layout {  
+      background: $color-fondo-secundario !important;
+      z-index: 999;
+    }
+    .ant-menu-horizontal {
+      line-height: 46px;
+      border: 0;
+      border-bottom: 1px solid #e5e9f2;
+      box-shadow: 0px 1px 3px 0px rgb(54 74 99 / 5%);
+      position: sticky;
+      top: 0px;
+      z-index: 100;
+    }
+
+
+    #components-layout-demo-responsive .logo {
+      height: 32px;
+      margin: 16px;
+      background: $color-fondo-primario;
+    }
+
+    //Sidebar
+
+    .ant-menu.ant-menu-dark, .ant-menu-dark .ant-menu-sub, .ant-menu.ant-menu-dark .ant-menu-sub{
+      background: transparent;
+    }
+
+    .ant-layout-sider{
+      background: $color-fondo-primario;
+    }
+
+    .site-layout-sub-header-background {
+      background: $color-fondo-secundario;
+    }
+
+    .site-layout-background {
+      background: $color-fondo-secundario;
+    }
+
+    .ant-layout-sider-children {     
+      position: fixed !important;
+      transition-delay: 0.5s;
+        .ant-menu.ant-menu-inline-collapsed {
+          width: auto;
+          left: -54px;
+          position: absolute;
+          transition-duration: 0.5s;
+      }
+    }
+
+    .ant-layout-header {      
+      line-height: 64px;
+      background: #001529;
+      position: -webkit-sticky;
+      position: sticky;
+      top: 0px;
+      z-index: 2;
   }
-}
+   
 
-.ant-steps-item-finish .ant-steps-item-icon { 
-  border-color: #4caf50 !important;
-}
+    //Empresa Id
 
-.visibilidadStep{
-  visibility: hidden;
-  display: none;
-}
+    .site-page-header-ghost-wrapper {
+      padding: 24px;
+      background-color: #f5f5f5;
+    }
 
-[class^='paso-'] {
-  min-height: 330px;
+    //Header
+    .ant-menu-horizontal {
+      justify-content: flex-end;
+    }
+    .ant-menu-overflow {
+      background: #fafafa;
+    }
+
+    //Formularios
+
+    .tagErrorForm{
+      position: relative;
+      top: -16px;
+      color: #ff185d;
+      left: 4px;
+    }
+
+    .formulariocrearEmpresa {
+       label {      
+        font-weight: 500;
+        color: #344357;
+        margin-bottom: 0.5rem;
+       }
+
+       .ant-input{      
+        font-weight: 400;
+        border-radius: 4px;
+        border: 1px solid #dbdfea;
+        transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+        padding: 6px 12px;
+        color: rgba(0, 0, 0, 0.85);
+        font-size: 14px;
+          &:focus,.ant-input-focused {
+            border-color: #6576ff;
+            box-shadow: 0 0 0 2px rgb(24 144 255 / 20%);
+            border-right-width: 1px;
+            outline: 0;
+            
+          }  
+      }   
+    }
+
+    //Miscelaneos
+    .icon-tienda{
+      position: relative;
+      top: -21px;
+      left: 5px;
+      font-size: 20px;
+      color: #ffc107;
+    }
+
+    //Formulario Dashboard
+
+    .formularioAdmin{
+      label{
+        font-size: 1.8rem;
+      }
+    }
+
+    .quillForm{
+    
+      .ql-editor {
+        min-height: 180px;    
+      }
+      .ql-container{
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        &.ql-snow {
+          border: 1px solid #ebebeb;  
+          background-color: #f6f7ffe5;        
+        }    
+      }
+      .ql-toolbar{
+        &.ql-snow{
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        border: 1px solid #ebebeb;
+        background-color: #fafafa;
+        border-radius: 2px 2px 0 0;
+      }
+    }
+    }
+
+    //Step formularios
+
+    .steps-content {
+      min-height: 200px;
+      margin-top: 16px;
+      padding-top: 80px;
+      text-align: center;
+      background-color: #fafafa;
+      border: 1px dashed #e9e9e9;
+      border-radius: 2px;
+    }
+
+    .steps-action {
+      margin-top: 24px;
+    }
+    .ant-steps-item-icon {
+      .ant-steps-icon {
+        position: relative;
+        top: -2px;
+        color: #1890ff;
+        line-height: 1;
+        &> .ant-steps-icon {
+          color: #4caf50;
+        }
+        .anticon {    
+          vertical-align: 0;    
+        }
+      }
+    }
+
+    .ant-steps-item.ant-steps-item-process.ant-steps-item-active{
+      .ant-steps-icon{
+        color:white
+      }
+    }
+    .ant-steps-item.ant-steps-item-finish{
+      .ant-steps-icon{
+        color:#4caf50;       
+      }
+      .ant-steps-item-icon{
+        border-color: #4caf50 !important;
+      }
+      .ant-steps-item-title{
+        &:after{
+          background-color: #4caf50 !important;
+        }
+      }
+    }
+
+   
+    .ant-steps-item.ant-steps-item-wait{
+      .ant-steps-icon{
+        filter: grayscale(1);
+        opacity: 0.6;
+      }
+    }
+
+    .visibilidadStep{
+      visibility: hidden;
+      display: none;
+    }
+
+    [class^='paso-'] {
+      min-height: 360px;
+    }
+
+//**************************************************
+//*
+//*                 Estadisticas
+//*
+//**************************************************
+
+    .widget-card{
+
+      .card { 
+        box-shadow: 0 0 5px 5px rgb(0 0 0 / 3%);
+        -webkit-box-shadow: 0 0 5px 5px rgb(0 0 0 / 3%);
+        border-radius: 6px;
+      }
+
+      .card-inner { 
+        padding: 1.8rem 2.2rem; 
+      }
+
+      .card-title-group { 
+        display: flex; align-items: center; 
+        justify-content: space-between; 
+        position: relative; 
+      }
+
+      .card-title-group .card-title { 
+        margin-bottom: 0; 
+      }
+
+      @media (min-width: 576px) { 
+          .card-inner { 
+            padding: 1.5rem; 
+          }
+        }
+    }
+
+    .change.up {
+      color: #1ee0ac !important;
+    }
+    .change.down {
+      color: #e85347 !important;
+    }
 }

@@ -10,7 +10,7 @@ function GalleryExtendedEmpresa ( props ) {
     }
 
     return (
-        <div className="product-lg position-relative p-4"> 
+        <div className="product-lg position-relative border border-lightp-4 rounded-top my-2"> 
             <div className='row justify-content-center'>    
                 <div className='col-8 col-md-6 img'>          
                     <LazyLoadImage
@@ -22,6 +22,11 @@ function GalleryExtendedEmpresa ( props ) {
                             width={300}        
                             height={300}                              
                     />   
+                </div>
+                <div className="product-details col-12 px-4 py-2">
+                    <h1 className="product-title text-center mt-2">{  empresa.name }</h1>    
+                    <div className="product-content mt-3">
+                    </div>         
                 </div>
             </div>    
         </div>

@@ -1,6 +1,5 @@
 import { useRouter } from 'next/router';
 import React, { useState, useEffect } from 'react';
-
 import ProductNine from '~/components/features/products/product-nine';
 import ProductEleven from '~/components/features/products/product-eleven';
 

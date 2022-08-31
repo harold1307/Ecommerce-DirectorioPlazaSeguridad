@@ -16,19 +16,13 @@ function Empresas() {
     const type = router.query.type;
     const query = router.query;
     const slug = router.query.slug;
-    console.log(query)
-  
-    const getProducts = ()=>{
-        return []
-    }
+   
     const data=[];
     const error="";
-
     const [ firstLoading, setFirstLoading ] = useState( false );
     const [ perPage, setPerPage ] = useState( 5 );
     const [ pageTitle, setPageTitle ] = useState( 'Todos' );
-    const [ toggle, setToggle ] = useState( false );
-    
+    const [ toggle, setToggle ] = useState( false );    
     const  companiesState =  useSelector(state => state.companiesAll);
     const  empresas = companiesState.companias;
     const  loading = companiesState.loading;
@@ -81,7 +75,6 @@ function Empresas() {
                 url += key + '=' + queryObject[ key ] + '&';
             }
         }
-
         router.push( url + 'ordenar=' + e.target.value );
     }
 

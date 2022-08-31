@@ -9,7 +9,16 @@
 	border-top: 1px solid #ebebeb;
 
 	&:last-child {
-		border-bottom: 1px solid #ebebeb;;
+		border-bottom: 1px solid #ebebeb;
+	}
+}
+
+.modal-dialog__empresa{
+	.card {	
+		border: none;		
+		&:last-child {
+			border: none;
+		}
 	}
 }
 
@@ -161,7 +170,6 @@
 	&.bg-white {
 		background-color: #fff !important;
 		border: 1px solid #ebebeb;
-
 		.card-title {
 			.toggle-button {
 				background-color: #fff;
@@ -174,6 +182,10 @@
 			.toggle-button {
 				&.collapsed {
 					background-color: #fafafa;
+				}
+				&.expanded{
+					background-color: #f9f9f9;				
+                    box-shadow: 0 2px 15px -4px rgb(133 79 255 / 25%);
 				}
 			}
 		}

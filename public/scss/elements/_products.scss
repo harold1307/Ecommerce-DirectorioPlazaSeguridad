@@ -2,9 +2,10 @@
 .product {
 	position: relative;
 	margin-bottom: 4.5rem;
+	box-shadow: 0 3px 16px rgb(0 0 0 / 5%);
 	transition: box-shadow .35s ease;
+	
 	background-color: #fff;
-
 	.owl-carousel & {
 		margin-bottom: 0 !important;
 	}
@@ -149,7 +150,7 @@
 
 	.countdown-amount {
 		display: inline-block;
-		color: #ef837b;
+		color: #ff498f;
 		font-weight: 500;
 		font-size: 1.8rem;
 		letter-spacing: -.03em;
@@ -1015,7 +1016,7 @@
 	.product-body {
 		padding-bottom: 2rem;
 		z-index: 2;
-
+		background-color: #fbfbfb;
 		div:last-child {
 			margin-bottom: 0;
 		}

@@ -7,6 +7,7 @@ import { useDispatch }  from "react-redux";
 import { addCartAction } from "../../../store/actions/AddCartAction";
 import countImage from '../../../controladors/countProductImages.jsx';
 const qty =1;
+
 const ProductEleven = ( props ) => {
     const router = useRouter();
     const query = router.query ; 

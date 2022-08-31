@@ -878,7 +878,10 @@ export const featureSlider4 = {
 
 export const introSlider = {
     nav: false,
-    dots: true
+    dots: true,
+    loop: true,
+    autoplay: true,
+    smartSpeed: 3000,
 }
 
 export const brandSlider = {
