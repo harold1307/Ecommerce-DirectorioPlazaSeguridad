@@ -60,6 +60,21 @@ const nextConfig = {
         destination: '/',
         permanent: false,
       },
+      {
+        source: '/publicarme',
+        destination: '/',
+        permanent: false,
+      },
+      {
+        source: '/porque',
+        destination: '/',
+        permanent: false,
+      },
+      {
+        source: '/faq',
+        destination: '/',
+        permanent: false,
+      },
 
     ]
   },

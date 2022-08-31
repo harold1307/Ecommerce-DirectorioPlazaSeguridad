@@ -96,6 +96,7 @@ const AdminLayoudTest = ({children}) => {
                           :
                           <ALink href="/dashboard">
                               <Image
+                              className='logoAdmin'
                               src="/Logo-Directorio-de-Seguridad.png"
                               alt="Logo"
                               width= {200}

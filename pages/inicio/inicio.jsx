@@ -101,7 +101,7 @@ const Home = () =>{
                                             <h3 className="intro-subtitle">Hottest Deals</h3>
 
                                             <h1 className="intro-title">
-                                                <span>Wherever You Go</span>
+                                                <span>DONES</span>
                                                 <br />DJI Mavic 2 Pro
                                             </h1>
 
@@ -113,33 +113,7 @@ const Home = () =>{
                                                 </span>
                                             </div>
                                             <ALink href="/productos/list" className="btn btn-primary">
-                                                <span>Discover Here</span>
-                                                <i className="icon-long-arrow-right"></i>
-                                            </ALink>
-                                        </Reveal>
-                                    </div>
-                                </div>
-                                <div className="intro-slide">
-                                    <figure className="slide-image mb-0">
-                                    <LazyLoadImage
-                                            alt="Slide"
-                                            src="/images/home/sliders/slide-3.jpg"
-                                            width={ 1180 }
-                                            height={ 500 }
-                                        />
-                                    </figure>
-                                    <div className="intro-content">
-                                        <Reveal keyframes={ fadeInUpShorter } delay={ 100 } duration={ 1000 }>
-                                            <h3 className="intro-subtitle">Limited Quantities</h3>
-
-                                            <h1 className="intro-title">
-                                                Refresh Your
-                                                <br />Wardrobe
-                                            </h1>
-
-                                            <div className="intro-text">Summer Collection 2021</div>
-                                            <ALink href="/productos/list" className="btn btn-primary">
-                                                <span>Discover Now</span>
+                                                <span>Contactanos</span>
                                                 <i className="icon-long-arrow-right"></i>
                                             </ALink>
                                         </Reveal>
@@ -362,22 +336,22 @@ const Home = () =>{
 
                                         <div className="banner-content">
                                             <h4 className="banner-subtitle text-white d-none d-sm-block">
-                                                <ALink href="/productos/list">Spring Sale is Coming</ALink>
+                                                <ALink href="/productos/list">Aumenta la visibilidad</ALink>
                                             </h4>
 
                                             <h3 className="banner-title text-white">
                                                 <ALink href="/productos/list">
-                                                    Floral T-shirts and Vests
+                                                    Anunciate en
 											    <br />
-                                                    <span>Spring Sale</span>
+                                                    <span>Directotio Plaza</span>
                                                 </ALink>
                                             </h3>
 
                                             <ALink
-                                                href="/productos/3cols"
+                                                href=""
                                                 className="banner-link"
                                             >
-                                                Shop Now
+                                                Quiero publicitarme
                                             <i className="icon-long-arrow-right"></i>
                                             </ALink>
                                         </div>
@@ -401,22 +375,22 @@ const Home = () =>{
 
                                         <div className="banner-content">
                                             <h4 className="banner-subtitle text-white d-none d-sm-block">
-                                                <ALink href="/productos/list">Amazing Value</ALink>
+                                                <ALink href="/productos/list">Encuentra</ALink>
                                             </h4>
 
                                             <h3 className="banner-title text-white">
                                                 <ALink href="/productos/list">
-                                                    Upgrade and Save
+                                                    Todo en seguridad
 											<br />
-                                                    <span>On The Latest Apple Devices</span>
+                                                    <span>en un solo lugar</span>
                                                 </ALink>
                                             </h3>
 
                                             <ALink
-                                                href="/productos/3cols"
+                                                href="/empresa"
                                                 className="banner-link"
                                             >
-                                                Shop Now
+                                                Contactanos
                                             <i className="icon-long-arrow-right"></i>
                                             </ALink>
                                         </div>
