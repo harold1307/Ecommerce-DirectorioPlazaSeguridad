@@ -58,7 +58,7 @@ function Cart ( props ) {
                     <div className="cart">
                         <div className="container mb-5">
                             {
-                                //cartList.length > 0 ?
+                             
                                 addCartRecducerState.cart.length ?
                                     <div className="row">
                                         <div className="col-lg-9">
@@ -77,11 +77,10 @@ function Cart ( props ) {
 
                                                 <tbody>
                                                     {
-                                                        // cartList.length > 0 ?
                                                         addCartRecducerState.cart.length ?
                                                             addCartRecducerState.cart.map( ( producto, index ) =>
                                                                 <tr key={ index }>
-                                                                    <td className="product-col">
+                                                                    <td className="product-col py-3">
                                                                         <div className="product">
                                                                             <figure className="product-media">
                                                                                 <ALink href={ `/producto/${producto._id}` } className="">
@@ -94,21 +93,21 @@ function Cart ( props ) {
                                                                             </h5>
                                                                         </div>
                                                                     </td>
-                                                                    <td className="text-justify px-2">                                                                
+                                                                    <td className="text-justify px-2 py-3">                                                                
                                                                         { producto.shortDescription }
                                                                     </td>                                                
-                                                                    <td className="text-center px-2">
+                                                                    <td className="text-center px-2 py-3">
                                                                        <ALink href={ `/empresa/${producto.COMPANY._id}` }>{ producto.COMPANY.name }</ALink>                                                                        
                                                                     </td>
                                                                     <td className="price-col text-center px-2">                                                                
                                                                     <span>$ </span><span className='price'>{ (producto.salePrice ??  producto.regularPrice )}</span> 
                                                                    
                                                                     </td>
-                                                                    <td className="price-col text-center px-2"> 
+                                                                    <td className="price-col text-center px-2 py-3"> 
                                                                         <Qty value={ 1 }  adClass="cart-product-quantity"></Qty>
                                                                     </td>
 
-                                                                    <td className="text-justify px-2">
+                                                                    <td className="text-center px-2 py-3">
                                                                         <CompanyModal  producto = {producto} index = {index} />
                                                                     </td>
                                                                     <td className="remove-col text-center">

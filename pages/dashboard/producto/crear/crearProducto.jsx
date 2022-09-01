@@ -1,6 +1,7 @@
-import React , {useState} from 'react';
+import React , {useState, useEffect} from 'react';
 import Image from 'next/image';
 import { PlusOutlined,  LoadingOutlined, SmileOutlined, SolutionOutlined, UserOutlined  } from '@ant-design/icons';
+import ALink  from '~/components/features/alink';
 import {
     Row,
     Col,
@@ -18,7 +19,9 @@ import {
   Upload,
   Space,
   Steps,
-  Modal
+  Modal,
+  Alert, 
+  Spin 
 } from 'antd';
 const { RangePicker } = DatePicker;
 const { TextArea } = Input;
@@ -29,7 +32,8 @@ export default function CrearProducto() {
     const [valuedc, setValuedc] = useState('');
     const [valuedl, setValuedl] = useState('');
     const [current, setCurrent] = useState(0);
-    const [ selectEmpresa , setSelectEmpresa ] = useState(0);
+    const [ selectEmpresa , setSelectEmpresa ] = useState(false);
+    
     
     <Select
     defaultValue="+"
@@ -53,7 +57,7 @@ export default function CrearProducto() {
     const [previewImage, setPreviewImage] = useState('');
     const [previewTitle, setPreviewTitle] = useState('');
     const [fileList, setFileList] = useState([]);
-    console.log(fileList);
+    console.log('fileList', fileList);
     const handleCancel = () => setPreviewVisible(false);
 
     const handlePreview = async (file) => {
@@ -105,8 +109,23 @@ export default function CrearProducto() {
         console.log(`selected ${value}`);
     };
     const ChangeEmpresa = (value) => {
-        console.log(`selected ${value}`);
+
+        console.log(`selected empresa ${value}`); 
+        setSelectEmpresa(true)  
+        console.log('selectEmpresa ',selectEmpresa) 
+
+        
+     
     };
+
+ 
+
+
+   
+
+
+
+
 
     const onFinish = (values) => {
         console.log('Success:', values);
@@ -116,30 +135,31 @@ export default function CrearProducto() {
         console.log('Failed:', errorInfo);
     };  
     const next = () => {
-        setCurrent(current>=6? 6 : current + 1);
+        setCurrent(current>=7? 7 : current + 1);
     }; 
     const prev = () => {
         setCurrent(current<=0? 0 : current - 1);
         
     };
    
-    const handleChangeTags = (value) => {
-        setSelectEmpresa( true);
-        console.log(`selected ${value}`);        
-        console.log('selectEmpresa',selectEmpresa);
+    const handleChangeTags = (value) => {       
+        console.log(`selected tags ${value}`);         
     };
-    console.log(selectEmpresa);
+
+  
+   
+   
 
  return (
     <>
         <Row className='py-5'>
             <Col xs={{span: 24,offset: 0,}}  sm={{span: 22,offset: 1,}}  md={{span: 20,offset: 2,}}  lg={{span: 18,offset: 3,}}  xl={{span: 18,offset: 3,}}>
                 <div className='steps'>
-                <Steps current={current} percent={current*(100/4)}>
-                        {['Paso 1','Paso 2','Paso 3','Paso 4', 'Paso 5','Listo'].map((item) => (
+                <Steps current={current} percent={current*(100/7)}>
+                        {['Paso 1','Paso 2','Paso 3','Paso 4', 'Paso 5','paso 6','Listo'].map((item) => (
                         <Step key={item} title={item} />
                         ))}
-                    </Steps>                      
+                    </Steps>                              
                 </div>                          
             </Col>
 
@@ -169,7 +189,7 @@ export default function CrearProducto() {
                             <div className={`${  current==0? 'paso-0' : 'visibilidadStep'}`}>
                                 <div className='pb-2'>
                                     <h6 className="title">Seleccionar Empresa</h6>                                                                         
-                                    <p>Debe seleccionar previamente la empresa, si no tiene ninguna, debe crear una primero.</p>
+                                    <p>Debe seleccionar previamente la empresa, si no tiene ninguna, debe crear una primero. <ALink href="/dashboard/empresa/crear">Crear</ALink></p>
                                </div>
                                 <Row className='mt-1 py-3'>
                                     <Col  xs={{span: 24,}}  sm={{span: 24,}} md={{span: 12,}}  >
@@ -390,13 +410,26 @@ export default function CrearProducto() {
                                         </Modal>
                                     </Col>
                                 </Row>                             
-                            </div>   
+                            </div>  
+                            <div className={`${  current==6? 'paso-6' : 'visibilidadStep'}`}>
+                            <div className='pb-2'>
+                                     <h6 className="title mb-5">Creando producto.</h6>                                                                         
+                                   
+                                    <Spin tip="Cargando...">
+                                        <Alert
+                                        message="Guardando imagenes.."
+                                        description="No se desconecte, se está creando el producto..."
+                                        type="info"
+                                        />
+                                    </Spin>
+                               </div>
+                            </div> 
                             {
-                            true?      
+                            selectEmpresa?      
                                 <div className='controlBtn'>
-                                    <Button type="primary" onClick={() => next()}  className={`${  current==5?   'visibilidadStep' : '' }`} > Siguiente </Button>
-                                    <Button  style={{ margin: '0 8px',}} className={`${ current==0 ?  'visibilidadStep' : '' }`}   onClick={() => prev()}> Previo </Button>
-                                    <Button htmlType='submit' className={`${  current==4?  '' : 'visibilidadStep' }`}  >Guardar</Button>
+                                    <Button type="primary" onClick={() => next()}  className={`${  current>=5?   'visibilidadStep' : '' }`} > Siguiente </Button>
+                                    <Button  style={{ margin: '0 8px',}} className={`${ (current==0 || current==6) ?  'visibilidadStep' : '' }`}   onClick={() => prev()}> Previo </Button>
+                                    <Button htmlType='submit' className={`${ (current==5) ?  '' : 'visibilidadStep' }`}  onClick={() => next()} >Guardar</Button>
                                 </div>
                                 : 
                                 ''

@@ -8,63 +8,99 @@ import { homeData, mainSlider5, mainSlider9 } from '~/utils/data';
 const nosotros =()=>{
   return (
     <Layout> 
+    <PageHeader title={ 'Sobre Nosotros'} />
       <nav className="breadcrumb-nav">
           <div className="container">
              <ol className="breadcrumb">
                 <li className="breadcrumb-item">
                     <ALink href="/">Inicio</ALink>
-                </li>             
-                <li className="breadcrumb-item active">Nosotros</li>
+                </li>            
+                  <li className="breadcrumb-item active">
+                     Nosotros
+                  </li>                      
              </ol>
           </div>
       </nav>
-      <div className="page-content pb-0">
-          <div className="container container__box">
-                    <div className="row">
-                        <div className="col-lg-12">
-                            <div className="mb-6 text-center py-5">
-                                <h1 className="display-4">¿Quienes Somos?</h1>
-                                <p>Somos una plataforma de negocios, que enlaza a las personas en busca de soluciones confiables de seguridad, con los profesionales y las empresas que pueden proveerlas con los mejores estándares de calidad y confiabilidad.</p>
-                                <p>Nuestro equipo de trabajo está integrado por un grupo selecto de profesionales expertos en marketing estratégico, imagen pública, tecnologías avanzadas y de seguridad integral, que se encargan de desarrollar esquemas innovadores de negocios en el sector.</p>
-                            </div>
-                        </div>
-                    </div>
-          </div>
-          <div className="bg-light-2 pt-6 pb-5 mb-6 mb-lg-8 py-5">
-                    <div className="container">
-                        <div className="row">
-                            <div className="col-lg-5 mb-3 mb-lg-0">
-                                <h2 className="title-decoration display-4">Principios</h2>
-                                <p className="lead text-primary mb-3">Pellentesque odio nisi, euismod pharetra a ultricies <br />in diam. Sed arcu. Cras consequat</p>
-                                <ul className="list">
-                                        <li> <i className="icon-check-circle-o pr-2"></i>Negociaciones exitosas</li>
-                                        <li> <i className="icon-check-circle-o pr-2"></i>Cumplimiento de expectativas</li>
-                                        <li> <i className="icon-check-circle-o pr-2"></i>Honestidad siempre</li>
-                                        <li> <i className="icon-check-circle-o pr-2"></i>Innovación inteligente</li>
-                                        <li> <i className="icon-check-circle-o pr-2"></i>Efectividad en el servicio</li>
-                                        <li> <i className="icon-check-circle-o pr-2"></i>Tecnologías amigables</li>
-                                        <li> <i className="icon-check-circle-o pr-2"></i>Confidencialidad de la información</li>
-                                    </ul>                               
-                            </div>
+      <div className="page-content">   
 
-                            <div className="col-lg-6 offset-lg-1">
-                                <div className="about-images">
-                                    <img src="images/about/img-1.jpg" alt="" className="about-img-front" />
-                                    <img src="images/about/img-2.jpg" alt="" className="about-img-back" />
-                                </div>
-                            </div>
+          <div className="container__nosotros">
+              <div className="about__area-title-right-image"></div>
+              <div className="container">
+                <div className="row align-items-center">
+                  <div className="col-xl-6 col-lg-6 lg-mb-30">
+                    <div className="about__area-left mr-70" >
+                      <div className="about__area-left-image">
+                        <img src="/images/about/sobre-1.jpg" alt="" />
+                        <div className="about__area-left-image-small-img">
+                          <img src="/images/about/sobre-2.jpg" alt="" />
                         </div>
+                        <div className="about__area-left-image-content">
+                          <p><span  className="counter">23</span>+</p>
+                          <p>Years Experience</p>
+                        </div>
+                      </div>
                     </div>
+                  </div>
+                  <div className="col-xl-6 col-lg-6">
+                    <div className="about__area-title-right" >	<span  className="subtitle-one">Sobre la compañia</span>
+                      <span className="subtitle-two">01</span>
+                      <h2 className="mb-25 title-decoration mb-3">¿Quienes Somos?</h2>
+                      <p className="mb-40">Somos una plataforma de negocios, que enlaza a las personas en busca de soluciones confiables de seguridad, con los profesionales y las empresas que pueden proveerlas con los mejores estándares de calidad y confiabilidad.</p>
+                      <p>Nuestro equipo de trabajo está integrado por un grupo selecto de profesionales expertos en marketing estratégico, imagen pública, tecnologías avanzadas y de seguridad integral, que se encargan de desarrollar esquemas innovadores de negocios en el sector.</p>
+                      <div className="row align-items-center mb-40">
+                        <div className="col-sm-6 pr-10">                                           
+                          <div className="about__area-title-right-author-text my-5">
+                            <div className='title'>César</div>
+                            <p>CEO Fundador</p>
+                          </div>                        
+                        </div>                       
+                      </div>	
+                    </div>
+                  </div>
+                </div>
+              </div>
           </div>
-          <div className="container container__box my-5">
+
+          <div className="container__nosotros solution__area" >
+          <div className="solution__area-right"></div>
+            <div className="container">
+              <div className="row">
+                <div className="col-xl-6 col-lg-6 lg-mb-50">
+                  <div className="solution__area-left">
+                    <span className="subtitle-one">Normativa ética</span>
+                    <span className="subtitle-two">02</span>
+                    <h2 className="mb-25">Nuestros Principios</h2>
+                    <p className="mb-40">Los principios corporativos, creencias y valores que rígen como guía e inspiran nuestra organización:</p>
+                      <ul className="list ml-4">
+                          <li> <i className="icon-check-circle-o pr-2 fz-22"></i>Negociaciones exitosas</li>
+                          <li> <i className="icon-check-circle-o pr-2 fz-22"></i>Cumplimiento de expectativas</li>
+                          <li> <i className="icon-check-circle-o pr-2 fz-22"></i>Honestidad siempre</li>
+                          <li> <i className="icon-check-circle-o pr-2 fz-22"></i>Innovación inteligente</li>
+                          <li> <i className="icon-check-circle-o pr-2 fz-22"></i>Efectividad en el servicio</li>
+                          <li> <i className="icon-check-circle-o pr-2 fz-22"></i>Tecnologías amigables</li>
+                          <li> <i className="icon-check-circle-o pr-2 fz-22"></i>Confidencialidad de la información</li>
+                      </ul>   
+                  </div>
+                </div>              
+              </div>
+            </div>
+          </div>
+   
+
+
+          <div className="container__nosotros">
             <div className="row">
                     <div className="col-lg-6 mb-3 mb-lg-0">
-                        <h2 className="display-4">Misión</h2>
-                        <p>Ser una conexión efectiva entre los clientes que desean adquirir soluciones de seguridad, y los profesionales, las empresas o las instituciones que pueden proveerla con los mejores estándares de calidad y confiabilidad posibles.</p>
+                        <div className='card-bg-color'>
+                          <h2 className="display-4">Misión</h2>
+                          <p>Ser una conexión efectiva entre los clientes que desean adquirir soluciones de seguridad, y los profesionales, las empresas o las instituciones que pueden proveerla con los mejores estándares de calidad y confiabilidad posibles.</p>
+                        </div>                                    
                     </div>
                     <div className="col-lg-6">
+                      <div className='card-bg-color'>
                         <h2 className="display-4">Visión</h2>
                         <p>roveer información útil, innovadora y fácil de comprender, de los productos y servicios que se ofrecen en el mercado de la seguridad, para que los usuarios la encuentren fácilmente y se contacten con sus proveedores de forma ágil.</p>
+                      </div>  
                     </div>
                 </div>
                 <div className="mb-5"></div>

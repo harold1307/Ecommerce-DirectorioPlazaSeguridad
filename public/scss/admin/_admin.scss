@@ -211,8 +211,8 @@ $color-boton-primario-hover: #e7ae11;
     .ant-steps-item-icon {
       .ant-steps-icon {
         position: relative;
-        top: -2px;
-        color: #1890ff;
+        top: -1px;
+        color: #4caf50;
         line-height: 1;
         &> .ant-steps-icon {
           color: #4caf50;
@@ -223,9 +223,9 @@ $color-boton-primario-hover: #e7ae11;
       }
     }
 
-    .ant-steps-item.ant-steps-item-process.ant-steps-item-active{
+    .ant-steps-item.ant-steps-item-process.ant-steps-item-active{      
       .ant-steps-icon{
-        color:white
+        color:white;        
       }
     }
     .ant-steps-item.ant-steps-item-finish{
@@ -253,6 +253,11 @@ $color-boton-primario-hover: #e7ae11;
     .visibilidadStep{
       visibility: hidden;
       display: none;
+    }
+    [data-theme='compact'] .site-navigation-steps,
+      .site-navigation-steps {
+        margin-bottom: 60px;
+        box-shadow: 0px -1px 0 0 #e8e8e8 inset;
     }
 
     [class^='paso-'] {
@@ -298,6 +303,6 @@ $color-boton-primario-hover: #e7ae11;
       color: #1ee0ac !important;
     }
     .change.down {
-      color: #e85347 !important;
+      color: #ff006a !important;
     }
 }

@@ -57,7 +57,6 @@ const index = () =>{
     }, 6000);
   };
 
-
   const columns = [
     {
       title: 'item',
@@ -122,7 +121,6 @@ const index = () =>{
       ),
     },
   ];
-
 
   return (    
       <AdminLayoud>

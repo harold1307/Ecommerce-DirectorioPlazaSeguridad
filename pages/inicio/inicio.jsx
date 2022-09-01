@@ -400,11 +400,11 @@ const Home = () =>{
                                     <div className="col-sm-6 col-lg-3">
                                         <div className="icon-box icon-box-side">
                                             <span className="icon-box-icon text-dark">
-                                                <i className="icon-rocket"></i>
+                                                <i className="icon-search"></i>
                                             </span>
                                             <div className="icon-box-content">
-                                                <h3 className="icon-box-title">Free Shipping</h3>
-                                                <p>Orders $50 or more</p>
+                                                <h3 className="icon-box-title">Buscar</h3>
+                                                <p>Realiza tus busquedas con facilidad.</p>
                                             </div>
                                         </div>
                                     </div>
@@ -416,8 +416,8 @@ const Home = () =>{
                                             </span>
 
                                             <div className="icon-box-content">
-                                                <h3 className="icon-box-title">Free Returns</h3>
-                                                <p>Within 30 days</p>
+                                                <h3 className="icon-box-title">Contactar</h3>
+                                                <p>Ponte en contacto con la empresa.</p>
                                             </div>
                                         </div>
                                     </div>
@@ -429,8 +429,8 @@ const Home = () =>{
                                             </span>
 
                                             <div className="icon-box-content">
-                                                <h3 className="icon-box-title">Get 20% Off 1 Item</h3>
-                                                <p>When you sign up</p>
+                                                <h3 className="icon-box-title">Comprar</h3>
+                                                <p>Compra con seguridad lo que necesitas.</p>
                                             </div>
                                         </div>
                                     </div>
@@ -442,8 +442,8 @@ const Home = () =>{
                                             </span>
 
                                             <div className="icon-box-content">
-                                                <h3 className="icon-box-title">We Support</h3>
-                                                <p>24/7 amazing services</p>
+                                                <h3 className="icon-box-title">Seguridad</h3>
+                                                <p>Las empresas registradas están verificadas.</p>
                                             </div>
                                         </div>
                                     </div>
@@ -499,7 +499,6 @@ const Home = () =>{
                                             <div className="banner banner-overlay">
                                                 <ALink href="/productos/list">
                                                     <div className="lazy-overlay"></div>
-
                                                     <LazyLoadImage
                                                         alt="Banner"
                                                         src="/images/home/banners/banner-12.jpg"
@@ -517,9 +516,7 @@ const Home = () =>{
 													<br />
                                                             <span>Pide tu</span> Cotización													
                                                         </ALink>
-                                                    </h3>
-
-                                                   
+                                                    </h3>                                                   
                                                 </div>
                                             </div>
                                         </div>
