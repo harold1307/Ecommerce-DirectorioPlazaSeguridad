@@ -30,8 +30,6 @@ const nosotros =()=>{
                         </div>
                     </div>
           </div>
-
-
           <div className="bg-light-2 pt-6 pb-5 mb-6 mb-lg-8 py-5">
                     <div className="container">
                         <div className="row">
@@ -58,7 +56,6 @@ const nosotros =()=>{
                         </div>
                     </div>
           </div>
-          
           <div className="container container__box my-5">
             <div className="row">
                     <div className="col-lg-6 mb-3 mb-lg-0">
@@ -72,7 +69,6 @@ const nosotros =()=>{
                 </div>
                 <div className="mb-5"></div>
           </div>
-
           <div className="container container__box my-5">
                     <div className="row">
                         <div className="col-lg-10 offset-lg-1">
@@ -87,8 +83,7 @@ const nosotros =()=>{
                             </div>
                         </div>
                     </div>
-          </div>
-       
+          </div>       
           <div className="about-testimonials bg-light-2 pt-6 pb-6 position-relative" style={ { marginBottom: '-1px' } }>
                   <div className="container">
                       <h2 className="title text-center mb-3">¿Qué dicen de nosotros?</h2>
