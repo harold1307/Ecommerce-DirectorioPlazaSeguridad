@@ -1224,4 +1224,204 @@
     color:#818181 !important;
 	opacity: 0.7;
 }
+// 
 
+.container__box{
+	padding: 0 calc(15px + 10%);
+	margin-bottom: 15px;
+}
+.title-decoration{
+	position: relative;
+	&:before {
+		content: " ";
+		background: #febf10;
+		width: 57px;
+		height: 3px;
+		position: absolute;
+		bottom: -7px;
+	}
+}
+
+.about__area-two {
+    position: relative;
+    &-left {
+        &-image {
+            position: relative;
+            margin-bottom: 120px;
+            img {
+                max-width: 400px;
+            }
+            &-small-img {
+                position: absolute;
+                bottom: -120px;
+                right: 0px;
+                max-width: 300px;
+                img {
+                    border: none;
+                    padding: 0;
+                }
+            }
+            &-content {
+                background: #ffe11d;
+                display: inline-block;
+                text-align: center;
+                padding: 60px 0 0 0;
+                position: absolute;
+                left: 40px;
+                bottom: -70px;
+                width: 220px;
+                height: 220px;
+                border-radius: 40px;
+                &::after {
+                    position: absolute;
+                    content: '';
+                    top: 0;
+                    left: 0;
+                    width: 190px;
+                    border-radius: 30px;
+                    margin: 15px;
+                    height: 190px;
+                    border: 2px dashed #000000;
+                }
+                p {                    
+                    
+                    font-weight: 700;       
+                    position: relative;                  
+                    z-index: 2;           
+                }
+                p:first-child {
+                    font-weight: 700;
+                    font-size: 48px;
+                    line-height: 60px;
+                    margin-bottom: 5px;
+                }
+            }
+        }
+    }
+    &-title {
+        &-right {
+            &-author {
+                display: flex;
+                align-items: center;
+                &-img {
+                    margin-right: 20px;
+                    img {
+                        max-width: 70px;
+                    }
+                }
+                &-text {
+                    p {
+                        font-size: 14px;
+                    }
+                }
+                &-signature { 
+                    text-align: right;
+                    border-left: 1px solid rgb(158, 158, 158);
+                    img {
+                        max-width: 230px;
+                    }
+                }
+            }
+            &-image {
+                position: absolute;
+                background-position: center;
+                background-size: cover;
+                background-repeat: repeat;
+                right: 30px;
+                top: 110px;
+                bottom: 0;
+                height: 70%;
+                width: 40%;               
+            }
+        }
+    }
+}
+@media (max-width: 1199px) {
+    .about__area {
+        &-left {
+            &-image {
+                margin-bottom: 120px;
+                img {
+                    max-width: 400px;
+                }
+                &-small-img {
+                    right: -40px;
+                    max-width: 300px;
+                }
+            }
+        }
+    }
+}
+@media (max-width: 991px) {
+    .about__area {
+        &-left {
+            margin-right: 40px;
+            &-image {
+                max-width: 480px;
+                margin: 0 auto;
+                margin-bottom: 120px;
+                img {
+                    max-width: 450px;
+                }
+                &-small-img {
+                    max-width: 360px;
+                }
+            }
+        }
+        &-two {
+            &-left {
+                max-width: 500px;
+                margin: 0;
+            }
+        }
+    }
+}
+@media (max-width: 575px) {
+    .about__area {
+        &-left {
+            &-image {
+                img {
+                    max-width: 330px;
+                }
+                &-small-img {
+                    right: -40px;
+                    max-width: 300px;
+                }
+                &-content {
+                    left: 0;
+                }
+            }
+        }
+        &-title {
+            &-right {
+                &-author {
+                    margin-bottom: 40px;
+                    &-signature { 
+                        text-align: left;
+                    }
+                }
+            }
+        }
+    }
+}
+@media (max-width: 430px) {
+    .about__area {
+        &-left {
+            &-image {
+                &-small-img {
+                    right: -40px;
+                    max-width: 250px;
+                }
+            }
+        }
+        &-two {
+            &-left {
+                &-image {
+                    img {
+                        max-width: 260px;
+                    }
+                }
+            }            
+        }
+    }
+}

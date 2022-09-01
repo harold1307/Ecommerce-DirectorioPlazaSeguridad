@@ -106,7 +106,7 @@ const MobileMenu = () => {
                                                                 <ALink href={ { pathname:  `/productos/todos`, query: {categoria: categoria.value     } } } className="sidebar-filter-clear" scroll={ false }>
                                                                     <div className="row">       
                                                                         <div className='text-uppercase pl-3'>                                           
-                                                                            <i className={'fa '+` ${categoria.icon}`} aria-hidden="true"></i> 
+                                                                            <i className={'fa '+` ${categoria.icon} pr-3`} aria-hidden="true"></i> 
                                                                             {categoria.name}
                                                                         </div>  
                                                                     </div>                                                        
