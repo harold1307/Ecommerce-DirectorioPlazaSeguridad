@@ -8,7 +8,7 @@ import AdminLayoud   from '../../admin/adminLayoud';
 import TinyLineChart from '../../admin/estadistica/TinyLineChart';
 import TinyAreaChart from '../../admin/estadistica/TinyAreaChart';
 
-const index = () =>{  
+const Inicio= () =>{  
     const dispatch = useDispatch();
     const [bottom, setBottom] = useState('bottomRight');
     
@@ -274,4 +274,4 @@ const index = () =>{
   )
 }
 
-export default index
+export default Inicio;
