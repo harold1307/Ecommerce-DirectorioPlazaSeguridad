@@ -84,9 +84,7 @@ const nosotros =()=>{
                 </div>              
               </div>
             </div>
-          </div>
-   
-
+          </div>  
 
           <div className="container__nosotros">
             <div className="row">
@@ -105,21 +103,7 @@ const nosotros =()=>{
                 </div>
                 <div className="mb-5"></div>
           </div>
-          <div className="container container__box my-5">
-                    <div className="row">
-                        <div className="col-lg-10 offset-lg-1">
-                            <div className="brands-text text-center mx-auto mb-6">
-                                <h2 className="title">The world is premium design brands in one destination.</h2>
-                                <p>Phasellus hendrerit. Pellentesque aliquet nibh nec urna. In nisi neque, aliquet vel, dapibus id, mattis vel, nis</p>
-                            </div>
-                            <div className="brands-display">
-                                <div className="row justify-content-center">
-                                   
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-          </div>       
+
           <div className="about-testimonials bg-light-2 pt-6 pb-6 position-relative" style={ { marginBottom: '-1px' } }>
                   <div className="container">
                       <h2 className="title text-center mb-3">¿Qué dicen de nosotros?</h2>
@@ -146,8 +130,21 @@ const nosotros =()=>{
                       </OwlCarousel>
                   </div>
           </div>
-        
 
+          <div className="container container__box my-5">
+                    <div className="row">
+                        <div className="col-lg-10 offset-lg-1">
+                            <div className="brands-text text-center mx-auto mb-6">
+                                <h2 className="title">Patrocinadores</h2>                               
+                            </div>
+                            <div className="brands-display">
+                                <div className="row justify-content-center">
+                                   
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+          </div>     
       </div>
     
     </Layout>
