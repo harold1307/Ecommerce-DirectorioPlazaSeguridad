@@ -15,9 +15,6 @@ function Cart ( props ) {
     const [ shippingCost, setShippingCost ] = useState( 0 );
     const addCartRecducerState =  useSelector( state => state.addCartReducer);
   
-
-
-
     function onChangeShipping ( value ) {
         setShippingCost( value );
     }

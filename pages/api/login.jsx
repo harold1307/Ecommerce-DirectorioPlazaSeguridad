@@ -2,8 +2,6 @@ import Cors from 'cors';
 import initMiddleware from '../../middleware/initMiddleware';
 import clienteAxios from '../../configuracion/axios';
 
-
-
 export default function handler(req, res) {
 
       var url = 'https://directorioseguridad.dte.gt/api/login';
@@ -11,7 +9,6 @@ export default function handler(req, res) {
         "username": "rce.beteta@gmail.com",
         "password": "12345"
     };
-
   
     fetch(url, {
         method: 'POST', 
@@ -26,7 +23,3 @@ export default function handler(req, res) {
 
 
 }
-
-
-
-
